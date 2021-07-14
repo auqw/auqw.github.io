@@ -1,0 +1,2205 @@
+{
+  "$type": "Grimoire.Botting.Configuration, Grimoire",
+  "Commands": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Botting.IBotCommand, Grimoire]], mscorlib",
+    "$values": [
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBotDelay, Grimoire",
+        "Delay": 50
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "adquest"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "ESO'S CRAGGLEROCK BOT",
+        "Alpha": 200,
+        "R": 255,
+        "G": 1,
+        "B": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "Requirements:",
+        "Alpha": 200,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "3+ target class",
+        "Alpha": 200,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "NOTE: Attacks set for spam",
+        "Alpha": 100,
+        "R": 255,
+        "G": 255,
+        "B": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "Change according to your class",
+        "Alpha": 100,
+        "R": 255,
+        "G": 255,
+        "B": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": " if necessary",
+        "Alpha": 100,
+        "R": 255,
+        "G": 255,
+        "B": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
+        "Skill": "0: Malevolent Burst",
+        "Index": "0",
+        "SafeHp": 100,
+        "SafeMp": 100,
+        "Wait": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
+        "Skill": "1: Atramentous Shade",
+        "Index": "1",
+        "SafeHp": 100,
+        "SafeMp": 100,
+        "Wait": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
+        "Skill": "2: Wicked Purgatory",
+        "Index": "2",
+        "SafeHp": 100,
+        "SafeMp": 100,
+        "Wait": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
+        "Skill": "3: Depraved Empowerment",
+        "Index": "3",
+        "SafeHp": 100,
+        "SafeMp": 100,
+        "Wait": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
+        "Skill": "4: Anathema",
+        "Index": "4",
+        "SafeHp": 100,
+        "SafeMp": 100,
+        "Wait": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "adquest"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBotDelay, Grimoire",
+        "Delay": 200
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getQuests%7%7277%7278%7280%7282%7283%7284%7285%7286%7288%7290%7292",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%28164%7291%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%28053%7289%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%27981%7287%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%27868%7297%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%19818%7281%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%acceptQuest%27512%7279%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBotDelay, Grimoire",
+        "Delay": 50
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
+        "Tag": "Misc",
+        "Text": "Int is",
+        "Value1": "z",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "teleport"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7292",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7292"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7290",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7290"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7288",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7288"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7286",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7286"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7285",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7285"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7284",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7284"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7283",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7283"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7282",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7282"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7280",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7280"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7278",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7278"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is available",
+        "Value1": "7277",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7277"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "done"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "teleport"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 0
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7292"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7292",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7292,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": true,
+          "CanComplete": true,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "thspan",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "thespan",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r16",
+        "Pad": "Down"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getMapItem%20365%6910%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7292,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": true,
+          "CanComplete": true,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "done"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7290"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7290",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7290,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Rainbow Moonstone",
+        "Value2": "*"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 24
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "earthstorm",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "earthstorm",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in temp inventory",
+        "Value1": "Chip of Ruby",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 3
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r3",
+        "Pad": "Right"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in temp inventory",
+        "Value1": "Chip of Sapphire",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 3
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r5",
+        "Pad": "Right"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in temp inventory",
+        "Value1": "Chip of Diamond",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 3
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r7",
+        "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in temp inventory",
+        "Value1": "Chip of Emerald",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 3
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r9",
+        "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest can not be turned in",
+        "Value1": "7291",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "7290"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7291,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7290,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7288"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7288",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7288,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Understone",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 10
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "battleunderc",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "battleunderc",
+        "Room": "999999",
+        "Cell": "r3",
+        "Pad": "Up"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "r3",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Up",
+        "Pad": "r3"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Fluorite Shard",
+        "Value2": "10"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7289,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7288,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7286"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7286",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7286,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Butterfly Sapphire",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 10
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "bloodtusk",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "bloodtusk",
+        "Room": "9999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "r4",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r4",
+        "Pad": "Center"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Butterfly Bloom",
+        "Value2": "15"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7287,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7286,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7285"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7285,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Songstone",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 14
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "mythsong",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "mythsong",
+        "Room": "9999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Cross",
+        "Pad": "Bottom"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Shards of Song",
+        "Value2": "15"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getMapItem%24803%6909%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 400
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Shards of Song",
+        "Value2": "15"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 0,
+        "Index": 3
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1000
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7297,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestCompleted, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest can be turned in",
+        "Value1": "7297",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 0,
+        "Index": 2
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7285,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7284"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7284",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7284,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "downward",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "downward",
+        "Room": "9999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r11",
+        "Pad": "Right"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getMapItem%25008%6908%",
+        "Client": false
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7284,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7283"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7283",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7283,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "timevoid",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "timevoid",
+        "Room": "9999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "Frame8",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Frame8",
+        "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Void Opal",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1300
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7283,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7282"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7282",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7282,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "brightfall",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "brightfall",
+        "Room": "9999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "r3",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r3",
+        "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Doomstone",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7282,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7280"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7280",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7280,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Dark Bloodstone",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 10
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "safiria",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "safiria",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "c2",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "c2",
+        "Pad": "Right"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Blood Gem",
+        "Value2": "10"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7281,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": true,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7280,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7278"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7278",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7278,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Ice Diamond",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Type": 1,
+        "Index": 10
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "kingcoal",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "mountfrost",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "War",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "War",
+        "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Frozen Coal",
+        "Value2": "10"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7279,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7278,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "7277"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "7277",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7277,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "wanders",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "wanders",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "r13",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "r13",
+        "Pad": "Right"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+        "Tag": "Item",
+        "Text": "Is not in temp",
+        "Value1": "Star of the Sandsea",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "attack"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "iGold": 0,
+          "iReqCP": 0,
+          "QuestID": 7277,
+          "bOnce": 0,
+          "iExp": 0,
+          "bUpg": 0,
+          "FactionID": 0,
+          "IsInProgress": false,
+          "CanComplete": false,
+          "ShouldSerializeGoldReward": false,
+          "ShouldSerializeRequiredClassPoints": false,
+          "ShouldSerializeIsNotRepeatable": false,
+          "ShouldSerializeExperienceReward": false,
+          "ShouldSerializeRewards": false,
+          "ShouldSerializeName": false,
+          "ShouldSerializeIsMemberOnly": false,
+          "ShouldSerializeFactionId": false,
+          "ShouldSerializeIsInProgress": false,
+          "ShouldSerializeCanComplete": false
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 0,
+        "Int": "z",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "check"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "done"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdChange, Grimoire",
+        "Guild": false,
+        "Text": "Bot by Archlight"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdChange, Grimoire",
+        "Guild": true,
+        "Text": "Archlight by Bot"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "yulgar",
+        "Room": "999999",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdStop, Grimoire"
+      }
+    ]
+  },
+  "Skills": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.Skill, Grimoire]], mscorlib",
+    "$values": []
+  },
+  "Quests": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.Quest, Grimoire]], mscorlib",
+    "$values": [
+      {
+        "$type": "Grimoire.Game.Data.Quest, Grimoire",
+        "iGold": 0,
+        "iReqCP": 0,
+        "QuestID": 7281,
+        "bOnce": 0,
+        "iExp": 0,
+        "bUpg": 0,
+        "FactionID": 0,
+        "Text": "7281",
+        "IsInProgress": true,
+        "CanComplete": false,
+        "ShouldSerializeGoldReward": false,
+        "ShouldSerializeRequiredClassPoints": false,
+        "ShouldSerializeIsNotRepeatable": false,
+        "ShouldSerializeExperienceReward": false,
+        "ShouldSerializeRewards": false,
+        "ShouldSerializeName": false,
+        "ShouldSerializeIsMemberOnly": false,
+        "ShouldSerializeFactionId": false,
+        "ShouldSerializeIsInProgress": false,
+        "ShouldSerializeCanComplete": false
+      }
+    ]
+  },
+  "Author": "Eso",
+  "Description": "All Quests from Bamboozle in /CraggleRock.\r\n Recommended Class: Spam Class (LR/3+ targets)",
+  "Boosts": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
+    "$values": []
+  },
+  "Drops": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": [
+      "Empowered Voidstone",
+      "Ice Diamond",
+      "Dark Bloodstone",
+      "Songstone",
+      "Butterfly Sapphire",
+      "Understone",
+      "Rainbow Moonstone",
+      "Floozer",
+      "Time Quartz"
+    ]
+  },
+  "Server": {
+    "$type": "Grimoire.Game.Data.Server, Grimoire",
+    "sName": "Twilly",
+    "iPort": 2956
+  },
+  "SkillDelay": 500,
+  "ExitCombatBeforeRest": true,
+  "ExitCombatBeforeQuest": false,
+  "EnablePickup": true,
+  "EnableRejection": true,
+  "EnablePickupAll": false,
+  "EnablePickupAcTagged": false,
+  "EnableRejectAll": false,
+  "AutoRelogin": true,
+  "RelogDelay": 6000,
+  "RelogRetryUponFailure": false,
+  "BotDelay": 50,
+  "WaitForAllSkills": false,
+  "WaitForSkill": false,
+  "SkipDelayIndexIf": true,
+  "InfiniteAttackRange": true,
+  "ProvokeMonsters": false,
+  "Untarget": false,
+  "EnemyMagnet": false,
+  "LagKiller": false,
+  "HidePlayers": true,
+  "SkipCutscenes": true,
+  "DisableAnimations": false,
+  "WalkSpeed": 8,
+  "NotifyUponDrop": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
+  "RestIfMp": false,
+  "RestIfHp": false,
+  "RestMp": 60,
+  "RestHp": 60,
+  "RestartUponDeath": true,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": [
+      "Empowered Voidstone",
+      "Ice Diamond",
+      "Dark Bloodstone",
+      "Songstone",
+      "Butterfly Sapphire",
+      "Understone",
+      "Rainbow Moonstone",
+      "Floozer",
+      "Time Quartz"
+    ]
+  },
+  "Packet": false,
+  "BankOnStop": false,
+  "EnsureComplete": false,
+  "EnsureTries": 20,
+  "AFK": true,
+  "DropDelay": 1000
+}
