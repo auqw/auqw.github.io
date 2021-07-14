@@ -209,9 +209,11 @@ h2 {
 }
 #myTable tr:hover {
   /*background-color: #ff3d3d;*/
-  border-radius: 3rem;
-  border: 2px solid #ff3d3d;
-
+  border-radius: 3px;
+  /*border: 2px solid #ff3d3d;*/
+  -webkit-box-shadow:inset 0px 0px 0px 1px #ff3d3d;
+  -moz-box-shadow:inset 0px 0px 0px 1px #ff3d3d;
+  box-shadow:inset 0px 0px 0px 1px #ff3d3d;
 /*  color: black;
   background-color: whitesmoke;
   border-radius: 1rem;*/
