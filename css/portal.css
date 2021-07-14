@@ -262,6 +262,13 @@ h2 {
   border-radius: 0.25rem;
   font-family: Roboto Th;
 }
+.paginate_button:hover {
+  /*background-color: #fc6565;*/
+  -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+  -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+  box-shadow:inset 0px 0px 0px 1px #fff;
+  /*border: 1px solid white;*/*/
+}
 .dataTables_paginate {
   margin: 10px;
 }
@@ -305,13 +312,20 @@ input {
 
 /*Buttons*/
 .btn {
-  background-color: ff3d3d;
+  background-color: #ff3d3d;
   border: none;
   color: white;
   padding: 12px 10px;
   cursor: pointer;
   font-size: 14px;
   border-radius: 0.25rem;
+}
+.btn:hover {
+  /*background-color: #fc6565;*/
+  -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+  -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+  box-shadow:inset 0px 0px 0px 1px #fff;
+  /*border: 1px solid white;*/*/
 }
 .btn2 {
   background-color: ff3d3d;
@@ -324,8 +338,19 @@ input {
   border-radius: 0.15rem;
   text-decoration: none;
 }
+.btn2:hover {
+  /*background-color: #fc6565;*/
+  -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+  -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+  box-shadow:inset 0px 0px 0px 1px #fff;
+  /*border: 1px solid white;*/*/
+}
 .btn-red-darker {
 	background-color: #C81D3D;
+}
+.btn-red-darker:hover {
+  /*background-color: #d13b57;*/
+  /*border: 3px white;*/
 }
 .btn-pad-y {
 	margin: 10px;
