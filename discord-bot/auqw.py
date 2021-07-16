@@ -1,5 +1,7 @@
 
 import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 import discord
 
 from discord.ext import tasks
@@ -13,7 +15,7 @@ from Cogs.Base import *
 from Cogs.UploadCog import UploadCog
 
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 if os.name == "nt":
@@ -30,6 +32,13 @@ else:
     DEPLOY_NAME = os.environ.get("DEPLOY_NAME")
     cmd = ";"
 
+intents = Intents.all()
+intents.presences = True
+Bot = commands.Bot(command_prefix=[cmd], description='Bloom Bot Revamped', intents=intents)
+Bot.remove_command('help')
+
+BaseStuff = BaseProgram()
+BaseStuff.git_prepare()
 
 
 @Bot.event
