@@ -27,6 +27,12 @@
 
 
 
+
+
+
+
+
+
 body {
 	font-family: Roboto Th;
 	color: whitesmoke;
@@ -42,6 +48,7 @@ body {
 
 h1 {
 	font-size: 5rem;
+  /*font-size:5vw;*/
 	font-family: Newborough;
 	/*margin-bottom: -20px;*/
 	/*text-shadow: 3px 3px #1c1c1c;*/
@@ -765,4 +772,43 @@ svg {
 
 .bodyBox {
   width: 60%;
+}
+#bodyThis h2 {
+  font-family: Newborough;
+  font-size: 32px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    h1 { 
+      font-size: 3rem;
+      text-align: center;
+    }
+    .overlayDark {
+      /*background-color: rgba(42, 27, 23, 0.4);*/
+      padding: 40px;
+      /*margin-top: 70px;*/
+    }
+    #subTitle {
+      margin-top: -30px;
+    }
+    .featureImage {
+      width: auto;
+      height: 30%;
+      /*margin-bottom: -50px;*/
+      margin-left: auto;
+      margin-right: auto;
+    }
+
 }
