@@ -74,7 +74,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         # root = lh.tostring(sliderRoot) #convert the generated HTML to a string
         soup = Soup(portal_html, 'html.parser')                #make BeautifulSoup
-        # prettyHTML = soup.prettify()
+        
         # pprint(prettyHTML)
 
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
@@ -107,7 +107,7 @@ class UploadCog(commands.Cog, BaseProgram):
         _collapse_.append(_collapse_a_)
         _collapse_.append(_collapse_b_)
 
-        tr = soup.new_tag("tr")
+        tr = soup.new_tag("tr", attrs={"name": _author_, "id": _botname_})
 
         row_1 = soup.new_tag("td", attrs={"class": "collapsibleInfoName"})
         row_1.append(_botLink_)
@@ -128,8 +128,8 @@ class UploadCog(commands.Cog, BaseProgram):
 
 
         div.insert(0, tr)
-        
-        self.git_save_html(soup, _botname_, _author_)
+        # prettyHTML = 
+        self.git_save_html(soup.prettify(), _botname_, _author_)
 
 
     
