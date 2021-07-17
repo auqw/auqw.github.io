@@ -210,7 +210,7 @@ class BaseProgram:
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
-                filepath=f"Bots_test/{fileName}",
+                filepath=f"bots/{fileName}",
                 content_bytes=git_data,
                 commit_message=f"Added {fileName} by {author}",
                 committer={
@@ -229,7 +229,7 @@ class BaseProgram:
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
-                filepath=f"lasdksd.html",
+                filepath=f"index.html",
                 content_bytes=str.encode(str(git_data)),
                 commit_message=f"Updated table with: {fileName} by {author}",
                 committer={

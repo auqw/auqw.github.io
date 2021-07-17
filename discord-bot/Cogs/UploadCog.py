@@ -34,9 +34,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
 
     @commands.command()
-    async def upload(self, ctx, tags=" ", desc=" "):
-        await ctx.send(f"\> Hello.")
-
+    async def upload(self, ctx, *, result:str=""):
         if str(ctx.author.id) not in BaseProgram.settings["verified_list"]:
             await ctx.send("\> You are not a verified boat maker")
             return
@@ -52,21 +50,22 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send("\> Only a .gbot, .zip, and .rar files are allowed.")
             return  
 
-
+        await ctx.send("\> Processing file please wait.")
         target_url = attach.url
         print(target_url)
                 
 
         data = await self.get_item_content(URL=target_url, is_soup=False, encoding="cp1252")
 
-        
-        tags_ = tags.replace("-", ", ").title()
+        result = result.split("-")
+        tags_ = result[0].title().strip()
         author = BaseProgram.settings["verified_list"][str(ctx.author.id)]
 
         self.git_save_bots(data, botName, author)
 
         
-        await self.update_portal(botName, author, tags_, desc)
+        await self.update_portal(botName, author, tags_, result[1].strip())
+        await ctx.send(f"\> Done uploading `{botName}` to the Portal.\n\> Please wait 10s-30s for the Portal to update.")
         return
 
     async def update_portal(self, _botname_, _author_, _tags_, _desc_):
