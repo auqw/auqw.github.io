@@ -113,7 +113,7 @@ class BaseProgram:
             mode = self.mode_list
 
         for file in mode:
-            with open(f'./discord-bot/Data/{file}.json', 'r', encoding='utf-8') as f:
+            with open(f'./Data/{file}.json', 'r', encoding='utf-8') as f:
                 setattr(BaseProgram, file, json.load(f))
 
 
@@ -132,7 +132,7 @@ class BaseProgram:
         if mode == ["all"]:
             mode = self.mode_list
         for file in mode:
-            with open(f'./discord-bot/Data/{file}.json', 'w', encoding='utf-8') as f:
+            with open(f'./Data/{file}.json', 'w', encoding='utf-8') as f:
                 json.dump(getattr(BaseProgram, file), f, ensure_ascii=False, indent=4)
 
 

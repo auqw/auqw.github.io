@@ -37,6 +37,7 @@ class UploadCog(commands.Cog, BaseProgram):
     async def upload(self, ctx, botName, author, tags, desc):
         await ctx.send(f"\> Hello.")
 
+        if str(ctx.author.id) not in BaseProgram.settings["verified_list"]
 
         try:
             attach = ctx.message.attachments[0]
