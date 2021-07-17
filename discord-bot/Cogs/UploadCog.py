@@ -4,24 +4,33 @@ from discord.ext import commands
 from pprintpp import pprint
 from datetime import date
 from bs4 import BeautifulSoup as Soup
+import discord
 
-
-class UploadCog(commands.Cog):
+class UploadCog(commands.Cog, BaseProgram):
 
     def __init__(self, bot):
         self.bot = bot
         pass
 
     @commands.command()
-    async def verify(self, ctx, role):
-        print(type(role))
-        if ctx.author.id != "252363724894109700":
-            await ctx.send("\>It works!")
-        else:
-            await ctx.send(f"\>GTFO you're not <@252363724894109700>")
-        
-        # BaseProgram.settings[]
+    async def verify(self, ctx, name: str, user: discord.User):
+        if ctx.author.id != 252363724894109700:
+            await ctx.send(f"\> BTFO you're not <@252363724894109700>")
+            return
 
+        if not name:
+            await ctx.send(f"\> Please enter a name. cmd form: `;verify name, @discord_profile`")
+            return
+
+        try:
+            id_ = user.id
+        except:
+            await ctx.send("\> Please mention a real discord user. cmd form: `;verify name, @discord_profile`")
+            return
+
+        BaseProgram.settings["verified_list"][name] = user.id
+        self.git_save("settings")
+        print(BaseProgram.settings)
 
 
     @commands.command()

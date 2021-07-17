@@ -113,13 +113,9 @@ class BaseProgram:
             mode = self.mode_list
 
         for file in mode:
-            with open(f'./Data/{file}.json', 'r', encoding='utf-8') as f:
+            with open(f'./discord-bot/Data/{file}.json', 'r', encoding='utf-8') as f:
                 setattr(BaseProgram, file, json.load(f))
-            if file == "classes":
-                self.sort_classes_acronym()
-            if file == "data" or file == "settings":
-                self.sort_privileged_roles()
-                self.sort_author_list_lowercase()
+
 
     def file_save(self, mode:str):
         """ Description: Saves data to local .json files
@@ -136,7 +132,7 @@ class BaseProgram:
         if mode == ["all"]:
             mode = self.mode_list
         for file in mode:
-            with open(f'./Data/{file}.json', 'w', encoding='utf-8') as f:
+            with open(f'./discord-bot/Data/{file}.json', 'w', encoding='utf-8') as f:
                 json.dump(getattr(BaseProgram, file), f, ensure_ascii=False, indent=4)
 
 
@@ -162,7 +158,7 @@ class BaseProgram:
             print("yeah")
             try:
                 content_sha, commit_sha = BaseProgram.github.write(
-                    filepath=f"Data/{file}.json",
+                    filepath=f"discord-bot/Data/{file}.json",
                     content_bytes=git_data,
                     commit_message=f"{file} updated",
                     committer={
@@ -205,12 +201,6 @@ class BaseProgram:
             # print(content_in_dict)
             setattr(BaseProgram, file, content_in_dict)
 
-
-            if file == "classes":
-                self.sort_classes_acronym()
-            if file == "data" or file == "settings":
-                self.sort_privileged_roles()
-                self.sort_author_list_lowercase()
             self.file_save(file)
             print(f"> Finished reading {file}.json")
         return
