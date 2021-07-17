@@ -39,11 +39,7 @@ BaseStuff.git_prepare()
 @Bot.event
 async def on_ready():
     print('> Starting AUQW')
-    if os.name == "nt":
-        channel = Bot.get_channel(799238286539227136)
-        await channel.send("HOLA")
-
-
+    
     await Bot.wait_until_ready()
     deploy_notif = await Bot.fetch_channel(830702959679373352)
 

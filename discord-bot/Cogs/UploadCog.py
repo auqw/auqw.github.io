@@ -13,8 +13,41 @@ class UploadCog(commands.Cog):
         pass
 
     @commands.command()
+    async def verify(self, ctx, role):
+        print(type(role))
+        if ctx.author.id != "252363724894109700":
+            await ctx.send("\>It works!")
+        else:
+            await ctx.send(f"\>GTFO you're not <@252363724894109700>")
+        
+        # BaseProgram.settings[]
+
+
+
+    @commands.command()
     async def upload(self, ctx, botName, author, tags, desc):
         await ctx.send(f"\> Hello.")
+
+
+        try:
+            attach = ctx.message.attachments[0]
+        except:
+            await ctx.send("\> Please attach a .txt file.")
+            return
+
+        file_n = attach.filename
+        if file_n.split(".")[-1] != "txt":
+            await ctx.send("\> Only a .txt files are allowed with `;uptext` command.")
+            return  
+
+
+
+        target_url = attach.url
+        print(target_url)
+                
+
+        data = await self.get_site_content(URL=target_url, is_soup=False, encoding="cp1252")
+        text = str(data).split("\n")
 
         tags_ = tags.replace("-", ",").capitalize()
 
