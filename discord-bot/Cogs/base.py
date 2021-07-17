@@ -17,7 +17,7 @@ from discord.ext import commands
 from bs4 import BeautifulSoup as Soup
 from dotenv import load_dotenv
 
-from pprint import pprint
+from pprintpp import pprint
 
 
 
@@ -34,7 +34,7 @@ class BaseProgram:
 
     # Read the data = True, Dont read = False
     read_true = True
-
+    github = ""
     def git_prepare(self):
         self.mode_list = ["boats"]
 
@@ -44,9 +44,9 @@ class BaseProgram:
 
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         os.chdir('..')
-        self.file_read("all")
-        if BaseProgram.read_true:
-            self.git_read("all")
+        # self.file_read("all")
+        # if BaseProgram.read_true:
+        #     self.git_read("all")
 
     def og_git(self):
         while True:
@@ -197,6 +197,8 @@ class BaseProgram:
             # git_data = BaseProgram.repository.file_contents(f"./Data/{file}.json").decoded
             # setattr(BaseProgram, file, json.loads(git_data.decode('utf-8')))
 
+            print(f"file: {file}")
+
             content_in_bytes = BaseProgram.github.read(f"Data/{file}.json")[0]
             content_in_dict = json.loads(content_in_bytes.decode('utf-8'))
             
@@ -212,3 +214,6 @@ class BaseProgram:
             self.file_save(file)
             print(f"> Finished reading {file}.json")
         return
+
+
+

@@ -15,18 +15,13 @@ from Cogs.Base import *
 from Cogs.UploadCog import UploadCog
 
 
-
-
-
 if os.name == "nt":
     load_dotenv()
-    BaseProgram.tweet_user = "1349290524901998592"
     DISCORD_TOKEN = os.getenv('DISCORD_BOT_TOKEN2') # test bot token
     CLIEND_ID = os.getenv("DISCORD_CLIENT_ID2")
     DEPLOY_NAME = os.getenv("DEPLOY_NAME")
     cmd = "'"
 else:
-    BaseProgram.tweet_user = "16480141"
     DISCORD_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
     CLIEND_ID = os.environ.get("DISCORD_CLIENT_ID")
     DEPLOY_NAME = os.environ.get("DEPLOY_NAME")
@@ -48,6 +43,7 @@ async def on_ready():
         channel = Bot.get_channel(799238286539227136)
         await channel.send("HOLA")
 
+
     await Bot.wait_until_ready()
     deploy_notif = await Bot.fetch_channel(830702959679373352)
 
@@ -55,6 +51,7 @@ async def on_ready():
     current_time = now.strftime("%d %B %Y, %a | %I:%M:%S %p")
 
     await deploy_notif.send(f"**Deployed**: {DEPLOY_NAME} at {current_time}")
+
 
 
 @Bot.event
@@ -67,7 +64,7 @@ async def on_command_error(ctx, error):
 
 
 # Essential Cog
-Bot.add_cog(BaseCog(Bot))
+# Bot.add_cog(BaseCog(Bot))
 
 
 # Feature Cogs
