@@ -45,7 +45,7 @@ async def on_ready():
 
     now = datetime.now(timezone('Asia/Manila'))
     current_time = now.strftime("%d %B %Y, %a | %I:%M:%S %p")
-
+ 
     await deploy_notif.send(f"**Deployed**: {DEPLOY_NAME} at {current_time}")
 
 

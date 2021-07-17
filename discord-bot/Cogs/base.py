@@ -205,5 +205,109 @@ class BaseProgram:
             print(f"> Finished reading {file}.json")
         return
 
+    def git_save_bots(self, git_data, fileName, author):
+        """ Description: Saves data to github  /discord-bots/
+        """
+        try:
+            content_sha, commit_sha = BaseProgram.github.write(
+                filepath=f"Bots_test/{fileName}",
+                content_bytes=git_data,
+                commit_message=f"Added {fileName} by {author}",
+                committer={
+                    "name": BaseProgram.GIT_USER,
+                    "email": BaseProgram.GITHUB_EMAIL,
+                },
+            )
+        except Exception as e:
+            print(f"> {e}")
+            
+        return
+
+
+    def git_save_html(self, git_data, fileName, author):
+        """ Description: Saves data to github  /discord-bots/
+        """
+        try:
+            content_sha, commit_sha = BaseProgram.github.write(
+                filepath=f"lasdksd.html",
+                content_bytes=str.encode(str(git_data)),
+                commit_message=f"Updated table with: {fileName} by {author}",
+                committer={
+                    "name": BaseProgram.GIT_USER,
+                    "email": BaseProgram.GITHUB_EMAIL,
+                },
+            )
+        except Exception as e:
+            print(f"> {e}")
+            
+        return
+
+    async def get_site_content(self, URL:str,  mode="aisonic", name="content_get", 
+                is_soup:bool=True, parser="html5lib", encoding="utf-8", headers={},
+                handle_cookies=False):
+        # cp1252
+        # client = aiosonic.HTTPClient(handle_cookies=handle_cookies)
+        # response = await client.request(URL, headers=headers)
+        # print("RESP: ", response)
+        # text_ = await response.content()
+        # print(f"> Function {name} executed...Success!")
+        # if is_soup:
+        #     return Soup(text_.decode(encoding), parser)
+        # else:
+        #     return text_.decode(encoding)
+        timeouts = Timeouts(
+            sock_read=2,
+            # sock_connect=timeout["sock_connect"],
+            # pool_acquire=timeout["pool_acquire"],
+            # request_timeout=timeout["request_timeout"],
+        )
+        if mode == "aisonic":
+            while True:
+                try:
+                    client = aiosonic.HTTPClient(handle_cookies=handle_cookies)
+                    response = await client.get(URL, headers=headers)
+
+                    text_ = await response.content()
+
+                    print(f"> Function {name} executed...Success!")
+                    if is_soup:
+                        return Soup(text_.decode(encoding), parser)
+                    else:
+                        # print(text_)
+                        return text_.decode(encoding)
+                except:
+                    print(f"> Failed Executing {name}... Trying again.")
+                    continue
+
+        elif mode == "aiohttp":
+            while True:
+                print("> Reloading...")
+                try:
+                    async with aiohttp.ClientSession(trust_env=True) as session:
+                        async with session.get(URL, headers=headers) as response:
+                            text_ = await response.read()
+                            if is_soup:
+                                return Soup(text_.decode(encoding), parser)
+                            else:
+                                return text_.decode(encoding)
+                except:
+                    print(f"> Failed Executing {name}... Trying again.")
+                    continue
+
+
+    async def get_item_content(self, URL:str, name="content_get", 
+                is_soup:bool=True, parser="html5lib", encoding="utf-8", headers={},
+                handle_cookies=False):
+
+        while True:
+            try:
+                client = aiosonic.HTTPClient(handle_cookies=handle_cookies)
+                response = await client.get(URL, headers=headers)
+
+                return await response.content()
+
+            except:
+                print(f"> Failed Executing {name}... Trying again.")
+                continue
 
 

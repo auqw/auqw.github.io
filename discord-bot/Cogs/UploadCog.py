@@ -28,41 +28,46 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send("\> Please mention a real discord user. cmd form: `;verify name, @discord_profile`")
             return
 
-        BaseProgram.settings["verified_list"][name] = user.id
+        BaseProgram.settings["verified_list"][user.id] = name 
         self.git_save("settings")
         print(BaseProgram.settings)
 
 
     @commands.command()
-    async def upload(self, ctx, botName, author, tags, desc):
+    async def upload(self, ctx, tags=" ", desc=" "):
         await ctx.send(f"\> Hello.")
 
-        if str(ctx.author.id) not in BaseProgram.settings["verified_list"]
+        if str(ctx.author.id) not in BaseProgram.settings["verified_list"]:
+            await ctx.send("\> You are not a verified boat maker")
+            return
 
         try:
             attach = ctx.message.attachments[0]
         except:
-            await ctx.send("\> Please attach a .txt file.")
+            await ctx.send("\> Please attach a .gbot, .zip, .rar file.")
             return
 
-        file_n = attach.filename
-        if file_n.split(".")[-1] != "txt":
-            await ctx.send("\> Only a .txt files are allowed with `;uptext` command.")
+        botName = attach.filename
+        if botName.split(".")[-1].lower() not in ["gbot", "zip", "rar"]:
+            await ctx.send("\> Only a .gbot, .zip, and .rar files are allowed.")
             return  
-
 
 
         target_url = attach.url
         print(target_url)
                 
 
-        data = await self.get_site_content(URL=target_url, is_soup=False, encoding="cp1252")
-        text = str(data).split("\n")
+        data = await self.get_item_content(URL=target_url, is_soup=False, encoding="cp1252")
 
-        tags_ = tags.replace("-", ",").capitalize()
+        
+        tags_ = tags.replace("-", ", ").title()
+        author = BaseProgram.settings["verified_list"][str(ctx.author.id)]
 
-        await self.update_portal(botName, author, tags, desc)
+        self.git_save_bots(data, botName, author)
 
+        
+        await self.update_portal(botName, author, tags_, desc)
+        return
 
     async def update_portal(self, _botname_, _author_, _tags_, _desc_):
 
@@ -76,14 +81,6 @@ class UploadCog(commands.Cog, BaseProgram):
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
 
         _date_ = date.today().strftime("%d %b %Y")
-
-
-        # _botname_ = "Text.gbot"
-        # _author_ = "weeb"
-        # _date_ = "14 jun 2021"
-        # _tags_ = "test, test, test"
-        # _desc_ = "test desc"
-
 
         _download_ = soup.new_tag("a",attrs={"class": "btn2", "href": "./bots/"+_botname_})
         _download_.string = "Download"
@@ -132,7 +129,8 @@ class UploadCog(commands.Cog, BaseProgram):
 
 
         div.insert(0, tr)
-        print(soup)
+        
+        self.git_save_html(soup, _botname_, _author_)
 
 
     
