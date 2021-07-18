@@ -92,7 +92,7 @@ class UploadCog(commands.Cog, BaseProgram):
         print("Deez: ",rejected_author)
         exists_already = ""
         if botName in BaseProgram.boats:
-            exists_already = "\> Bot already exists and was overwritten by this bot.\n"
+            exists_already = "\> Upload Bot overwrite existing bot.\n"
 
         BaseProgram.boats[botName] = {}
         BaseProgram.boats[botName]["date"] = date_
