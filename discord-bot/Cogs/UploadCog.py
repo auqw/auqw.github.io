@@ -128,12 +128,15 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send("\> The bot you passed cannot be deleted: `Does not Exists`.")
             return
 
-        if BaseProgram.settings["verified_list"][user] not in BaseProgram.boats[botName]["authors"]:
-            if len(BaseProgram.boats[botName]["authors"]) > 1:
-                await ctx.send("\> You're not one of the bot's authors.")
+        if user not in BaseProgram.settings["clearance"]:
+            if BaseProgram.settings["verified_list"][user] not in BaseProgram.boats[botName]["authors"]:
+                if len(BaseProgram.boats[botName]["authors"]) > 1:
+                    await ctx.send("\> You're not one of the bot's authors.")
+                    return
+                await ctx.send("\> Error. You're not the author of this bot.")
                 return
-            await ctx.send("\> Error. You're not the author of this bot.")
-            return
+
+
         await ctx.send("\> Processing deletion. Please wait...")
         portal_html, sha = BaseProgram.github.read("index.html")
         soup = Soup(portal_html, 'html.parser')
@@ -186,14 +189,16 @@ class UploadCog(commands.Cog, BaseProgram):
         _collapse_a_.string.insert_before(_collapse_a_a_)
 
         # collapse descs
-        _collapse_b_ = soup.new_tag("p")
-        _collapse_b_.string = _desc_
-        _collapse_b_a_ = soup.new_tag("b")
-        _collapse_b_a_.string = "Description: "
-        _collapse_b_.string.insert_before(_collapse_b_a_)
+        if _desc_:
+            _collapse_b_ = soup.new_tag("p")
+            _collapse_b_.string = _desc_
+            _collapse_b_a_ = soup.new_tag("b")
+            _collapse_b_a_.string = "Description: "
+            _collapse_b_.string.insert_before(_collapse_b_a_)
 
         _collapse_.append(_collapse_a_)
-        _collapse_.append(_collapse_b_)
+        if _desc_:
+            _collapse_.append(_collapse_b_)
 
         tr = soup.new_tag("tr", attrs={"name": _author_, "id": _botname_})
 
