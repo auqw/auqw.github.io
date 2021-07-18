@@ -127,7 +127,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         if _exists_already_:
             bot = div.find("tr", {"id": _botname_})
-            bot.extract()
+            bot.decompose()
 
         _download_ = soup.new_tag("a",attrs={"class": "btn2", "href": "./bots/"+_botname_})
         _download_.string = "Download"
@@ -177,7 +177,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         div.insert(0, tr)
         # prettyHTML = 
-        self.git_save_html(soup.prettify(), _botname_, _author_)
+        self.git_save_html(soup, _botname_, _author_)
 
 
     
