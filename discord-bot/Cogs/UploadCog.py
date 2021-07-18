@@ -32,6 +32,12 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save("settings")
         print(BaseProgram.settings)
 
+    @commands.command()
+    async def uploadtest(self, ctx, *, result:str=""):
+        res = result.split("-")
+        for i in res:
+            await ctx.send(i)
+            print(i)
 
     @commands.command()
     async def upload(self, ctx, *, result:str=""):
@@ -51,24 +57,61 @@ class UploadCog(commands.Cog, BaseProgram):
             return  
 
         await ctx.send("\> Processing file please wait.")
-        target_url = attach.url
-        print(target_url)
-                
 
-        data = await self.get_item_content(URL=target_url, is_soup=False, encoding="cp1252")
+        data = await self.get_item_content(URL=attach.url, is_soup=False, encoding="cp1252")
+
+        del attach
 
         result = result.split("-")
         tags_ = result[0].title().strip()
-        author = BaseProgram.settings["verified_list"][str(ctx.author.id)]
+        desc = result[1].strip()
+        author = [BaseProgram.settings["verified_list"][str(ctx.author.id)]]
+        print("Deez: ",author)
+        rejected_author = []
+        date_ = date.today().strftime("%d %b %Y")
 
+
+        if len(result) > 3:
+            await ctx.send("\> You used more than 3 delimeter (-). cmd form: `;upload tags, tags... - description - @author2, @author3`")
+            return
+        print("this: ", result[2])
+        if len(result) == 3:
+            other_authors = [str(x.replace(">", "").replace("!", "")) for x in result[2].strip().split("<@")][1:]
+            print("this: ", other_authors)
+            for othr_author in other_authors:
+                if str(othr_author) in BaseProgram.settings["verified_list"]:
+                    author.append(BaseProgram.settings["verified_list"][str(othr_author)])
+                else:
+                    rejected_author.append(f"<@{othr_author.strip()}>")
+            del other_authors
+        del result
+        print("Deez: ",rejected_author)
+        exists_already = ""
+        if botName in BaseProgram.boats:
+            exists_already = "\> Bot already exists and was overwritten by this bot.\n"
+
+        BaseProgram.boats[botName] = {}
+        BaseProgram.boats[botName]["date"] = date_
+        if len(author) > 1:
+            author = ', '.join(author)
+        else:
+            author = str(author[0]).strip()
+        BaseProgram.boats[botName]["authors"] = author
+        BaseProgram.boats[botName]["tags"] = tags_
+        BaseProgram.boats[botName]["description"] = desc
+
+        # return
         self.git_save_bots(data, botName, author)
+        self.git_save("boats")
 
-        
-        await self.update_portal(botName, author, tags_, result[1].strip())
-        await ctx.send(f"\> Done uploading `{botName}` to the Portal.\n\> Please wait 10s-30s for the Portal to update.")
+        await self.update_portal(botName, date_, author, tags_, desc, exists_already)
+
+        await ctx.send(f"\> Done uploading `{botName}` to the Portal.\n{exists_already}\> Please wait 10s-30s for the Portal to update.")
+        if rejected_author:
+            await ctx.send(f"\> The following author/s were rejected due to being unverified:\n {' '.join(rejected_author)}")
         return
 
-    async def update_portal(self, _botname_, _author_, _tags_, _desc_):
+    async def update_portal(self, _botname_, _date_, _author_, _tags_, _desc_, _exists_already_):
 
         portal_html, sha = BaseProgram.github.read("index.html")
 
@@ -77,9 +120,14 @@ class UploadCog(commands.Cog, BaseProgram):
         
         # pprint(prettyHTML)
 
+        # redundancy check
+
+
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
 
-        _date_ = date.today().strftime("%d %b %Y")
+        if _exists_already_:
+            bot = div.find("tr", {"id": _botname_})
+            bot.extract()
 
         _download_ = soup.new_tag("a",attrs={"class": "btn2", "href": "./bots/"+_botname_})
         _download_.string = "Download"

@@ -146,20 +146,32 @@ h2 {
 
 }
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  /*padding: 8px 8px 8px 32px;*/
   text-decoration: none;
   font-size: 18px;
+  /*font-family: Roboto;*/
   color: whitesmoke;
   display: block;
   transition: 0.3s;
+  padding: 12px 10px;
+  padding-left: 25px;
 }
 .sidenavBtn:hover {
-  color: #f1f1f1;
+/*  color: #f1f1f1;
   border-radius: 6px;
   cursor: pointer;
   -webkit-box-shadow:inset 0px 0px 0px 1px #FF3D3D;
   -moz-box-shadow:inset 0px 0px 0px 1px #FF3D3D;
-  box-shadow:inset 0px 0px 0px 1px #FF3D3D;
+  box-shadow:inset 0px 0px 0px 1px #FF3D3D;*/
+
+  background-color: #ff3d3d;
+  border: none;
+  color: white;
+  
+  cursor: pointer;
+  /*font-size: 14px;*/
+  border-radius: 0.25rem;
+
 }
 .sidenav .closebtn {
   position: absolute;
@@ -264,7 +276,6 @@ h2 {
   background-color: #1C1B18;
   position: relative; /* Stay in place */
   box-sizing: border-box;
-
   color: #242424;
   margin: auto;
   padding: 20px;
@@ -417,6 +428,10 @@ h2 {
   outline: none;
   border-color: #ff3d3d;
  }
+.paddingBottom {
+  padding-bottom: 60px;
+}
+
 
 #blackSVG {
   fill:  black;
@@ -426,8 +441,7 @@ h2 {
   color: whitesmoke;
 }
 .paginate_button{
-    background-color: ff3d3d;
-  border: none;
+  /*background-color: #FF3D3D;*/
   color: white;
   padding: 6px 6px;
   margin-top: 5px;
@@ -435,16 +449,17 @@ h2 {
   margin-left: 5px;
   cursor: pointer;
   font-size: 14px;
-  border-radius: 0.25rem;
+  /*border-radius: 0.15rem;*/
   font-family: Roboto Th;
   transition: 0.3s;
+  border-bottom: 1px solid white;
+/*  -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+  -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+  box-shadow:inset 0px 0px 0px 1px #fff;*/
 }
 .paginate_button:hover {
-  /*background-color: #fc6565;*/
-  -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
-  -moz-box-shadow:inset 0px 0px 0px 1px #fff;
-  box-shadow:inset 0px 0px 0px 1px #fff;
-  /*border: 1px solid white;*/*/
+  background-color: #FF3D3D;
+  border-bottom: none;
 }
 .dataTables_paginate {
   margin: 10px;
@@ -457,13 +472,18 @@ input {
   width: 100%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
-  border: 1px solid none;
+  /*border: 1px solid none;*/
   margin-bottom: 12px;
+  /*border-radius: 0.25rem;*/
 }
-input:focus, input:hover {
-  border: 1px solid #FF3D3D;
+input:hover {
+  /*border: 1px solid #FF3D3D;*/
+  -webkit-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
+  -moz-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
+  box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
 }
-
+input:focus {
+}
 #myTable_length {
   float: left;
   margin-bottom: 10px;
@@ -472,6 +492,10 @@ input:focus, input:hover {
 #myTable_info {
   margin-top: 10px;
   font-family: Roboto Th;
+  float: left;
+}
+#myTable_paginate {
+  float: right;
 }
 
 
@@ -509,7 +533,7 @@ input:focus, input:hover {
   /*border: 1px solid white;*/*/
 }
 .btn2 {
-  background-color: ff3d3d;
+  background-color: #ff3d3d;
   border: none;
   color: white;
   padding: 4px 19px;
@@ -518,6 +542,7 @@ input:focus, input:hover {
   width: 40px;
   border-radius: 0.15rem;
   text-decoration: none;
+  transition: 0.3s;
 }
 .btn2:hover {
   /*background-color: #fc6565;*/
@@ -526,6 +551,10 @@ input:focus, input:hover {
   box-shadow:inset 0px 0px 0px 1px #fff;
   /*border: 1px solid white;*/*/
 }
+/*.btn2:focus {
+  background-color: whitesmoke;
+  color: #ff3d3d;
+}*/
 .btn-red-darker {
 	background-color: #C81D3D;
 }
