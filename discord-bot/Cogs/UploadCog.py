@@ -32,6 +32,7 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.settings["verified_list"][user.id] = name 
         self.git_save("settings")
         print(BaseProgram.settings)
+        await ctx.send(f"\> Successfully verified `{name}`")
 
     @commands.command()
     async def uploadtest(self, ctx, *, result:str=""):
