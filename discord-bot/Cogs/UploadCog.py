@@ -80,6 +80,9 @@ class UploadCog(commands.Cog, BaseProgram):
             print("this: ", other_authors)
             for othr_author in other_authors:
                 if str(othr_author) in BaseProgram.settings["verified_list"]:
+                    if str(othr_author) == str(author[0]):
+                        print(f"other: {othr_author}\tauthor: {author[0]}")
+                        continue
                     author.append(BaseProgram.settings["verified_list"][str(othr_author)])
                 else:
                     rejected_author.append(f"<@{othr_author.strip()}>")
@@ -177,7 +180,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         div.insert(0, tr)
         # prettyHTML = 
-        self.git_save_html(soup, _botname_, _author_)
+        self.git_save_html(soup.prettify(), _botname_, _author_)
 
 
     

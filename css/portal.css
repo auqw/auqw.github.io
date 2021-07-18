@@ -377,12 +377,19 @@ h2 {
   width: 100%;
   background-color: #333333;
   transition: 0.3s;
+  table-layout:fixed;
+      
+
 
  }
 #myTable td, #myTable th {
   /*border: 1px solid #ff6969;*/
   text-align: left;
   padding: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+      
+
 }
 #myTable th {
   background-color: #1C1B18;
@@ -497,6 +504,12 @@ input:focus {
 #myTable_paginate {
   float: right;
 }
+.dataTable {
+
+}
+
+
+
 
 
 /*minor tools*/
@@ -738,12 +751,16 @@ svg {
   /*outline: none;*/
   font-size: 14px;
   font-family: Roboto;
+      
 }
 .collapsibleInfoName {
     max-width: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    word-wrap: break-word;
+}
+.collapsibleInfoName a {
+  white-space: nowrap;
 }
 .collapsibleInfo {
   font-size: 13px;
@@ -756,23 +773,19 @@ svg {
   /*float:left;*/
   width: 100%;
   color:  white;
+
 }
 
 .collapsibleContent {
   font-family: Roboto Th;
   font-weight: 200;
   font-size: 13px;
-  padding: 0px 0px;
   display: none;
-  overflow: hidden;
-
-  /*background-color: #f1f1f1;*/
+  /*width: 100px;*/
+  /*overflow: auto;*/
+      
+  /*overflow-y: scroll;*/
 }
-
-
-
-
-
 .imgAuQW {
   /*background-color: url("./img/grim.gif");*/
   border-radius: 50%;
@@ -784,7 +797,9 @@ svg {
   overflow: hidden;
   border-radius: 50%;
 }
+.collapsibleItem {
 
+}
 
 
 
