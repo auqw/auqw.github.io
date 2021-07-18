@@ -97,35 +97,70 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.boats[botName] = {}
         BaseProgram.boats[botName]["date"] = date_
         if len(author) > 1:
-            author = ', '.join(author)
+            author_joined = ', '.join(author)
         else:
-            author = str(author[0]).strip()
+            author_joined = str(author[0]).strip()
         BaseProgram.boats[botName]["authors"] = author
-        BaseProgram.boats[botName]["tags"] = tags_
+        BaseProgram.boats[botName]["tags"] = [x.title().strip() for x in tags_.strip().split(", ")]
         BaseProgram.boats[botName]["description"] = desc
 
         # return
-        self.git_save_bots(data, botName, author)
+        self.git_save_bots(data, botName, author_joined)
         self.git_save("boats")
 
-        await self.update_portal(botName, date_, author, tags_, desc, exists_already)
+        await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 
         await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}\> Please wait 10s-30s for the Portal to update.")
         if rejected_author:
             await ctx.send(f"\> The following author/s were rejected due to being unverified:\n {' '.join(rejected_author)}")
         return
 
+    @commands.command()
+    async def delete(self, ctx, *, botName):
+        botName = botName.strip()
+        user = self.clean_char(ctx.author.id)
+
+        if user not in BaseProgram.settings["verified_list"]:
+            await ctx.send("\> Sorry. User is not a verified boat maker.")
+            return
+
+        if botName not in BaseProgram.boats:
+            await ctx.send("\> The bot you passed cannot be deleted: `Does not Exists`.")
+            return
+
+        if BaseProgram.settings["verified_list"][user] not in BaseProgram.boats[botName]["authors"]:
+            if len(BaseProgram.boats[botName]["authors"]) > 1:
+                await ctx.send("\> You're not one of the bot's authors.")
+                return
+            await ctx.send("\> You're the author of this bot.")
+            return
+        
+        portal_html, sha = BaseProgram.github.read("index.html")
+        soup = Soup(portal_html, 'html.parser')
+
+        div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
+        bot = div.find_all("tr", {"id": botName})
+        for bt in bot:
+            bt.decompose()
+
+        if len(BaseProgram.boats[botName]["authors"]) > 1:
+            author_joined = ', '.join(BaseProgram.boats[botName]["authors"]).strip()
+        else:
+            author_joined = str(BaseProgram.boats[botName]["authors"][0]).strip()
+
+        BaseProgram.boats.pop(botName, None)
+
+        self.git_save_html(soup.prettify(), f"Deleted {botName} by {author_joined}")
+        self.git_save("boats")
+
+        await ctx.send(f"\> Successfully deleted {botName} by {author_joined}")
+        return
+
     async def update_portal(self, _botname_, _date_, _author_, _tags_, _desc_, _exists_already_):
 
         portal_html, sha = BaseProgram.github.read("index.html")
-
-        # root = lh.tostring(sliderRoot) #convert the generated HTML to a string
-        soup = Soup(portal_html, 'html.parser')                #make BeautifulSoup
+        soup = Soup(portal_html, 'html.parser')
         
-        # pprint(prettyHTML)
-
-        # redundancy check
-
 
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
 
@@ -182,7 +217,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         div.insert(0, tr)
         # prettyHTML = 
-        self.git_save_html(soup.prettify(), _botname_, _author_)
+        self.git_save_html(soup.prettify(), f"Updated table with: {_botname_} by {_author_}")
 
 
     def clean_char(self, id_):

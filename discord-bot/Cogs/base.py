@@ -224,14 +224,14 @@ class BaseProgram:
         return
 
 
-    def git_save_html(self, git_data, fileName, author):
+    def git_save_html(self, git_data, message):
         """ Description: Saves data to github  /discord-bots/
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
                 filepath=f"index.html",
                 content_bytes=str.encode(str(git_data)),
-                commit_message=f"Updated table with: {fileName} by {author}",
+                commit_message=message,
                 committer={
                     "name": BaseProgram.GIT_USER,
                     "email": BaseProgram.GITHUB_EMAIL,
