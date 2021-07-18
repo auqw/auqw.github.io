@@ -153,7 +153,7 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_html(soup.prettify(), f"Deleted {botName} by {author_joined}")
         self.git_save("boats")
 
-        await ctx.send(f"\> Successfully deleted {botName} by {author_joined}")
+        await ctx.send(f"\> Successfully deleted {botName} by {author_joined}\n\> Please wait 10s-30s for the Portal to update.")
         return
 
     async def update_portal(self, _botname_, _date_, _author_, _tags_, _desc_, _exists_already_):
