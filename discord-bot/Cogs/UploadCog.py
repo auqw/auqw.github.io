@@ -132,9 +132,9 @@ class UploadCog(commands.Cog, BaseProgram):
             if len(BaseProgram.boats[botName]["authors"]) > 1:
                 await ctx.send("\> You're not one of the bot's authors.")
                 return
-            await ctx.send("\> You're the author of this bot.")
+            await ctx.send("\> Error. You're not the author of this bot.")
             return
-        
+        await ctx.send("\> Processing deletion. Please wait...")
         portal_html, sha = BaseProgram.github.read("index.html")
         soup = Soup(portal_html, 'html.parser')
 
@@ -153,7 +153,7 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_html(soup.prettify(), f"Deleted {botName} by {author_joined}")
         self.git_save("boats")
 
-        await ctx.send(f"\> Successfully deleted {botName} by {author_joined}\n\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}\n\> Please wait 10s-30s for the Portal to update.")
         return
 
     async def update_portal(self, _botname_, _date_, _author_, _tags_, _desc_, _exists_already_):
