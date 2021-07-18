@@ -5,6 +5,7 @@ from pprintpp import pprint
 from datetime import date
 from bs4 import BeautifulSoup as Soup
 import discord
+import re
 
 class UploadCog(commands.Cog, BaseProgram):
 
@@ -66,7 +67,7 @@ class UploadCog(commands.Cog, BaseProgram):
         tags_ = result[0].title().strip()
         desc = result[1].strip()
         author = [BaseProgram.settings["verified_list"][str(ctx.author.id)]]
-        print("Deez: ",author)
+
         rejected_author = []
         date_ = date.today().strftime("%d %b %Y")
 
@@ -76,14 +77,14 @@ class UploadCog(commands.Cog, BaseProgram):
             return
         print("this: ", result[2])
         if len(result) == 3:
-            other_authors = [str(x.replace(">", "").replace("!", "")) for x in result[2].strip().split("<@")][1:]
-            print("this: ", other_authors)
+            other_authors = [self.clean_char(x) for x in result[2].strip().split("<@")][1:]
+
             for othr_author in other_authors:
-                if str(othr_author) in BaseProgram.settings["verified_list"]:
-                    if str(othr_author) == str(author[0]):
+                if othr_author in BaseProgram.settings["verified_list"]:
+                    if othr_author == self.clean_char(ctx.author.id):
                         print(f"other: {othr_author}\tauthor: {author[0]}")
                         continue
-                    author.append(BaseProgram.settings["verified_list"][str(othr_author)])
+                    author.append(BaseProgram.settings["verified_list"][othr_author])
                 else:
                     rejected_author.append(f"<@{othr_author.strip()}>")
             del other_authors
@@ -109,7 +110,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         await self.update_portal(botName, date_, author, tags_, desc, exists_already)
 
-        await ctx.send(f"\> Done uploading `{botName}` to the Portal.\n{exists_already}\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}\> Please wait 10s-30s for the Portal to update.")
         if rejected_author:
             await ctx.send(f"\> The following author/s were rejected due to being unverified:\n {' '.join(rejected_author)}")
         return
@@ -129,8 +130,9 @@ class UploadCog(commands.Cog, BaseProgram):
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
 
         if _exists_already_:
-            bot = div.find("tr", {"id": _botname_})
-            bot.decompose()
+            bot = div.find_all("tr", {"id": _botname_})
+            for bt in bot:
+                bt.decompose()
 
         _download_ = soup.new_tag("a",attrs={"class": "btn2", "href": "./bots/"+_botname_})
         _download_.string = "Download"
@@ -183,4 +185,5 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_html(soup.prettify(), _botname_, _author_)
 
 
-    
+    def clean_char(self, id_):
+        return re.sub("[<@!>]", "", str(id_)).strip()
