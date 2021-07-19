@@ -327,7 +327,8 @@ class BaseCog(commands.Cog, BaseProgram):
                "`;upload tag1, tag2, tag3, etc., - description... - @author2, @author3`\n\n"\
                " - Bot name is file name\n"\
                " - tag and author, delimeted by ` , `\n"\
-               " - tag, author, desc, separated by ` - `\n"
+               " - tag, author, desc, separated by ` - `\n"\
+               " - Only accepts .gbot, .zip, and .rar files\n"
 
         desc2 = "**Example 1:**\n"\
                "➣ `;upload`\n"\
