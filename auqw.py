@@ -1,9 +1,5 @@
 
 import os
-
-
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-print("Current Working Dir:", os.curdir)
 import discord
 
 from discord.ext import tasks
@@ -13,8 +9,11 @@ from pprint import pprint
 from datetime import datetime
 from pytz import timezone
 
-from Cogs.Base import *
-from Cogs.UploadCog import UploadCog
+from lib.Cogs.Base import *
+from lib.Cogs.UploadCog import UploadCog
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+print("Current Working Dir:", os.curdir)
 
 if os.name == "nt":
     load_dotenv()
@@ -51,13 +50,13 @@ async def on_ready():
 
 
 
-@Bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, CommandNotFound):
-        print("System: lmao a nigger used", error)
-        return
-    BaseProgram.database_updating = False
-    raise error
+# @Bot.event
+# async def on_command_error(ctx, error):
+#     if isinstance(error, CommandNotFound):
+#         print("System: lmao a nigger used", error)
+#         return
+#     BaseProgram.database_updating = False
+#     raise error
 
 
 # Essential Cog
