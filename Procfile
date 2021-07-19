@@ -1,1 +1,1 @@
-worker: python discord-bot/auqw.py
+worker: python auqw.py
