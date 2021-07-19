@@ -26,7 +26,8 @@ os.chdir('..')
 
 class BaseProgram:
 
-    tweet_user_list = []
+    icon_auqw = "https://images-ext-2.discordapp.net/external/HYh_FWKYc_DqZZAmoIg1ZR0sMSB34aDf0YAFGGLFGSE/%3Fsize%3D1024/https/cdn.discordapp.com/icons/782192889723748362/a_d4c8307eb1dc364f207183a2ee144b4d.gif"
+
     loop = asyncio.get_event_loop()
 
     asyncio.set_event_loop(loop)
@@ -35,6 +36,8 @@ class BaseProgram:
     # Read the data = True, Dont read = False
     read_true = True
     github = ""
+    block_color = 16727357
+
     def git_prepare(self):
         self.mode_list = ["boats", "settings"]
 
@@ -311,3 +314,39 @@ class BaseProgram:
                 continue
 
 
+
+class BaseCog(commands.Cog, BaseProgram):
+    def __init__(self, bot):
+        self.bot = bot
+        
+    @commands.command()
+    async def ahelp(self, ctx):
+        embedVar = discord.Embed(title="Command Display", color=BaseProgram.block_color)
+        desc = "`;ahelp` ➣ Shows all AuQW Bot Integratio commands.\n\n"\
+               "**Upload Command (Must include bot):**\n"\
+               "`;upload tag1, tag2, tag3, etc., - description... - @author2, @author3`\n\n"\
+               " - Bot name is file name\n"\
+               " - tag and author, delimeted by ` , `\n"\
+               " - tag, author, desc, separated by ` - `\n"
+               
+        desc2 = "**Example 1:**\n"\
+               "➣ `;upload`\n"\
+               "➣ __Result__: No tags and no description.\n\n"\
+               "**Example 2:**\n"\
+               "➣ `;upload Bludrut, Arena, Legion`\n"\
+               "➣ __Result__: Bot with tags but no description.\n\n"\
+               "**Example 3:**\n"\
+               "➣ `;upload Reputation, Story, Grimlite - This bot will Farm Arcangrove`\n"\
+               "➣ __Result__: Bot with tag, description and registed author name.\n\n"\
+               "**Example 4:\n**"\
+               "➣ Bloom uploads a bot and is in Collaboration with Weeb.\n"\
+               "➣ `;upload Seks, Story, Grimlite - This bot will seks grimlite - @Weeb`\n"\
+               "➣ __Result__: Bot with tags, desc, and multiple authors."
+        embedVar.description = desc
+        embedVar.add_field(name="\u200b", inline=False, value=desc2)
+       
+
+        embedVar.set_author(name="The AutoQuest World's Integration Bot", icon_url=BaseProgram.icon_auqw)
+        # embedVar.set_thumbnail(url="https://cdn.discordapp.com/attachments/805367955923533845/866632546854240266/harbor2_-_Copy.jpg")
+        await ctx.send(embed=embedVar)
+        return

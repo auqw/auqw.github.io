@@ -60,7 +60,7 @@ async def on_ready():
 
 
 # Essential Cog
-# Bot.add_cog(BaseCog(Bot))
+Bot.add_cog(BaseCog(Bot))
 
 
 # Feature Cogs
