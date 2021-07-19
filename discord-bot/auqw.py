@@ -2,6 +2,8 @@
 import os
 
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+print("Current Working Dir:", os.curdir)
 import discord
 
 from discord.ext import tasks
@@ -14,8 +16,6 @@ from pytz import timezone
 from Cogs.Base import *
 from Cogs.UploadCog import UploadCog
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-print("Current Working Dir:", os.curdir)
 if os.name == "nt":
     load_dotenv()
     DISCORD_TOKEN = os.getenv('DISCORD_BOT_TOKEN2') # test bot token
