@@ -65,8 +65,17 @@ class UploadCog(commands.Cog, BaseProgram):
         del attach
 
         result = result.split("-")
-        tags_ = result[0].title().strip()
-        desc = result[1].strip()
+        if len(result) >= 1:
+            tags_ = result[0].title().strip()
+        else:
+            tag_ = ""
+
+        if len(result) >=2:
+            desc = result[1].strip()
+        else:
+            desc = ""
+
+
         author = [BaseProgram.settings["verified_list"][str(ctx.author.id)]]
 
         rejected_author = []
@@ -76,7 +85,7 @@ class UploadCog(commands.Cog, BaseProgram):
         if len(result) > 3:
             await ctx.send("\> You used more than 3 delimeter (-). cmd form: `;upload tags, tags... - description - @author2, @author3`")
             return
-        print("this: ", result[2])
+        # print("this: ", result[2])
         if len(result) == 3:
             other_authors = [self.clean_char(x) for x in result[2].strip().split("<@")][1:]
 

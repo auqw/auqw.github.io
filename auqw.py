@@ -20,7 +20,7 @@ if os.name == "nt":
     DISCORD_TOKEN = os.getenv('DISCORD_BOT_TOKEN2') # test bot token
     CLIEND_ID = os.getenv("DISCORD_CLIENT_ID2")
     DEPLOY_NAME = os.getenv("DEPLOY_NAME")
-    cmd = ";"
+    cmd = "'"
 else:
     DISCORD_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
     CLIEND_ID = os.environ.get("DISCORD_CLIENT_ID")
