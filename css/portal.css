@@ -33,7 +33,14 @@
     font-display: swap;
 }
 
-
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('./fonts/Roboto-Light.woff2') format('woff2'),
+        url('./fonts/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 
@@ -262,7 +269,7 @@ h2 {
   background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
   transition: opacity 0.15s linear;
 
-  padding-top: 70px;
+  padding-top: 60px;
   padding-bottom: 100px;
 }
 .modal2 {
@@ -382,10 +389,11 @@ h2 {
 #myTable {
   color: whitesmoke;
   border-collapse: collapse;
-  font-family: arial, sans-serif;
+  font-family: Roboto Th;
   border-collapse: collapse;
   width: 100%;
-  background-color: #333333;
+  background-color: #262626;
+  /*background-color: red;*/
   transition: 0.3s;
   table-layout:fixed;
       
@@ -406,7 +414,7 @@ h2 {
 }
 #myTable tr:nth-child(even) {
   /*background-color: #F0F0F0;*/
-  background-color: #262626;
+  background-color: #1C1B18;
   /*color: w;*/
 }
 #myTable tr:hover {
@@ -505,6 +513,11 @@ input:focus {
   float: left;
   margin-bottom: 10px;
 }
+#myTable_length select {
+  width: 50px;
+  font-family: Roboto;
+  /*border-radius: 0.4rem;*/
+}
 
 #myTable_info {
   margin-top: 10px;
@@ -566,6 +579,7 @@ input:focus {
   border-radius: 0.15rem;
   text-decoration: none;
   transition: 0.3s;
+  font-family: Roboto;
 }
 .btn2:hover {
   /*background-color: #fc6565;*/
@@ -752,49 +766,49 @@ svg {
 
 .collapsible {
   background-color: none;
-  /*color: white;*/
+  color: white;
   cursor: pointer;
-  /*padding: 18px;*/
-  /*width: 100%;*/
   border: none;
   text-align: left;
-  /*outline: none;*/
   font-size: 14px;
-  font-family: Roboto;
-      
+  font-weight: 100;
+  font-family: Roboto Light;
+  /*letter-spacing:1px;*/
+}
+.collapsible b {
+
 }
 .collapsibleInfoName {
-    max-width: 20px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    word-wrap: break-word;
+ 
+
+  max-width: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 .collapsibleInfoName a {
   white-space: nowrap;
 }
 .collapsibleInfo {
-  font-size: 13px;
+  font-size: 14px; 
+  font-weight: 100;
+  font-family: Roboto Light;
 }
 .active, .collapsible:hover {
   background-color: #FF3D3D;
-  /*font-family: Roboto;*/
+
   padding: 5px;
-  /*margin: 5px;*/
-  /*float:left;*/
   width: 100%;
   color:  white;
 
 }
 /*# test*/
 .collapsibleContent {
-  font-family: Roboto Th;
-  font-weight: 200;
-  font-size: 13px;
+  font-size: 14px; 
+  font-weight: 100;
+  font-family: Roboto Light;
   display: none;
-  /*width: 100px;*/
-  /*overflow: auto;*/
-      
-  /*overflow-y: scroll;*/
+
 }
 .imgAuQW {
   /*background-color: url("./img/grim.gif");*/
