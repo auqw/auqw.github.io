@@ -9,7 +9,7 @@ import re
 
 class UploadCog(commands.Cog, BaseProgram):
 
-    def __init__(self, bot):
+    def __init__(self, bot):    
         self.bot = bot
         pass
 

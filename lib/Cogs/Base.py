@@ -158,7 +158,7 @@ class BaseProgram:
             print("yeah")
             try:
                 content_sha, commit_sha = BaseProgram.github.write(
-                    filepath=f"discord-bot/Data/{file}.json",
+                    filepath=f"lib/Data/{file}.json",
                     content_bytes=git_data,
                     commit_message=f"{file} updated",
                     committer={
@@ -195,7 +195,7 @@ class BaseProgram:
 
             print(f"file: {file}")
 
-            content_in_bytes = BaseProgram.github.read(f"discord-bot/Data/{file}.json")[0]
+            content_in_bytes = BaseProgram.github.read(f"lib/Data/{file}.json")[0]
             content_in_dict = json.loads(content_in_bytes.decode('utf-8'))
             
             # print(content_in_dict)
@@ -206,7 +206,7 @@ class BaseProgram:
         return
 
     def git_save_bots(self, git_data, fileName, author):
-        """ Description: Saves data to github  /discord-bots/
+        """ Description: Saves data to github  /libs/
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
@@ -225,7 +225,7 @@ class BaseProgram:
 
 
     def git_save_html(self, git_data, message):
-        """ Description: Saves data to github  /discord-bots/
+        """ Description: Saves data to github  /libs/
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
