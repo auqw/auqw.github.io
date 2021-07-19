@@ -322,7 +322,8 @@ class BaseCog(commands.Cog, BaseProgram):
     @commands.command()
     async def ahelp(self, ctx):
         embedVar = discord.Embed(title="Command Display", color=BaseProgram.block_color)
-        desc = "`;ahelp` ➣ Shows all AuQW Bot Integration commands.\n\n"\
+        desc = "`;ahelp` ➣ Shows all AuQW Bot Integration commands.\n"\
+               "`;delete bot_name.gbot` ➣ Delete a bot associated with you.\n\n"\
                "**Upload Command (Must include bot):**\n"\
                "`;upload tag1, tag2, tag3, etc., - description... - @author2, @author3`\n\n"\
                " - Bot name is file name\n"\
