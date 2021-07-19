@@ -1,6 +1,6 @@
 
 import os
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 import discord
 
@@ -14,11 +14,12 @@ from pytz import timezone
 from Cogs.Base import *
 from Cogs.UploadCog import UploadCog
 
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+print("Current Working Dir:", os.curdir)
 if os.name == "nt":
     load_dotenv()
-    DISCORD_TOKEN = os.getenv('DISCORD_BOT_TOKEN') # test bot token
-    CLIEND_ID = os.getenv("DISCORD_CLIENT_ID")
+    DISCORD_TOKEN = os.getenv('DISCORD_BOT_TOKEN2') # test bot token
+    CLIEND_ID = os.getenv("DISCORD_CLIENT_ID2")
     DEPLOY_NAME = os.getenv("DEPLOY_NAME")
     cmd = ";"
 else:
