@@ -332,7 +332,14 @@ h2 {
   cursor: pointer;
 }
 #myModalDownload {
-  padding-bottom: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  /*height:10600px;*/
+  /*padding: 30%;*/
+}
+.modalDownloadGrim {
+
+  height: 550px;
 }
 
 
@@ -600,6 +607,19 @@ input:focus {
   /*background-color: #d13b57;*/
   /*border: 3px white;*/
 }
+.btn-blue-darker {
+  background-color: #4F53CD;
+}
+.btn-blue-darker:hover {
+  /*background-color: #d13b57;*/
+  /*border: 3px white;*/
+}
+.btn-pad-a {
+  /*margin: 0;*/
+  margin-right: 10px;
+
+}
+
 .btn-pad-y {
 	margin: 10px;
 }
@@ -803,7 +823,7 @@ svg {
   /*padding-top: 5px;*/
   /*padding-bottom: 5px;*/
 
-  padding: 5px;
+  padding: 7px;
   /*padding-left: 10px;*/
   width: 100%;
   color:  white;
@@ -889,12 +909,18 @@ svg {
     }
     .modalWide {
       width: 100%;
+
     }
     table {
       overflow: auto;
     }
     .modal-content {
       width: 100%;
+      height: 100%;
+      padding-top: 50px;
+    }
+    #myModalDownload {
+      padding: 0;
     }
 }
 @media (min-width:  500px) {
@@ -902,6 +928,9 @@ svg {
     height: auto;
     width: 90%;
   }
+    #myModalDownload {
+      /*padding-top: 50px;*/
+    }
 }
 
 
@@ -916,4 +945,154 @@ svg {
   /*-ms-transform: translateY(-50%);*/
   /*transform: translateY(-50%);*/
 
+}
+
+
+
+.link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.01em;
+}
+
+.link:hover {
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+  /*background-color: red;*/
+  
+}
+.downloadLinks {
+  line-height:  7px;
+}
+.downloadLinks a {
+  margin-left: 10px;
+}
+
+.floatBottom {
+  position:absolute;
+  bottom:0;
+  margin: auto;
+  text-align: center;
+}
+.LeftAllign {
+  float: right;
+}
+.ulLeft {
+  margin-left: 40px;
+}
+.ulLeft li {
+  margin-left: 40px;
+}
+
+
+
+/* Style the tab */
+.tab {
+  float: left;
+  /*border: 1px solid #ccc;*/
+  /*background-color: #f1f1f1;*/
+  width: 25%;
+  height: 350px;
+/*flex-grow : 1;*/
+  padding: none;
+  margin-right: 20px;
+  /*padding-bottom: 100%;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  /*background-color: inherit;*/
+  color: white;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 13px;
+  width: 80%;
+  font-family: Roboto Light;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  /*background-color: #b50022;*/
+
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: whitesmoke;
+  color: #212121;
+}
+
+/* Style the tab content */
+.tabcontent {
+  /*float: right;*/
+  /*padding: 0px 12px;*/
+  /*border: 1px solid #ccc;*/
+  /*width: 70%;*/
+  /*border-left: none;*/
+  /*height: 300px;*/
+}
+
+#insGrimlite {
+  display: block;
+}
+#insBugFixes {
+  display: none;
+}
+#insCredits {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+li {
+  line-height: 20px;
+}
+
+.tooltip {
+  position: relative;
+  /*border-bottom: 1px dotted black;*/
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50%;
+  height: 40px;
+  overflow-wrap: break-word;
+  line-height: 20px;
+  background-color: #C81D3D;
+  color: whitesmoke;
+  text-align: left;
+  border-radius: 6px;
+ 
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+}
+.tooltiptext {
+ padding: 20px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #C81D3D transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
