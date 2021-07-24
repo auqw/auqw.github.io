@@ -339,7 +339,7 @@ h2 {
 }
 .modalDownloadGrim {
 
-  height: 550px;
+  height: 478px;
 }
 
 
@@ -1013,7 +1013,7 @@ svg {
   width: 80%;
   font-family: Roboto Light;
 }
-
+/*.tab button svg*/
 /* Change background color of buttons on hover */
 .tab button:hover {
   /*background-color: #b50022;*/
@@ -1025,9 +1025,13 @@ svg {
   background-color: whitesmoke;
   color: #212121;
 }
+.tab button.active svg {
+  fill: #212121;
+}
 
 /* Style the tab content */
 .tabcontent {
+
   /*float: right;*/
   /*padding: 0px 12px;*/
   /*border: 1px solid #ccc;*/
@@ -1060,14 +1064,16 @@ li {
 
 .tooltip {
   position: relative;
+  box-sizing: border-box;
+  display: inline;
   /*border-bottom: 1px dotted black;*/
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 50%;
-  height: 40px;
-  overflow-wrap: break-word;
+  width: 200%;
+  /*height: 40px;*/
+  /*overflow-wrap: break-word;*/
   line-height: 20px;
   background-color: #C81D3D;
   color: whitesmoke;
@@ -1076,11 +1082,12 @@ li {
  
   position: absolute;
   z-index: 1;
-  top: -5px;
+  top: -21px;
   left: 110%;
 }
 .tooltiptext {
  padding: 20px;
+ display: inline-block;
 }
 
 .tooltip .tooltiptext::after {
@@ -1095,6 +1102,17 @@ li {
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
 
-  
+
+.brmedium {
+    display: block;
+    margin-bottom: 2em;
+}
+.br {
+    display: block;
+    margin-bottom: 1em;
+}
+.fontSmall {
+  font-size: 13px;
 }
