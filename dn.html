@@ -6,7 +6,7 @@
       <script src="./files/JS Scripts/nicEdit.js" type="text/javascript"></script>
      
       <!-- <script src="./files/JS Scripts/html2canvas.min.js" type="text/javascript"></script> -->
-      <script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+      <!-- <script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script> -->
       <script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
       <!-- <script src="./files/JS Scripts/FileSaver.js" type="text/javascript"></script> -->
 
@@ -210,70 +210,8 @@
 
 <script>
    
-// Define the function 
-// to screenshot the div
-function takeshot() {
-   // window.scrollTo(0,0);
-   // window.scroll({
-   //    top: 0,
-   //    left: 0,
-   //    behavior: 'smooth'
-   // });
-   // document.body.scrollTop = 0;
-   // document.documentElement.scrollTop = 0;
 
-    document.getElementById("myNicPanel").style.display = 'none';
-    document.getElementById("OutputName").style.display = '';
-    
-    document.getElementById("content-box-center").style.margin = '0 0 0 0';
-    var div = document.getElementById('photo');
-
-   let menu = document.getElementById('output');
-   while (menu.firstChild) {
-       menu.removeChild(menu.firstChild);
-   }    
-    
-
-    html2canvas(div, {
-      allowTaint : true,
-      letterRendering: 1,
-      scale: 3,
-      dpi: 144,
-      useCORS: true,   
-      // foreignObjectRendering: true
-      backgroundColor:null, 
-      // imageSmoothingEnabled=true,
-        // imageTimeout: 0;
-        scrollX: -window.scrollX,
-        scrollY: -window.scrollY,
-        windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight,
-      }).then(
-        function (canvas) {
-         canvas.id = "result";
-         canvas.crossorigin="anonymous"
-            document.getElementById('output').appendChild(canvas);
-             // document.getElementById("theimage").src = canvas.toDataURL();
-             Canvas2Image.saveAsPNG(canvas);
-            
-
-         window.location.href=image; // it will save locally
-
-           // var link = document.getElementById('screenSave');
-           // link.setAttribute('download', 'MintyPaper.png');
-           // link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-           // link.click();
-        })
-    // div.display = ''
-    document.getElementById("myNicPanel").style.display = '';
-    document.getElementById("content-box-center").style.margin = 'auto';
-    // var elmnt = document.getElementById("bottom-view");
-
-
-
-    // elmnt.scrollIntoView(true); // Top
-}
-
+   
 </script>
 
 </html>
