@@ -82,7 +82,7 @@ function takeshot() {
 
 function changePFP(name) {
 	var pic = document.getElementById("DNProfile");
-	pic.src = "./files/pfp/" + name +".png";
+	pic.src = "./files/pfp/" + name +".webp";
 
 	var pfp = document.getElementById("inputName");
 	pfp.innerHTML = name;
@@ -93,7 +93,7 @@ function changePFP(name) {
 function changeBG(bg_name) {
 
 	document.getElementById("profileBGborder").style.backgroundImage = "url(./files/bg/" + bg_name;
-	console.log("url(./files/pfp/" + name+ ".png)")
+	console.log("url(./files/pfp/" + name+ ".webp)")
 }
 
 function closeModal_() {
