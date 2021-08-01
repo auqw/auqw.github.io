@@ -48,7 +48,7 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdFactionRankLessThan, Grimoire",
         "Tag": "This player",
         "Text": "Faction Rank is less than",
-        "Value1": "TreaureHunter",
+        "Value1": "TreasureHunter",
         "Value2": "10"
       },
       {
@@ -235,7 +235,7 @@
     "$values": []
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in RTF)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -243,6 +243,11 @@
   "Drops": {
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": []
+  },
+  "Server": {
+    "$type": "Grimoire.Game.Data.Server, Grimoire",
+    "sName": "Twilly",
+    "iPort": 55586
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
