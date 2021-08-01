@@ -24,6 +24,9 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send(f"\> Please enter a name. cmd form: `;verify @discord_profile`")
             return
 
+        if str(user.id) in BaseProgram.settings["clearance"]:
+            await ctx.send(f"\> User `{user.name}` already has clearance. ")
+            return
         BaseProgram.settings["clearance"].append(str(user.id)) 
         self.git_save("settings")
         print(BaseProgram.settings)
