@@ -27,7 +27,7 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.settings["clearance"].append(str(user.id)) 
         self.git_save("settings")
         print(BaseProgram.settings)
-        await ctx.send(f"\> Successfully gave clearance to `{name}`")
+        await ctx.send(f"\> Successfully gave clearance to `{user.name}`")
 
     @commands.command()
     async def verify(self, ctx, name: str, user: discord.User):
