@@ -12,6 +12,22 @@ class UploadCog(commands.Cog, BaseProgram):
     def __init__(self, bot):    
         self.bot = bot
         pass
+    @commands.command()
+    async def clearance(self, ctx, user: discord.User):
+        if ctx.author.id != 252363724894109700:
+            await ctx.send(f"\> BTFO you're not <@252363724894109700>")
+            return
+
+        try:
+            id_ = user.id
+        except:
+            await ctx.send(f"\> Please enter a name. cmd form: `;verify @discord_profile`")
+            return
+
+        BaseProgram.settings["clearance"].append(str(user.id)) 
+        self.git_save("settings")
+        print(BaseProgram.settings)
+        await ctx.send(f"\> Successfully gave clearance to `{name}`")
 
     @commands.command()
     async def verify(self, ctx, name: str, user: discord.User):
@@ -120,7 +136,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 
-        await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}. Please wait 10s-30s for the Portal to update.")
         if rejected_author:
             await ctx.send(f"\> The following author/s were rejected due to being unverified:\n {' '.join(rejected_author)}")
         return
@@ -166,7 +182,7 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_html(soup.prettify(), f"Deleted {botName} by {author_joined}")
         self.git_save("boats")
 
-        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}\n\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}\n. Please wait 10s-30s for the Portal to update.")
         return
 
     async def update_portal(self, _botname_, _date_, _author_, _tags_, _desc_, _exists_already_):
