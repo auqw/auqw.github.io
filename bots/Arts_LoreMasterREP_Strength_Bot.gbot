@@ -29,12 +29,12 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotEquipped, Grimoire",
         "Tag": "Item",
         "Text": "Is not equipped",
-        "Value1": "Void Highlord",
+        "Value1": "LightCaster",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
-        "ItemName": "Void Highlord"
+        "ItemName": "LightCaster"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -120,22 +120,37 @@
         "Name": "Kill"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "1: Shackle",
+        "$type": "Grimoire.Botting.Commands.Combat.CmdAttack, Grimoire",
+        "Monster": "Bupers Camel"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+        "Monster": "Bupers Camel",
+        "Skill": "1: Lingering Light",
         "Index": "1",
         "SafeHp": 100,
         "SafeMp": 100
       },
       {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "2: Highlord's Gaze",
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+        "Monster": "Bupers Camel",
+        "Skill": "2: Light Blast",
         "Index": "2",
         "SafeHp": 100,
         "SafeMp": 100
       },
       {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "4: Armageddon",
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+        "Monster": "Bupers Camel",
+        "Skill": "3: Illuminate",
+        "Index": "3",
+        "SafeHp": 100,
+        "SafeMp": 100
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+        "Monster": "Bupers Camel",
+        "Skill": "4: Burned by Light",
         "Index": "4",
         "SafeHp": 100,
         "SafeMp": 100
@@ -229,7 +244,7 @@
     "$values": []
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in RTF)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -241,7 +256,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Twilly",
-    "iPort": 6766
+    "iPort": 53659
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
@@ -253,6 +268,7 @@
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
   "Untarget": true,
+  "LagKiller": true,
   "SkipCutscenes": true,
   "WalkSpeed": 8,
   "NotifyUponDrop": {
