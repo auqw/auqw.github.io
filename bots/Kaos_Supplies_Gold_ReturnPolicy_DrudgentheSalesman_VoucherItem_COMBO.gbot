@@ -39,8 +39,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 7551,
-          "IsInProgress": true
+          "QuestID": 7551
         }
       },
       {
@@ -446,8 +445,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2857,
-          "IsInProgress": true
+          "QuestID": 2857
         }
       },
       {
@@ -461,8 +459,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 7551,
-          "IsInProgress": true
+          "QuestID": 7551
         }
       },
       {
@@ -817,8 +814,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2857,
-          "IsInProgress": true
+          "QuestID": 2857
         }
       },
       {
@@ -963,26 +959,39 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
         "Tag": "Map",
         "Text": "Map is not",
-        "Value1": "evilmarsh",
+        "Value1": "tercessuinotlim",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
-        "Map": "evilmarsh-1e99",
-        "Cell": "Field1",
+        "Map": "citadel-1e99",
+        "Cell": "m22",
         "Pad": "Left"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "tercessuinotlim",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
+        "Map": "tercessuinotlim-1e99",
+        "Cell": "m2",
+        "Pad": "Top"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
         "Tag": "Map",
         "Text": "Cell is not",
-        "Value1": "Field1",
+        "Value1": "m2",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Field1",
-        "Pad": "Left"
+        "Cell": "m2",
+        "Pad": "Top"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
@@ -1113,8 +1122,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "4771",
-          "IsInProgress": true
+          "ItemId": "4771"
         }
       },
       {
@@ -1140,8 +1148,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "4769",
-          "IsInProgress": true
+          "ItemId": "4769"
         }
       },
       {
@@ -1167,8 +1174,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "4770",
-          "IsInProgress": true
+          "ItemId": "4770"
         }
       },
       {
@@ -1194,8 +1200,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "6136",
-          "IsInProgress": true
+          "ItemId": "6136"
         }
       },
       {
@@ -1221,8 +1226,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "22332",
-          "IsInProgress": true
+          "ItemId": "22332"
         }
       },
       {
@@ -1248,8 +1252,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 7551,
-          "ItemId": "4771",
-          "IsInProgress": true
+          "ItemId": "4771"
         }
       },
       {
@@ -1311,7 +1314,7 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestCompleted, Grimoire",
         "Tag": "Quest",
         "Text": "Quest can be turned in",
-        "Value1": "7551",
+        "Value1": "605",
         "Value2": ""
       },
       {
@@ -1717,8 +1720,7 @@
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 2857,
-        "Text": "2857",
-        "IsInProgress": true
+        "Text": "2857"
       }
     ]
   },
@@ -1757,7 +1759,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Sepulchure",
-    "iPort": 47631
+    "iPort": 35633
   },
   "EnablePickup": true,
   "EnableRejection": true,
