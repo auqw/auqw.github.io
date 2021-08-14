@@ -478,7 +478,7 @@
         "Tag": "Misc",
         "Text": "Int Greater Than",
         "Value1": "skill_counter",
-        "Value2": "[var_skill_counter_limit]"
+        "Value2": "[var_spam_limit]"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -1167,7 +1167,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
         "TransferFromBank": true,
-        "ItemName": "Legion Wrath Scythe"
+        "ItemName": "Legion Beast Rune Cape"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
@@ -3551,6 +3551,16 @@
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
         "Delay": 700
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Essence of Treachery",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLogout, Grimoire"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
@@ -8311,8 +8321,8 @@
   },
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Yorumi",
-    "iPort": 36924
+    "sName": "Galanoth",
+    "iPort": 29302
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
