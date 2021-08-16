@@ -118,8 +118,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 1682,
-          "IsInProgress": true
+          "QuestID": 1682
         }
       },
       {
@@ -295,7 +294,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 5000
+        "Delay": 1500
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
@@ -323,7 +322,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
         "Cell": "Blank",
-        "Pad": "Satan"
+        "Pad": "Cell"
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
@@ -350,13 +349,12 @@
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 1682,
-        "Text": "1682",
-        "IsInProgress": true
+        "Text": "1682"
       }
     ]
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in RTF)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -370,7 +368,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Twig",
-    "iPort": 53217
+    "iPort": 2142
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
