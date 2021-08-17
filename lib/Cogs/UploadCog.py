@@ -33,7 +33,7 @@ class UploadCog(commands.Cog, BaseProgram):
         await ctx.send(f"\> Successfully gave clearance to `{user.name}`")
 
     @commands.command()
-    async def verify(self, ctx, name: str, user: discord.User):
+    async def verify(self, ctx, name: str="", user: discord.User=""):
         if ctx.author.id != 252363724894109700:
             await ctx.send(f"\> BTFO you're not <@252363724894109700>")
             return
@@ -50,6 +50,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         BaseProgram.settings["verified_list"][user.id] = name 
         self.git_save("settings")
+        self.git_read("settings")
         print(BaseProgram.settings)
         await ctx.send(f"\> Successfully verified `{name}`")
 
