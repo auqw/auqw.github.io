@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- https://www.cssportal.com/html-formatter/ -->
+<!-- http://html-minify.online-domain-tools.com/ -->
+<html lang=en style="min-height: 100%">
+
+<head>
+	<title>AutoQuest Worlds</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+	<meta content="AutoQuest Worlds" name="twitter:title">
+	<meta content="aqw bots, adventure quest bots, aqw cheat, aqw hack, aqw exploits, grimoire download, adventure quest worlds bot, leveling bot aqw, botting mmorpg, aqw private server, aqworlds private server, aqw server, aqw ps, aqw private, skidson, aqw pirata, servidor de aqw, adventure quest worlds private, dragonfable private server, adventure quest private server, free to play mmorpg, free online games, browser games, jogos online, jogos criancas, jogos de navegador, best aqw private server, best online mmorpg, best browser mmorpg, habbo servidor privado, habbo retro, habbo private server, runescape private server, high rates aqw, aqw items, aqworlds wiki" name="keywords">
+	<meta content="https://adventurequest.life/" name="twitter:url">
+	<meta content="Auto Quest Worlds is a botting communtiy for the popular MMORPG Adventure quest worlds" name="description">
+	<meta content="Auto Quest Worlds is a botting community for the popular MMORPG Adventure quest worlds, join our discord to learn more ⚔️ --&gt; https://discord.io/AQWBots &lt;-- ⚔️" name="twitter:description">
+	<meta content="https://cdn.discordapp.com/icons/782192889723748362/a_d4c8307eb1dc364f207183a2ee144b4d.gif?size=1024" name="twitter:image">
+	<meta content="Auto Quest Worlds is a botting community for the popular MMORPG Adventure quest worlds, join our discord to learn more ⚔️ --&gt; https://discord.io/AQWBots &lt;-- ⚔️" property="og:description">
+	<meta content="Auto Quest Worlds" property="og:site_name">
+	<meta content=https://auqw.tk property="og:url">
+	<meta content=en_US property="og:locale">
+	<meta content="Auto Quest Worlds - Aqw Bots" property="og:site_name">
+	<meta content=website property="og:type">
+	<meta content="Aqw Bots" property="og:title">
+	<meta content="https://cdn.discordapp.com/icons/782192889723748362/a_d4c8307eb1dc364f207183a2ee144b4d.gif?size=1024" name="og:image">
+	<meta content="https://auqw.tk/" property="og:url">
+	<link href=./favicon.ico rel="icon">
+	<link href=./css/portal.css rel=stylesheet type="text/css">
+	<script src=./js/portal.js></script>
+	<script src=./js/jquery.min.js></script>
+	<script src=./js/jquery.dataTables.min.js type=text/javascript></script>
+	<script src=./js/bootstrap.min.js type=text/javascript></script>
+
+   <style>
+      body {
+         font-family: "Lato", sans-serif;
+      }
+
+      .sidenav {
+         height: 100%;
+         width: 160px;
+         position: fixed;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         background-color: #111;
+         overflow-x: hidden;
+         padding-top: 20px;
+      }
+
+      .sidenav a {
+         padding: 6px 8px 6px 16px;
+         text-decoration: none;
+         font-size: 25px;
+         color: #818181;
+         display: block;
+      }
+
+      .sidenav a:hover {
+         color: #f1f1f1;
+      }
+
+      .main {
+         margin-left: 160px;
+         /* Same as the width of the sidenav */
+         font-size: 28px;
+         /* Increased text to enable scrolling */
+         padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+         .sidenav {
+            padding-top: 15px;
+         }
+
+         .sidenav a {
+            font-size: 18px;
+         }
+      }
+   </style>
+</head>
+
+
+<!-- Navigation sidebar -->
+
+
+<div class="sidenav">
+   <a href="#about">Authors</a>
+   <a href="#services">Installation</a>
+   <a href="#clients">Guide</a>
+   <a href="#contact">Contact</a>
+</div>
+
+<br>
+<br>
+
+<body>
+
+
+   
+</body>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<footer>
+	<!-- collapsible script - for the table rows -->
+	<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	for(i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if(content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+		});
+	}
+	</script>
+	<script>
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			$("#headerbox").css("opacity", 1 - $(window).scrollTop() / ($("#headerbox").height() / 1.5));
+		});
+	});
+	</script>
+
+	<!-- Fade Script -->
+	<script>
+	$(window).on("load", function() {
+		function fade() {
+			var animation_height = $(window).innerHeight() * 0.5;
+			var ratio = Math.round((1 / animation_height) * 10000) / 10000;
+			$(".fade").each(function() {
+				var objectTop = $(this).offset().top;
+				var windowBottom = $(window).scrollTop() + $(window).innerHeight();
+				if(objectTop < windowBottom) {
+					if(objectTop < windowBottom - animation_height) {
+						// $(this).html( 'fully visible' );
+						$(this).css({
+							transition: "opacity 1s linear",
+							opacity: 1,
+						});
+					} else {
+						// $(this).html( 'fading in/out' );
+						$(this).css({
+							transition: "opacity 1s linear",
+							opacity: (windowBottom - objectTop) * ratio,
+						});
+					}
+				} else {
+					// $(this).html( 'not visible' );
+					$(this).css("opacity", 0);
+				}
+			});
+		}
+		$(".fade").css("opacity", 0);
+		fade();
+		$(window).scroll(function() {
+			fade();
+		});
+	});
+	</script>
+	<script>
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("insGrimlite").click();
+	</script>
+</footer>
+
+</html>

@@ -1,5 +1,6 @@
 from .Base import *
 from discord.ext import commands
+from discord.utils import get
 
 from pprintpp import pprint
 from datetime import date
@@ -9,7 +10,7 @@ import re
 
 class UploadCog(commands.Cog, BaseProgram):
 
-    def __init__(self, bot):    
+    def __init__(self, bot):
         self.bot = bot
         pass
     @commands.command()
@@ -27,13 +28,13 @@ class UploadCog(commands.Cog, BaseProgram):
         if str(user.id) in BaseProgram.settings["clearance"]:
             await ctx.send(f"\> User `{user.name}` already has clearance. ")
             return
-        BaseProgram.settings["clearance"].append(str(user.id)) 
+        BaseProgram.settings["clearance"].append(str(user.id))
         self.git_save("settings")
         print(BaseProgram.settings)
         await ctx.send(f"\> Successfully gave clearance to `{user.name}`")
 
     @commands.command()
-    async def verify(self, ctx, name: str="", user: discord.User=""):
+    async def verify(self, ctx, name: str = "", user: discord.Member = ""):
         if ctx.author.id != 252363724894109700:
             await ctx.send(f"\> BTFO you're not <@252363724894109700>")
             return
@@ -48,10 +49,19 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send("\> Please mention a real discord user. cmd form: `;verify name, @discord_profile`")
             return
 
-        BaseProgram.settings["verified_list"][user.id] = name 
+        BaseProgram.settings["verified_list"][user.id] = name
         self.git_save("settings")
         self.git_read("settings")
         print(BaseProgram.settings)
+
+        if os.name == "nt":
+            role1 = ctx.guild.get_role(856385548675317821)
+            await user.add_roles(role1)
+        else:
+            role1 = ctx.guild.get_role(811305081063604284)
+            role2 = ctx.guild.get_role(811305081097814073)
+            await user.add_roles(role1)
+            await user.add_roles(role2)
         await ctx.send(f"\> Successfully verified `{name}`")
 
     @commands.command()
@@ -76,7 +86,7 @@ class UploadCog(commands.Cog, BaseProgram):
         botName = attach.filename
         if botName.split(".")[-1].lower() not in ["gbot", "zip", "rar"]:
             await ctx.send("\> Only a .gbot, .zip, and .rar files are allowed.")
-            return  
+            return
 
         await ctx.send("\> Processing file please wait.")
 
@@ -193,7 +203,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         portal_html, sha = BaseProgram.github.read("index.html")
         soup = Soup(portal_html, 'html.parser')
-        
+
 
         div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
 
@@ -251,7 +261,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
 
         div.insert(0, tr)
-        # prettyHTML = 
+        # prettyHTML =
         self.git_save_html(soup.prettify(), f"Updated table with: {_botname_} by {_author_}")
 
 
