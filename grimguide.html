@@ -82,25 +82,41 @@
 <!-- Navigation sidebar -->
 
 
-<div class="sidenav">
-   <a href="#about">Authors</a>
-   <a href="#services">Installation</a>
-   <a href="#clients" class="collapsible">   
-      Guide
-   </a>
-      <div class="collapsibleContent">
-         <a href="#services">Combat</a>
-      </div>
-   <a href="#contact">Contact</a>
+<div id="mySidebar" class="sideNav">
+   
+   <div class="headerBG sideNav-overlay center">
+      <button href="javascript:void(0)" class="sideNav-closebtn" onclick="closeNav()">×</button>
+      <h1>AutoQuest Worlds</h1>
+         
+   </div>
+   
+   <h3>CONTENTS:</h3>
+   
+   <a href="#Author">Author</a>
+   <a href="#Installation">Installation</a>
+   <a href="#Versions">Versions</a>
+   <a href="#Guide" class="collapsible">Guide</a>
+   <a href="#g-UI" class="collapsibleContent">UI</a>
 </div>
 
-<br>
-<br>
-
-<body>
 
 
+<body onLoad="openNav()">
+   <div id="main">
+      <button id="mySideOpener" class="sideNav-openbtn" onclick="openNav()">☰</button>
+   </div>
    
+   <div class="featureBox2 sideheadbox">
+      <div class="left">
+         <h2 align="left">Authors</h2>
+      </div>
+   </div>
+   <div style="margin-left: 11em;margin-top: -2.5em;"><hr class="hrBar"></div>
+   
+   <br><br>
+   <div class="featureBox2 left">test2</div>
+   <div class="featureBox2 ">test3</div>
+
 </body>
 
 
@@ -113,6 +129,19 @@
 
 
 <footer>
+   <script>
+      function openNav() {
+         // document.getElementById("mySidebar").style.display = "block";
+         document.getElementById("mySidebar").style.width = "15em";
+         // document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+         // document.getElementById("mySidebar").style.display = "none";
+         document.getElementById("mySidebar").style.width = "0";
+         // document.getElementById("main").style.marginLeft = "0";
+      }
+   </script>
 	<!-- collapsible script - for the table rows -->
 	<script>
 	var coll = document.getElementsByClassName("collapsible");
