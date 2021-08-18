@@ -49,6 +49,10 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send("\> Please mention a real discord user. cmd form: `;verify name, @discord_profile`")
             return
 
+        if str(user.id) in BaseProgram.settings["verified_list"]:
+            await ctx.send("\> User already verified, you oaf.")
+            return
+
         BaseProgram.settings["verified_list"][user.id] = name
         self.git_save("settings")
         self.git_read("settings")
