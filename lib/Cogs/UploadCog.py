@@ -50,13 +50,14 @@ class UploadCog(commands.Cog, BaseProgram):
             return
 
         if str(user.id) in BaseProgram.settings["verified_list"]:
-            await ctx.send("\> User already verified, you oaf.")
-            return
-
-        BaseProgram.settings["verified_list"][user.id] = name
-        self.git_save("settings")
-        self.git_read("settings")
-        print(BaseProgram.settings)
+            # await ctx.send("\> User already verified, you oaf.")
+            # return
+            pass
+        else:
+            BaseProgram.settings["verified_list"][user.id] = name
+            self.git_save("settings")
+            self.git_read("settings")
+            print(BaseProgram.settings)
 
         if os.name == "nt":
             guild = self.bot.get_guild(761956630606250005)
@@ -65,8 +66,8 @@ class UploadCog(commands.Cog, BaseProgram):
         else:
             guild_harbor = self.bot.get_guild(811305081063604284)
             guild_gang = self.bot.get_guild(848944006641877023)
-            role_harbor = ctx.guild_harbor.get_role(811305081097814073)
-            role_gang = ctx.guild_gang.get_role(877551430100209755)
+            role_harbor = guild_harbor.get_role(811305081097814073)
+            role_gang = guild_gang.get_role(877551430100209755)
 
             await user.add_roles(role_harbor)
             await user.add_roles(role_gang)
