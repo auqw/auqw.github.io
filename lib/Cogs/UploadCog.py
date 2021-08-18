@@ -59,18 +59,20 @@ class UploadCog(commands.Cog, BaseProgram):
             self.git_read("settings")
             print(BaseProgram.settings)
 
-        if os.name == "nt":
-            guild = self.bot.get_guild(761956630606250005)
-            role1 = guild.get_role(856385548675317821)
-            await user.add_roles(role1)
-        else:
-            guild_harbor = self.bot.get_guild(811305081063604284)
-            guild_gang = self.bot.get_guild(848944006641877023)
-            role_harbor = guild_harbor.get_role(811305081097814073)
-            role_gang = guild_gang.get_role(877551430100209755)
+        # if os.name == "nt":
+        #     guild = self.bot.get_guild(761956630606250005)
+        #     role1 = guild.get_role(856385548675317821)
+        #     await user.add_roles(role1)
+        # else:
+            
+        guild_gang = self.bot.get_guild(848944006641877023)
+        role_gang = guild_gang.get_role(877551430100209755)
+        await user.add_roles(role_gang)
 
-            await user.add_roles(role_harbor)
-            await user.add_roles(role_gang)
+        # guild_harbor = self.bot.get_guild(811305081063604284)
+        # role_harbor = guild_harbor.get_role(811305081097814073)
+        # await user.add_roles(role_harbor)
+
         await ctx.send(f"\> Successfully verified `{name}`")
 
     @commands.command()
