@@ -463,8 +463,7 @@
         "Delay": 1000
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuy, Grimoire",
-        "ShopId": 618,
+        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
         "ItemName": "ShadowReaper of Doom"
       },
       {
@@ -476,7 +475,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 1
+        "Index": 2
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -549,7 +548,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Twilly",
-    "iPort": 65150
+    "iPort": 31945
   },
   "ExitCombatBeforeRest": true,
   "EnableRejection": true,
@@ -558,7 +557,6 @@
   "BotDelay": 50,
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
-  "LagKiller": true,
   "SkipCutscenes": true,
   "WalkSpeed": 8,
   "NotifyUponDrop": {
