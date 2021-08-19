@@ -167,7 +167,8 @@ h2 {
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
+  display: block;
+  position: absolute;
   z-index: 1;
   /*float:  right;*/
   top: 0;
@@ -690,27 +691,14 @@ input:focus {
     padding: 1rem 0;
     margin-top: 1rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: stretch;
     justify-content: space-evenly;
     font-family: Roboto Th;
 }
-.featureBox2 {
-	/*width: 75%;*/
-	/*margin-top: 40%;*/
-	   margin-right: auto;
-    padding: 1rem 0;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 20em;
-    align-content: stretch;
-    justify-content: flex-start;
-    /* font-family: Roboto Th; */
-}
+
 .feature {
 	flex: 3;
 /*	border-top: 1px solid #eaecef;*/
@@ -1176,7 +1164,7 @@ li {
     font-size: 2.5em;
 }
 .sideheadbox {
-    margin-top: -4em;
+    margin-top: -2em;
     /* align: "left"; */
 }
 
@@ -1185,29 +1173,36 @@ li {
   margin: none;
 }
 .mySideOpener {
-    position: fixed;
-    display: inline;
+  position: fixed;
+  display: inline;
 }
 .hrBar {
-    
-
-    width: 80%;
-    background-color: #383838;
-    border: none;
-    height: 0.1em;
+  margin-top: -1.6em;
+  /* margin-bottom: -3em; */
+  margin-left: 2em;
+  width: 85%;
+}
+.hrBar hr {
+  background-color: #383838;
+  border: none;
+  height: 0.1em;
 }
 .sideNav {
   font-family: Roboto Th;
   height: 100%;
   width: 0;
+  background-color: #171614;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* display: inline-block; */
+
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #171614;
   overflow-x: hidden;
-  transition: 0.5s;
-  display: inline-block;
+
+
   /* padding-top: 60px; */
 }
 .sideNav h1 {
@@ -1219,7 +1214,10 @@ li {
 	text-shadow: 3px 3px 13px #1c1c1c;    
 }
 .sideNav a {
-  padding: 0px 0.5rem 0.5em 2em;
+  /* padding: 0.5px 0.5rem 0.5em 2em; */
+  padding-left: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   text-decoration: none;
   font-size: 1em;
   color: white;
@@ -1237,7 +1235,7 @@ li {
 .sideNav a:hover {
   /* color: #ff3d3d; */
   font-weight: bold;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   transition: 0.3s;
 }
 .sideNav .sideNav-closebtn {
@@ -1272,9 +1270,74 @@ li {
   padding: 1em 2em;
   /* margin-top: 70px;     */
 }
-
-
-/* @media screen and (max-height: 450px) {
-  .sideNav {padding-top: 15px;}
-  .sideNav a {font-size: 18px;}
-} */
+.collapsibleSide {
+  background-color: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-weight: 100;
+  padding-left: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /*letter-spacing:1px;*/
+}
+.collapsibleContentSide {
+  color: #cfcfcf;
+  font-size: 0.9em;
+  font-weight: 100;
+  font-family: Roboto Th;
+  display: none;
+}
+.activeSide {
+  
+}
+.sideNavActive {
+  background-color: #FF3D3D;
+}
+.collapse-2nd a{
+    padding-left: 3em;
+}
+.collapse-2nd a.activeSide {
+    background-color: transparent;
+}
+.collapse-3rd {
+    padding-left: 2em;
+}
+.collapse-3rd a.activeSide {
+    background-color: transparent;
+}
+.spacedList li {
+  padding-bottom: 0.7em;
+  margin-left: -0.8em;
+}
+.spacedList li a {
+  color: #ff3d3d;
+}
+.spacedList b {
+  color: #ff3d3d;
+}
+.subMain h4 {
+    margin-bottom: 1em;
+    display: block;
+    font-weight: bold;
+    margin: 0em;
+}
+.subMain h3 {
+  font-size: 1.2em;
+}
+.featureBox2 {
+	/*width: 75%;*/
+	/*margin-top: 40%;*/
+	   /* margin-right: auto; */
+    /* padding: 1rem 0; */
+    margin-top: 1rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    margin-left: 2.5em;
+    /* margin-top: 5em; */
+    align-content: stretch;
+    justify-content: flex-start;
+    font-family: Roboto Th;
+}
