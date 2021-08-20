@@ -1,0 +1,315 @@
+Changelog:
+
+Grimoire 1.1
+- Fixed critical issue with joining maps
+- Fixed critical issue with resting while in combat
+- Added a 'Send' button to the packet spammer window, used to send the packet in the textbox once
+- The design window can now be used
+
+Grimoire 1.2
+- Updated UI slightly
+- Improved map load complete check (it is now seemingly bulletproof)
+- Fixed a mistake in the loading of a bot file
+- Fixed a mistake in checking temp items
+- Fixed a mistake in checking bank items
+- Added a function to use skill X only when health is less than Y% (Called safe skill in the bot)
+- Added a check that will cancel the current target if the current target is yourself
+- Added a checkbox to the item whitelist. It allows you to configure whether the items in the whitelist should be picked up or not.
+- Added a "Kill for items/temp items" function
+- Streamlined the skill delay function. You can now set the skill delay to a minimum of 100 milliseconds, without problems.
+- Added party/friend bot (Read the text file in the .zip before using!)
+- Grabbers are now usable
+
+Grimoire 1.2.1
+- Fixed a critical error in the detection of monsters when killing for items/temp items
+
+Grimoire 1.3
+- Added configurable hotkeys. Hotkeys can also be saved and will be loaded when Grimoire is launched.
+- Added function that enchants your currently equipped items with the specified enchantment. Level 51-65 only at this time.
+- A help document explaining some of the more unusual functions is now included in the download
+- The minimum value for the bot delay is now 500 (not recommended to decrease if your bot contains Join commands)
+- Added a function that ensures the player is out of combat before joining a map
+- Added fast travels
+- Fixed critical bug where parts of the game would break if the player logs out
+- Fixed error that occurs when the Debug (and possibly others) window is opened
+- Fixed duplicate window bug
+- Fixed issue with "Exit cell before completing quest" function
+- Improved the performance a bit, the game now runs faster
+
+Grimoire 1.4
+- Fixed critical bug where drop names containing an apostrophe would be incorrectly handled, resulting in the bot rejecting the item
+- Fullscreen has been enabled in the application
+- Added "Auto bots" tab in the Bot window. (Only 2 bots at this time, I had to rush this release because of the critical bug)
+- Fixed a minor bug in the "Kill for" function
+
+Grimoire 1.5
+- Added "Get all drops" option
+- Added "Reject all drops" option
+- Fixed critical calculation error when minimizing the application
+- Added "Saved bots" tab in the Bot window (searches for .gbot files and displays them in a list box. Also searches all sub-directories)
+- Modified the UI behavior when opening/closing windows
+- Added manual input for login information so that you can run several Grimoire instances at once with different accounts
+- Added armor customizer in Loaders
+- Added armor customizer action in Hotkeys
+- Added map load timeout. If the map has been loading for 60 seconds and isn't finished, it will be reloaded.
+- Added "Set spawn point" option
+- Fixed minor error in the processing of quests
+- Added new bot command: "Accept quest"
+- Added new bot command: Buy back (PLEASE READ THE HELP FILE!)
+
+Grimoire 1.6
+- Added option to load the test version of AQW
+
+Grimoire 1.7
+- Fixed autobots bug where all commands would be "Unknown"
+- Added checks to make sure that bank items are always loaded when using bank commands
+- Login information for the buy back command is no longer saved in bot files
+- .dmbot compatibility; you can now load .dmbot files into Grimoire
+- The bot can now pick up drops on the AQW test servers
+- Auto relogin failure detection (read help.txt, this function is very useful)
+- Auto relogin delay
+- Auto relogin cmd delay
+- The bot will no longer attempt to use a skill when you do not have enough mana
+- Added option to complete quests with an item id (where you select a reward, like Voucher Item for instance)
+- Grimoire can now be minimized to system tray
+
+Grimoire 1.8
+- New command: goto
+- Option to automatically restart bot if player goes afk when the bot is running
+- Fixed disconnection bug when loading quests
+- Added option to merge bots
+- New "If..." command: "Player is in room"
+- New "If..." command: "Player is not in room"
+- Lag killer and remove players options are temporarily disabled when relogging to avoid potential problems
+- Added option to skip bot delay for "If..." and "Index up/down" commands
+- New command: change bot delay (changes bot delay while the bot is running)
+- Fixed certain errors when loading/saving bots
+- Fixed "Skip Cutscene" option not working at all
+- Fixed some bugs with using skills
+- Resolved minor issues with certain item names
+- Resolved minor issues with "greater than/less than" if statements
+
+Grimoire 1.8.1
+- Fixed quest completion bug
+
+Grimoire 1.8.2
+- Fixed another quest completion bug
+- Fixed error that prevented the AQW test version from loading
+
+Grimoire 1.9
+- Added new if statements: "If number of monsters in cell is greater/less than"
+- Added option to hide password when configuring the buy back command
+- Added hotkey option: minimize Grimoire to system tray
+- Quests where rewards are selected (such as Voucher Item) can now be added to the quest list for automatic completion
+- Fixed critical bug where the bot wouldn't stop when disabling it
+- Added option to save/load .xml files in the packet spammer
+
+Grimoire 3.0
+- The bot has been completely rewritten, severe bugs have been fixed including random crashes and disconnects.
+- Added a timeout mechanism for bot commands, ensuring the bot does not get stuck
+- Added possibility to specify an author and description for bots
+- Improved the way saved bots are displayed
+- Added option to kill random monster for items
+- Added rest command that only executes if your HP is less than X%
+- Added option to wait for all skills to cool down before attacking
+- Added walk command
+- The goto command now checks whether the player is in the same map or not before executing
+- Added possibility to disable bot delay (further explained below)
+- New if statements: "Level is less than", "Level is greater than", "Level is", "Gold is less than", "Gold is greater than"
+- Improved .dmbot conversion, you no longer need to click a "small, gray, textless button"
+- Added bot statistics
+- Added option to automatically clear the debug output upon reaching 500 lines
+- The skip cutscene option no longer disables lag killer
+- Added attack bot option (slightly different than what you are used to)
+- Added option to play a sound when one of the specified items are picked up by the bot
+- Added possibility to add custom fast travels
+- Added possibility of seeing all the data specified for a command: double click the command in the list
+
+Grimoire 3.1
+- Fixed critical bug: jump function was broken
+
+Grimoire 3.2
+- Fixed critical bug: item names with an ampersand in their names (&) caused errors when using bank and inventory commands
+- Fixed mistake with "Rest if HP <X%"
+- The bot now waits until the player is out of combat before executing accept and complete quest commands
+- Text boxes in the bot manager now automatically clears the default text when clicked on
+- Added support for Augoeides/Hidden Project
+
+Grimoire 3.3
+- When Grimoire is minimized, all open windows (such as the bot manager) are also minimized.
+- Lag killer and remove players options are disable temporarily when auto relogging
+- Added hotkeys. They are now operating system-wide meaning they will ALWAYS work when Grimoire is running. However, I have it made such that if Grimoire is minimized, hotkeys are ignored. EXCEPT if the hotkey is set to show/minimize Grimoire, then it will work regardless.
+- Fixed the walk command (it was broken in the bot manager)
+- Fixed errors with the AQW test version, everything was broken in previous versions
+- Fixed bugs with the grabber
+
+Grimoire 3.4
+- Bot files are a bit different. You will have to re-create all of your bots, once again........... Just kidding, they are automatically converted but you should re-save them.
+- The drops whitelist has been greatly improved and is now faster than ever.
+- New command: load bot (has to be saved in the default Bots folder)
+- Hopefully fixed some auto relogin bugs
+- Improved and fixed a bug with the buy back, previously item whose names contained symbols could not be bought back
+- Fixed kill-for command bugs
+- Replace index up/down with goto index, although the old commands still work
+- Moved everything from "Options" to Bot manager > Options so they are now part of .gbot files.
+- The bot should now be a bit more lightweight because I rewrote some retarded code
+- Removed metroframework (UI theme) to make my life easier because used Grimoire as part of a school project. Maybe I will get it back in the future, maybe not. If you like UI design and know some C#, feel free to create a UI that Grimoire might use.
+
+Grimoire 3.5
+- Implemented plugin system
+- Rest if is no longer a command
+- New command: logout
+- Text can now be copied in the new grabber, triple click an item to edit/copy the text
+- Added option to disable player animations
+- New command: buy item
+- The join command now ensures that you end up in the correct cell
+- Safe skills can now be mana based
+- "Exit combat before completing quest" now also works for the complete quest command
+- There is now an option for controlling whether the bot is restarted when the player dies
+- New command: labels. You add a label in the command list, and then you can goto that label with a goto label command (this removes all the index commands)
+- Added option to set FPS
+- Commands in the command list can now be edited by double clicking them
+
+Grimoire 3.6
+- Fixed bug where the whitelist would either pick up items or reject them, not both
+- Fixed error that occured when clicking the buyback textbox
+- Quests and bank items are now loaded if needed when the Load Bot command is executed
+- Fixed merge option duplication bug
+- Made it more clear that the bot does not have to be started to use infinite range, monster magnet etc...
+- "Options" are now reapplied when auto-relogin finishes
+- Fixed accept quest command bug
+- Increased the command timeout for all kill commands
+
+Grimoire 3.7
+- Grimoire is now a proxy server
+- Items will now not be shown at all instead of being rejected
+- Disable player animations now functions properly (and wonderfully)
+- Added packet tamperer (used to easily send any packets to both the client and the server)
+- Items that contain extra spaces in their name (items and temp items) will no longer be a problem
+
+Grimoire 3.8
+- Once and for all got rid of the issue of items with extra spaces in their name (should be completely gone)
+- Fixed bug where quests were accepted even if not on the quest list
+
+Grimoire 3.8+ 
+- EmperorArts took over and modified Biney's original source code.
+
+Grimoire 3.8+ (05-08-19):
+- Restart command when AFK. This feature will restart current command if your character is AFK
+- Anti Bot-Killer. This feature will ensure your character is in right place before attacking monster, to enable this feature you just need to add MoveToCell or Join command (that two command will save your attacking location) and if your character isnt in that location, the bot will move you to that location
+- New way for moving and deleting command. This feature allow you to move a command by using CTRL + (Arrow) and delete a command by using CTRL + Delete, this feature will help you to rearrange the bot easily
+- Move character when changing pad boxlist(top-right corner)
+- Spammer Variabel. This feature allow you to using defined variable for making spammer packet, currently this bot have 2 defined variable namely {ROOM_ID} and {USERNAME}. Example : to join a map you can write "%xt%zm%cmd%1%tfer%{USERNAME}%MAPNAME%"
+- Find and join public glitched map. This feature will traverse room with room number 9999 - 9990, and if that room contains 2 player(included you) the bot will stay at that room, otherwise the bot will join a normal map, to use this feature you need to add "-Glitch" after room name in join command, example : revenant-Glitch. Unfortunatelly due to lack of algorithm this feature is not guaranteed you to find public glitched map correctly
+- New combat system. This feature will allow you to do skill combo correctly if you have enough mana (lol), this feature will execute your skill command list orderly and wait untill the next skill is ready before using that skill
+- Fix some typo algorithm
+- Fix login message. When you entered the game with wrong account credentials the bot will stuck in Authentiaction Account Info, now its fixed
+- Passing map name when you pass current cell to join command
+- Client side hack plugin. This plugin will allow you to modify your gender, username, and access level to hide your credentials. This plugin work only for this version of Grimoire 3.8
+- User stats plugin. This plugin will allow you to see your character's stats. This plugin work only for this version of Grimoire 3.8
+- Fix join command algorithm
+- Re-adjust minimum skill delay. Now you can use skill with zero delay, this mean the bot will execute next skill when its ready without delay
+- New feature for finding glitched map
+  Now the bot can find out glitched map in specific range, to use this you can use join command with some parameter
+  example : "MapName-Glitch:Max:Min", remember that 0 < Min < Max < 32767
+  there is example if i want find glitched map in range 100 - 200 : https://prnt.sc/nvqf0p
+  also you can use "MapName-Glitch" with default Max = 9999 and Min = 9990
+
+Grimoire 3.8+ (02/06/2019) :
+- Fix port number. The known problem is that there are several servers that share the same IP Address so that the bot will identify that they are the same, for example: Galanoth and Sir Ver share the same IP address, so if you go to Sir Ver's server you actually enter the Galanoth server. I hope the problem is solved because i dont have an upgraded account to test it
+- Add special feature for killing escherion or vath. This feature will automatically kill Staff of Inversion or Stalagbite first when they respawn again, just target the Escherion or Vath using command Kill : Monster Name, example : Kill : Vath
+- Fix provoke monster. The bot will not provoke monster when the characters is dead, so i hope there is no disconnected issue because provoke monster
+- New way for inserting command. This feature allow you to insert a command above the selected command by using CTRL + (Button Click), this feature will help you to rearrange the bot easily
+
+Grimoire 3.8+ (13/06/2019) :
+- Adding option to wait a skill to cooldown before using them. Now you can use new combat system or old combat system
+- Optimizing the new combat system. Using the smallest delay interval in using skill when its ready
+- Changing the way to start and stop the bot. Changing the enable bots checkbox to button type
+- Adding a mechanism to prevent undefined behaviour of bot. There is a short delay before starting the bot for the second time and so on to prevent undefined behaviour of bot
+- Fix provoke monster(again, lol). Now you can equip an item, buy an item, sell an item, join a map, turnin a quest and rest safely without getting attacked because provoking monster
+- Adding new if statement. Item -> If in house. Item -> If not in house.
+- Removed an unnecessary button above the combat tab
+
+Grimoire 3.8+ (27/06/2019) :
+- Fix turn in quest algorithm. Now bot can't turn in the quest if the requirements is not fulfilled, example : monthly and daily quest not available, quest has not been unlocked, required items not fulfilled, level, class rank or reputation not fulfilled, and many more.
+- Fix spammer variable. Now you can use spammer variabel(example : {ROOM_ID} and {USERNAME}) in spammer and tamperer menu
+- New plugin for additional combat commands. Now you can use "USE SKILL" command from the new plugin to use the skill safely, this is usefull if you want attack a monster like Slugfit
+- New feature in grabber. Now you can adding a quest to quest list, all quest's requirements to drop list, and all quest's rewards to drop list with 2 clicks, just right click and then left click
+- Fix some typos in update 28/06/2019
+
+Grimoire 3.8+ (07/07/2019) :
+- Fix Game's URL
+- Fix character didnt load if hide player is active
+- Add new menu to grabber.nThe new menu is 'Add to drop list' and 'Copy item name to clipboard' in every item's label in grabber
+- Fix Some minor algorithm error
+
+Grimoire 3.8+ (24/07/2019) :
+- Skill Set System. This system will allow you to use various skills combination for any situations. How to enable this system? You need to create a skill set by fill the skill set name column in combat tab and click the button, and then go to skill list and input your skills combination, to use a skill set you can click the use skill set button. I'm attached the example in bots folder and i hope someone make a video about this to give better explanation lol
+  Note : if you not use any skill set, the bot will cast random skill with priority(1 > 2 > 3 > 4)
+- Support Potion. Now you can use potion in bot manager and Skill Command plugin, and ofc you can equip potion by using Equip command
+- Fix Spammer Variable
+- Fix User Stats Plugin
+- New Plugin : Generic Bot Attack
+
+Grimoire 3.8+ (05/08/2019) :
+- Fix game's URL. Maps now work
+- Change Join command algorithm. Now the bot will not rejoin a map if the map is full, you can use statement command "player in map" to check if the map is full or not
+- Fix proxy
+- New statement command "If Quest Is Available" and "If Quest Is Not Available". Quest is available if the quest's text is green, and quest is not available if the quest's text is red. You can check the daily quest is completed or not by using this statement command
+
+Grimoire 3.8+ PRO:
+- Satan took over and updated Grimoire.
+- Bot Manager additions
+- Better UI
+- Extendable bot manager
+- New Unbank list feature
+  - Add items to unbank list to automatically unbank them at the start of the bot (only 70ms per each swap) 
+  - "Bank on Stop" button to put them all back in the bank after the bot stops
+- Customizable item whitelist drop delay
+- More if statements (If member/if not member + If quest is in progress)
+- Index feature (go back up to a command)
+- New Log feature
+  - Can log each turn-in of a bot
+- Untarget self option + Buff up option (locks haste to 50%)
+- New provoke toggle command feature
+- New Client tab
+- Walk randomly button (Map tab)
+- Set spawnpoint button (Map tab)
+- Commands to trigger skills (Combat tab)
+- Loader/Grabber additions
+- Can Force accept quests directly from grabber
+- Can add quests from grabber directly to quest list & item list
+- Can equip SWFS directly from grabber
+
+Grimlite:
+- Cat appeared and presented combination of Grimoire and AQLite.
+- Collaborated with Satan and they both made Grimlite.
+- Changelog currently lost in time.
+
+Grimlite Rev:
+- After Grimlite, Ganku took over the source code and updated it.
+
+Grimlite Rev (19 July 2021):
+- Removed Infinite Mana (0 mana cost) display.
+- Added Available/Visible Monster Count statement.
+
+Grimlite Rev (23 July 2021:
+- Added Variable supports to the following commands: BuyItem, BuyFast, GetDrop, Sell, ToBankFromInv, ToInvFromBank, AddTo/RemoveFromWhitelist, JoinMap, JumpCell, Attack.
+- Skill Command is now integrated with Monster Target function, which is compatible with Variable.
+- Fixed the website links on Bot Portal/Get Bots buttons.
+
+Grimlite Rev (25 July 2021:
+- Added Bordered version for Grimlite Rev. It has a bordered window (which fixes the grey bars on old grimlites) along with better Dark Mode and cleaner UI.
+
+Grimlite Rev (28 July 2021 (Bordered only):
+- Added Chat Trigger as fast travel method. Used by typing a chat trigger (.) on in-game chat (ex: .example). Chat triggers’ list is available at the Fast Travel menu.
+- Added Get Current Cell button on the main menu, with the button’s label “<“.
+- Added “Set client level to max” button and command, that which sets your character’s level to 100 on client-side.
+- Added “Add infinite Gold/ACs count” buttons, which adds infinite amount to your character’s Gold/ACs count on client-side.
+- Game screen does no longer clip upon resize.
+- Client window is now in the middle position upon opening it.
+- Bot does no longer un-AFK automatically upon entering AFK state in-game while botting.
+- Fixed an issue with the Cell jump (Jump to Cell) command not registering Variable properly.
+- Fixed an issue with the AddInfoMsg/AddWarningMsg buttons not registering their commands.
+- Fixed an issue with HidePlayers, LagKiller, SkipCutscenes, and DisableAnims buttons not functioning properly on the main menu.
+- Minor UI changes.
