@@ -88,7 +88,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
-        "ItemName": "StoneCrusher",
+        "ItemName": "SOLO CLASS",
         "Safe": true
       },
       {
@@ -102,16 +102,16 @@
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "2: Highlord's Gaze",
-        "Index": "2",
+        "Skill": "1: Shackle",
+        "Index": "1",
         "SafeHp": 100,
         "SafeMp": 100
       },
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "1: Shackle",
-        "Index": "1",
+        "Skill": "2: Highlord's Gaze",
+        "Index": "2",
         "SafeHp": 100,
         "SafeMp": 100
       },
@@ -187,7 +187,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
-        "ItemName": "Shaman",
+        "ItemName": "FARMING CLASS",
         "Safe": true
       },
       {
@@ -201,15 +201,15 @@
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "1: Unshackle",
-        "Index": "1",
+        "Skill": "3: Calm Before the Storm",
+        "Index": "3",
         "SafeHp": 100,
         "SafeMp": 100
       },
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "2: Highlord's Gaze",
+        "Skill": "2: Shout of the Ancients",
         "Index": "2",
         "SafeHp": 100,
         "SafeMp": 100
@@ -217,7 +217,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "1: Shackle",
+        "Skill": "1: Fists of Frost",
         "Index": "1",
         "SafeHp": 100,
         "SafeMp": 100
@@ -225,8 +225,8 @@
       {
         "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
         "Monster": "*",
-        "Skill": "2: Armageddon",
-        "Index": "2",
+        "Skill": "4: Glacial Storm",
+        "Index": "4",
         "SafeHp": 100,
         "SafeMp": 100
       },
@@ -1478,7 +1478,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "MRT-CHECK"
+        "Label": "MRT - CHECK"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -1912,12 +1912,12 @@
         }
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1600
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdSetFPS, Grimoire",
         "FPS": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
@@ -1935,6 +1935,14 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdStop, Grimoire"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
       }
     ]
   },
@@ -1975,8 +1983,8 @@
   },
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Galanoth",
-    "iPort": 31945
+    "sName": "Twilly",
+    "iPort": 43660
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
