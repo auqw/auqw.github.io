@@ -327,56 +327,8 @@
         "Index": 2
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 666
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a1>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a2>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "SSLUGFIT"
+        "$type": "Grimoire.Botting.Commands.Combat.CmdKill, Grimoire",
+        "Monster": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -1183,7 +1135,7 @@
     "$values": []
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in Rich Text Format)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -1209,7 +1161,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Artix",
-    "iPort": 2783
+    "iPort": 34748
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
@@ -1245,7 +1197,11 @@
       "Blood Gem of the Archfiend"
     ]
   },
-  "EnsureTries": 20,
+  "Packets": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
   "AFK": true,
-  "DropDelay": 1000
+  "DropDelay": 1000,
+  "PacketDelay": 250
 }
