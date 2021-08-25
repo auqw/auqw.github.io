@@ -414,6 +414,30 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
         "Tag": "Item",
         "Text": "Is in bank",
+        "Value1": "Fiend Seal",
+        "Value2": "*"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
+        "TransferFromBank": true,
+        "ItemName": "Fiend Seal"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Gem of Domination",
+        "Value2": "*"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
+        "TransferFromBank": true,
+        "ItemName": "Gem of Domination"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
         "Value1": "Bone Dust",
         "Value2": "*"
       },
@@ -696,8 +720,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 5660,
-          "IsInProgress": true
+          "QuestID": 5660
         }
       },
       {
@@ -2090,7 +2113,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 623
+          "QuestID": 623,
+          "IsInProgress": true
         }
       },
       {
@@ -3218,8 +3242,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 5660,
-          "IsInProgress": true
+          "QuestID": 5660
         }
       },
       {
@@ -3265,7 +3288,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 4748
+          "QuestID": 4748,
+          "IsInProgress": true
         }
       },
       {
@@ -3410,7 +3434,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 4748
+          "QuestID": 4748,
+          "IsInProgress": true
         }
       },
       {
