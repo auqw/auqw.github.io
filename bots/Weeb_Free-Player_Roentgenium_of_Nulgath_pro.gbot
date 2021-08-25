@@ -120,7 +120,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "BLOOD"
+        "Label": "ROENT CHECK"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -696,7 +696,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 5660
+          "QuestID": 5660,
+          "IsInProgress": true
         }
       },
       {
@@ -1007,7 +1008,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 802
+          "QuestID": 802,
+          "IsInProgress": true
         }
       },
       {
@@ -1154,7 +1156,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 802
+          "QuestID": 802,
+          "IsInProgress": true
         }
       },
       {
@@ -1209,22 +1212,27 @@
         "Label": "CLASS"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
         "Tag": "Map",
-        "Text": "Map is not",
-        "Value1": "tercessuinotlim",
+        "Text": "Cell is not",
+        "Value1": "m22",
         "Value2": ""
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Weeb"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
-        "Map": "citadel-1e99",
         "Cell": "m22",
         "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "m22",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Index": 2
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
@@ -2761,7 +2769,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 236
+          "QuestID": 236,
+          "IsInProgress": true
         }
       },
       {
@@ -3209,7 +3218,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 5660
+          "QuestID": 5660,
+          "IsInProgress": true
         }
       },
       {
@@ -3821,12 +3831,13 @@
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 236,
-        "Text": "236"
+        "Text": "236",
+        "IsInProgress": true
       }
     ]
   },
   "Author": "Author",
-  "Description": "Description (Write in RTF)",
+  "Description": "Description (Write in Rich Text Format)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -3871,6 +3882,11 @@
       "Gem of Domination"
     ]
   },
+  "Server": {
+    "$type": "Grimoire.Game.Data.Server, Grimoire",
+    "sName": "Twilly",
+    "iPort": 34748
+  },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
   "EnablePickup": true,
@@ -3894,7 +3910,11 @@
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": []
   },
-  "EnsureTries": 20,
+  "Packets": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
   "AFK": true,
-  "DropDelay": 2222
+  "DropDelay": 2222,
+  "PacketDelay": 250
 }
