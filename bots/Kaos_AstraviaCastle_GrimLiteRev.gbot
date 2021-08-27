@@ -1701,6 +1701,69 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8250 - Creatures Repelled"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "astraviacastle",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "astraviacastle",
+  "Room": "[Map No.]",
+  "Cell": "r3",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r3",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r3",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Creatures Repelled",
+  "Value2": "6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8250 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
   "Name": "8250 - City Model Examined"
 },
 {
@@ -1763,6 +1826,17 @@
 "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
 "Tag": "Item",
 "Text": "Is not in temp",
+"Value1": "Creatures Repelled",
+"Value2": "6"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8250 - Creatures Repelled"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
 "Value1": "City Model Examined",
 "Value2": "1"
   },
@@ -1784,7 +1858,7 @@
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-"Delay": 500
+"Delay": 1600
   },
   {
 "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
