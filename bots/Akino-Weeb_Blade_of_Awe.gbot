@@ -5,19 +5,19 @@
     "$values": [
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "START"
+        "Label": "SETTINGS"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
-        "Text": "(Write Text Here)",
-        "Alpha": 1,
-        "R": 220,
-        "G": 220,
-        "B": 220
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
-        "Text": "Blade of Awe Bot",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
         "Alpha": 255,
         "R": 172,
         "G": 73,
@@ -33,16 +33,24 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
-        "Text": "Edit Class and",
-        "Alpha": 200,
-        "R": 220,
-        "G": 220,
-        "B": 220
+        "Text": "BLADE OF AWE BOT",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
-        "Text": "Skills Below",
-        "Alpha": 200,
+        "Text": "W/ OPTION TO RANK 10",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "by Akinø and Weeb",
+        "Alpha": 255,
         "R": 220,
         "G": 220,
         "B": 220
@@ -56,12 +64,149 @@
         "B": 220
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[100,100,100]Join Discord"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[250,250,250]discord.io/AQWBots"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "SETTINGS"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Map No.",
+        "Value2": "1e99"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
         "ItemName": "YOUR CLASS????",
         "Safe": true
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "Int": "RANK UP TO 10 AFTERWARDS?",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "Value is 0 = No; while 1 = Yes",
+        "Alpha": 255,
+        "R": 200,
+        "G": 200,
+        "B": 200
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "START"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "Edit Skills Bellow",
+        "Alpha": 200,
+        "R": 220,
+        "G": 220,
+        "B": 220
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -145,6 +290,22 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
         "Text": "(Write Text Here)",
         "Alpha": 1,
         "R": 220,
@@ -176,6 +337,19 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "UNBANK"
       },
@@ -189,13 +363,23 @@
         "Delay": 1600
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Legendary Stonewrit",
+        "Value2": "*"
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
         "TransferFromBank": true,
         "ItemName": "Legendary Stonewrit"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Stonewrit Found!",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -203,8 +387,11 @@
         "ItemName": "Stonewrit Found!"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Legendary Handle",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -212,8 +399,11 @@
         "ItemName": "Legendary Handle"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Handle Found!",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -221,8 +411,11 @@
         "ItemName": "Handle Found!"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Legendary Hilt",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -230,8 +423,11 @@
         "ItemName": "Legendary Hilt"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Hilt Found!",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -239,8 +435,11 @@
         "ItemName": "Hilt Found!"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Legendary Blade",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -248,8 +447,11 @@
         "ItemName": "Legendary Blade"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Blade Found!",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -257,8 +459,11 @@
         "ItemName": "Blade Found!"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Legendary Runes",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -266,8 +471,11 @@
         "ItemName": "Legendary Runes"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Runes Found!",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -275,8 +483,11 @@
         "ItemName": "Runes Found!"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Blade of Awe",
+        "Value2": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
@@ -284,8 +495,17 @@
         "ItemName": "Blade of Awe"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -315,7 +535,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "FINISH"
+        "Label": "REP CHECK"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -324,6 +544,11 @@
         "R": 220,
         "G": 220,
         "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -405,6 +630,91 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "LEGENDARY STONEWRIT",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "STONEWRIT"
       },
@@ -443,7 +753,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "j6",
-        "Room": "1e99",
+        "Room": "[Map No.]",
         "Cell": "R4",
         "Pad": "Left"
       },
@@ -514,6 +824,70 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "LEGENDARY HANDLE",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "HANDLE"
       },
@@ -552,7 +926,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "gilead",
-        "Room": "1",
+        "Room": "[Map No.]",
         "Cell": "r3",
         "Pad": "Right"
       },
@@ -623,6 +997,70 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "LEGENDARY HILT",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "HILT"
       },
@@ -661,7 +1099,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "castleundead",
-        "Room": "1e99",
+        "Room": "[Map No.]",
         "Cell": "Enter",
         "Pad": "Spawn"
       },
@@ -720,6 +1158,70 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "LEGENDARY BLADE",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "BLADE"
       },
@@ -734,7 +1236,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2936
+          "QuestID": 2936,
+          "IsInProgress": true
         }
       },
       {
@@ -758,7 +1261,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "hydra",
-        "Room": "1e99",
+        "Room": "[Map No.]",
         "Cell": "Boss",
         "Pad": "Left"
       },
@@ -809,7 +1312,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2936
+          "QuestID": 2936,
+          "IsInProgress": true
         }
       },
       {
@@ -819,6 +1323,70 @@
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
         "Label": "BOA"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "LEGENDARY RUNES",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -938,6 +1506,242 @@
         "B": 220
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "REPUTATION FARM",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "REP FARM"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdWhitelist, Grimoire",
+        "state": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "2935",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 2935
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "2935",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Index": 2
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "castleundead",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "castleundead",
+        "Room": "[Map No.]",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "castleundead",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Index": 2
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest can not be turned in",
+        "Value1": "2935",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "BRUH"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Akinø"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 2935
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdFactionRankLessThan, Grimoire",
+        "Tag": "This player",
+        "Text": "Faction Rank is less than",
+        "Value1": "Blade of Awe",
+        "Value2": "10"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "REP FARM"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "FINISH"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "BLADE OF AWE",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "BOA MERGE"
       },
@@ -994,8 +1798,121 @@
         "Index": 2
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "REP CHECK"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
+        "Tag": "Misc",
+        "Text": "Int is",
+        "Value1": "RANK UP TO 10 AFTERWARDS?",
+        "Value2": "1"
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "CHECK"
+        "Label": "REP FARM"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "CONGRATULATIONS!",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 172,
+        "G": 73,
+        "B": 124
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "Alpha": 255,
+        "R": 60,
+        "G": 60,
+        "B": 60
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
