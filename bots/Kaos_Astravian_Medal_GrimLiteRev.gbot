@@ -587,6 +587,14 @@
       }
 ,
       {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdEquipped, Grimoire",
+        "Tag": "Item",
+        "Text": "Is equipped",
+        "Value1": "[Soloing Class]",
+        "Value2": ""
+      }
+,
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
         "Label": "[Check]"
       }
@@ -756,13 +764,13 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotEquipped, Grimoire",
         "Tag": "Item",
         "Text": "Is not equipped",
-        "Value1": "Your Mom",
+        "Value1": "[Farming Class]",
         "Value2": ""
       }
 ,
       {
         "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
-        "ItemName": "Your Mom"
+        "ItemName": "[Farming Class]"
       }
 ,
       {
@@ -943,13 +951,13 @@
   "Tag": "Misc",
   "Text": "Int is not",
   "Value1": "Class Equip",
-  "Value2": "0"
+  "Value2": "1"
 }
 ,
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
     "Int": "Class Equip",
-    "Value":0
+    "Value":1
   }
 ,
       {
@@ -1197,13 +1205,13 @@
   "Tag": "Misc",
   "Text": "Int is not",
   "Value1": "Class Equip",
-  "Value2": "1"
+  "Value2": "0"
 }
 ,
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
     "Int": "Class Equip",
-    "Value":1
+    "Value":0
   }
 ,
       {
