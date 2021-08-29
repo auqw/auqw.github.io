@@ -193,12 +193,12 @@
             <div class="boat-container">
                <table id="myTable">
                    <colgroup>
-                     <col span=1 style="width: 5%">
-                     <col span=1 style="width: 6%">
+                     <col span=1 style="width: 2%">
+                     <col span=1 style="width: 10%">
                      <col span=1 style="width: 40%">
-                     <col span=1 style="width: 7%">
+                     <col span=1 style="width: 10%">
                      
-                     <col span=1 style="width: 7%">
+                     <col span=1 style="width: 10%">
                    </colgroup>
                    <thead>
                        <tr>
@@ -477,13 +477,13 @@
                botName = botName.replace(data[key]["authors"][auth], "");
 
             }
-
+            // <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
             
             // console.log(botName)
             let cnt = "";
             if (tags == "") {
                cnt = `
-                  <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
+                  <td></t>
                   <td class="c-info">${authors}</td>
                   <td class="c-name"><a class="collapsible" type="button">${botName} <span class="spancircle">No meta</span></a>
                      <div class="collapsibleContent c-cnt">
@@ -492,7 +492,7 @@
                   </td>`;
             } else if (desc == ""){
                cnt = `
-                  <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
+                  <td></t>
                   <td class="c-info">${authors}</td>
                   <td class="c-name"><a class="collapsible" type="button">${botName}</a>
                      <div class="collapsibleContent c-cnt">
@@ -502,7 +502,7 @@
                   </td>`;
             } else {
                cnt = `
-                  <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
+                  <td></t>
                   <td class="c-info">${authors}</td>
                   <td class="c-name"><a class="collapsible" type="button">${botName}</a>
                      <div class="collapsibleContent c-cnt">
