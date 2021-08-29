@@ -454,7 +454,6 @@
          // Latest bot updates
          let updatesContainer = document.getElementById("botUpdates");
          for (let i = 1; i <11; i++) {
-            console.log(i)
             let rowtr =  document.createElement('li');
             let lastItem = Object.keys(data)[Object.keys(data).length - i];
 
@@ -555,7 +554,6 @@
       });
 
       function addDailyBoost(data) {
-         console.log("enemy: " + data["daily"]["enemy"][0])
          document.getElementById("serverBoost").innerHTML = `<b>Boost: </b>${data["boost"]["item"]}`;
          document.getElementById("serverDeadline").innerHTML = `<b>Ends in: </b>${data["boost"]["endsin"]}`;
 
