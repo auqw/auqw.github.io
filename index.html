@@ -539,6 +539,10 @@
 
          // 3. Initialize table search function
          tableStart(); 
+         let tabs = document.getElementsByClassName("defaultOpen");
+         for(var index=0;index < tabs.length;index++){
+            tabs[index].click();
+         }
      }
    </script>
 
@@ -626,13 +630,13 @@
    </script>
 
 
-   <script type="text/javascript">
+<!--    <script type="text/javascript">
       // Opens All default tabs
       let tabs = document.getElementsByClassName("defaultOpen");
       for(var index=0;index < tabs.length;index++){
          tabs[index].click();
       }
-   </script>
+   </script> -->
 
 </footer>
 </html>
