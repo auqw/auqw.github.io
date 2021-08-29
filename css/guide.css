@@ -1,1 +1,199 @@
-body{background-color:#211e1e}p{margin:0 0!important}h2{margin:.2em 0!important}h3{margin:.5em 0!important;font-size:1.5em!important}h4{color:#ff5b52}h5{color:#fff;margin:.5em 0!important;font-size:1.1em!important}*{font-family:Roboto Condensed Light}#homeLink{padding-left:0}.featureBox{margin:0 2.5em;margin-right:40%;align-content:stretch;justify-content:flex-start}.featureBox h4{margin-bottom:1em;display:block;font-weight:700;margin:0}.featureBox h3{font-size:1.2em}.featureBox h2{font-size:2.5em}.featureBox li{padding-bottom:.3em;margin-left:-.8em}@media only screen and (max-width:1200px){.featureBox{margin-right:2em}}.hrBar hr{background-color:#383838;border:none;height:1px}.sideNavImage{background-image:url(img/header.webp);background-repeat:no-repeat;background-size:cover;padding:.1em 2em}.sideNav{background-color:#171414;font-family:Roboto Condensed Light;height:100%;width:0;top:0;left:0;bottom:0;left:0;transition:1s;display:block;position:fixed;z-index:1;overflow-x:hidden;overflow-y:auto}.sideNav h1{font-size:2rem;font-family:BlackChancery;text-shadow:3px 3px 13px #1c1c1c}.sideNav a{padding-left:2em;padding-top:.2em;padding-bottom:.2em;text-decoration:none;font-size:1em;color:#fff;display:block;transition:.3s}.sideNav h3{padding:.3em 0 0 2em;color:#ff3d3d;text-decoration:none;font-size:1em!important;display:block;transition:.3s}.sideNav a:hover{font-weight:700;transition:.3s}.sideNav .sideNav-closebtn{position:absolute;top:0;right:25px;font-size:36px;margin-left:50px;border:none;cursor:pointer;color:#fff;background-color:transparent}#sideNavOpener{position:fixed;display:inline;font-size:20px;cursor:pointer;background-color:#111;opacity:.2;color:#fff;padding:10px 15px;border:none;margin:1em 1em}#sideNavOpener:hover{background-color:#444}.sideNav-closebtn:hover{font-size:2.4em;transition:.3s}.collapsibleSide{background-color:none;color:#fff;cursor:pointer;border:none;text-align:left;font-weight:100;padding-left:5px;padding-top:0;padding-bottom:0}.collapsibleContentSide{color:#cfcfcf;font-size:.9em;font-weight:100;font-family:Roboto Condensed Light;display:none}.collapsibleOpen{display:block!important}.sideNavActive{background-color:#ff3d3d}.collapse-2nd a{padding-left:3em}.collapse-2nd a.activeSide{background-color:transparent}.collapse-3rd{padding-left:2em}.collapse-3rd a.activeSide{background-color:transparent}
+/*BASE STYLES*/
+body {
+    background-color: #211e1e;
+}
+p {
+  margin: 0em 0em !important;
+}
+h2 {
+  margin: 0.2em 0em !important;
+}
+h3 {
+  margin: 0.5em 0em !important;
+  font-size: 1.5em !important;
+}
+h4 {
+  color: #ff5b52;
+}
+h5 {
+  color: white;
+  margin: 0.5em 0em !important;
+  /*margin-bottom: -0.5em !important;*/
+  font-size: 1.1em !important;
+}
+a {
+  /*text-decoration: underline;*/
+}
+* {
+  /*transition: 1s;*/
+  font-family: Roboto Condensed Light;
+}
+
+
+
+
+
+
+
+
+
+/*# CONTENT*/
+#homeLink {
+  padding-left:  0em;
+}
+.featureBox {
+    margin: 0em 2.5em;
+    margin-right: 40%;
+    align-content: stretch;
+    justify-content: flex-start;
+}	
+.featureBox h4 {
+    margin-bottom: 1em;
+    display: block;
+    font-weight: bold;
+    margin: 0em;
+}
+.featureBox h3 {
+  font-size: 1.2em;
+}
+.featureBox h2 {
+    font-size: 2.5em;
+}
+.featureBox li {
+  padding-bottom: 0.3em;
+  margin-left: -0.8em;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .featureBox {margin-right: 2em;}
+}
+.hrBar hr {
+  background-color: #383838;
+  border: none;
+  height: 1px;
+}
+
+
+
+
+
+/*NAVIGATION BAR*/
+.sideNavImage {
+  background-image: url("./img/header.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.1em 2em;
+}
+.sideNav {
+  background-color: #171414;
+  font-family: Roboto Condensed Light;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  bottom:0;
+  left:0;
+  transition: 1s;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sideNav h1 {
+	font-size: 2rem;
+	font-family: BlackChancery;
+	text-shadow: 3px 3px 13px #1c1c1c;    
+}
+.sideNav a {
+  padding-left: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.sideNav h3 {
+  padding: 0.3em 0em 0em 2em;
+  color: #ff3d3d;
+  text-decoration: none;
+  font-size: 1em !important;
+  display: block;
+  transition: 0.3s;
+}
+.sideNav a:hover {
+  font-weight: bold;
+  transition: 0.3s;
+}
+.sideNav .sideNav-closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+}
+#sideNavOpener {
+  position: fixed;
+  display: inline;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  opacity: 0.2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin: 1em 1em;
+}
+#sideNavOpener:hover {
+  background-color: #444;
+}
+
+.sideNav-closebtn:hover {
+  /* font-weight: bold; */
+  font-size: 2.4em;
+  transition: 0.3s;
+}
+.collapsibleSide {
+  background-color: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-weight: 100;
+  padding-left: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /*letter-spacing:1px;*/
+}
+.collapsibleContentSide {
+  color: #cfcfcf;
+  font-size: 0.9em;
+  font-weight: 100;
+  font-family: Roboto Condensed Light;
+  display: none;
+}
+.collapsibleOpen {
+  display: block !important;
+}
+.sideNavActive {
+  background-color: #FF3D3D;
+}
+.collapse-2nd a{
+    padding-left: 3em;
+}
+.collapse-2nd a.activeSide {
+    background-color: transparent;
+}
+.collapse-3rd {
+    padding-left: 2em;
+}
+.collapse-3rd a.activeSide {
+    background-color: transparent;
+}
