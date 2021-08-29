@@ -159,7 +159,7 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_bots(data, botName, author_joined)
         self.git_save("boats")
 
-        await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
+        # await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 
         await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}. Please wait 10s-30s for the Portal to update.")
         if rejected_author:
