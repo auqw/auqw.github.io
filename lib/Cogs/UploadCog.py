@@ -189,13 +189,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
 
         await ctx.send("\> Processing deletion. Please wait...")
-        portal_html, sha = BaseProgram.github.read("index.html")
-        soup = Soup(portal_html, 'html.parser')
 
-        div = soup.find("div", {"id": "myModalBoats"}).find("table", {"id":"myTable"}).find("tbody")
-        bot = div.find_all("tr", {"id": botName})
-        for bt in bot:
-            bt.decompose()
 
         if len(BaseProgram.boats[botName]["authors"]) > 1:
             author_joined = ', '.join(BaseProgram.boats[botName]["authors"]).strip()
@@ -204,7 +198,6 @@ class UploadCog(commands.Cog, BaseProgram):
 
         BaseProgram.boats.pop(botName, None)
 
-        self.git_save_html(soup.prettify(), f"Deleted {botName} by {author_joined}")
         self.git_save("boats")
 
         await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}\n. Please wait 10s-30s for the Portal to update.")
