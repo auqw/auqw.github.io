@@ -200,7 +200,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         self.git_save("boats")
 
-        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}\n. Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}.\n\> Please wait 10s-30s for the Portal to update.")
         return
 
 
