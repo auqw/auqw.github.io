@@ -3,21 +3,21 @@ import os
 import re
 import json
 import github3
-from github_contents import GithubContents
+
 import requests
 import asyncio
 import aiosonic
-from aiosonic.timeout import Timeouts
+
 import aiohttp
 import discord
 import nest_asyncio
 import html5lib
 
+from pprintpp import pprint
 from discord.ext import commands
 from bs4 import BeautifulSoup as Soup
 from dotenv import load_dotenv
-
-from pprintpp import pprint
+from github_contents import GithubContents
 
 
 
@@ -248,22 +248,7 @@ class BaseProgram:
     async def get_site_content(self, URL:str,  mode="aisonic", name="content_get", 
                 is_soup:bool=True, parser="html5lib", encoding="utf-8", headers={},
                 handle_cookies=False):
-        # cp1252
-        # client = aiosonic.HTTPClient(handle_cookies=handle_cookies)
-        # response = await client.request(URL, headers=headers)
-        # print("RESP: ", response)
-        # text_ = await response.content()
-        # print(f"> Function {name} executed...Success!")
-        # if is_soup:
-        #     return Soup(text_.decode(encoding), parser)
-        # else:
-        #     return text_.decode(encoding)
-        timeouts = Timeouts(
-            sock_read=2,
-            # sock_connect=timeout["sock_connect"],
-            # pool_acquire=timeout["pool_acquire"],
-            # request_timeout=timeout["request_timeout"],
-        )
+
         if mode == "aisonic":
             while True:
                 try:
