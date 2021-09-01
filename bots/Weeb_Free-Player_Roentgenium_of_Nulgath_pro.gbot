@@ -219,13 +219,6 @@
         "SafeMp": 100
       },
       {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "5: Potions",
-        "Index": "5",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
         "type": 1,
         "Int": "Skill Rotation Counter"
@@ -239,7 +232,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 8
+        "Index": 7
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1036,8 +1029,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 802,
-          "IsInProgress": true
+          "QuestID": 802
         }
       },
       {
@@ -1184,8 +1176,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 802,
-          "IsInProgress": true
+          "QuestID": 802
         }
       },
       {
@@ -2119,7 +2110,6 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 623,
-          "IsInProgress": true,
           "CanComplete": true
         }
       },
@@ -3132,56 +3122,8 @@
         "Index": 2
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1750
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a1>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a2>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "KILL QUILLS"
+        "$type": "Grimoire.Botting.Commands.Combat.CmdKill, Grimoire",
+        "Monster": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
@@ -3296,7 +3238,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 4748,
-          "CanComplete": true
+          "IsInProgress": true
         }
       },
       {
@@ -3442,7 +3384,7 @@
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
           "QuestID": 4748,
-          "CanComplete": true
+          "IsInProgress": true
         }
       },
       {
@@ -3600,45 +3542,8 @@
         "Name": "Kill"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1750
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a1>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%aa>m:10%wvz%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInCombat, Grimoire",
-        "Tag": "This player",
-        "Text": "Is in combat",
-        "Value1": "",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%gar%1%1%a2>m:10%wvz%"
+        "$type": "Grimoire.Botting.Commands.Combat.CmdKill, Grimoire",
+        "Monster": "*"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -3940,6 +3845,7 @@
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
   "Untarget": true,
+  "LagKiller": true,
   "SkipCutscenes": true,
   "WalkSpeed": 8,
   "NotifyUponDrop": {
