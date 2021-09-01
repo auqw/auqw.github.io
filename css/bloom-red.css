@@ -202,6 +202,12 @@ a:hover {
   pointer-events: none;
     z-index: -10;
 }
+.header-imgs img {
+  transition: 0.5s;
+}
+.header h1, .header h3, .header button {
+  transition: 0.7s;
+}
 .header-imgs::before {
   content: "";
   position: absolute;
