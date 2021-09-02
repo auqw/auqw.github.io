@@ -134,7 +134,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "ACCEPT"
+        "Label": "MAP"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -159,7 +159,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
         "Map": "dreadrock-1e99",
-        "Cell": "r4",
+        "Cell": "r8",
         "Pad": "Right"
       },
       {
@@ -219,7 +219,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 4849
+          "QuestID": 4849,
+          "IsInProgress": true
         }
       },
       {
@@ -628,7 +629,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 236
+          "QuestID": 236,
+          "IsInProgress": true
         }
       },
       {
@@ -870,12 +872,14 @@
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 4849,
-        "Text": "4849"
+        "Text": "4849",
+        "IsInProgress": true
       },
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 236,
-        "Text": "236"
+        "Text": "236",
+        "IsInProgress": true
       }
     ]
   },
@@ -895,7 +899,7 @@
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
     "sName": "Yorumi",
-    "iPort": 14507
+    "iPort": 13743
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
