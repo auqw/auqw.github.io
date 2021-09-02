@@ -134,7 +134,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "MAP"
+        "Label": "DREADROCK"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -219,8 +219,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 4849,
-          "IsInProgress": true
+          "QuestID": 4849
         }
       },
       {
@@ -629,8 +628,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 236,
-          "IsInProgress": true
+          "QuestID": 236
         }
       },
       {
@@ -872,19 +870,17 @@
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 4849,
-        "Text": "4849",
-        "IsInProgress": true
+        "Text": "4849"
       },
       {
         "$type": "Grimoire.Game.Data.Quest, Grimoire",
         "QuestID": 236,
-        "Text": "236",
-        "IsInProgress": true
+        "Text": "236"
       }
     ]
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in Rich Text Format)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -896,11 +892,6 @@
       "Berserker Bunny"
     ]
   },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Yorumi",
-    "iPort": 13743
-  },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
   "EnablePickup": true,
@@ -910,7 +901,6 @@
   "BotDelay": 1,
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
-  "ProvokeMonsters": true,
   "Untarget": true,
   "LagKiller": true,
   "SkipCutscenes": true,
@@ -926,7 +916,11 @@
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": []
   },
-  "EnsureTries": 20,
+  "Packets": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
   "AFK": true,
-  "DropDelay": 2222
+  "DropDelay": 2222,
+  "PacketDelay": 250
 }
