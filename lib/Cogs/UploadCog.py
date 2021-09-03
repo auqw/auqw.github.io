@@ -106,8 +106,6 @@ class UploadCog(commands.Cog, BaseProgram):
 
         data = await self.get_item_content(URL=attach.url, is_soup=False, encoding="cp1252")
 
-        del attach
-
         result = result.split("-")
         if len(result) >= 1:
             tags_ = result[0].title().strip()
@@ -134,15 +132,13 @@ class UploadCog(commands.Cog, BaseProgram):
             other_authors = [x.strip().lower() for x in result[2].split(",")]
 
             for ver_author in BaseProgram.settings["verified_namelist"]:
-                if ver_author.lower() in other_authors and ver_author not in author:
+                if (ver_author.lower() in other_authors) and (ver_author not in author):
                     author.append(ver_author)
 
-            del other_authors
-        del result
 
-        exists_already = ""
+        exists_already = "\n"
         if botName in BaseProgram.boats:
-            exists_already = "\> Upload Bot overwrite existing bot.\n"
+            exists_already = "\n\> Upload Bot overwrite existing bot.\n"
 
         BaseProgram.boats[botName] = {}
         BaseProgram.boats[botName]["date"] = date_
@@ -158,6 +154,9 @@ class UploadCog(commands.Cog, BaseProgram):
         # if not BaseProgram.debug:
         self.git_save_bots(data, botName, author_joined)
         self.git_save("boats")
+
+        await ctx.send(f"\> Successfully Uploaded `{botName}` by {author_joined}.{exists_already}\> Please wait 10s-30s for the Portal to update.")
+
 
         # await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 
