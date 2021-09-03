@@ -29,6 +29,7 @@ class UploadCog(commands.Cog, BaseProgram):
             await ctx.send(f"\> User `{user.name}` already has clearance. ")
             return
         BaseProgram.settings["clearance"].append(str(user.id))
+
         self.git_save("settings")
         print(BaseProgram.settings)
         await ctx.send(f"\> Successfully gave clearance to `{user.name}`")
@@ -55,6 +56,8 @@ class UploadCog(commands.Cog, BaseProgram):
             pass
         else:
             BaseProgram.settings["verified_list"][user.id] = name
+            if name not in BaseProgram.settings["verified_namelist"]:
+                BaseProgram.settings["verified_namelist"].append(name)
             self.git_save("settings")
             self.git_read("settings")
             print(BaseProgram.settings)
@@ -128,19 +131,15 @@ class UploadCog(commands.Cog, BaseProgram):
             return
         # print("this: ", result[2])
         if len(result) == 3:
-            other_authors = [self.clean_char(x) for x in result[2].strip().split("<@")][1:]
+            other_authors = [x.strip().lower() for x in result[2].split(",")]
 
-            for othr_author in other_authors:
-                if othr_author in BaseProgram.settings["verified_list"]:
-                    if othr_author == self.clean_char(ctx.author.id):
-                        print(f"other: {othr_author}\tauthor: {author[0]}")
-                        continue
-                    author.append(BaseProgram.settings["verified_list"][othr_author])
-                else:
-                    rejected_author.append(f"<@{othr_author.strip()}>")
+            for ver_author in BaseProgram.settings["verified_namelist"]:
+                if ver_author.lower() in othr_author:
+                    author.append(ver_author)
+
             del other_authors
         del result
-        print("Deez: ",rejected_author)
+
         exists_already = ""
         if botName in BaseProgram.boats:
             exists_already = "\> Upload Bot overwrite existing bot.\n"
@@ -156,14 +155,13 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.boats[botName]["description"] = desc
 
         # return
-        self.git_save_bots(data, botName, author_joined)
-        self.git_save("boats")
+        if not BaseProgram.debug:
+            self.git_save_bots(data, botName, author_joined)
+            self.git_save("boats")
 
         # await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 
-        await ctx.send(f"\> Done uploading: `{botName}`.\n{exists_already}. Please wait 10s-30s for the Portal to update.")
-        if rejected_author:
-            await ctx.send(f"\> The following author/s were rejected due to being unverified:\n {' '.join(rejected_author)}")
+
         return
 
     @commands.command()
