@@ -38,7 +38,7 @@ class BaseProgram:
     github = ""
     block_color = 16727357
 
-    debug = True
+    debug = False
     def git_prepare(self):
         self.mode_list = ["boats", "settings"]
 
