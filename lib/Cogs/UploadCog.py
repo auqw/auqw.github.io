@@ -155,9 +155,9 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.boats[botName]["description"] = desc
         print(author)
         # return
-        if not BaseProgram.debug:
-            self.git_save_bots(data, botName, author_joined)
-            self.git_save("boats")
+        # if not BaseProgram.debug:
+        self.git_save_bots(data, botName, author_joined)
+        self.git_save("boats")
 
         # await self.update_portal(botName, date_, author_joined, tags_, desc, exists_already)
 

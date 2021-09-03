@@ -311,7 +311,7 @@ class BaseCog(commands.Cog, BaseProgram):
         desc = "`;ahelp` ➣ Shows all AuQW Bot Integration commands.\n"\
                "`;delete bot_name.gbot` ➣ Delete a bot associated with you.\n\n"\
                "**Upload Command (Must include bot):**\n"\
-               "`;upload tag1, tag2, tag3, etc., - description... - @author2, @author3`\n\n"\
+               "`;upload tag1, tag2, tag3, etc., - description... - author2, author3`\n\n"\
                " - Bot name is file name\n"\
                " - tag and author, delimeted by ` , `\n"\
                " - tag, author, desc, separated by ` - `\n"\
@@ -328,7 +328,7 @@ class BaseCog(commands.Cog, BaseProgram):
                "➣ __Result__: Bot with tag, description and registed author name.\n\n"\
                "**Example 4:\n**"\
                "➣ Bloom uploads a bot and is in Collaboration with Weeb.\n"\
-               "➣ `;upload Seks, Story, Grimlite - This bot will seks grimlite - @Weeb`\n"\
+               "➣ `;upload Seks, Story, Grimlite - This bot will seks grimlite - Weeb, Bluu, Kaos, NNg`\n"\
                "➣ __Result__: Bot with tags, desc, and multiple authors."
         embedVar.description = desc
         embedVar.add_field(name="\u200b", inline=False, value=desc2)
