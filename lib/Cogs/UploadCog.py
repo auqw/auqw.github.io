@@ -134,7 +134,7 @@ class UploadCog(commands.Cog, BaseProgram):
             other_authors = [x.strip().lower() for x in result[2].split(",")]
 
             for ver_author in BaseProgram.settings["verified_namelist"]:
-                if ver_author.lower() in othr_author:
+                if ver_author.lower() in other_authors:
                     author.append(ver_author)
 
             del other_authors
@@ -153,7 +153,7 @@ class UploadCog(commands.Cog, BaseProgram):
         BaseProgram.boats[botName]["authors"] = author
         BaseProgram.boats[botName]["tags"] = [x.title().strip() for x in tags_.strip().split(", ")]
         BaseProgram.boats[botName]["description"] = desc
-
+        print(author)
         # return
         if not BaseProgram.debug:
             self.git_save_bots(data, botName, author_joined)
