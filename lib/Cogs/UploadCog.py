@@ -134,7 +134,7 @@ class UploadCog(commands.Cog, BaseProgram):
             other_authors = [x.strip().lower() for x in result[2].split(",")]
 
             for ver_author in BaseProgram.settings["verified_namelist"]:
-                if ver_author.lower() in other_authors:
+                if ver_author.lower() in other_authors and ver_author not in author:
                     author.append(ver_author)
 
             del other_authors
