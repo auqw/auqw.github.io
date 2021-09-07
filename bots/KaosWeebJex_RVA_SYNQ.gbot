@@ -483,7 +483,12 @@
         "$type": "Grimoire.Botting.Commands.Misc.CmdClearTemp, Grimoire"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdStop, Grimoire"
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBeep, Grimoire",
+        "Times": 10
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdStopBotWithMessage, Grimoire",
+        "Message": "Bot done Nigger"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -2256,8 +2261,19 @@
         "Delay": 1111
       },
       {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdItemPickupable, Grimoire",
+        "Tag": "Item",
+        "Text": "Has dropped",
+        "Value1": "Void Aura",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdGetDrop, Grimoire",
+        "ItemName": "Void Aura"
+      },
+      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLog, Grimoire",
-        "Text": "===================\r\nYou have completed Retrieve the Void Auras 5 times! at {TIME: 24}\r\nYou now have {ITEM: Void Aura}/7500 Void Auras\r\nKeep Going!\r\n==================="
+        "Text": "===================\r\nYou have completed Retrieve the Void Auras at {TIME: 24}\r\nYou now have {ITEM: Void Aura}/7500 Void Auras\r\nKeep Going!\r\n==================="
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
@@ -2289,7 +2305,7 @@
     "$values": []
   },
   "Author": "Jex",
-  "Description": "H4sIAAAAAAAEAIVTTW/bMAy9F+h/YHvpOgyB7DjtihyGpCvQbjt1xk66yDKdaJElV5KTGUH++yg53Yp9AoJMkNTjeyS95y40GRfGq3TJbpXls5zX2DSMG9sradtOhOjQwqxyNnu75401IVSaDMYbozRv5Fo4j4HBrdCqcmp+oGD2a3CphdyIukYHD+Vtysl/A0ATejfMD4fTkz2XVltHpWDOHdb5bMZXDtFEo9I9stFdXI/ubMaS+5r9OZ2+8wT7mq/QoBPBOnhUck25DDI2YZPshhXZgW8V7jbK1AXvZQanJ7wTruZe5Ixxr/PrK7rbXoeMP8nUBZ/nPDYoYzF1fEC3jE2g44sCljZANcAH/EbuY9q/kGVszggN96i1BdyiG6xBCGvlgQ5hwU6FNQhwuBVtN0aCanECZTR3SmtYo+5gsD34wTxFw4Fw7QDC1NCQRZcPNJTzRwxOURX4YlUNi94Jf37GtTKYKB+NKe91mpzPC7i3OwgWaHbQd+9+Kkv0e22I7g8V5RodXngoYCucEpWOSkRI1KQwgLUK8IZ8SNwcgjJw9/6hXCw/3X2GV7G6h/wmlpvml+ClsySutjtD+rXSF1DR+yiKAC8o1NAEI1o7gcQdHppUaycM5YHvUKpGSfAb6lJU8ExEaG9HNnSsiRhAYkCLCjUsynJx+xGO6p6JQTa9SknhOWAhK6ZwGYfusKPdV2YVAY9sRkolNYBaIiJdZ1ugsXhVI7UBzVc7pNKVDYHenv1lZwr2chtfrN9/9jbl0P8A3wHSLF3ABgQAAA==",
+  "Description": "H4sIAAAAAAAEAIVTTW/bMAy9B8h/YHvJOgyB7DjNihyGNCvQrDt1xk66yDKdaJElV5KTGUH++ygn2YZ9AoJMkBT53iN94C5UCRfGq/6SzTpJpykvsaoYN7ZV0taNCNGhhVmnbPr2wCtrQig0GYxXRmleyY1wHgODey3kVpQlOljly/mRcpJfc5ZCq8KpPpj+FkQTWtfNj8fh4MCl1dZRK5hzh2U6nfK1QzTRKHSL7OTOZid3MmW9e8b+nE7feV/2NV+jQSeCdfCs5IZyGSRszMbJHcuSI98p3G+VKTPeygSGA94IV3IvUsa41+nslu661SHhL5LLSJGU8FnGo0gJyWADFB18wK8UZfH1cPCvKjIKQVV8msIjam0Bd+g6axDCRnmgQ7Vgr8IGBDjcibo5RYKqcQx5NPdKa9igbqCzLfjOvETDgXB1B8KUUJFFlw80netnDE5RF/hsVQmL1gl/fcW1MthDPhsT3up+Sj7N4NHuIVigOUHbvPvBrIffakNwv7PIN+hw5CGDnXBKFDoyEaGHJoUBLFWAN+RDwuYQlIGH96t8cf/x4RO8it09pHex3SS9AS+dJXKl3Rvir5UeQUHvIykqOKJQRdOK1eox9NhhVfW99sJQHvgGpaqUBL8llSKDCxChvT2hoWNNrAFEBrQoUMMizxfLJzizuwCDZHLbJ4VLwEKSTeAmDt1hQz+BMutY8IzmBCknAUgSEeE6WwONxasSSQY0X2zXty5sCPT26i87k7GfN++k/n+365JJuw/fAOm92aDyAwAA",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -2299,11 +2315,6 @@
     "$values": [
       "Bot made by Jex"
     ]
-  },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Sepulchure",
-    "iPort": 5588
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
@@ -2328,22 +2339,6 @@
   "Items": {
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": [
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
-      "Bot made by Jex",
       "Bot made by Jex"
     ]
   },
