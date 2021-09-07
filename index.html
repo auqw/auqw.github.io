@@ -56,18 +56,24 @@
    <script type="text/javascript" src=./js/jquery.dataTables.min.js type=text/javascript></script>
    <script type="text/javascript" src=./js/bootstrap.min.js type=text/javascript></script>
 
+   <style type="text/css">
+      #Layer_1_5, #Layer_2, #Layer_3, #Layer_4, #Layer_5, #Layer_6 {
+         top: 1 !important;
+      }
+      
 
+   </style>
 
    <div class="header">
       <div class="header-imgs">
-        <img id="Layer 7" src="./css/parallax/Layer 7 - Sky.webp">
-        <img id="Layer 6" src="./css/parallax/Layer 6 - Landscape.webp">
-        <img id="Layer 5" src="./css/parallax/Layer 5.webp">
-        <img id="Layer 4" src="./css/parallax/Layer 4.webp">
-        <img id="Layer 3" src="./css/parallax/Layer 3.webp">
-        <img id="Layer 2" src="./css/parallax/Layer 2.webp">
-        <img id="Layer 1.5" src="./css/parallax/Layer 1.5.webp">
-        <img id="Layer 1" src="./css/parallax/Layer 1 - Foreground.webp">
+        <img id="Layer_7" src="./css/parallax/Layer 7 - Sky.webp">
+        <img id="Layer_6" src="./css/parallax/Layer 6 - Landscape.webp">
+        <img id="Layer_5" src="./css/parallax/Layer 5.webp">
+        <img id="Layer_4" src="./css/parallax/Layer 4.webp">
+        <img id="Layer_3" src="./css/parallax/Layer 3.webp">
+        <img id="Layer_2" src="./css/parallax/Layer 2.webp">
+        <img id="Layer_1_5" src="./css/parallax/Layer 1.5.webp">
+        <img id="Layer_1" src="./css/parallax/Layer 1 - Foreground.webp">
       </div>
       <div id="header-info">
          <!-- <p>New Grimlite V.1.2 !?</p> -->
@@ -439,8 +445,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       setInterval(function() {showTime("serverDate", "serverTime");}, 500);
    </script>
 
+
+   <!-- Parallax Script -->
+   <script>
+      // let layer_1 = document.getElementById('Layer 1')
+      let layer_1_5 = document.getElementById('Layer_1_5');
+      let layer_2 = document.getElementById('Layer_2');
+      let layer_3 = document.getElementById('Layer_3');
+      let layer_4 = document.getElementById('Layer_4');
+      let layer_5 = document.getElementById('Layer_5');
+      let layer_6 = document.getElementById('Layer_6');
+
+      let header_info = document.getElementById('header-info');
+
+      function scroll_layer(params) {
+         let value = window.scrollY;
+         if (value <230) {
+            layer_2.style.transform = 'translateY('+value * +0.02 + 'em)';
+            layer_1_5.style.transform = 'translateY(' + value * +0.025 + 'em)';
+            layer_3.style.transform = 'translateY(' + value * +0.025 + 'em)';
+            layer_4.style.transform = 'translateY(' + value * +0.035 + 'em)';
+            layer_5.style.transform = 'translateY(' + value * +0.040 + 'em)';
+            layer_6.style.transform = 'translateY(' + value * +0.01 + 'em)';
+
+
+            header_info.style.transform = 'translateY(' + value * -0.1 + 'em)';
+
+         } else {
+
+         }
+      }
+
+      window.addEventListener('scroll', scroll_layer);
+      window.scrollTo(0, 5);
+   </script>
+
+
    <!-- Script that manages the table -->
    <script>
+      
 
       const capitalize = (str, lower = false) =>
         (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
@@ -611,39 +654,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    </script>
 
 
-
-   <!-- Parallax Script -->
-   <script>
-      
-      // let layer_1 = document.getElementById('Layer 1')
-      let layer_1_5 = document.getElementById('Layer 1.5')
-      let layer_2 = document.getElementById('Layer 2')
-      let layer_3 = document.getElementById('Layer 3')
-      let layer_4 = document.getElementById('Layer 4')
-      let layer_5 = document.getElementById('Layer 5')
-      let layer_6 = document.getElementById('Layer 6')
-
-      let header_info = document.getElementById('header-info');
-
-      function scroll_layer(params) {
-         let value = window.scrollY;
-         if (value <230) {
-            layer_2.style.transform = 'translateY('+value * +0.02 + 'em)';
-            layer_1_5.style.transform = 'translateY(' + value * +0.025 + 'em)';
-            layer_3.style.transform = 'translateY(' + value * +0.025 + 'em)';
-            layer_4.style.transform = 'translateY(' + value * +0.035 + 'em)';
-            layer_5.style.transform = 'translateY(' + value * +0.040 + 'em)';
-            layer_6.style.transform = 'translateY(' + value * +0.01 + 'em)';
-
-
-            header_info.style.transform = 'translateY(' + value * -0.1 + 'em)';
-
-         } else {
-
-         }
-      }
-      window.addEventListener('scroll', scroll_layer)
-   </script>
 
 
 <!--    <script type="text/javascript">
