@@ -64,7 +64,7 @@
          <h3 id="bugfix">Bug fix</h3>
          <div class="hrBar"><hr></div>
 
-         <h4>Grimoire Not Opening</h4>
+         <h4 id="notopeningfix">Grimoire Not Opening</h4>
          <p>This installs flash player for you because windows killed it.</p>
 
          <p>I. Download and install <a href="https://github.com/CleanFlash/installer/releases" target="_blank">Clean Flash Installer</a>.
@@ -90,7 +90,18 @@
          </ol>
          <br>
 
-         <h4>System fix</h4>
+
+
+         <h4 id="connectfix">Stuck at connecting/loading fix.</h4>
+         <p>First try relogging and restarting grim. If that still won't work, do this.</p>
+         <ol>
+            <li>Type    <code>%AppData%</code>    on windows search menu to open "Roaming" folder.</li>
+            <li>Find "Marcomedia" folder inside Roaming and delete it.</li>
+            <li>Restart Grimoire.</li>
+         </ol>
+         <br>
+
+         <h4 id="systemfix">Corrupted System fix</h4>
          <p>If none of that still works, maybe your system files are corrupted. Do the ff. to fix it.</p>
             <ol>
                <li>Open CMD in administrator mode.</li>
@@ -99,9 +110,8 @@
                <li>Once done, open Grimoire, test and see if things are fixed. If not restart your PC and then open Grimoire.</li>
             </ol>
          <br>
-         
-         <h4 id="uifix">UI fix</h4>
-         <div class="hrBar"><hr></div>
+
+         <h4 id="uifix">Broken UI fix</h4>
          <p>Grim Client looks like shit with the autistic looking UI? Try this:</p>
          <ol>
             <li>Right click Grimoire.exe and click properties.</li>
@@ -131,7 +141,12 @@
       // Insert jump-tos
       let pageDrop =  document.createElement('div');
       pageDrop.className = "collapsibleContentSide collapse-2nd collapsibleOpen";
-      pageDrop.innerHTML = `<a href="#bugfix">• Bugfix</a><a href="#uifix">• UI Fix</a>`
+      pageDrop.innerHTML = `
+      <a href="#notopeningfix">• Grimoire not opening</a>
+      <a href="#connectfix">•Stuck at connecting/loading</a>
+      <a href="#systemfix">• Corrupted System fix</a>
+      <a href="#uifix">•Broken UI fix</a>
+      `
 
       div.insertBefore(pageDrop, pagebtn.nextSibling);
 
