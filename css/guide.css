@@ -3,7 +3,7 @@ body {
     background-color: #211e1e;
 }
 p {
-  margin: 0em 0em !important;
+  margin: 0.3em 0em !important;
 }
 h2 {
   margin: 0.2em 0em !important;
@@ -29,7 +29,16 @@ a {
   /*transition: 1s;*/
   font-family: Roboto Condensed Light;
 }
-
+code {
+    font-family: monospace !important;
+    background-color: #d93434;
+    padding: 0.03em 0.5em;
+}
+img { 
+  object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
 /*
 h4 {
   color: #ff5b52;
@@ -74,7 +83,9 @@ h5 {
   padding-bottom: 0.3em;
   margin-left: -0.8em;
 }
-
+.featurebox-wider {
+  margin-right: 35%;
+}
 
 @media only screen and (max-width: 1200px) {
   .featureBox {margin-right: 2em;}

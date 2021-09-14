@@ -44,38 +44,54 @@
       <button id="sideNavOpener" onclick="openNav()">☰</button>
       <div class="featureBox">
          <br><br><br><br>
-         <h2>Authors</h2>
+         <h2>Guides</h2>
          <div class="hrBar"><hr></div>
+         <p>This Guide Section will explain how most of Grimlite's functionality works. For a detailed explanation of each feature, read their pages from the nav-bar.</p>
          <br>
 
-         <h4>Grimlite Rev Team</h4>
+
+         <h3>User Interface</h3>
+         <div class="hrBar"><hr></div>
+         <p><b>Description:</b> This part will explain Grimoire's user interface.</p>
          <ul>
-            <li><b><a class=link href="https://github.com/GentleGanku/" target=_blank>Ganku</a></b> for creating Grimlite Rev Updates and fixes.</li>
+            <li><a href="#front-screen">Front Screen</a></li>
+            <li><a  href="#tool-bar">Tool Bar</a></li>
          </ul>
 
-         <h4>Grimlite Team</h4>
-         <ul>
-            <li><b><a class=link href=https://github.com/0zl target=_blank>Cat</a></b> for combining Grimoire with
-               AQLite and updating it to Grimlite.</li>
-            <li><b><a class=link href=https://github.com/wispie target=_blank>Satan</a></b> for updating Grimoire to
-               Grimlite and creating bugfix and updates..</li>
-         </ul>
+         <h3 id="front-screen">Front Screen</h3>
+         <div class="hrBar"><hr></div>
+         <img src="./img/ui/enter_screen.webp" alt="Grimlite.Rev.v.1.3 (14 Sep 2021)">
+         <p class="center">Grimlite Rev v.1.3 (14 Sep 2021)</p>
 
-         <h4>Grimoire Team</h4>
-         <ul>
-            <li><b><a class=link href=https://github.com/wispie target=_blank>Satan</a></b> for upgrading Grimoire 3.8 to Pro+ up until 1.7.7.</li>
-            <li><b>EmperorArts</b> for updating grim.</li>
-            <li><b>Biney</b> for creating grim.</li>
-         </ul>
+         <br><br>
+
+         <h3 id="tool-bar">Tool Bar</h3>
+         <div class="hrBar"><hr></div>
+         <p>The Client's features are accessed through here.</p>
+         <!-- <img src="./img/ui/tool_bar.png" alt="Toolbar - Grimlite.Rev.v.1.3 (14 Sep 2021)"> -->
          <br>
 
-         <h3 id="noteworthy">Note Worthy Mentions</h3>
-         <div class="hrBar"><hr></div>
-         <ul>
-            <li><b><a class=link href="https://github.com/rodit/" target=_blank>Rodit</a></b> for creating EoL Patch for Grimoire 1.7.8.</li>
-            <li><b><a class=link href="https://github.com/133spider/" target=_blank>133Spider</a></b> for his Open Source AQLite.</li>
-            <li><b><a class=link href="https://www.artix.com/" target=_blank>Artix Entertainment</a></b> for our abusive relationship and for creating an awesome game we so dearly love and hate.</li>
-         </ul>
+         <h5>Feature side (Left)</h5>
+         <img src="./img/ui/tool_bar_left.png" alt="Toolbar - Grimlite.Rev.v.1.3 (14 Sep 2021)">
+         <p><code>About</code> Contains details about grimoire's bot authors,  relevant links, and version info.</p>
+         <p><code>Bot</code> Open's the Bot Manager window. Main feature. You load and edit bots through here.</p>
+         <p><code>Tools</code> Extra tools such as Loader/Grabber, Cosmetic sets, Banker, Plugins, etc..</p>
+         <p><code>Packets</code> AQW functions using packets, or basically, command strings. This opens the packet manager windows.</p>
+         <p><code>Options</code> Changes aqw states like lag killer, infinite attack range, skip cutscene. Can be found in Bots Manager too.</p>
+         <p><code>Bank</code> Opens Bank for you. Can reload it if it failed to load.</p>
+         <p><code>Plugins</code> Third-Party features that are not part of Grim will appear here. Open Plugin Manager in tools to load them.</p>
+         <p><code>More</code> Opens relevant links to reach the discord server and bot/feature suggestion forms.</p>
+         <p><code>Get Bots</code> Opens the portal to download bots.</p>
+
+         <br><br>
+         <h5>Quick side (Right)</h5>
+         <img src="./img/ui/tool_bar_right.png" alt="Toolbar - Grimlite.Rev.v.1.3 (14 Sep 2021)">
+         <p><code>The Two boxes</code> If you click the arrow pointing left, it'll show the room Cell on the first box and Pad on the 2nd box. Clicking the dropdown button will also show the Room's list of Cells/Pads. Pads can be understood as room position (Left, Right, Up, Down, etcc...)</p>
+         <p><code>Jump</code> Will move your character to whatever's Cell and Pad is on the boxes. <b>WARNING: </b>Do not jump carelessly unless you know the exact room position or you're in private. Many people were BANNED because of cell hopping. DO NOT BE A RETARD.</p>
+
+
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
       </div>
@@ -87,19 +103,8 @@
    <script>
       // Loads the navigation bar
       loadNav("..");
-      let div = document.getElementById("sidelinks");
-      let pagebtn = document.getElementById("authors-tab");
-      pagebtn.classList.add("sideNavActive");
-      pagebtn.classList.add("collapsibleSide")
-      pagebtn.href = "#main";
-      // Insert jump-tos
-      let pageDrop =  document.createElement('div');
-      pageDrop.className = "collapsibleContentSide collapse-2nd collapsibleOpen";
-      pageDrop.innerHTML = `<a href="#noteworthy">• Mentions</a>`
-
-      div.insertBefore(pageDrop, pagebtn.nextSibling);
-
-      document.getElementById("authors-tab").classList.add("sideNavActive");
+      loadNavGuide("guide-tab", "..");
+      document.getElementById("guide-tab").classList.add("sideNavActive");
       if (document.documentElement.clientWidth >= 600) {
             openNav();
       }
