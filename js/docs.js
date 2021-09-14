@@ -78,9 +78,9 @@ function loadNavGuide(activePage, level) {
                <a id="g-Packets-Spammer">Spammer</a>
                <a id="g-Packets-Tamperer">Tamperer</a>
             </div>
-            <a id="g-options" href=${level}/d/g/UI.html>• Options</a>
-            <a id="g-bank" href=${level}/d/g/UI.html>• Bank</a>
-            <a id="g-plugins" href=${level}/d/g/UI.html>• Plugins</a>
+            <a id="g-options">• Options</a>
+            <a id="g-bank">• Bank</a>
+            <a id="g-plugins">• Plugins</a>
 
             <a id="g-Others" class="collapsibleSide">• Others</a>
             <div class="collapsibleContentSide collapse-3rd">
