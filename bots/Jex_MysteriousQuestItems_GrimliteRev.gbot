@@ -510,7 +510,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "freakitiki",
-        "Room": "[Map No.]",
+        "Room": "[R_Number]",
         "Cell": "Enter",
         "Pad": "Spawn"
       },
@@ -561,7 +561,7 @@
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
         "Map": "[ROOM]",
-        "Room": "",
+        "Room": "[R_Number]",
         "Cell": "Spawn",
         "Pad": "Left"
       },
@@ -2544,11 +2544,6 @@
     "$values": [
       "Bot made by Jex"
     ]
-  },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Sepulchure",
-    "iPort": 5588
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
