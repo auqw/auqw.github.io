@@ -126,10 +126,6 @@
         "Value2": "Legion Revenant"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "PREP"
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
         "Text": " "
       },
@@ -178,7 +174,11 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "nd"
+        "Int": "necrodungeon"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "PREP"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1196,7 +1196,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 6795
+          "QuestID": 6795,
+          "IsInProgress": true
         }
       },
       {
@@ -1286,7 +1287,7 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
         "Tag": "Misc",
         "Text": "Int is",
-        "Value1": "nd",
+        "Value1": "necrodungeon",
         "Value2": "0"
       },
       {
@@ -1643,7 +1644,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 6795
+          "QuestID": 6795,
+          "IsInProgress": true
         }
       },
       {
@@ -4562,7 +4564,7 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
         "Tag": "Misc",
         "Text": "Int is",
-        "Value1": "nd",
+        "Value1": "necrodungeon",
         "Value2": "0"
       },
       {
@@ -5877,6 +5879,7 @@
   "BotDelay": 50,
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
+  "ProvokeMonsters": true,
   "Untarget": true,
   "LagKiller": true,
   "SkipCutscenes": true,
