@@ -1423,7 +1423,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301
+          "QuestID": 8301,
+          "IsInProgress": true
         }
       },
       {
@@ -2105,7 +2106,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301
+          "QuestID": 8301,
+          "IsInProgress": true
         }
       },
       {
@@ -3801,7 +3803,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "%xt%chatm%69061%guild~ Bot done. Check your inventory for Chaos Avenger quest reuirements.%Akinø%25810%69061%0%",
+        "Packet": "%xt%chatm%69061%guild~ Bot done. Check your inventory for Chaos Avenger quest requirements.%Akinø%25810%69061%0%",
         "Delay": 1500,
         "Client": true
       },
@@ -4345,6 +4347,11 @@
       "Xiang Chaos",
       "Dragonoid of Hours"
     ]
+  },
+  "Server": {
+    "$type": "Grimoire.Game.Data.Server, Grimoire",
+    "sName": "Sepulchure",
+    "iPort": 5588
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
