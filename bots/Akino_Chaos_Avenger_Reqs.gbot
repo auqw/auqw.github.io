@@ -1423,8 +1423,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301,
-          "IsInProgress": true
+          "QuestID": 8301
         }
       },
       {
@@ -2106,8 +2105,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301,
-          "IsInProgress": true
+          "QuestID": 8301
         }
       },
       {
@@ -2308,12 +2306,11 @@
         "Delay": 1500
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad2, Grimoire",
-        "ShopId": "2055"
+        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
+        "ShopId": 2055
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuy2, Grimoire",
-        "ShopId": "2055",
+        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
         "ItemName": "Fragments of the Lords A"
       },
       {
@@ -2492,12 +2489,11 @@
         "Delay": 1500
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad2, Grimoire",
-        "ShopId": "2055"
+        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
+        "ShopId": 2055
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuy2, Grimoire",
-        "ShopId": "2055",
+        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
         "ItemName": "Fragments of the Lords B"
       },
       {
@@ -4347,11 +4343,6 @@
       "Xiang Chaos",
       "Dragonoid of Hours"
     ]
-  },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Sepulchure",
-    "iPort": 5588
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
