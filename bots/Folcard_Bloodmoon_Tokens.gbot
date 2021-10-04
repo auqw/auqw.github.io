@@ -34,6 +34,13 @@
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
         "Tag": "Misc",
         "Text": "Set Variable",
+        "Value1": "Turn in Item Count",
+        "Value2": "63"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Variable",
         "Value1": "Skill Counter",
         "Value2": "21"
       },
@@ -333,7 +340,7 @@
         "Tag": "Item",
         "Text": "Is not in inventory",
         "Value1": "Black Blood Vial",
-        "Value2": "93"
+        "Value2": "[Turn in Item Count]"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -344,7 +351,7 @@
         "Tag": "Item",
         "Text": "Is not in inventory",
         "Value1": "Moon Stone",
-        "Value2": "93"
+        "Value2": "[Turn in Item Count]"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -385,9 +392,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 6059,
-          "IsInProgress": true,
-          "CanComplete": true
+          "QuestID": 6059
         }
       },
       {
@@ -548,19 +553,26 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 6059,
-          "IsInProgress": true,
-          "CanComplete": true
+          "QuestID": 6059
         }
       },
       {
         "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 6059,
-          "IsInProgress": true,
-          "CanComplete": true
+          "QuestID": 6059
         }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInInventory, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in inventory",
+        "Value1": "Blood Moon Token",
+        "Value2": "300"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "Main Redirect"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestCompleted, Grimoire",
@@ -571,7 +583,11 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 4
+        "Index": 6
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdGetDrop, Grimoire",
+        "ItemName": "Blood Moon Token"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -638,11 +654,6 @@
       "Blood Moon Token",
       "Black Blood Vial"
     ]
-  },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Swordhaven (EU)",
-    "iPort": 5588
   },
   "ExitCombatBeforeRest": true,
   "EnablePickup": true,
