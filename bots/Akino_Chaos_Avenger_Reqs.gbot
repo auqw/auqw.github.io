@@ -989,17 +989,6 @@
         "Index": 2
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
-        "Tag": "Misc",
-        "Text": "Int is",
-        "Value1": "mons_queen",
-        "Value2": "0"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "[qcheck]"
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdItemPickupable, Grimoire",
         "Tag": "Item",
         "Text": "Has dropped",
@@ -1175,10 +1164,6 @@
         "Value": 2
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "mons_queen"
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
         "Tag": "Misc",
         "Text": "Set Temporary Variable",
@@ -1242,11 +1227,45 @@
         "Value2": "*"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "Int": "l"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 250
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
+        "Packet": "{\"t\":\"xt\",\"b\":{\"r\":-1,\"o\":{\"cmd\":\"updateQuest\",\"iValue\":27,\"iIndex\":403}}}",
+        "Delay": 1500,
+        "Client": true
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 250
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
+        "Packet": "{\"t\":\"xt\",\"b\":{\"r\":-1,\"o\":{\"cmd\":\"updateQuest\",\"iValue\":11,\"iIndex\":405}}}",
+        "Delay": 1500,
+        "Client": true
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "type": 1,
+        "Int": "l",
+        "Value": 1
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntLessThan, Grimoire",
         "Tag": "Misc",
-        "Text": "Set Temporary Variable",
-        "Value1": "qcheck",
-        "Value2": "*"
+        "Text": "Int is less than",
+        "Value1": "l",
+        "Value2": "1"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+        "Index": 6
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
@@ -1522,8 +1541,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301,
-          "IsInProgress": true
+          "QuestID": 8301
         }
       },
       {
@@ -1783,41 +1801,6 @@
         "Name": "queen_frag"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Wait",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Wait",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "transformation",
-        "Room": "1e99",
-        "Cell": "r9",
-        "Pad": "Left"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "{\"t\":\"xt\",\"b\":{\"r\":-1,\"o\":{\"cmd\":\"updateQuest\",\"iValue\":27,\"iIndex\":403}}}",
-        "Delay": 1500,
-        "Client": true
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 200
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "{\"t\":\"xt\",\"b\":{\"r\":-1,\"o\":{\"cmd\":\"updateQuest\",\"iValue\":11,\"iIndex\":405}}}",
-        "Delay": 1500,
-        "Client": true
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
         "Tag": "Misc",
         "Text": "Update Temporary Variable",
@@ -1941,8 +1924,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8301,
-          "IsInProgress": true
+          "QuestID": 8301
         }
       },
       {
@@ -3994,19 +3976,19 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "%xt%chatm%69061%guild~ Bot done. Check your inventory for Chaos Avenger quest requirements.%Akinø%25810%69061%0%",
+        "Packet": "%xt%chatm%69061%guild~Bot done. Check your inventory for Chaos Avenger quest requirements.%Akinø%25810%69061%0%",
         "Delay": 1500,
         "Client": true
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "%xt%chatm%69061%guild~ Jak Kaos Weeb thanks joe.%Akinø%25810%69061%0%",
+        "Packet": "%xt%chatm%69061%guild~Jak Kaos Weeb Caustic thanks joe.%Akinø%25810%69061%0%",
         "Delay": 1500,
         "Client": true
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket2, Grimoire",
-        "Packet": "%xt%chatm%69061%guild~ Join the support server at discord.io/AQWBots.%Akinø%25810%69061%0%",
+        "Packet": "%xt%chatm%69061%guild~Join the support server at discord.io/AQWBots.%Akinø%25810%69061%0%",
         "Delay": 1500,
         "Client": true
       },
@@ -4538,11 +4520,6 @@
       "Xiang Chaos",
       "Dragonoid of Hours"
     ]
-  },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Gravelyn",
-    "iPort": 5588
   },
   "SkillDelay": 500,
   "ExitCombatBeforeRest": true,
