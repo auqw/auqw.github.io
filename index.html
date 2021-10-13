@@ -632,6 +632,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
          // 2. Initialize table search function
          tableStart(); 
+
+
       }
 
 
@@ -660,6 +662,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          })
          .then(function (data) {
             rbotAppendData(data);
+
+         // 3. Creates the Collapsible Script - for the table rows
+         var coll = document.getElementsByClassName("collapsible");
+         var i;
+         for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+               this.classList.toggle("activeCollapse");
+               var content = this.nextElementSibling;
+               if (content.style.display === "block") {
+                  content.style.display = "none";
+               } else {
+                  content.style.display = "block";
+               }
+            });
+         }
+
          })
          .catch(function (err) {
             console.log('error: ' + err);
@@ -727,20 +745,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          // 2. Initialize table search function
          tableRbotStart();
 
-         // 3. Creates the Collapsible Script - for the table rows
-         var coll = document.getElementsByClassName("collapsible");
-         var i;
-         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-               this.classList.toggle("activeCollapse");
-               var content = this.nextElementSibling;
-               if (content.style.display === "block") {
-                  content.style.display = "none";
-               } else {
-                  content.style.display = "block";
-               }
-            });
-         }
+         // // 3. Creates the Collapsible Script - for the table rows
+         // var coll = document.getElementsByClassName("collapsible");
+         // var i;
+         // for (i = 0; i < coll.length; i++) {
+         //    coll[i].addEventListener("click", function () {
+         //       this.classList.toggle("activeCollapse");
+         //       var content = this.nextElementSibling;
+         //       if (content.style.display === "block") {
+         //          content.style.display = "none";
+         //       } else {
+         //          content.style.display = "block";
+         //       }
+         //    });
+         // }
 
          
          let tabs = document.getElementsByClassName("defaultOpen");
