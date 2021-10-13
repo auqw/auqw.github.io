@@ -275,7 +275,11 @@
   -moz-box-shadow:inset 0px 0px 0px 1px white;
   box-shadow:inset 0px 0px 0px 1px white;
 }
-#tabBoats {
+#tabGbots {
+  padding: 1em 1em 3em !important;
+
+}
+#tabRbots {
   padding: 1em 1em 3em !important;
 
 }
@@ -285,7 +289,7 @@
 }
 
 /*tabless*/ 
-#myTable {
+.myTable {
   color: whitesmoke;
   border-collapse: collapse;
   font-family: Roboto Th;
@@ -317,41 +321,41 @@
     font-size: 0.3em !important;
      padding: 2em 1em !important;
   }
-  #myTable th {
+  .myTable th {
     font-size: 0.5em;
   }
-  #myTable_paginate {
+  .myTable_paginate {
     font-size: 0.5em;
   }
-  #myTable_info {
+  .myTable_info {
     font-size: 0.8em;
   }
 }
 
-#myTable td, #myTable th {
+.myTable td, .myTable th {
   text-align: left;
   padding: 5px;
   width: -moz-fit-content;
   width: fit-content;
 }
-#myTable th {
+.myTable th {
   background-color: #171414;
 }
-#myTable tr:nth-child(even) {
+.myTable tr:nth-child(even) {
   background-color: #171414;
 }
-#myTable tr:hover {
+.myTable tr:hover {
   border-radius: 3px;
   -webkit-box-shadow:inset 0px 0px 0px 1px #ff3d3d;
   -moz-box-shadow:inset 0px 0px 0px 1px #ff3d3d;
   box-shadow:inset 0px 0px 0px 1px #ff3d3d;
 }
-#myTable th:hover {
+.myTable th:hover {
   border-radius: 0;
   border: none;
   cursor: pointer;
 }
-#myTable_filter label input {
+.dataTables_filter label input {
   background-image: url('./img/search3.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -362,13 +366,13 @@
   transition: 0.5s;
   border: none;
 }
-#myTable_filter label input:focus{
+.dataTables_filter label input:focus{
   outline: none;
   -webkit-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
   -moz-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
   box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
  }
-#myTable_filter label input:hover {
+.dataTables_filter label input:hover {
   -webkit-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
   -moz-box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
   box-shadow:inset 0px 0px 0px 1.5px #FF3D3D;
@@ -416,25 +420,25 @@
 .dataTables_paginate {
   margin: 10px;
 }
-#myTable_length {
+.myTable_length {
   float: left;
   margin-bottom: 10px;
 }
-#myTable_length select {
+.myTable_length select {
   width: 50px;
   font-family: "Roboto Condensed Light";
   border-radius: 0.2rem;
   outline: none;
 }
 
-#myTable_info {
+.dataTables_info {
   margin-top: 10px;
   font-family: Roboto Th;
   float: left;
 }
-#myTable_paginate {
-  float: right;
-  font-size: 0.8em;
+#gTable_paginate, #rTable_paginate {
+  float: right !important;
+  font-size: 0.8em; 
 }
 .spancircle {
   background-color: #F33F35;
