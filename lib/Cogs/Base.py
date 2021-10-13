@@ -40,7 +40,7 @@ class BaseProgram:
 
     debug = False
     def git_prepare(self):
-        self.mode_list = ["gbots", "rbots", "settings"]
+        self.mode_list = ["gbots", "rbots", "settings", "author_list"]
 
         self.env_variables()
         # self.og_git()
