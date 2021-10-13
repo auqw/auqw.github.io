@@ -40,7 +40,7 @@ class BaseProgram:
 
     debug = False
     def git_prepare(self):
-        self.mode_list = ["boats", "settings"]
+        self.mode_list = ["gbots", "rbots", "settings"]
 
         self.env_variables()
         # self.og_git()
@@ -209,12 +209,12 @@ class BaseProgram:
             print(f"> Finished reading {file}.json")
         return
 
-    def git_save_bots(self, git_data, fileName, author):
+    def git_save_bots(self, bot, git_data, fileName, author):
         """ Description: Saves data to github  /libs/
         """
         try:
             content_sha, commit_sha = BaseProgram.github.write(
-                filepath=f"bots/{fileName}",
+                filepath=f"bots/{bot}/{fileName}",
                 content_bytes=git_data,
                 commit_message=f"Added {fileName} by {author}",
                 committer={
