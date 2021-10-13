@@ -87,7 +87,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
     @commands.command()
     async def upload(self, ctx):
-        await ctx.send("```;upload no longer works and is replaced by `;uploadr rbot_name` and `;uploadg gbot_name`.")
+        await ctx.send("The command `;upload` no longer works and is replaced by `;uploadr rbot_name` and `;uploadg gbot_name`.")
         return
 
     @commands.command()
@@ -141,9 +141,9 @@ class UploadCog(commands.Cog, BaseProgram):
                     author.append(ver_author)
 
 
-        exists_already = "\n"
+        exists_already = ""
         if botName in BaseProgram.gbots:
-            exists_already = "\n\> Upload Bot overwrite existing bot.\n"
+            exists_already = "\n\> Upload Bot overwrite existing bot."
 
         BaseProgram.gbots[botName] = {}
         BaseProgram.gbots[botName]["date"] = date_
@@ -160,7 +160,7 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_bots("gbots", data, botName, author_joined)
         self.git_save("gbots")
 
-        await ctx.send(f"\> Successfully Uploaded gbot: `{botName}` by {author_joined}.{exists_already}.")
+        await ctx.send(f"\> Successfully Uploaded gbot: `{botName}` by {author_joined}{exists_already}.")
         return
 
     @commands.command()
@@ -214,7 +214,7 @@ class UploadCog(commands.Cog, BaseProgram):
                     author.append(ver_author)
 
 
-        exists_already = "\n"
+        exists_already = ""
         if botName in BaseProgram.rbots:
             exists_already = "\n\> Upload Bot overwrite existing bot.\n"
 
@@ -233,13 +233,13 @@ class UploadCog(commands.Cog, BaseProgram):
         self.git_save_bots("rbots", data, botName, author_joined)
         self.git_save("rbots")
 
-        await ctx.send(f"\> Successfully Uploaded rbot: `{botName}` by {author_joined}.{exists_already}.")
+        await ctx.send(f"\> Successfully Uploaded rbot: `{botName}` by {author_joined}{exists_already}.")
         return
 
 
     @commands.command()
     async def delete(self, ctx):
-        await ctx.send("```;delete no longer works and is replaced by `;deleter rbot_name` and `;deleteg gbot_name`.")
+        await ctx.send("The command `;delete` no longer works and is replaced by `;deleter rbot_name` and `;deleteg gbot_name`.")
         return
 
     @commands.command()
@@ -276,7 +276,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         self.git_save("gbots")
 
-        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}.\n\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}.")
         return
 
     @commands.command()
@@ -313,7 +313,7 @@ class UploadCog(commands.Cog, BaseProgram):
 
         self.git_save("rbots")
 
-        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}.\n\> Please wait 10s-30s for the Portal to update.")
+        await ctx.send(f"\> Successfully deleted `{botName}` by {author_joined}.")
         return
 
     def clean_char(self, id_):

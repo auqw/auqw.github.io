@@ -597,6 +597,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             updatesContainer.appendChild(rowtr);
          }
 
+         // 1. Creates the gbot table contents
          var mainContainer = document.getElementById("gbotBody");
          for (var key in data) {
             let rowtr =  document.createElement('tr');
@@ -612,8 +613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             }
             // <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
-            
-            // console.log(botName)
+
             let cnt = "";
             if (tags == "") {
                cnt = `
@@ -656,33 +656,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             mainContainer.appendChild(rowtr);
          }
 
-         // 2. Creates the Collapsible Script - for the table rows
-         var coll = document.getElementsByClassName("collapsible");
-         var i;
-         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-               this.classList.toggle("activeCollapse");
-               var content = this.nextElementSibling;
-               if (content.style.display === "block") {
-                  content.style.display = "none";
-               } else {
-                  content.style.display = "block";
-               }
-            });
-         }
 
-         // 3. Initialize table search function
+         // 2. Initialize table search function
          tableStart(); 
          
      }
-     
+
       function rbotAppendData(data) {
          
-
+         // 1. Creates the rbot table content
          var mainContainer = document.getElementById("rbotBody");
          for (var key in data) {
             let rowtr =  document.createElement('tr');
-            
             let tags = data[key]["tags"].join(", ");
             let authors = data[key]["authors"].join(", ");
             let desc = data[key]["description"];
@@ -693,9 +678,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                botName = botName.replace(data[key]["authors"][auth], "");
 
             }
-            // <td class="c-info"><img class="svgbtn" onclick="openFeedback('${key}')"></td>
-            
-            // console.log(botName)
+
             let cnt = "";
             if (tags == "") {
                cnt = `
@@ -738,7 +721,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             mainContainer.appendChild(rowtr);
          }
 
-         // 2. Creates the Collapsible Script - for the table rows
+         // 2. Initialize table search function
+         tableRbotStart();
+
+         // 3. Creates the Collapsible Script - for the table rows
          var coll = document.getElementsByClassName("collapsible");
          var i;
          for (i = 0; i < coll.length; i++) {
@@ -753,8 +739,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
          }
 
-         // 3. Initialize table search function
-         tableRbotStart();
          
          let tabs = document.getElementsByClassName("defaultOpen");
          for(var index=0;index < tabs.length;index++){
