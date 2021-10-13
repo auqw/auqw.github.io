@@ -513,7 +513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }) 
 
       // Gets the boats json
-      fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/boats.json')
+      fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/gboats.json')
          .then(function (response) {
             return response.json();
          })
@@ -592,7 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             rowtr.innerHTML = cnt +
             `
             <td class="c-info c-time sorting_1">${time}</td>
-            <td class="c-info"><a class="btn2" href="./bots/${key}">Download</a></td>`
+            <td class="c-info"><a class="btn2" href="./bots/gbots/${key}">Download</a></td>`
             mainContainer.appendChild(rowtr);
          }
 
