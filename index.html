@@ -545,7 +545,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
          function my_fun(){ 
             $("#gTable").DataTable({
-            // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                order: [
                   [3, "desc"]
                ],
@@ -601,7 +600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName} <span class="spancircle">No metadata</span></a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName} <span class="spancircle">No metadata</span></a>
                      <div class="collapsibleContent c-cnt">
                              <p><b>Filename:</b> ${key}</p>
                      </div>
@@ -610,7 +609,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName}</a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName}</a>
                      <div class="collapsibleContent c-cnt">
                           <p><b>Filename:</b> ${key}</p>
                           <p><b>Tags:</b> ${tags}</p>
@@ -620,7 +619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName}</a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName}</a>
                      <div class="collapsibleContent c-cnt">
                           <p><b>Filename:</b> ${key}</p>
                           <p><b>Tags:</b> ${tags}</p>
@@ -638,14 +637,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             mainContainer.appendChild(rowtr);
          }
 
-
          // 2. Initialize table search function
          tableStart(); 
-
-
       }
-
-
 
 
 
@@ -655,7 +649,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
          function my_fun2(){ 
             $("#rTable").DataTable({
-            // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                order: [
                   [3, "desc"]
                ],
@@ -671,22 +664,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          })
          .then(function (data) {
             rbotAppendData(data);
-
-         // 3. Creates the Collapsible Script - for the table rows
-         var coll = document.getElementsByClassName("collapsible");
-         var i;
-         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-               this.classList.toggle("activeCollapse");
-               var content = this.nextElementSibling;
-               if (content.style.display === "block") {
-                  content.style.display = "none";
-               } else {
-                  content.style.display = "block";
-               }
-            });
-         }
-
          })
          .catch(function (err) {
             console.log('error: ' + err);
@@ -714,7 +691,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName} <span class="spancircle">No metadata</span></a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName} <span class="spancircle">No metadata</span></a>
                      <div class="collapsibleContent c-cnt">
                              <p><b>Filename:</b> ${key}</p>
                      </div>
@@ -723,7 +700,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName}</a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName}</a>
                      <div class="collapsibleContent c-cnt">
                           <p><b>Filename:</b> ${key}</p>
                           <p><b>Tags:</b> ${tags}</p>
@@ -733,7 +710,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                cnt = `
                   <td></t>
                   <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button">${botName}</a>
+                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)" >${botName}</a>
                      <div class="collapsibleContent c-cnt">
                           <p><b>Filename:</b> ${key}</p>
                           <p><b>Tags:</b> ${tags}</p>
@@ -754,6 +731,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          // 2. Initialize table search function
          tableRbotStart();
 
+
+
+         
+         let tabs = document.getElementsByClassName("defaultOpen");
+         for(var index=0;index < tabs.length;index++){
+            tabs[index].click();
+         }
+
          // // 3. Creates the Collapsible Script - for the table rows
          // var coll = document.getElementsByClassName("collapsible");
          // var i;
@@ -769,18 +754,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          //    });
          // }
 
-         
-         let tabs = document.getElementsByClassName("defaultOpen");
-         for(var index=0;index < tabs.length;index++){
-            tabs[index].click();
-         }
      }
 
-
-     
-
-
    </script>
+
 
    <script type="text/javascript">
       // Gets the boats json

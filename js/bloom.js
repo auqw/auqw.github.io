@@ -5,6 +5,16 @@ function openInNewTab(link) {
   window.open(link,'_blank');
 }
 
+function collapseNextDiv(cont) {
+  var content = cont.nextElementSibling;
+  cont.classList.toggle("activeCollapse");
+  if (content.style.display === "block") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
+}
+
  // Copy the text inside the text field
 function copy2clipboard(tagID) {
   navigator.clipboard.writeText(document.getElementById(tagID).innerHTML.trim());
