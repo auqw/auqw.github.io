@@ -545,20 +545,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          tableStart = my_fun;
       }) 
 
-      // Create searchable Table function
-      var tableRbotStart = null; 
-      $(function() { 
-
-         function my_fun2(){ 
-            $("#rTable").DataTable({
-            // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-               order: [
-                  [3, "desc"]
-               ],
-            });
-         }  
-         tableRbotStart = my_fun2;
-      }) 
 
       // Gets the gbots json
       fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/gbots.json')
@@ -572,19 +558,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.log('error: ' + err);
       });
 
-      // Gets the gbots json
-      fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/rbots.json')
-         .then(function (response) {
-            return response.json();
-         })
-         .then(function (data) {
-            rbotAppendData(data);
-         })
-         .catch(function (err) {
-            console.log('error: ' + err);
-      });
-
-      // 1. Creates the table
       function gbotAppendData(data) {
          
          // Latest bot updates
@@ -659,8 +632,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
          // 2. Initialize table search function
          tableStart(); 
-         
-     }
+      }
+
+
+
+
+
+      // Create searchable Table function
+      var tableRbotStart = null; 
+      $(function() { 
+
+         function my_fun2(){ 
+            $("#rTable").DataTable({
+            // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+               order: [
+                  [3, "desc"]
+               ],
+            });
+         }  
+         tableRbotStart = my_fun2;
+      }) 
+
+      // Gets the rbots json
+      fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/rbots.json')
+         .then(function (response) {
+            return response.json();
+         })
+         .then(function (data) {
+            rbotAppendData(data);
+         })
+         .catch(function (err) {
+            console.log('error: ' + err);
+      });
 
       function rbotAppendData(data) {
          
