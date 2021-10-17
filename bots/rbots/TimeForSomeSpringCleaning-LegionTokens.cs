@@ -8,6 +8,7 @@ public class Script
     //-----------EDIT BELOW-------------//
     public string MapNumber = "69699";
     public int LegionTokenQuantity = 25000;
+    public int TurnInQuantity = 40;
     public string[] RequiredItems = {
         "Paragon Fiend Quest Pet",
         "Shogun Paragon Pet",
@@ -37,6 +38,10 @@ public class Script
         UnbankList(RequiredItems);
         GetDropList(RequiredItems);
         bot.SendPacket("%xt%zm%getQuests%40245%5755%5756%6743%6750%7073%");
+        if (LegionTokenQuantity < 100) LegionTokenQuantity = 100;
+        if (LegionTokenQuantity > 25000) LegionTokenQuantity = 25000;
+        if (TurnInQuantity < 10) TurnInQuantity = 10;
+        if (TurnInQuantity > 50) TurnInQuantity = 50;
 
         while (!bot.ShouldExit())
         {
@@ -79,9 +84,9 @@ public class Script
     public void SpringCleaning(int QuestID)
     {
         if (!bot.Quests.IsAvailable(QuestID)) StopBot("Please Complete Fail To The King from Dage in Underworld.", "underworld");
-        TempItemFarm("Nothing Heard", 10, "fotia", "Enter", "Spawn", QuestID);
-        TempItemFarm("Nothing To See", 10, "fotia", "Enter", "Spawn", QuestID);
-        TempItemFarm("Area Secured and Quiet", 10, "fotia", "Enter", "Spawn", QuestID);
+        TempItemFarm("Nothing Heard", TurnInQuantity, "fotia", "Enter", "Spawn", QuestID);
+        TempItemFarm("Nothing To See", TurnInQuantity, "fotia", "Enter", "Spawn", QuestID);
+        TempItemFarm("Area Secured and Quiet", TurnInQuantity, "fotia", "Enter", "Spawn", QuestID);
         SafeQuestComplete(QuestID);
     }
 
