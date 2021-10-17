@@ -14,11 +14,11 @@ public class Script {
 		bot.Options.SafeRelogin = true;
 		bot.Options.PrivateRooms = true;
 		bot.Options.SkipCutscenes = true;
-		bot.Options.LagKiller = true;
+		bot.Options.LagKiller = false;
 		bot.Options.HuntDelay = 1000;
 		
-		bot.Skills.LoadSkills("Skills/chaosslayer.xml");
-		bot.Skills.StartSkills("Skills/chaosslayer.xml");
+		bot.Skills.LoadSkills("Skills/generic.xml");
+		bot.Skills.StartSkills("Skills/generic.xml");
 		
 		
 		bot.Player.LoadBank();
