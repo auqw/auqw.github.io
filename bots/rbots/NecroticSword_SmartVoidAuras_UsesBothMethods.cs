@@ -43,6 +43,8 @@ public class Script
         EquipList(EquippedItems);
         UnbankList(RequiredItems);
         GetDropList(RequiredItems);
+        if (RVAQuantity < 20) RVAQuantity = 20;
+        if (RVAQuantity > 100) RVAQuantity = 100;
 
         while (!bot.ShouldExit())
         {
