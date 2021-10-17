@@ -8,6 +8,9 @@ public class Script
     public int LegionTokenQuantity = 25000;
     public string[] RequiredItems = {
         "Paragon Fiend Quest Pet",
+        "Shogun Paragon Pet",
+        "Paragon Ringbearer",
+        "Shogun Dage Pet",
         "Legion Token"
     };
     public string[] EquippedItems = { };
@@ -17,6 +20,7 @@ public class Script
 
     int FarmLoop = 0;
     int SavedState = 0;
+    public int[] QuestList = { 5755, 5756, 6750, 7073 };
     public ScriptInterface bot => ScriptInterface.Instance;
     public void ScriptMain(ScriptInterface bot)
     {
@@ -35,11 +39,14 @@ public class Script
         {
             while (!bot.Inventory.Contains("Legion Token", LegionTokenQuantity))
             {
-                if (!bot.Inventory.Contains("Paragon Fiend Quest Pet")) Console.WriteLine("You do not have the Paragon Fiend Quest Pet.");
-                TempItemFarm("Nothing Heard", 10, "fotia", "Enter", "Spawn", 6750);
-                TempItemFarm("Nothing To See", 10, "fotia", "Enter", "Spawn", 6750);
-                TempItemFarm("Area Secured and Quiet", 10, "fotia", "Enter", "Spawn", 6750);
-                SafeQuestComplete(6750);
+                foreach (var Quest in QuestList)
+                {
+                    if (bot.Quests.IsAvailable(Quest)) bot.Quests.EnsureAccept(Quest);
+                    if (bot.Quests.CanComplete(Quest)) SafeQuestComplete(Quest);
+                }
+                TempItemFarm("Nothing Heard", 10, "fotia", "Enter", "Spawn");
+                TempItemFarm("Nothing To See", 10, "fotia", "Enter", "Spawn");
+                TempItemFarm("Area Secured and Quiet", 10, "fotia", "Enter", "Spawn");
             }
             StopBot("underworld");
         }
