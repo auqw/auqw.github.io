@@ -55,9 +55,12 @@ public class Script
                     InvItemFarm("Empowered Essence", 50, "shadowrealmpast", "Enter", "Spawn", 4439);
                     InvItemFarm("Malignant Essence", 3, "shadowrealmpast", "r4", "Left", 4439);
                     SafeQuestComplete(4439);
-                }
-                if (bot.Player.GetFactionRank("Evil") > 10)
-                {
+                } else {
+                    while (bot.Player.GetFactionRank("Evil") < 10)
+                    {
+                        TempItemFarm("Youthanize", 1, "swordhavenbridge", "Bridge", "Left", 364, "Slime");
+                        SafeQuestComplete(364);
+                    }
                     InvItemFarm("Astral Ephemerite Essence", RVAQuantity, "timespace", "Frame1", "Left", 4432, "Astral Ephemerite");
                     InvItemFarm("Black Knight Essence", RVAQuantity, "greenguardwest", "BKWest15", "Down", 4432, "Black Knight");
                     InvItemFarm("Unending Avatar Essence", RVAQuantity, "timevoid", "Frame8", "Left", 4432, "Unending Avatar");
@@ -69,11 +72,6 @@ public class Script
                     InvItemFarm("Dai Tengu Essence", RVAQuantity, "hachiko", "Roof", "Left", 4432, "Dai Tengu");
                     InvItemFarm("Carnax Essence", RVAQuantity, "aqlesson", "Frame9", "Right", 4432, "Carnax");
                     SafeQuestComplete(4432);
-                }
-                while (bot.Player.GetFactionRank("Evil") < 10)
-                {
-                    TempItemFarm("Youthanize", 1, "swordhavenbridge", "Bridge2", "Left", 364, "Slime");
-                    SafeQuestComplete(364);
                 }
             }
             StopBot("Successfully Farmed 7500 Void Auras", "shadowfall");
