@@ -1,6 +1,8 @@
 ﻿using System;
 using RBot;
 using System.Collections.Generic;
+using System.Windows.Forms;
+
 public class Script
 {
     //-----------EDIT BELOW-------------//
@@ -34,35 +36,53 @@ public class Script
         EquipList(EquippedItems);
         UnbankList(RequiredItems);
         GetDropList(RequiredItems);
+        bot.SendPacket("%xt%zm%getQuests%40245%5755%5756%6743%6750%7073%");
 
         while (!bot.ShouldExit())
         {
-            if (!bot.Inventory.Contains("Paragon Fiend Quest Pet") || (!bot.Inventory.Contains("Shogun Paragon Pet")) || (!bot.Inventory.Contains("Paragon Ringbearer")) || (!bot.Inventory.Contains("Shogun Dage Pet")))
+            if (bot.Inventory.Contains("Paragon Fiend Quest Pet") || (bot.Inventory.Contains("Shogun Paragon Pet")) || (bot.Inventory.Contains("Paragon Ringbearer")) || (bot.Inventory.Contains("Shogun Dage Pet")))
             {
                 while (!bot.Inventory.Contains("Legion Token", LegionTokenQuantity))
                 {
-                    if (!bot.Quests.IsAvailable(6743))
+                    if (bot.Inventory.Contains("Shogun Paragon Pet"))
                     {
-                        Console.WriteLine("Please Complete Fail To The King from Dage in Underworld.");
-                        StopBot("underworld");
+                        SpringCleaning(5755);
                     }
-                    foreach (var Quest in QuestList)
+                    if (bot.Inventory.Contains("Shogun Dage Pet"))
                     {
-                        if (bot.Quests.IsAvailable(Quest)) bot.Quests.EnsureAccept(Quest);
-                        if (bot.Quests.CanComplete(Quest)) SafeQuestComplete(Quest);
+                        SpringCleaning(5756);
                     }
-                    TempItemFarm("Nothing Heard", 10, "fotia", "Enter", "Spawn");
-                    TempItemFarm("Nothing To See", 10, "fotia", "Enter", "Spawn");
-                    TempItemFarm("Area Secured and Quiet", 10, "fotia", "Enter", "Spawn");
+                    if (bot.Inventory.Contains("Paragon Fiend Quest Pet"))
+                    {
+                        SpringCleaning(6750);
+                    }
+                    if (bot.Inventory.Contains("Paragon Ringbearer"))
+                    {
+                        SpringCleaning(7073);
+                    }
                 }
-                StopBot("underworld");
+                StopBot("Farmed " + LegionTokenQuantity + " Legion Tokens successfully.", "underworld");
             } else {
-                Console.WriteLine("You do not have any of the required Paragon Pets.");
-                StopBot("underworld");
+                StopBot("You do not have any of the required Paragon Pets.", "underworld");
             }
         }
         bot.Log($"[{DateTime.Now:HH:mm:ss}] Script stopped successfully.");
-        StopBot("underworld");
+        StopBot();
+    }
+
+    /*------------------------------------------------------------------------------------------------------------
+                                                     Specific Functions
+    ------------------------------------------------------------------------------------------------------------*/
+
+    //These functions are specific to this bot.
+    
+    public void SpringCleaning(int QuestID)
+    {
+        if (!bot.Quests.IsAvailable(QuestID)) StopBot("Please Complete Fail To The King from Dage in Underworld.", "underworld");
+        TempItemFarm("Nothing Heard", 10, "fotia", "Enter", "Spawn", QuestID);
+        TempItemFarm("Nothing To See", 10, "fotia", "Enter", "Spawn", QuestID);
+        TempItemFarm("Area Secured and Quiet", 10, "fotia", "Enter", "Spawn", QuestID);
+        SafeQuestComplete(QuestID);
     }
 
     /*------------------------------------------------------------------------------------------------------------
@@ -235,7 +255,7 @@ public class Script
     }
 
     //StopBot ("MapName", "MapNumber", "CellName", "PadName")
-    public void StopBot(string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
+    public void StopBot(string Text = "Bot stopped successfully.", string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
     {
         //Stops the bot at yulgar if no parameters are set, or your specified map if the parameters are set.
 
@@ -249,6 +269,8 @@ public class Script
         bot.Options.LagKiller = false;
         bot.Options.AggroMonsters = false;
         bot.Log($"[{DateTime.Now:HH:mm:ss}] Bot stopped successfully.");
+        Console.WriteLine(Text);
+        MessageBox.Show(Text);
         bot.Exit();
     }
 
