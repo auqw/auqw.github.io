@@ -49,34 +49,29 @@ public class Script
                 if (!bot.Inventory.Contains("Sepulchure's DoomKnight Armor") {
                     InvItemFarm("Empowered Essence", 50, "shadowrealmpast", "Enter", "Spawn", 4439);
                     InvItemFarm("Malignant Essence", 3, "shadowrealmpast", "r4", "Left", 4439);
-                    SafeQuestComplete(4439)
+                    SafeQuestComplete(4439);
                 }
                 if (bot.Player.GetFactionRank("Evil") > 10)
                 {
-                    InvItemFarm("Astral Ephemerite Essence", RVAQuantity, 
-                                "timespace", "Frame1", "Left", 
-                                4432, "Astral Ephemerite")
-                    InvItemFarm("Black Knight Essence", RVAQuantity, 
-                                "greenguardwest", "BKWest15", "Down", 
-                                4432, "Black Knight")
-                    InvItemFarm("Unending Avatar Essence", RVAQuantity, "timevoid", "Frame8", "Left", 4432, "Unending Avatar")
-                    InvItemFarm("Belrot the Fiend Essence", RVAQuantity, "citadel", "m13", "Left", 4432, "Belrot the Fiend")
-                    InvItemFarm("Creature Creation Essence", RVAQuantity, "maul", "r3", "Down", 4432, "Creature Creation")
-                    InvItemFarm("Chaos Vordred Essence", RVAQuantity, "necrocavern", "r16", "Down", 4432, "Chaos Vordred")
-                    InvItemFarm("Void Dragon Essence", RVAQuantity, "dragonchallenge", "r4", "Left", 4432, "Void Dragon")
-                    InvItemFarm("Tiger Leech Essence", RVAQuantity, "mudluk", "Boss", "Down", 4432, "Tiger Leech")
-                    InvItemFarm("Dai Tengu Essence", RVAQuantity, "hachiko", "Roof", "Left", 4432, "Dai Tengu")
-                    InvItemFarm("Carnax Essence", RVAQuantity, "aqlesson", "Frame9", "Right", 4432, "Carnax")
+                    InvItemFarm("Astral Ephemerite Essence", RVAQuantity, "timespace", "Frame1", "Left", 4432, "Astral Ephemerite");
+                    InvItemFarm("Black Knight Essence", RVAQuantity, "greenguardwest", "BKWest15", "Down", 4432, "Black Knight");
+                    InvItemFarm("Unending Avatar Essence", RVAQuantity, "timevoid", "Frame8", "Left", 4432, "Unending Avatar");
+                    InvItemFarm("Belrot the Fiend Essence", RVAQuantity, "citadel", "m13", "Left", 4432, "Belrot the Fiend");
+                    InvItemFarm("Creature Creation Essence", RVAQuantity, "maul", "r3", "Down", 4432, "Creature Creation");
+                    InvItemFarm("Chaos Vordred Essence", RVAQuantity, "necrocavern", "r16", "Down", 4432, "Chaos Vordred");
+                    InvItemFarm("Void Dragon Essence", RVAQuantity, "dragonchallenge", "r4", "Left", 4432, "Void Dragon");
+                    InvItemFarm("Tiger Leech Essence", RVAQuantity, "mudluk", "Boss", "Down", 4432, "Tiger Leech");
+                    InvItemFarm("Dai Tengu Essence", RVAQuantity, "hachiko", "Roof", "Left", 4432, "Dai Tengu");
+                    InvItemFarm("Carnax Essence", RVAQuantity, "aqlesson", "Frame9", "Right", 4432, "Carnax");
                     SafeQuestComplete(4432);
                 }
                 while (bot.Player.GetFactionRank("Evil") < 10)
                 {
-                    TempItemFarm("Youthanize", 1, "swordhavenbridge", "Bridge2", "Left", 364, "Slime")
+                    TempItemFarm("Youthanize", 1, "swordhavenbridge", "Bridge2", "Left", 364, "Slime");
                     SafeQuestComplete(364);
-                }
-                    
+                }  
             }
-            StopBot("shadowfall");
+            StopBot("Successfully Farmed 7500 Void Auras", "shadowfall");
         }
         bot.Log($"[{DateTime.Now:HH:mm:ss}] Script stopped successfully.");
         StopBot();
@@ -252,7 +247,7 @@ public class Script
     }
 
     //StopBot ("MapName", "MapNumber", "CellName", "PadName")
-    public void StopBot(string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
+    public void StopBot(string Text = "Bot stopped successfully.", string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
     {
         //Stops the bot at yulgar if no parameters are set, or your specified map if the parameters are set.
 
@@ -266,6 +261,8 @@ public class Script
         bot.Options.LagKiller = false;
         bot.Options.AggroMonsters = false;
         bot.Log($"[{DateTime.Now:HH:mm:ss}] Bot stopped successfully.");
+        Console.WriteLine(Text);
+        MessageBox.Show(Text);
         bot.Exit();
     }
 
