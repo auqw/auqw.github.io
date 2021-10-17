@@ -1,11 +1,12 @@
 ﻿using System;
 using RBot;
 using System.Collections.Generic;
+using System.Windows.Forms;
 public class Script
 {
     //-----------EDIT BELOW-------------//
     public string MapNumber = "69699";
-    public string[] RequiredItems = { 
+    public string[] RequiredItems = {
         "Void Aura",
         "Sepulchure's DoomKnight Armor",
         "Empowered Essence",
@@ -46,7 +47,8 @@ public class Script
         {
             while (!bot.Inventory.Contains("Void Aura", 7500))
             {
-                if (!bot.Inventory.Contains("Sepulchure's DoomKnight Armor") {
+                if (bot.Inventory.Contains("Sepulchure's DoomKnight Armor"))
+                {
                     InvItemFarm("Empowered Essence", 50, "shadowrealmpast", "Enter", "Spawn", 4439);
                     InvItemFarm("Malignant Essence", 3, "shadowrealmpast", "r4", "Left", 4439);
                     SafeQuestComplete(4439);
@@ -69,7 +71,7 @@ public class Script
                 {
                     TempItemFarm("Youthanize", 1, "swordhavenbridge", "Bridge2", "Left", 364, "Slime");
                     SafeQuestComplete(364);
-                }  
+                }
             }
             StopBot("Successfully Farmed 7500 Void Auras", "shadowfall");
         }
