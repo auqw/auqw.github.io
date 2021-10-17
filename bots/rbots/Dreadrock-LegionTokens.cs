@@ -35,7 +35,7 @@ public class Script
             while (!bot.Inventory.Contains("Legion Token", LegionTokenQuantity))
             {
                 SafePurchase("Undead Champion", 1, "underworld", 216);
-                TempItemFarm("Dreadrock Enemy Recruited", 6, "dreadrock", "r8", "Right", 4849);
+                TempItemFarm("Dreadrock Enemy Recruited", 6, "dreadrock", "r3", "Right", 4849);
                 SafeQuestComplete(4849);
             }
             StopBot("underworld");
