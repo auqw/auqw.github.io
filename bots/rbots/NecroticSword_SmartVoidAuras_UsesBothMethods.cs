@@ -6,6 +6,7 @@ public class Script
 {
     //-----------EDIT BELOW-------------//
     public string MapNumber = "69699";
+    public int RVAQuantity = 100;
     public string[] RequiredItems = {
         "Void Aura",
         "Sepulchure's DoomKnight Armor",
@@ -24,7 +25,7 @@ public class Script
     };
     public string[] EquippedItems = { };
     int[] SkillOrder = { 3, 1, 2, 4 };
-    public int RVAQuantity = 100;
+    public int SaveStateLoops = 8700;
     //-----------EDIT ABOVE-------------//
 
     int FarmLoop = 0;
@@ -126,7 +127,7 @@ public class Script
             bot.Quests.EnsureAccept(QuestID);
             bot.Options.AggroMonsters = true;
             bot.Player.Attack(MonsterName);
-            if (FarmLoop > 8700) goto breakFarmLoop;
+            if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
         }
     }
 
@@ -167,7 +168,7 @@ public class Script
             bot.Quests.EnsureAccept(QuestID);
             bot.Options.AggroMonsters = true;
             bot.Player.Attack(MonsterName);
-            if (FarmLoop > 8700) goto breakFarmLoop;
+            if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
         }
     }
 
@@ -248,7 +249,7 @@ public class Script
         if (bot.Quests.CanComplete(QuestID)) goto maintainCompleteLoop;
     }
 
-    //StopBot ("MapName", "MapNumber", "CellName", "PadName")
+    //StopBot ("Text", "MapName", "MapNumber", "CellName", "PadName")
     public void StopBot(string Text = "Bot stopped successfully.", string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
     {
         //Stops the bot at yulgar if no parameters are set, or your specified map if the parameters are set.
@@ -289,18 +290,9 @@ public class Script
     //SmartSaveState("MapNumber")
     public void SmartSaveState()
     {
-        //Creates a quick Save State by joining a private /yulgar.
+        //Creates a quick Save State by messaging yourself.
 
-        //Must have the following functions in your script:
-        //SafeMapJoin
-        //ExitCombat
-
-        string CurrentMap = bot.Map.Name;
-        string CurrentCell = bot.Player.Cell;
-        string CurrentPad = bot.Player.Pad;
-        if (bot.Map.Name != "yulgar") SafeMapJoin("yulgar", "Enter", "Spawn");
-        else SafeMapJoin("tavern", "Enter", "Spawn");
-        SafeMapJoin(CurrentMap, CurrentCell, CurrentPad);
+        bot.SendPacket("%xt%zm%whisper%1% creating save state%" + bot.Player.Username + "%");
         bot.Log($"[{DateTime.Now:HH:mm:ss}] Successfully Saved State.");
     }
 
