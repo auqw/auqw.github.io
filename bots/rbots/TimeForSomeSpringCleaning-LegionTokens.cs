@@ -7,6 +7,8 @@ public class BluuTemplate
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 2142069;
+	public int LegionTokenQuantity = 25000;
+	public int TurnInQuantity = 40;
 	public string[] RequiredItems = { 
 		"Legion Token",
 		"Shogun Paragon Pet",
