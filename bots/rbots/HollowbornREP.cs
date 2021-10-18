@@ -17,6 +17,7 @@ public class BluuTemplate
 
 	public int FarmLoop;
 	public int SavedState;
+	public int[] QuestList = { 7553, 7555 }
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public void ScriptMain(ScriptInterface bot)
 	{
