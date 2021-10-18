@@ -11,7 +11,12 @@ public class BluuTemplate
 		"Hollow Soul",
 		"Bone Dust",
 		"Death's Oversight",
-		"Incarnation of Glitches Scythe"
+		"Incarnation of Glitches Scythe",
+		"Unmoulded Fiend Essence",
+		"Hollowborn Reaper's Kama",
+		"Hollowborn Reaper's Kamas",
+		"Hollowborn Reaper's Daggers",
+		"Hollowborn Reaper's Minion"
 	};
 	public string[] EquippedItems = { };
 	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
@@ -142,7 +147,6 @@ public class BluuTemplate
 			SafePurchase("Unmoulded Fiend Essence", UnmouldedEssence, "tercessuinotlim", 1951);
 		}
 	}
-
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
