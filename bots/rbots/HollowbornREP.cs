@@ -17,7 +17,7 @@ public class BluuTemplate
 
 	public int FarmLoop;
 	public int SavedState;
-	public int[] QuestList = { 7553, 7555 }
+	public int[] QuestList = { 7553, 7555 };
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public void ScriptMain(ScriptInterface bot)
 	{
@@ -41,7 +41,7 @@ public class BluuTemplate
 			goto maintainFarmLoop;
 
 		breakFarmLoop:
-			SmartSaveState(MapNumber);
+			SmartSaveState();
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] Completed Farming Loop {SavedState}.");
 			FarmLoop = 0;
 			goto startFarmLoop;
@@ -50,7 +50,7 @@ public class BluuTemplate
 			while (bot.Player.GetFactionRank("Hollowborn") < 10)
 			{
 				FarmLoop += 1;
-				if (bot.Map.Name != "shadowrealm") SafeMapJoin("shadowrealm", MapNumber, "r10", "Bottom");
+				if (bot.Map.Name != "shadowrealm") SafeMapJoin("shadowrealm", "r10", "Bottom");
 				if (bot.Player.Cell != "r2") bot.Player.Jump("r2", "Center");
 				foreach (var Quest in QuestList)
 				{
@@ -61,7 +61,7 @@ public class BluuTemplate
 				bot.Player.Attack("*");
 				if (FarmLoop > 8700) goto breakFarmLoop;
 			}
-			StopBot("shadowrealm", MapNumber, "r10", "Bottom");
+			StopBot("shadowrealm", "r10", "Bottom");
 		}
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Script stopped successfully.");
 		StopBot();
