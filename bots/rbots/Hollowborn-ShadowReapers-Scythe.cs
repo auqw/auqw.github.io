@@ -6,7 +6,7 @@ using System.Windows.Forms;
 public class BluuTemplate
 {
 	//-----------EDIT BELOW-------------//
-	public int MapNumber = 2142069;
+	public int MapNumber = 69699;
 	public string[] RequiredItems = {
 		"Hollow Soul",
 		"Bone Dust",
@@ -172,7 +172,7 @@ public class BluuTemplate
 	/// <summary>
 	/// Farms you the specified quantity of the specified item with the specified quest accepted from specified monsters in the specified location. Saves States every ~5 minutes.
 	/// </summary>
-	public void InvItemFarm(string ItemName, int ItemQuantity, string MapName, string CellName, string PadName, int QuestID = -1, string MonsterName = "*")
+	public void InvItemFarm(string ItemName, int ItemQuantity, string MapName, string CellName, string PadName, int QuestID = 1, string MonsterName = "*")
 	{
 
 	/*
@@ -216,7 +216,7 @@ public class BluuTemplate
 	/// <summary>
 	/// Farms you the required quantity of the specified temp item with the specified quest accepted from specified monsters in the specified location.
 	/// </summary>
-	public void TempItemFarm(string TempItemName, int TempItemQuantity, string MapName, string CellName, string PadName, int QuestID = -1, string MonsterName = "*")
+	public void TempItemFarm(string TempItemName, int TempItemQuantity, string MapName, string CellName, string PadName, int QuestID = 1, string MonsterName = "*")
 	{
 
 	/*
