@@ -7,7 +7,8 @@ public class BluuTemplate
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 2142069;
-	public string[] requiredItems = {
+	public int DoomCoinStack = 100;
+	public string[] RequiredItems = {
 			"Dark Spirit Orb",
 			"DoomCoin"
 	};
@@ -441,4 +442,4 @@ public class BluuTemplate
 			if (bot.Bank.Contains(item)) bot.Bank.ToInventory(item);
 		}
 	}
-}▇▇
+}
