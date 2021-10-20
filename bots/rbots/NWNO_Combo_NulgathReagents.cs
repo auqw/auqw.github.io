@@ -21,6 +21,7 @@ public class BluuTemplate
 	"Gem of Nulgath",
 	"Fiend Token",
 	"Tainted Gem",
+	"Cubes"
 	};
 	public int BloodGemOfTheArchfiendQuantity = 100;
 	public int DiamondOfNulgathQuantity = 1000;
