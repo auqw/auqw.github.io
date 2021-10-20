@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RBot;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -9,7 +9,8 @@ public class BluuTemplate
 	public int MapNumber = 2142069;
 	public int LegionTokenQuantity = 25000;
 	public string[] RequiredItems = { 
-		"Legion Token"
+		"Legion Token",
+		"Undead Champion"
 	};
 	public string[] EquippedItems = { };
 	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
