@@ -2,17 +2,14 @@
 using RBot;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using RBot.Options;
 
 public class RepLycan
 {
 	//-----------EDIT BELOW-------------//
-	public int MapNumber = ScriptInterface.Instance.Config.Get<int>("RoomNumber");
+	public int MapNumber = 2142069;
 	public string[] RequiredItems = { };
 	public string[] EquippedItems = { };
-	public string[] SFClass = { SoloClass, FarmClass };
-	public readonly int[] SoloSkillOrder = { 3, 1, 2, 4 };
-	public readonly int[] FarmingSkillOrder = { 4, 2, 3, 1 };
+	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
 	//-----------EDIT ABOVE-------------//
@@ -23,13 +20,12 @@ public class RepLycan
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public void ScriptMain(ScriptInterface bot)
 	{
-		StopBot();
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
 		ConfigureBotOptions();
 		ConfigureLiteSettings();
 
-		SkillList(SoloSkillOrder);
+		SkillList(SkillOrder);
 		EquipList(EquippedItems);
 		UnbankList(RequiredItems);
 		CheckSpace(RequiredItems);
@@ -47,21 +43,6 @@ public class RepLycan
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Script stopped successfully.");
 		StopBot();
 	}
-
-	/*------------------------------------------------------------------------------------------------------------
-															Bot Options
-	------------------------------------------------------------------------------------------------------------*/
-
-	public List<IOption> Options = new List<IOption>()
-	{
-		new Option<int>("RoomNumber","Room Number","Add the desired room number so you can join public/private rooms.", 2142069),
-		new Option<string>("SoloClass","Soloing Class","This will be the class designed to use in solo situations.","Void Highlord"),
-		new Option<string>("FarmClass","Farming Class","This class will be used for farming.","Legion Revenant"),
-		new Option<string>("skillOrder", "Skill Order", "The order of skill execution. Use -> [1, 2, 3, 4, 5, 6] just like the aqw UI skill keys.", "3,4,2,1")
-	};
-
-	public static string SoloClass = ScriptInterface.Instance.Config.Get<string>("SoloClass");
-	public static string FarmClass = ScriptInterface.Instance.Config.Get<string>("FarmClass");
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
