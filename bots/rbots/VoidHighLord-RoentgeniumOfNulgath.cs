@@ -67,6 +67,7 @@ public class BluuTemplate
 				SuppliesVNM();
 				LarvaeUni13();
 
+				SafeEquip(FarmingClass);
 				EmblemOfNulgath();
 				SwindleBulk();
 				VoucherItem();
@@ -102,14 +103,14 @@ public class BluuTemplate
 		while (bot.Player.GetFactionRank("Spellcrafting") < 2)
         {
 			SafeEquip(FarmingClass);
-			InvItemFarm("Mystic Quills", 10, "mobius", "Slugfit", "Bottom");
+			InvItemFarm("Mystic Quills", 10, "elemental", "r3", "Down");
 			SafePurchase("Ember Ink", 10, "spellcraft", 549);
 			SafeQuestComplete(2300);
         }
 		while (bot.Player.GetFactionRank("Spellcrafting") < 3)
         {
 			SafeEquip(FarmingClass);
-			InvItemFarm("Mystic Quills", 10, "mobius", "Slugfit", "Bottom");
+			InvItemFarm("Mystic Quills", 10, "elemental", "r3", "Down");
 			SafePurchase("Runic Ink", 10, "spellcraft", 549);
 			SafeQuestComplete(2353);
 		}
