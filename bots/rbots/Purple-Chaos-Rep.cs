@@ -8,7 +8,7 @@ public class RepChaos
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = ScriptInterface.Instance.Config.Get<int>("RoomNumber");
-	public string[] RequiredItems = { };
+	public string[] RequiredItems = { "Fragment of Mount Doomskull" };
 	public string[] EquippedItems = { };
 	public string[] SFClass = { SoloClass, FarmClass };
 	public readonly int[] SoloSkillOrder = { 3, 1, 2, 4 };
