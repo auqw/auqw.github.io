@@ -131,6 +131,7 @@ public class BluuTemplate
     {
 		bot.Wait.ForDrop("Combat Trophy");
 		while (bot.Player.State == 2) { }
+		bot.Sleep(1500);
 		if (bot.Map.Name != "battleon") bot.SendPacket("%xt%zm%cmd%78664%tfer%" + bot.Player.Username + "%Battleon-" + MapNumber + "%Enter%Spawn%");
 	}
 	
