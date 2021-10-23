@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RBot;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -125,6 +125,7 @@ public class BluuTemplate
 				bot.Player.Attack("Team B Captain");
 			}
 		}
+		bot.Sleep(1500);
 	}
 
 	public void SchoolLooting()
