@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ChaosAvenger
 {
+	// Thanks emha @discord.gg/sailing for testing
+
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 1;
 	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
@@ -73,7 +75,7 @@ public class ChaosAvenger
 				InvItemFarm(RequiredItems[10], 1, "palooza", "Act5", "Right");
 				bot.Log($"{RequiredItems[10]} acquired.");
 
-				InvItemFarm(RequiredItems[11], 1, "legdermayne", "Boss", "Right");
+				InvItemFarm(RequiredItems[11], 1, "ledgermayne", "Boss", "Right");
 				bot.Log($"{RequiredItems[11]} acquired.");
 
 				SafePurchase(RequiredItems[3], 1, "championdrakath", 2055);
