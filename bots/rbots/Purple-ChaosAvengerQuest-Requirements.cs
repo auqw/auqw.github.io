@@ -1,15 +1,14 @@
-﻿using System;
+using System;
 using RBot;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Xml;
-using System.IO;
-using System.Linq;
 
 public class ChaosAvenger
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 1;
+	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
+	public int SaveStateLoops = 8700;
+	public int TurnInAttempts = 10;
 	public string[] RequiredItems = {
 		"Parallel Chaos Amulet",
 		"Fragment of the Dragon",
@@ -32,10 +31,8 @@ public class ChaosAvenger
 		"Champion Drakath Insignia"
 	};
 	public string[] EquippedItems = { };
-	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
-	public int SaveStateLoops = 8700;
-	public int TurnInAttempts = 3;
 	//-----------EDIT ABOVE-------------//
+
 
 	public int FarmLoop;
 	public int SavedState;
@@ -50,6 +47,7 @@ public class ChaosAvenger
 		SkillList(SkillOrder);
 		EquipList(EquippedItems);
 		UnbankList(RequiredItems);
+		CheckSpace(RequiredItems);
 		GetDropList(RequiredItems);
 
 		while (!bot.ShouldExit())
@@ -68,6 +66,7 @@ public class ChaosAvenger
 				InvItemFarm(RequiredItems[8], 1, "kitsune", "Boss", "Left");
 				bot.Log($"{RequiredItems[8]} acquired.");
 
+				SendWolfWingPacket();
 				InvItemFarm(RequiredItems[9], 1, "wolfwing", "Boss", "Left");
 				bot.Log($"{RequiredItems[9]} acquired.");
 
@@ -83,7 +82,7 @@ public class ChaosAvenger
 
 			if (!bot.Inventory.Contains(RequiredItems[4], 1))
 			{
-				InvItemFarm(RequiredItems[12], 1, "djinn", "r6", "Center");
+				InvItemFarm(RequiredItems[12], 1, "djinn", "r5", "Center");
 				bot.Log($"{RequiredItems[12]} acquired.");
 
 				InvItemFarm(RequiredItems[13], 1, "dreamnexus", "r17a", "Right");
@@ -113,14 +112,24 @@ public class ChaosAvenger
 			InvItemFarm(RequiredItems[2], 1, "mountdoomskull", "b1", "Left", 8301);
 			bot.Log($"{RequiredItems[2]} acquired.");
 
-			if (bot.Inventory.Contains(RequiredItems[18], 2055))
+			if (bot.Inventory.Contains(RequiredItems[18], 20))
 			{
 				SafePurchase(RequiredItems[0], 1, "championdrakath", 2055);
 				bot.Log($"{RequiredItems[0]} acquired.");
 			}
 		}
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Script stopped successfully.");
-		StopBot("Chaos Avenger Quest bot completed.)");
+		StopBot("Chaos Avenger Quest bot completed.");
+	}
+
+	/*------------------------------------------------------------------------------------------------------------
+														Bot Specific
+	------------------------------------------------------------------------------------------------------------*/
+
+	public void SendWolfWingPacket()
+	{
+		string data = "{\"t\":\"xt\",\"b\":{\"r\":-1,\"o\":{\"cmd\":\"updateQuest\",\"iValue\":23,\"iIndex\":26}}}";
+		bot.SendClientPacket(data, "json");
 	}
 
 
@@ -131,9 +140,6 @@ public class ChaosAvenger
 		bot.SendClientPacket(data1, "json");
 		bot.SendClientPacket(data2, "json");
 	}
-
-
-
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
@@ -198,7 +204,7 @@ public class ChaosAvenger
 	}
 
 	/// <summary>
-	/// Farms you the required quantity of the specified temp item with the specified quest accepted from specified monsters in the specified location.
+	/// Farms you the required quantity of the specified temp item with the specified quest accepted from specified monsters in the specified location. Saves States every ~5 minutes.
 	/// </summary>
 	public void TempItemFarm(string TempItemName, int TempItemQuantity, string MapName, string CellName, string PadName, int QuestID = 0, string MonsterName = "*")
 	{
@@ -241,6 +247,63 @@ public class ChaosAvenger
 	}
 
 	/// <summary>
+	/// Farms you the specified quantity of the specified item with the specified quest accepted from specified monsters in the specified location. Saves States every ~5 minutes.
+	/// </summary>
+	public void HuntItemFarm(string ItemName, int ItemQuantity, string MapName, bool Temporary = false, int QuestID = 0, string MonsterName = "*")
+	{
+	/*
+		*   Must have the following functions in your script:
+		*   SafeMapJoin
+		*   SmartSaveState
+		*   SkillList
+		*   ExitCombat
+		*   GetDropList OR ItemWhitelist
+		*
+		*   Must have the following commands under public class Script:
+		*   int FarmLoop = 0;
+		*   int SavedState = 0;
+	*/
+
+	startFarmLoop:
+		if (FarmLoop > 0) goto maintainFarmLoop;
+		SavedState++;
+		bot.Log($"[{DateTime.Now:HH:mm:ss}] Started Farming Loop {SavedState}.");
+		goto maintainFarmLoop;
+
+	breakFarmLoop:
+		SmartSaveState();
+		bot.Log($"[{DateTime.Now:HH:mm:ss}] Completed Farming Loop {SavedState}.");
+		FarmLoop = 0;
+		goto startFarmLoop;
+
+	maintainFarmLoop:
+		if (Temporary)
+		{
+			while (!bot.Inventory.ContainsTempItem(ItemName, ItemQuantity))
+			{
+				FarmLoop++;
+				if (bot.Map.Name != MapName) SafeMapJoin(MapName);
+				if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
+				bot.Options.AggroMonsters = true;
+				bot.Player.Hunt(MonsterName);
+				if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
+			}
+		}
+		else
+		{
+			while (!bot.Inventory.Contains(ItemName, ItemQuantity))
+			{
+				FarmLoop++;
+				if (bot.Map.Name != MapName) SafeMapJoin(MapName);
+				if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
+				bot.Options.AggroMonsters = true;
+				bot.Player.Hunt(MonsterName);
+				if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
+			}
+		}
+	}
+
+	/// <summary>
 	/// Equips an item.
 	/// </summary>
 	public void SafeEquip(string ItemName)
@@ -248,7 +311,7 @@ public class ChaosAvenger
 		//Must have the following functions in your script:
 		//ExitCombat
 
-		while (!bot.Inventory.IsEquipped(ItemName))
+		while (bot.Inventory.Contains(ItemName) && !bot.Inventory.IsEquipped(ItemName))
 		{
 			ExitCombat();
 			bot.Player.EquipItem(ItemName);
@@ -299,10 +362,9 @@ public class ChaosAvenger
 	/// </summary>
 	public void SafeQuestComplete(int QuestID, int ItemID = -1)
 	{
-	//Must have the following functions in your script:
-	//ExitCombat
+		//Must have the following functions in your script:
+		//ExitCombat
 
-	maintainCompleteLoop:
 		ExitCombat();
 		bot.Quests.EnsureAccept(QuestID);
 		bot.Quests.EnsureComplete(QuestID, ItemID, tries: TurnInAttempts);
@@ -312,20 +374,17 @@ public class ChaosAvenger
 			bot.Player.Logout();
 		}
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Turned In Quest {QuestID} successfully.");
-		bot.Quests.EnsureAccept(QuestID);
-		bot.Sleep(1000);
-		if (bot.Quests.CanComplete(QuestID)) goto maintainCompleteLoop;
+		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
 	}
 
 	/// <summary>
 	/// Stops the bot at yulgar if no parameters are set, or your specified map if the parameters are set.
 	/// </summary>
-	public void StopBot(string Text = "Bot stopped successfully.", string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn")
+	public void StopBot(string Text = "Bot stopped successfully.", string MapName = "yulgar", string CellName = "Enter", string PadName = "Spawn", string Caption = "Stopped")
 	{
 		//Must have the following functions in your script:
 		//SafeMapJoin
 		//ExitCombat
-
 		if (bot.Map.Name != MapName) SafeMapJoin(MapName, CellName, PadName);
 		if (bot.Player.Cell != CellName) bot.Player.Jump(CellName, PadName);
 		bot.Drops.RejectElse = false;
@@ -333,8 +392,8 @@ public class ChaosAvenger
 		bot.Options.AggroMonsters = false;
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Bot stopped successfully.");
 		Console.WriteLine(Text);
-		MessageBox.Show(Text);
-		bot.Exit();
+		SendMSGPacket(Text, Caption, "event");
+		ScriptManager.StopScript();
 	}
 
 	/*------------------------------------------------------------------------------------------------------------
@@ -372,7 +431,7 @@ public class ChaosAvenger
 	/// <summary>
 	/// Joins the specified map.
 	/// </summary>
-	public void SafeMapJoin(string MapName, string CellName, string PadName)
+	public void SafeMapJoin(string MapName, string CellName = "Enter", string PadName = "Spawn")
 	{
 		//Must have the following functions in your script:
 		//ExitCombat
@@ -422,6 +481,7 @@ public class ChaosAvenger
 	/// </summary>
 	public void ConfigureBotOptions(string PlayerName = "Bot By AuQW", string GuildName = "https://auqw.tk/", bool LagKiller = true, bool SafeTimings = true, bool RestPackets = true, bool AutoRelogin = true, bool PrivateRooms = false, bool InfiniteRange = true, bool SkipCutscenes = true, bool ExitCombatBeforeQuest = true)
 	{
+		bot.SendClientPacket("%xt%moderator%-1%AuQW: Configuring bot.%");
 		bot.Options.CustomName = PlayerName;
 		bot.Options.CustomGuild = GuildName;
 		bot.Options.LagKiller = LagKiller;
@@ -435,6 +495,7 @@ public class ChaosAvenger
 		bot.Events.PlayerDeath += PD => ScriptManager.RestartScript();
 		bot.Events.PlayerAFK += PA => ScriptManager.RestartScript();
 	}
+
 	/// <summary>
 	/// Gets AQLite Functions
 	/// </summary>
@@ -517,18 +578,23 @@ public class ChaosAvenger
 	/// <summary>
 	/// Equips all items in an array.
 	/// </summary>
+	/// <param name="EquipList"></param>
 	public void EquipList(params string[] EquipList)
 	{
 		foreach (var Item in EquipList)
 		{
-			SafeEquip(Item);
+			if (bot.Inventory.Contains(Item))
+			{
+				SafeEquip(Item);
+			}
 		}
 	}
 
 	/// <summary>
 	/// Unbanks all items in an array after banking every other AC-tagged Misc item in the inventory.
 	/// </summary>
-	public void UnbankList(params string[] BankItems)
+	/// <param name="UnbankList"></param>
+	public void UnbankList(params string[] UnbankList)
 	{
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 		while (bot.Player.State == 2) { }
@@ -537,11 +603,45 @@ public class ChaosAvenger
 		foreach (var item in bot.Inventory.Items)
 		{
 			if (!Whitelisted.Contains(item.Category.ToString())) continue;
-			if (item.Name != "Treasure Potion" && item.Coins && !Array.Exists(BankItems, x => x == item.Name)) bot.Inventory.ToBank(item.Name);
+			if (item.Name != "Treasure Potion" && item.Coins && !Array.Exists(UnbankList, x => x == item.Name)) bot.Inventory.ToBank(item.Name);
 		}
-		foreach (var item in BankItems)
+		foreach (var item in UnbankList)
 		{
 			if (bot.Bank.Contains(item)) bot.Bank.ToInventory(item);
 		}
+	}
+
+	/// <summary>
+	/// Checks the amount of space you need from an array's length/set amount.
+	/// </summary>
+	/// <param name="UnbankList"></param>
+	public void CheckSpace(params string[] UnbankList)
+	{
+		int MaxSpace = bot.GetGameObject<int>("world.myAvatar.objData.iBagSlots");
+		int FilledSpace = bot.GetGameObject<int>("world.myAvatar.items.length");
+		int EmptySpace = MaxSpace - FilledSpace;
+		int SpaceNeeded = 0;
+
+		foreach (var Item in UnbankList)
+		{
+			if (!bot.Inventory.Contains(Item)) SpaceNeeded++;
+		}
+
+		if (EmptySpace < SpaceNeeded)
+		{
+			StopBot($"Need {SpaceNeeded} empty inventory slots, please make room for the quest.", bot.Map.Name, bot.Player.Cell, bot.Player.Pad, "Error");
+		}
+	}
+
+	/// <summary>
+	/// Sends a message packet to client in chat.
+	/// </summary>
+	/// <param name="Message"></param>
+	/// <param name="Name"></param>
+	/// <param name="MessageType">moderator, warning, server, event, guild, zone, whisper</param>
+	public void SendMSGPacket(string Message = " ", string Name = "SERVER", string MessageType = "zone")
+	{
+		// bot.SendClientPacket($"%xt%{MessageType}%-1%{Name}: {Message}%");
+		bot.SendClientPacket($"%xt%chatm%0%{MessageType}~{Message}%{Name}%");
 	}
 }
