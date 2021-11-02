@@ -1,22 +1,18 @@
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 using RBot;
 using RBot.Options;
-using RBot.Skills.UseRules;
 
 
 public class Script {
    // Sustem variables
    public ScriptInterface bot => ScriptInterface.Instance;
-   public bool DebugMode = true;
+   public bool DebugMode = false;
 
    // Setup Variables
    public int MapNumber;
-
-
-   // Monster variables
 
    // Class & Skill variables
    public string ClassFarm;
@@ -30,9 +26,6 @@ public class Script {
       new Option<string>("‎space0", "『 Metadata 』", "Bot info.\n(This is just a section header).", ""),
       new Option<string>("author", "Author", "The creator of this bot is bloom.", "Bloom", true),
       new Option<string>("version", "Version", "The bot version.", "v.1.0.0", true),
-      new Option<string>("findus", "Find Us", "Join us on discord if you have any question. You can find more bots in the portal link.", "discord.io/AQWBots", true),
-      new Option<string>("findus2", " ", "Join us on discord if you have any question. You can find more bots in the portal link.", "https://auqw.tk/", true),
-      new Option<string>("‎space1", " ", "", ""),
 
       new Option<string>("‎space2", "『 Setting 』", "The Setting Section.\n(This is just a section header).", ""),
       new Option<int>("map", "Map", "Map number to join into.", 9999),
@@ -58,19 +51,20 @@ public class Script {
       SkillConvert();
       SkillWait = bot.Config.Get<int>("skillWait");
 
-
       // Configurations
       bot.Lite.CustomDropsUI = false;
       bot.Drops.RejectElse = true;
       bot.Drops.Start();
       Configurations();
-
+      OnScriptExit();
 
       /// <remark> MAIN CHECK </remark>
-      
       while ((bot.Player.GetFactionRank("Evil") < 10) || DebugMode) {
          QuestRun("newbie", "r2", "Left", 364);
       }
+
+      SafeMapJoin("freakitiki");
+      bot.Options.LagKiller = false;
  
    }
 
@@ -207,6 +201,14 @@ public class Script {
       bot.Log($"[{DateTime.Now:HH:mm:ss}] Joined map {mapname}-{number}, positioned at the {PadName} side of cell {CellName}.");
    }
 
-
+    /// <summary>Turns on Lag killer on bot exit</summary>
+   public void OnScriptExit() {
+      bot.RegisterHandler(2, b=> {
+          if (bot.ShouldExit()) {
+              bot.Options.LagKiller = false;
+              bot.Lite.HideUI = false;
+          }
+      });
+   }
 
 }
