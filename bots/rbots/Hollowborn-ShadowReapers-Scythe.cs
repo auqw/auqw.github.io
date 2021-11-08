@@ -69,7 +69,7 @@ public class BluuTemplate
 				SafePurchase("Hollowborn Reaper's Minion", 1, "shadowrealm", 1889);
 			}
 			FarmComponentReqs(0, 0, 0, 1, 0);
-			while (bot.Player.Level < 1000)
+			while (bot.Player.Level < 100)
 			{
 				FarmIceStormArena();
 			}
