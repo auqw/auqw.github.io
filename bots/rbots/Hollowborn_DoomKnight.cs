@@ -15,6 +15,8 @@ public class ExeScript
 
 	public int MapNumber = 2142069;
 	public int[] QuestList = {7553, 7555};
+	public string[] AlchemyItems = { "Ice Vapor", "Dragon Scale"};
+	public int[] ALchemyNumbers = {30, 30};
 	public string[] Contract = { "Lae's Hardcore Contract" };
 	public string[] ContractReq = {
 		//ForQuest
@@ -150,9 +152,7 @@ public class ExeScript
 				StopBot("Completion of the DoomVault B story is required.");
 			
 			//Lae's Hardcore Contract	(7556)
-			bot.Player.OpenBank();
-			bot.SendPacket("%xt%zm%bankToInv%126139%55157%1955750943%");
-			bot.Sleep(5000);
+			UnbankList(Contract);
 			if (!bot.Inventory.Contains("Lae's Hardcore Contract")){
 				bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Lae's Hardcore Contract-----");
 				bot.Log($"[{DateTime.Now:HH:mm:ss}] Obtaining \t [Lae's Hardcore Contract]");
@@ -259,7 +259,7 @@ public class ExeScript
 				SafeQuestComplete(8415);
 			}	
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] Check \t \t [Hollowborn Empress' Blade]");
-			bot.Log($"[{DateTime.Now:HH:mm:ss}] ↑ \t \t \t [Hollowborn DoomBlade]");
+			bot.Log($"\n \t \t \t [Hollowborn DoomBlade]");
 			BankArrayUpTo(ADKFalls, "Royal ShadowScythe Blade");
 			
 			//A Dark Knight Returns (8416)
@@ -289,12 +289,13 @@ public class ExeScript
 				EquipList(FarmGear);
 				ItemFarm(
 					"Dark Energy", 10000,
-					HuntFor: true,
 					QuestID: 8416,
-					MonsterName: "Dark Makai",
-					MapName: "tercessuinotlim"
+					MapName: "dwarfhold",
+					CellName: "r2",
+					PadName: "Left"
 				);
 				EquipList(SoloGear);
+				MapNumber = 1;
 				ItemFarm(
 					"(Necro) Scroll of Dark Arts", 3,
 					HuntFor: true,
@@ -312,13 +313,14 @@ public class ExeScript
 					);
 					while (!bot.Inventory.Contains("Void Aura", 50)) {
 						EquipList(FarmGear);
+						MapNumber = 2142069;
 						ItemFarm(
 							"Empowered Essence", 50, 
 							QuestID: 4439, 
 							MapName: "shadowrealmpast"
 						);
 						EquipList(SoloGear);
-						bot.Bank.ToInventory("Malignant Essence");
+						MapNumber = 1;
 						ItemFarm(
 							"Malignant Essence", 3,
 							HuntFor: true,
@@ -340,9 +342,8 @@ public class ExeScript
 					QuestID: 8416,
 					MapName: "sepulchurebattle"
 				);
-				MapNumber = 1;
 				ItemFarm(
-					"Weapon Imprint", 12,
+					"Weapon Imprint", 1,
 					HuntFor: true,
 					QuestID: 8416,
 					MonsterName: "Undead Raxgore",
@@ -376,7 +377,10 @@ public class ExeScript
 	public void GetSoulPotion()
 	{
 		if (bot.Player.GetFactionRank("alchemy") < 8)
-			StopBot("Fanction Rank 8 Alchemy requiered.");
+			{
+				bot.Log($"[{DateTime.Now:HH:mm:ss}] Alchemy \t \t Rank below 8, starting rep farm");
+				AlchemyRanking();
+			}
 		if (!bot.Inventory.Contains("Soul Potion")) {
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] Obtaining \t [Soul Potion]");
 			ItemFarm(
@@ -392,18 +396,17 @@ public class ExeScript
 				MapName: "orecavern"
 			);
 			SafeMapJoin("Alchemy");
-            bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11480%11473%false%Ready to Mix%Necrot%Arashtite Ore%Gebo%Man%");
-            bot.Sleep(15000);
-            bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11480%11473%false%Mix Complete%Necrot%Arashtite Ore%Gebo%Man%");
-            bot.Sleep(700);
-        }
+            		bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11480%11473%false%Ready to Mix%Necrot%Arashtite Ore%Gebo%Man%");
+            		bot.Sleep(15000);
+           		bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11480%11473%false%Mix Complete%Necrot%Arashtite Ore%Gebo%Man%");
+            		bot.Sleep(700);
+        	}
 	}
 	
 	public void ADKFarm(string Target = "Dark Fragment")
 	{
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Obtaining \t \t [{Target}]");
 		EquipList(SoloGear);
-		MapNumber = 2142069;
 		ItemFarm(
 			"Shadowworn", 1, 
 			HuntFor: true, 
@@ -412,8 +415,6 @@ public class ExeScript
 			MapName: "shadowrealmpast"
 		);
 		EquipList(FarmGear);
-		MapNumber = 2142069;
-		bot.Bank.ToInventory("Empowered Essence");
 		ItemFarm(
 			"Empowered Essence", 10, 
 			MapName: "shadowrealmpast"
@@ -441,13 +442,13 @@ public class ExeScript
 			SafeQuestComplete(8413, 65839);
 		else if (Target == "Dark Fragment")
 			SafeQuestComplete(8413, 65837);
+		bot.Wait.ForPickup(Target);
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] Check \t \t [{Target}]");
 	}
 	
 	public void ADKRisesFarm()
 	{
 		EquipList(SoloGear);
-		MapNumber = 1;
 		ItemFarm(
 			"Doomatter", 10,
 			HuntFor: true,
@@ -461,6 +462,7 @@ public class ExeScript
 			MonsterName: "Shadow Lord",
 			MapName: "shadowrealmpast"
 		);
+		MapNumber = 1;
 		ItemFarm(
 			"Worshipper of Doom", 1,
 			HuntFor: true,
@@ -478,6 +480,7 @@ public class ExeScript
 		while (!bot.Inventory.Contains("Dark Fragment", 5))
 			ADKFarm();
 		SafeQuestComplete(8414);
+		bot.Wait.ForPickup("Doom Fragment");
 	}
 	
 	public void GoldCheck(int GoldNeeded)
@@ -492,6 +495,44 @@ public class ExeScript
 			while (bot.Player.Gold <= GoldNeeded)
 				bot.Player.Attack("*");
 			bot.Player.Jump("Wait", "Enter");
+		}
+	}
+	
+	public void AlchemyRanking() //Thank you Tato
+	{
+		UnbankList(AlchemyItems);
+		while (bot.Player.GetFactionRank("alchemy") < 8)
+		{
+			BankArrayUpTo(AlchemyItems, UpTo: "Ice Vapor");
+			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Aquiring Needed Items");
+			ItemFarm(
+			"Dragon Scale", 30,
+			HuntFor: true,
+			QuestID: 0,
+			MonsterName: "Water Draconian",
+			MapName: "lair"
+		);
+
+			ItemFarm(
+			"Ice Vapor", 30,
+			HuntFor: true,
+			QuestID: 0,
+			MonsterName: "Water Draconian",
+			MapName: "lair"
+		);
+
+			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Making Potions");			
+			bot.Player.Pickup("Dragon Scale", "Ice Vapor");
+			
+			bot.Player.Join("alchemy-9943199", "Enter", "Spawn");
+			bot.Sleep(500);
+			while(bot.Inventory.GetQuantity("Dragon Scale") > 1 && bot.Inventory.GetQuantity("Ice Vapor") > 1) 
+			{
+			bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11475%11478%false%Ready to Mix%Dragon Scale%Ice Vapor%Jera%Moose%");
+			bot.Sleep(10000);
+			bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11475%11475%fa lse%Mix Complete%Dragon Scale%Ice Vapor%Gebo%Moose%");
+			bot.Sleep(500);
+			}
 		}
 	}
 	
