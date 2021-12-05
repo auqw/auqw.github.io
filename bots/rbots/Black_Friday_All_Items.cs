@@ -730,13 +730,15 @@ public class ExeScript
 	/// </summary>
 	public void GetDropList(params string[] GetDropList)
 	{
+		if(bot.Handlers.Any(h => h.Name == "Drop Handler"))
+			bot.Handlers.RemoveAll(h => h.Name == "Drop Handler");
 		bot.RegisterHandler(4, b => {
 			foreach (string Item in GetDropList)
 			{
 				if (bot.Player.DropExists(Item)) bot.Player.Pickup(Item);
 			}
 			bot.Player.RejectExcept(GetDropList);
-		});
+		}, "Drop Handler");
 	}
 
 	/// <summary>
