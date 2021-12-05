@@ -342,7 +342,7 @@ public class ExeScript
 				);
 				MapNumber = 1;
 				ItemFarm(
-					"Weapon Imprint", 1,
+					"Weapon Imprint", 12,
 					HuntFor: true,
 					QuestID: 8416,
 					MonsterName: "Undead Raxgore",
