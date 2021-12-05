@@ -188,6 +188,8 @@ public class ExeScript
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Deal Bot 2.0 Items-----");
 			FarmArray(DealBotItems, "Deal Bot 2.0");
 			
+			BankArray(DealBotItems);
+			
 			//Black Mirror Drakath
 			UnbankList(DrakathItems);
 			GetDropList(DrakathItems);
@@ -195,13 +197,18 @@ public class ExeScript
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Black Mirror Drakath-----");
 			ItemFarm("Black Mirror Drakath", 1, MapName: "finalbattle", CellName: "r9", PadName: "Left");
 			
+			BankArray(DrakathItems);
+			
 			//Glacialitems
-			UnbankList(DrakathItems);
-			GetDropList(DrakathItems);
+			UnbankList(Glacialitems);
+			GetDropList(Glacialitems);
 		
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Glacial Elemental Items-----");
 			ItemFarm("Black Ice Wizard", 1, HuntFor: true, MonsterName: "Glacial Elemental", MapName: "cryostorm");
 			ItemFarm("Dark Billowing Scarves", 1, HuntFor: true, MonsterName: "Glacial Elemental", MapName: "cryostorm");
+			
+			BankArray(Glacialitems);
+			
 			//EbilCorp Reward Shop
 			UnbankList(ECRSItems);
 			
