@@ -343,7 +343,7 @@ public class ExeScript
 					MapName: "sepulchurebattle"
 				);
 				ItemFarm(
-					"Weapon Imprint", 1,
+					"Weapon Imprint", 12,
 					HuntFor: true,
 					QuestID: 8416,
 					MonsterName: "Undead Raxgore",
