@@ -7,7 +7,7 @@ public class BluuPurpleTemplate
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 999999;
-	public readonly int[] SkillOrder = { 2, 4, 1 };
+	public readonly int[] SkillOrder = { 2, 4, 1, 3 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
 	public string[] FarmGear = { };
@@ -98,6 +98,7 @@ public class BluuPurpleTemplate
 			GetDropList(HelsgroveQuestRewards);
 			EquipList(FarmGear);
 			
+			SafeMapJoin("helsgrove");
 			bot.Shops.Load(2076);
 			foreach (string Item in HelsgroveMerge) {
 				if (!bot.Inventory.Contains(Item)) {
