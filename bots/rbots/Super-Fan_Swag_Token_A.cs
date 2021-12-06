@@ -52,20 +52,20 @@ public class BluuPurpleTemplate
 					SafePurchase("Super-Fan Swag Token B", 50, MapName: "collection", ShopID: 325);
 					while (bot.Inventory.Contains("Super-Fan Swag Token B", 20)) {
 						bot.Shops.BuyItem("Super-Fan Swag Token A");
-						FormatLog
+						FormatLog("Buying", "Super-Fan Swag Token A");
 					}
 				}
 			}
 			bot.Player.LoadBank();
 			bot.Inventory.ToBank("Super-Fan Swag Token A");
-			FormatLog("Banked", "Super-Fan Swag Token A")
-			FormatLog(Title: true, Text: "Post Farm Cleanup")
+			FormatLog("Banked", "Super-Fan Swag Token A");
+			FormatLog(Title: true, Text: "Post Farm Cleanup");
 			while (bot.Inventory.Contains("Super-Fan Swag Token C"))
 				bot.Shops.SellItem("Super-Fan Swag Token C");
-				FormatLog("Deleted", "Super-Fan Swag Token C")
+				FormatLog("Deleted", "Super-Fan Swag Token C");
 			while (bot.Inventory.Contains("Super-Fan Swag Token B"))
 				bot.Shops.SellItem("Super-Fan Swag Token B");
-				FormatLog("Deleted", "Super-Fan Swag Token B")
+				FormatLog("Deleted", "Super-Fan Swag Token B");
 				
 			StopBot();
 		}
