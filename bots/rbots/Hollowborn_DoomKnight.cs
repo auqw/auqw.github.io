@@ -458,6 +458,7 @@ public class ExeScript
 	{	
 		if (!bot.Inventory.Contains("Doomatter", 10)); {
 			GoldCheck(300000);
+			SafeMapJoin("citadel", "m22", "Center");
 			SafeMapJoin("tercessuinotlim", "Wait", "Enter");
 			bot.Shops.Load(124);
 			SafePurchase(
