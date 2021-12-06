@@ -2,6 +2,7 @@ using System;
 using RBot;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 public class ExeScript
 {
@@ -55,6 +56,7 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
+		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?",
@@ -77,6 +79,7 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
+		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?",
@@ -113,6 +116,7 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
+		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?"
@@ -126,6 +130,8 @@ public class ExeScript
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Scrip Launched-----");
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
+		VersionCheck("3.6.1.0");
+		
 		ConfigureBotOptions();
 		ConfigureLiteSettings();
 
@@ -148,8 +154,10 @@ public class ExeScript
 				StopBot("Must be level 65.");
 			if (bot.Player.GetFactionRank("evil") < 10) 
 				StopBot("Faction Rank 10 Evil required.");
+			if (!bot.Quests.IsUnlocked(169))
+				StopBot("Completion of the /Lair story is required.");
 			if (!bot.Quests.IsUnlocked(3004))
-				StopBot("Completion of the DoomVault B story is required.");
+				StopBot("Completion of the /DoomVaultB story is required.");
 			
 			//Lae's Hardcore Contract	(7556)
 			UnbankList(Contract);
@@ -447,22 +455,28 @@ public class ExeScript
 	}
 	
 	public void ADKRisesFarm()
-	{
+	{	
+		if (!bot.Inventory.Contains("Doomatter", 10)); {
+			GoldCheck(300000);
+			SafeMapJoin("tercessuinotlim", "Wait", "Enter");
+			bot.Shops.Load(124);
+			SafePurchase(
+				"Receipt of Swindle", 1, 
+				MapName: "tercessuinotlim",
+				ShopID: 124);
+			SafePurchase(
+				"Doomatter", 10, 
+				MapName: "tercessuinotlim", 
+				ShopID: 124);
+		}
+		MapNumber = 1;
 		EquipList(SoloGear);
-		ItemFarm(
-			"Doomatter", 10,
-			HuntFor: true,
-			QuestID: 8414,
-			MonsterName: "Creature Creation",
-			MapName: "maul"
-		);
 		ItemFarm(
 			"Shadow DoomReaver", 1,
 			HuntFor: true,
 			MonsterName: "Shadow Lord",
 			MapName: "shadowrealmpast"
 		);
-		MapNumber = 1;
 		ItemFarm(
 			"Worshipper of Doom", 1,
 			HuntFor: true,
@@ -563,6 +577,14 @@ public class ExeScript
 			}
 		}
 	}
+	
+	public void VersionCheck(string version)
+    {
+        if (!Forms.Main.Text.StartsWith($"RBot {version}"))
+        {
+            MessageBox.Show($"This bot is likely glitch out if you dont have RBot {version} or above. You have been warned", "WARNING");
+        }
+    }
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
