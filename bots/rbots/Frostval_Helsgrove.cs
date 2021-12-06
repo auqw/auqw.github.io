@@ -72,6 +72,8 @@ public class BluuPurpleTemplate
 		ConfigureLiteSettings();
 
 		DeathHandler();
+		
+		BankArray(Combined.Concat(HelsdottirDrops).ToArray());
 
 		SkillList(SkillOrder);
 		CheckSpace(Combined);
