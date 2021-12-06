@@ -460,15 +460,15 @@ public class ExeScript
 			GoldCheck(300000);
 			SafeMapJoin("citadel", "m22", "Center");
 			SafeMapJoin("tercessuinotlim", "Wait", "Enter");
-			bot.Shops.Load(124);
+			bot.Shops.Load(1951);
 			SafePurchase(
 				"Receipt of Swindle", 1, 
 				MapName: "tercessuinotlim",
-				ShopID: 124);
+				ShopID: 1951);
 			SafePurchase(
 				"Doomatter", 10, 
 				MapName: "tercessuinotlim", 
-				ShopID: 124);
+				ShopID: 1951);
 		}
 		MapNumber = 1;
 		EquipList(SoloGear);
