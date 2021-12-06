@@ -2,6 +2,7 @@ using System;
 using RBot;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 public class BluuPurpleTemplate
 {
@@ -66,6 +67,7 @@ public class BluuPurpleTemplate
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public void ScriptMain(ScriptInterface bot)
 	{
+		VersionCheck("3.6.1.0");
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
 		ConfigureBotOptions();
@@ -178,6 +180,15 @@ public class BluuPurpleTemplate
 			}
 		}
 	}
+	
+	public void VersionCheck(string version)
+    {
+        if (!Forms.Main.Text.StartsWith($"RBot {version}"))
+        {
+            MessageBox.Show($"Sorry, this script only works with RBot {version}+", "Load failed!");
+            ScriptManager.StopScript();
+        }
+    }
 	
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
