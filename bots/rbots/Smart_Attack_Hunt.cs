@@ -24,48 +24,33 @@ public class SmartAttackHunt {
 
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public string Target;
-	public int QuestID;
-	public string Cell;
-	public string Pad;
 	public void ScriptMain(ScriptInterface bot){
 		bot.Options.SafeTimings = true;
 		bot.Options.RestPackets = true;
 		bot.Options.InfiniteRange = false;
 		
 		//Remove the "//" on the line below to activate the automation of picking up drops.
-		GetDropList(GrabTheseDrops);
+		//GetDropList(GrabTheseDrops);
 		SkillList(SkillOrder);
+		AutoQuestComplete();
+		DeathHandler();
 		
 		// Checking if player should hunt or attack
 		if (bot.Player.HasTarget) {
 			Target = bot.Player.Target.Name;
-			bot.Log($"[{DateTime.Now:HH:mm:ss}] Hunting \t \t [{Target}]");
+			FormatLog("Hunting", $"[{Target}]");
 		}
-		else bot.Log($"[{DateTime.Now:HH:mm:ss}] Attacking \t [Everything]");
+		else FormatLog("Attacking", "[Everything]", Tabs: 1);
 
+		// Doing the actual Hunting
+		if (bot.Player.HasTarget)
+			while(!bot.ShouldExit())
+				bot.Player.Hunt(Target);
 		
-		while(!bot.ShouldExit()) {
-			// Doing the actual Hunting
-			if (bot.Player.HasTarget) bot.Player.Hunt(Target);
-			
-			// The alternative of attacking
-			else while(!bot.ShouldExit()) {
-				bot.Player.SetSpawnPoint();
-				bot.Player.Attack("*");
-			}
-			
-			// Auto Quest Turnin
-			if (bot.Quests.ActiveQuests.Count >= 1)	{
-				foreach (var Quest in bot.Quests.ActiveQuests) {
-					QuestID = Quest.ID;
-					if (bot.Quests.CanComplete(QuestID)) {
-						Cell = bot.Player.Cell;
-						Pad = bot.Player.Pad;
-						SafeQuestComplete(QuestID);
-						bot.Player.Jump(Cell, Pad);
-					}
-				}
-			}
+		// The alternative of attacking
+		else while(!bot.ShouldExit()) {
+			bot.Player.SetSpawnPoint();
+			bot.Player.Attack("*");
 		}
 	}
 	
@@ -73,6 +58,29 @@ public class SmartAttackHunt {
 													 Required Functions
 	------------------------------------------------------------------------------------------------------------*/
 	//These functions are required for this bot to function.
+
+	/// <summary>
+	/// Constantly checks if there are quests ready for turnin. If that is the case, jump to Wait, Enter 
+	/// </summary>
+	public void AutoQuestComplete()
+	{
+		if(bot.Handlers.Any(h => h.Name == "Quest Handler"))
+			bot.Handlers.RemoveAll(h => h.Name == "Quest Handler");
+		bot.RegisterHandler(4, b => {
+			if (bot.Quests.ActiveQuests.Count >= 1) {
+				foreach (var Quest in bot.Quests.ActiveQuests) {
+					int QuestID = Quest.ID;
+					if (bot.Quests.CanComplete(QuestID)) {
+						string Cell = bot.Player.Cell;
+						string Pad = bot.Player.Pad;
+						SafeQuestComplete(QuestID);
+						bot.Player.Jump(Cell, Pad);
+					}
+				}
+			}
+		}, "Quest Handler");
+	}
+
 
 	/// <summary>
 	/// Spams Skills when in combat. You can get in combat by going to a cell with monsters in it with bot.Options.AggroMonsters enabled or using an attack command against one.
@@ -121,11 +129,31 @@ public class SmartAttackHunt {
 		bot.Quests.EnsureComplete(QuestID, ItemID, tries: TurnInAttempts);
 		if (bot.Quests.IsInProgress(QuestID))
 		{
-			bot.Log($"[{DateTime.Now:HH:mm:ss}] Failed to turn in Quest {QuestID}. Logging out.");
+			FormatLog("Quest", $"Turning in Quest {QuestID} failed. Logging out");
 			bot.Player.Logout();
 		}
-		bot.Log($"[{DateTime.Now:HH:mm:ss}] Turned In Quest {QuestID} successfully.");
+		FormatLog("Quest", $"Turning in Quest {QuestID} successful.");
 		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
+	}
+
+	/// <summary>
+	/// Logs following a specific format. No more than 3 tabs allowed.
+	/// </summary>
+	public void FormatLog(string Topic = "FormatLog", string Text = "Missing Input", int Tabs = 2, bool Title = false, bool Followup = false)
+	{
+		if (Title)
+			bot.Log($"[{DateTime.Now:HH:mm:ss}] -----{Text}-----");
+		else 
+		{
+			Tabs = Tabs > 3 ? 3 : Tabs;
+			string TabPlace = "";
+			for (int i = 0; i < Tabs; i++) 
+				TabPlace += "\t";
+			if (Followup) 
+				bot.Log($"[{DateTime.Now:HH:mm:ss}] ↑ {TabPlace}{Text}");
+			else 
+				bot.Log($"[{DateTime.Now:HH:mm:ss}] {Topic} {TabPlace}{Text}");
+		}
 	}
 	
 	/// <summary>
@@ -135,7 +163,17 @@ public class SmartAttackHunt {
 	{
 		bot.Options.AggroMonsters = false;
 		bot.Player.Jump("Wait", "Spawn");
-		bot.Sleep(1000);
-		while (bot.Player.State == 2) { }
+		bot.Wait.ForCombatExit();
+		bot.Sleep(1800);
+	}
+
+	public void DeathHandler() {
+      bot.RegisterHandler(2, b => {
+         if (bot.Player.State==0) {
+            bot.Player.SetSpawnPoint();
+            ExitCombat();
+            bot.Sleep(12000);
+         }
+      });
 	}
 }
