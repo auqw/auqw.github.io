@@ -35,6 +35,8 @@ public class SmartAttackHunt {
 		AutoQuestComplete();
 		DeathHandler();
 		
+		FormatLog(Text: "Script Started", Title: true);
+
 		// Checking if player should hunt or attack
 		if (bot.Player.HasTarget) {
 			Target = bot.Player.Target.Name;
@@ -42,12 +44,12 @@ public class SmartAttackHunt {
 		}
 		else FormatLog("Attacking", "[Everything]", Tabs: 1);
 
-		// Doing the actual Hunting
+		// The Hunting part
 		if (bot.Player.HasTarget)
 			while(!bot.ShouldExit())
 				bot.Player.Hunt(Target);
 		
-		// The alternative of attacking
+		// The Attacking part
 		else while(!bot.ShouldExit()) {
 			bot.Player.SetSpawnPoint();
 			bot.Player.Attack("*");
