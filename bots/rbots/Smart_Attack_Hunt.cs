@@ -131,10 +131,10 @@ public class SmartAttackHunt {
 		bot.Quests.EnsureComplete(QuestID, ItemID, tries: TurnInAttempts);
 		if (bot.Quests.IsInProgress(QuestID))
 		{
-			FormatLog("Quest", $"Turning in Quest {QuestID} failed. Logging out");
+			FormatLog("Quest", $"Turned in Quest {QuestID} unsuccesfully. Logging out");
 			bot.Player.Logout();
 		}
-		FormatLog("Quest", $"Turning in Quest {QuestID} successful.");
+		FormatLog("Quest", $"Turned in Quest {QuestID}");
 		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
 	}
 
