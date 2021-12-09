@@ -2,16 +2,27 @@ using System;
 using RBot;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 public class ExeScript
 {
 	//-----------EDIT BELOW-------------//
-	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
+	public readonly int[] SkillOrder = { 1, 2, 4, 3 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public string[] FarmGear = { };
-	public string[] SoloGear = { };
+	public string[] FarmGear = { 
+		"Legion Revenant", 
+		"Hollowborn Reaper's Scythe", 
+		"Head of the Legion Beast", 
+		"Shadow DragonMaster's Wings", 
+		"Polly Rogers" 
+	};
+	public string[] SoloGear = {
+		"TimeKeeper",
+		"Necrotic Sword of Doom",
+		"Helm of Awe",
+		"Blood Paladin Wings",
+		"Polly Rogers"
+	};
 	//-----------EDIT ABOVE-------------//
 
 	public int MapNumber = 2142069;
@@ -56,7 +67,6 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
-		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?",
@@ -79,7 +89,6 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
-		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?",
@@ -116,7 +125,6 @@ public class ExeScript
 		 "Hollow Soul",
 		"Doom Fragment",
 		 "Doomatter",
-		  "Receipt of Swindle",
 		 "Shadow DoomReaver",
 		 "Worshipper of Doom",
 		 "Ingredients?"
@@ -130,8 +138,6 @@ public class ExeScript
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Scrip Launched-----");
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
-		VersionCheck("3.6.1.0");
-		
 		ConfigureBotOptions();
 		ConfigureLiteSettings();
 
@@ -154,10 +160,8 @@ public class ExeScript
 				StopBot("Must be level 65.");
 			if (bot.Player.GetFactionRank("evil") < 10) 
 				StopBot("Faction Rank 10 Evil required.");
-			if (!bot.Quests.IsUnlocked(169))
-				StopBot("Completion of the /Lair story is required.");
 			if (!bot.Quests.IsUnlocked(3004))
-				StopBot("Completion of the /DoomVaultB story is required.");
+				StopBot("Completion of the DoomVault B story is required.");
 			
 			//Lae's Hardcore Contract	(7556)
 			UnbankList(Contract);
@@ -428,8 +432,6 @@ public class ExeScript
 			MapName: "shadowrealmpast"
 		);
 		GoldCheck(100000);
-		SafeMapJoin("shadowfall");
-		bot.Shops.Load(89);
 		SafePurchase(
 			"Shadowscythe Venom Head", 1, 
 			MapName: "shadowfall",
@@ -457,29 +459,22 @@ public class ExeScript
 	}
 	
 	public void ADKRisesFarm()
-	{	
-		if (!bot.Inventory.Contains("Doomatter", 10)); {
-			GoldCheck(300000);
-			SafeMapJoin("citadel", "m22", "Center");
-			SafeMapJoin("tercessuinotlim", "Wait", "Enter");
-			bot.Shops.Load(1951);
-			SafePurchase(
-				"Receipt of Swindle", 1, 
-				MapName: "tercessuinotlim",
-				ShopID: 1951);
-			SafePurchase(
-				"Doomatter", 10, 
-				MapName: "tercessuinotlim", 
-				ShopID: 1951);
-		}
-		MapNumber = 1;
+	{
 		EquipList(SoloGear);
+		ItemFarm(
+			"Doomatter", 10,
+			HuntFor: true,
+			QuestID: 8414,
+			MonsterName: "Creature Creation",
+			MapName: "maul"
+		);
 		ItemFarm(
 			"Shadow DoomReaver", 1,
 			HuntFor: true,
 			MonsterName: "Shadow Lord",
 			MapName: "shadowrealmpast"
 		);
+		MapNumber = 1;
 		ItemFarm(
 			"Worshipper of Doom", 1,
 			HuntFor: true,
@@ -518,6 +513,7 @@ public class ExeScript
 	public void AlchemyRanking() //Thank you Tato
 	{
 		UnbankList(AlchemyItems);
+		GetDropList(AlchemyItems);
 		while (bot.Player.GetFactionRank("alchemy") < 8)
 		{
 			BankArrayUpTo(AlchemyItems, UpTo: "Ice Vapor");
@@ -580,14 +576,6 @@ public class ExeScript
 			}
 		}
 	}
-	
-	public void VersionCheck(string version)
-    {
-        if (!Forms.Main.Text.StartsWith($"RBot {version}"))
-        {
-            MessageBox.Show($"This bot is likely glitch out if you dont have RBot {version} or above. You have been warned", "WARNING");
-        }
-    }
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
