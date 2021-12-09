@@ -46,8 +46,17 @@ public class SmartAttackHunt {
 
 		// The Hunting part
 		if (bot.Player.HasTarget)
-			while(!bot.ShouldExit())
+			while(!bot.ShouldExit()) {
 				bot.Player.Hunt(Target);
+				if (bot.Quests.ActiveQuests.Count >= 1)
+					foreach (var Quest in bot.Quests.ActiveQuests) {
+						int QuestID = Quest.ID;
+						if (bot.Quests.CanComplete(QuestID)) {
+							bot.Wait.ForQuestComplete(QuestID);
+							bot.Sleep(700);
+						}
+					}
+			}
 		
 		// The Attacking part
 		else while(!bot.ShouldExit()) {
@@ -166,7 +175,7 @@ public class SmartAttackHunt {
 		bot.Options.AggroMonsters = false;
 		bot.Player.Jump("Wait", "Spawn");
 		bot.Wait.ForCombatExit();
-		bot.Sleep(1800);
+		bot.Sleep(2000);
 	}
 
 	public void DeathHandler() {
