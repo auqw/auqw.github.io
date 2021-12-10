@@ -129,6 +129,7 @@ public class ExeScript
 		 "Worshipper of Doom",
 		 "Ingredients?"
 	};
+	
 
 	public int FarmLoop;
 	public int SavedState;
@@ -516,7 +517,6 @@ public class ExeScript
 		GetDropList(AlchemyItems);
 		while (bot.Player.GetFactionRank("alchemy") < 8)
 		{
-			BankArrayUpTo(AlchemyItems, UpTo: "Ice Vapor");
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Aquiring Needed Items");
 			ItemFarm(
 			"Dragon Scale", 30,
@@ -537,12 +537,12 @@ public class ExeScript
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Making Potions");			
 			bot.Player.Pickup("Dragon Scale", "Ice Vapor");
 			
-			bot.Player.Join("alchemy-9943199", "Enter", "Spawn");
+			SafeMapJoin("alchemy", "Enter", "Spawn");
 			bot.Sleep(500);
 			while(bot.Inventory.GetQuantity("Dragon Scale") > 1 && bot.Inventory.GetQuantity("Ice Vapor") > 1) 
 			{
 			bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11475%11478%false%Ready to Mix%Dragon Scale%Ice Vapor%Jera%Moose%");
-			bot.Sleep(10000);
+			bot.Sleep(17500);
 			bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11475%11475%fa lse%Mix Complete%Dragon Scale%Ice Vapor%Gebo%Moose%");
 			bot.Sleep(500);
 			}
