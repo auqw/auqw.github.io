@@ -58,13 +58,14 @@ public class SmartDailies
 	public static bool DeathKnightLord = true;
 
 	// Cosmetics
-	public static bool BrightArmor = true;
+	public static bool BrightKnight = true;
 	public static bool MoglinPets = true;
 
 	// Priority Misc. Items
 	public static bool TreasureChestKeys = true;
 	public static bool WheelOfDoom = true;	
 	public static bool Ballyhoo = true;
+	public static bool EldersBlood = true;
 	public static bool DrakathArmor = true;
 
 	// Misc. Items
@@ -74,13 +75,15 @@ public class SmartDailies
 
 	public string OptionsStorage = "DailyOptionStorage";
 	public List<IOption> Options = new List<IOption>() {
+		new Option<string>("-", "Close this window in order to start the bot", " ", " "),
+		new Option<string>("-", " ", " ", " "),
 		new Option<bool>("buyGoal", "Buy the Final Product", "If enabled, the bot will automatically buy the final product (when available) of the things it farmed for.", buyGoal),
 		new Option<bool>("DisableQuantity", "Disable Quantity checks", "If enabled, the bot will continue to farm items even if the goal has already been reached.", DisableQuantities),
 		new Option<bool>("DisableHunt", "Disable Hunting mode", "Highly recommended to leave this off. Only turn this on if you are having issues with RBot's Hunting feature.", DisableHunt),
 
 		// Catagories
 		new Option<string>("-", " ", " ", " "),
-		new Option<string>("", "Enable/Disable entire catagories", "", ""),
+		new Option<string>("-", "Enable/Disable entire catagories", " ", " "),
 		new Option<bool>("DisableClasses", "    Disable all Classes", "If enabled, the bot will automatically skip the entire 'Classes' section.", DisableClasses),
 		new Option<bool>("DisableCosmetics", "    Disable all Cosmetics ", "If enabled, the bot will automatically skip the entire 'Cosmetics' section.", DisableCosmetics),
 		new Option<bool>("DisablePrioMisc", "    Disable all Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Priority Misc. Items' section.", DisablePrioMisc),
@@ -88,7 +91,7 @@ public class SmartDailies
 
 		// Classes
 		new Option<string>("-", " ", " ", " "),
-		new Option<string>("", "Enable/Disable specific Classes", "", ""),
+		new Option<string>("-", "Enable/Disable specific Classes", " ", " "),
 		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.", Pyromancer),
 		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", Cryomancer),
 		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", TheCollector),
@@ -97,23 +100,25 @@ public class SmartDailies
 
 		// Cosmetics
 		new Option<string>("-", " ", " ", " "),
-		new Option<string>("", "Enable/Disable specific Cosmetics", "", ""),
-		new Option<bool>("BrightArmor", "    Bright Armor", "If disabled, the bot will automatically skip the 'Bright Armor' check.", BrightArmor),
+		new Option<string>("-", "Enable/Disable specific Cosmetics", " ", " "),
+		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", BrightKnight),
 		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MoglinPets),
 
 		// Priority Misc. Items
 		new Option<string>("-", " ", " ", " "),
-		new Option<string>("", "Enable/Disable specific Priority Misc. Items", "", ""),
+		new Option<string>("-", "Enable/Disable specific Priority Misc. Items", " ", " "),
 		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check.", TreasureChestKeys),
 		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", WheelOfDoom),
+		//new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check"),
 		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", Ballyhoo),
-		new Option<bool>("DrakathArmor", "    Drakath's Armor", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", DrakathArmor),
+		new Option<bool>("EldersBlood", "    Void Highlord (Elder's Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elder's Blood)' check.", EldersBlood),
+		new Option<bool>("DrakathArmour", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armour' check.", DrakathArmor),
 		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check"),
 		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check."),
 		
 		// Misc. Items
 		new Option<string>("-", " ", " ", " "),
-		new Option<string>("", "Enable/Disable Misc. Items", "", "")
+		new Option<string>("-", "Enable/Disable Misc. Items", " ", " ")
 		
 	};
 
@@ -162,18 +167,15 @@ public class SmartDailies
 					ItemArray = new[] {"Pyromancer", "Shurpu Blaze Token"};
 					QuantityArray = new[] {1, 84};
 					QuestArray = new[] {2209, 2210};
-					if (DailyCheckANY(2157)) {
-						SoloMode();
-						Mancer(
-							"Pyromancer", 
-							ItemName: "Guardian Shale", 
-							MonsterName: "Shurpu Ring Guardian",
-							MapName: "xancave",
-							CellName: "r11",
-							ShopID: 447
-						);
-					}
-					
+					SoloMode();
+					Mancer(
+						"Pyromancer", 
+						ItemName: "Guardian Shale", 
+						MonsterName: "Shurpu Ring Guardian",
+						MapName: "xancave",
+						CellName: "r11",
+						ShopID: 447
+					);			
 				}
 
 				// Cryomancer - Glacera Ice Token
@@ -348,15 +350,16 @@ public class SmartDailies
 				FormatLog(Text: "Cosmetics", Title: true);
 				
 				// Bright Knight 
-				if (bot.Config.Get<bool>("BrightArmor")) {
-					FormatLog(Text: "Bright Armor", Title: true);
+				if (bot.Config.Get<bool>("BrightKnight")) {
+					FormatLog(Text: "Bright Knight", Title: true);
 				// Bright Knight - Seal of Light
-					ItemArray = new[] {"Bright Armor", "Seal of Light"};
+					ItemArray = new[] {"Bright Knight", "Seal of Light"};
 					QuantityArray = new[] {1, 50};
 					QuestArray = new[] {3826};
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						SoloMode();
 						ItemFarm(
 							"Alteon Defeated", 1,
 							Temporary: true,
@@ -374,12 +377,13 @@ public class SmartDailies
 					BankArray(ItemArray);
 
 				// Bright Knight - Seal of Darkness
-					ItemArray = new[] {"Bright Armor", "Seal of Darkness"};
+					ItemArray = new[] {"Bright Knight", "Seal of Darkness"};
 					QuantityArray = new[] {1, 50};
 					QuestArray = new[] {3825};
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						SoloMode();
 						ItemFarm(
 							"Sepulchure Defeated", 1,
 							Temporary: true,
@@ -400,6 +404,8 @@ public class SmartDailies
 				// Twig, Twilly & Zorbak pet - Moglin MEAL
 				if (bot.Config.Get<bool>("MoglinPets")) {
 					FormatLog(Text: "Twig, Twilly & Zorbak Pets", Title: true);
+					FormatLog("Notice", "The bot can only the quest all these use once a day.");
+					FormatLog(Followup: true, Text: "Ignore the extra DailyCheker messages");
 				// Twig Pet
 					FormatLog(Text: "Twig Pet", Title: true);
 					ItemArray = new[] {"Twig Pet", "Moglin MEAL"};
@@ -408,6 +414,7 @@ public class SmartDailies
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						FarmMode();
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
@@ -436,6 +443,7 @@ public class SmartDailies
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						FarmMode();
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
@@ -464,6 +472,7 @@ public class SmartDailies
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						FarmMode();
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
@@ -533,6 +542,22 @@ public class SmartDailies
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
 				}
 
+				// Free Daily Boost
+				/*if (IsMember && bot.Config.Get<BoostEnum>("BoostEnum").ToString() != "Disabled") {
+					FormatLog(Text: "Free Daily Boost", Title: true);
+					ItemArray = new[] {bot.Config.Get<BoostEnum>("BoostEnum").ToString()};
+					QuantityArray = new[] {500};
+					QuestArray = new[] {4069};
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						SafeQuestComplete(QuestArray[0]);
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BankArray(ItemArray);
+				} */
+
 				// Ballyhoo's Ad Rewards
 				if (bot.Config.Get<bool>("Ballyhoo")) {
 					FormatLog(Text: "Ballyhoo's Ad Rewards", Title: true);
@@ -549,16 +574,44 @@ public class SmartDailies
 					else FormatLog("Ballyhoo", "Max. amount of Ad Rewards already received today");
 				}
 
-				// Drakath's Armor - Dage's Scroll Fragment
-				if  (bot.Config.Get<bool>("DrakathArmor")) {
-					FormatLog(Text: "Drakath's Armor", Title: true);
-					ItemArray = new[] {"Drakath's Armor", "Dage's Scroll Fragment"};
+				// Void Highlord - Elder's Blood
+				if (bot.Config.Get<bool>("EldersBlood")) {
+					FormatLog(Text: "Void Highlord (Elder's Blood)", Title: true);
+					ItemArray = new[] {"Void Highlord", "Elder's Blood"};
+					QuantityArray = new[] {1, 5};
+					QuestArray = new[] {802};
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						FarmMode();
+						ItemFarm(
+							"Slain Gorillaphant", 50,
+							Temporary: true,
+							HuntFor: bot.Config.Get<bool>("DisableHunt"),
+							QuestID: QuestArray[0],
+							MonsterName: "Gorillaphant",
+							MapName: "arcangrove",
+							CellName: "Right",
+							PadName: "Right"
+						);
+						SafeQuestComplete(QuestArray[0]);
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BankArray(ItemArray);
+				}
+
+				// Drakath's Armuor - Dage's Scroll Fragment
+				if  (bot.Config.Get<bool>("DrakathArmour")) {
+					FormatLog(Text: "Drakath's Armour (Dage's Scroll Fragment)", Title: true);
+					ItemArray = new[] {"Drakath's Armour", "Dage's Scroll Fragment"};
 					QuantityArray = new[] {1, 13};
 					QuestArray = new[] {3596};
 					if (DailyCheckANY(QuestArray[0])) {
 						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
+						FarmMode();
 						ItemFarm(
 							"Chaos Power Increased", 6,
 							Temporary: true,
@@ -586,6 +639,7 @@ public class SmartDailies
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray.Concat(ItemArrayB).ToArray());
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
+						FarmMode();
 						ItemFarm(
 							"Raw Ore", 30,
 							Temporary: true,
@@ -623,6 +677,7 @@ public class SmartDailies
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray.Concat(ItemArrayB).ToArray());
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
+						FarmMode();
 						ItemFarm(
 							"Raw Ore", 30,
 							Temporary: true,
@@ -684,7 +739,6 @@ public class SmartDailies
 		-		Priority Misc. Farm
 		*	Free Daily Boost (Ragnas / Battleon) Legend Only	
 		*	Legendary Pauldron of Awe
-		*	Elders' Blood
 
 		-		Misc. Farm
 		*	Shadow Shroud
@@ -781,6 +835,15 @@ public class SmartDailies
 		Rhodium = 12032,
 		Thorium = 12075,
 		Mercury = 12122
+	}
+
+	public enum BoostEnum
+	{
+		XP_Boost = 27552,
+		REP_Boost = 27553,
+		GOLD_Boost = 27554,
+		Class_Boost = 27555,
+		Disabled
 	}
 
 	public void Mancer (string MancerType, string ItemName, string MonsterName , string MapName, string CellName, int ShopID)
