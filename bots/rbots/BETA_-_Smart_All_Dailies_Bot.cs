@@ -59,8 +59,8 @@ public class SmartDailies
 	public static bool DeathKnightLord = true;
 
 	// Cosmetics
-	public static bool MadWeaponsmith = true;
-	public static bool SUPERHammer = true;
+	public static bool MadWeaponsmith = false;
+	public static bool SUPERHammer = false;
 	public static bool BrightKnight = true;
 	public static bool MoglinPets = true;
 
@@ -106,8 +106,8 @@ public class SmartDailies
 		// Cosmetics
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Cosmetics", " ", " "),
-		new Option<bool>("MadWeaponsmith", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MadWeaponsmith),
-		new Option<bool>("SUPERHammer", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", SUPERHammer),
+		new Option<bool>("MadWeaponsmith", "    Mad Weaponsmith", "If disabled, the bot will automatically skip the 'Mad Weaponsmith' check.", MadWeaponsmith),
+		new Option<bool>("SUPERHammer", "    Cysero's SUPER Hammer", "If disabled, the bot will automatically skip the 'Cysero's SUPER Hammer' check.", SUPERHammer),
 		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", BrightKnight),
 		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MoglinPets),
 
