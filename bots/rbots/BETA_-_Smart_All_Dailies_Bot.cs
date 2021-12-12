@@ -25,7 +25,7 @@ public class SmartDailies
 	public string Password = "Input Password Here";
 
 	//-----------EDIT BELOW-------------//
-	public int MapNumber = 999999;
+	public static int PrivateRoomNumber = 999999;
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
 	public string[] SoloingGear = {"LightCaster"};
@@ -42,6 +42,7 @@ public class SmartDailies
 	//		Option Menu Default Values
 	public static bool buyGoal = true;
 	public static bool DisableQuantities = false;
+	public static bool PrivateOnly = false;
 	public static bool DisableHunt = false;
 
 	// Catagories
@@ -58,6 +59,8 @@ public class SmartDailies
 	public static bool DeathKnightLord = true;
 
 	// Cosmetics
+	public static bool MadWeaponsmith = true;
+	public static bool SUPERHammer = true;
 	public static bool BrightKnight = true;
 	public static bool MoglinPets = true;
 
@@ -67,6 +70,7 @@ public class SmartDailies
 	public static bool Ballyhoo = true;
 	public static bool EldersBlood = true;
 	public static bool DrakathArmor = true;
+	public static bool ArmorOfAwe = true;
 
 	// Misc. Items
 
@@ -79,6 +83,7 @@ public class SmartDailies
 		new Option<string>("-", " ", " ", " "),
 		new Option<bool>("buyGoal", "Buy the Final Product", "If enabled, the bot will automatically buy the final product (when available) of the things it farmed for.", buyGoal),
 		new Option<bool>("DisableQuantity", "Disable Quantity checks", "If enabled, the bot will continue to farm items even if the goal has already been reached.", DisableQuantities),
+		new Option<bool>("PrivateOnly", "Make all rooms private", "If enabled, the bot will make all rooms you go to private. If disabled, it will swap depending on if it's on Farm or Solo mode for that Daily Quest", PrivateOnly),
 		new Option<bool>("DisableHunt", "Disable Hunting mode", "Highly recommended to leave this off. Only turn this on if you are having issues with RBot's Hunting feature.", DisableHunt),
 
 		// Catagories
@@ -101,6 +106,8 @@ public class SmartDailies
 		// Cosmetics
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Cosmetics", " ", " "),
+		new Option<bool>("MadWeaponsmith", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MadWeaponsmith),
+		new Option<bool>("SUPERHammer", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", SUPERHammer),
 		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", BrightKnight),
 		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MoglinPets),
 
@@ -109,12 +116,13 @@ public class SmartDailies
 		new Option<string>("-", "Enable/Disable specific Priority Misc. Items", " ", " "),
 		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check.", TreasureChestKeys),
 		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", WheelOfDoom),
-		//new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check"),
+		new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check"),
 		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", Ballyhoo),
-		new Option<bool>("EldersBlood", "    Void Highlord (Elder's Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elder's Blood)' check.", EldersBlood),
+		new Option<bool>("EldersBlood", "    Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", EldersBlood),
 		new Option<bool>("DrakathArmour", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armour' check.", DrakathArmor),
 		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check"),
 		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check."),
+		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check.", ArmorOfAwe),
 		
 		// Misc. Items
 		new Option<string>("-", " ", " ", " "),
@@ -129,6 +137,7 @@ public class SmartDailies
 	public int[] QuantityArray;
 	public int[] QuestArray;
 	public int SpaceNeeded = 0;
+	public int MapNumber = PrivateRoomNumber;
 
 	public int FarmLoop;
 	public int SavedState;
@@ -167,15 +176,46 @@ public class SmartDailies
 					ItemArray = new[] {"Pyromancer", "Shurpu Blaze Token"};
 					QuantityArray = new[] {1, 84};
 					QuestArray = new[] {2209, 2210};
-					SoloMode();
-					Mancer(
-						"Pyromancer", 
-						ItemName: "Guardian Shale", 
-						MonsterName: "Shurpu Ring Guardian",
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						SoloMode();
+						if (IsMember) {
+							FormatLog($"{ItemArray[0]}", "Doing the Legend-Only Daily Quest", Tabs: 1);
+							ItemFarm(
+								"Guardian Shale", 1, 
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[1],
+								MonsterName: "Shurpu Ring Guardian",
+								MapName: "xancave", 
+								CellName: "r11", 
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[1]);
+						}
+						else {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+							ItemFarm(
+								"Guardian Shale", 1, 
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Shurpu Ring Guardian",
+								MapName: "xancave", 
+								CellName: "r11", 
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[0]);
+						}
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BuyGoal(
 						MapName: "xancave",
-						CellName: "r11",
 						ShopID: 447
-					);			
+					);
+					BankArray(ItemArray);
 				}
 
 				// Cryomancer - Glacera Ice Token
@@ -184,15 +224,46 @@ public class SmartDailies
 					ItemArray = new[] {"Cryomancer", "Glacera Ice Token"};
 					QuantityArray = new[] {1, 84};
 					QuestArray = new[] {3966, 3965};
-					FarmMode();
-					Mancer(
-						"Cryomancer", 
-						ItemName: "Dark Ice", 
-						MonsterName: "Frost Invader",
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						FarmMode();
+						if (IsMember) {
+							FormatLog($"{ItemArray[0]}", "Doing the Legend-Only Daily Quest", Tabs: 1);
+							ItemFarm(
+								"Dark Ice", 1, 
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[1],
+								MonsterName: "Frost Invader",
+								MapName: "frozenruins", 
+								CellName: "r6", 
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[1]);
+						}
+						else {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+							ItemFarm(
+								"Dark Ice", 1, 
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Frost Invader",
+								MapName: "frozenruins", 
+								CellName: "r6", 
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[0]);
+						}
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BuyGoal(
 						MapName: "frozenruins",
-						CellName: "r6",
 						ShopID: 1056
 					);
+					BankArray(ItemArray);
 				}
 
 				// The Collector - Token of Collection
@@ -207,7 +278,7 @@ public class SmartDailies
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
 						FarmMode();
 						if (IsMember) {
-							FormatLog($"{ItemArray[0]}", "Using the Free-Player & Legend-Only Quests", Tabs: 1);
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
 							foreach (int Quest in QuestArray) {
 								bot.Quests.EnsureAccept(Quest);
 							}
@@ -235,7 +306,7 @@ public class SmartDailies
 							SafeQuestComplete(QuestArray[2]);
 						}
 						else {
-							FormatLog($"{ItemArray[0]}", "Using the Free-Player Quest", Tabs: 1);
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
 							bot.Quests.EnsureAccept(QuestArray[0]);
 						}
 						ItemFarm(
@@ -259,7 +330,6 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 				
-
 				// ShadowScythe General - Shadow Shield
 				if (bot.Config.Get<bool>("ShadowScytheGeneral")) {
 					FormatLog(Text: "ShadowScythe General", Title: true);
@@ -271,7 +341,7 @@ public class SmartDailies
 						GetDropList(ItemArray);
 						FarmMode();
 						if (IsMember) {
-							FormatLog("ShadowScy Gen.", "Using the Free-Player & Legend-Only Quests", Tabs: 1);
+							FormatLog("ShadowScy Gen.", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
 							foreach (int Quest in QuestArray) {
 								bot.Quests.EnsureAccept(Quest);
 							}
@@ -288,7 +358,7 @@ public class SmartDailies
 							SafeQuestComplete(QuestArray[1]);
 						}
 						else {
-							FormatLog("ShadowScy Gen.", "Using the Free-Player Quest", Tabs: 1);
+							FormatLog("ShadowScy Gen.", "Doing the Free-Player Daily Quest", Tabs: 1);
 							bot.Quests.EnsureAccept(QuestArray[0]);
 						}
 						ItemFarm(
@@ -322,7 +392,7 @@ public class SmartDailies
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						FarmMode();
-						FormatLog($"{ItemArray[0]}", "Using the Legend-Only Quest", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", "Doing the Legend-Only Daily Quest", Tabs: 1);
 						ItemFarm(
 							"Shadow Scales", 5,
 							Temporary: true,
@@ -348,7 +418,109 @@ public class SmartDailies
 			/// Cosmetics
 			if (!bot.Config.Get<bool>("DisableCosmetics")) {
 				FormatLog(Text: "Cosmetics", Title: true);
-				
+
+				// Mad Weaponsmith - C-Armor Token
+				if (bot.Config.Get<bool>("MadWeaponsmith")) {
+					FormatLog(Text: "Mad Weaponsmith", Title: true);
+					ItemArray = new[] {"Mad Weaponsmith", "C-Armor Token"};
+					QuantityArray = new[] {1, 90};
+					QuestArray = new[] {4308, 4309};
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						SoloMode();
+						if (IsMember) {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
+							foreach (int Quest in QuestArray) {
+								bot.Quests.EnsureAccept(Quest);
+							}
+							ItemFarm(
+								"Nightmare Fire", 1,
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Nightmare",
+								MapName: "deadmoor",
+								CellName: "r5",
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[1]);
+						}
+						else {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+							bot.Quests.EnsureAccept(QuestArray[0]);
+						}
+						ItemFarm(
+								"Unlucky Horseshoe", 1,
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Nightmare",
+								MapName: "deadmoor",
+								CellName: "r5",
+								PadName: "Left"
+							);
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BuyGoal(
+						MapName: "deadmoor",
+						ShopID: 500
+					);
+					BankArray(ItemArray);
+				}
+
+				// Cysero's SUPER Hammer - C-Weapon Token
+				if (bot.Config.Get<bool>("SUPERHammer")) {
+					FormatLog(Text: "Cysero's SUPER Hammer", Title: true);
+					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Weapon Token"};
+					QuantityArray = new[] {1, 90};
+					QuestArray = new[] {4310, 4311};
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						SoloMode();
+						if (IsMember) {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
+							foreach (int Quest in QuestArray) {
+								bot.Quests.EnsureAccept(Quest);
+							}
+							ItemFarm(
+								"Geist's Chain Link", 1,
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Geist",
+								MapName: "deadmoor",
+								CellName: "r5",
+								PadName: "Left"
+							);
+							SafeQuestComplete(QuestArray[1]);
+						}
+						else {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+							bot.Quests.EnsureAccept(QuestArray[0]);
+						}
+						ItemFarm(
+								"Geist's Pocket Lint", 1,
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Geist",
+								MapName: "deadmoor",
+								CellName: "r13",
+								PadName: "Right"
+							);
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BuyGoal(
+						MapName: "deadmoor",
+						ShopID: 500
+					);
+					BankArray(ItemArray);
+				}
+
 				// Bright Knight 
 				if (bot.Config.Get<bool>("BrightKnight")) {
 					FormatLog(Text: "Bright Knight", Title: true);
@@ -357,6 +529,7 @@ public class SmartDailies
 					QuantityArray = new[] {1, 50};
 					QuestArray = new[] {3826};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Seal of Light Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						SoloMode();
@@ -381,6 +554,7 @@ public class SmartDailies
 					QuantityArray = new[] {1, 50};
 					QuestArray = new[] {3825};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Seal of Darkness Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						SoloMode();
@@ -412,6 +586,7 @@ public class SmartDailies
 					QuantityArray = new[] {1, 30};
 					QuestArray = new[] {4159};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						FarmMode();
@@ -438,9 +613,8 @@ public class SmartDailies
 				// Twilly Pet
 					FormatLog(Text: "Twilly Pet", Title: true);
 					ItemArray = new[] {"Twilly Pet", "Moglin MEAL"};
-					QuantityArray = new[] {1, 30};
-					QuestArray = new[] {4159};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						FarmMode();
@@ -467,9 +641,8 @@ public class SmartDailies
 				// Zorbak Pet
 					FormatLog(Text: "Zorbak Pets", Title: true);
 					ItemArray = new[] {"Zorbak Pet", "Moglin MEAL"};
-					QuantityArray = new[] {1, 30};
-					QuestArray = new[] {4159};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						FarmMode();
@@ -508,6 +681,7 @@ public class SmartDailies
 					UnbankList(ItemArray);
 					GetDropList(ItemArray);
 					if (!bot.Quests.IsDailyComplete(QuestArray[0])) {
+						FormatLog("Chest Key", "Doing the Legend-Only Monthly Quest", Tabs: 1);
 						SafeQuestComplete(QuestArray[0]);
 					}
 					else FormatLog("MonthlyCheck", "Monthly Quest unavailable", Tabs: 1);
@@ -523,15 +697,15 @@ public class SmartDailies
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
 					if (IsMember && !bot.Quests.IsDailyComplete(QuestArray[0])) {
 						if (CheckStorage(ItemArray[0], 3))
-							FormatLog("Wheel of Doom", "Using the Free-Player Weekly and Legend-Only Quest", Tabs: 1);
-						else FormatLog("Wheel of Doom", "Using the Legend-Only Quest", Tabs: 1);
+							FormatLog("Wheel of Doom", "Doing the Free-Player Weekly and Legend-Only Daily Quest", Tabs: 1);
+						else FormatLog("Wheel of Doom", "Doing the Legend-Only Daily Quest", Tabs: 1);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForDrop("*");
 						bot.Player.PickupAll(true);
 					}
 					if (CheckStorage(ItemArray[0], 3)) {
 						if (!IsMember)
-							FormatLog("Wheel of Doom", "Using the Free-Player Weekly Quest", Tabs: 1);
+							FormatLog("Wheel of Doom", "Doing the Free-Player Weekly Quest", Tabs: 1);
 						if (bot.Bank.Contains(ItemArray[0]))
 							bot.Bank.ToInventory(ItemArray[0]);
 						SafeQuestComplete(QuestArray[1]);
@@ -542,27 +716,29 @@ public class SmartDailies
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
 				}
 
-				// Free Daily Boost
-				/*if (IsMember && bot.Config.Get<BoostEnum>("BoostEnum").ToString() != "Disabled") {
+				// Free Daily Boost - XP Boost /  REP Boost /  GOLD Boost / Class Boost 
+				if (IsMember && bot.Config.Get<BoostEnum>("BoostEnum").ToString() != "Disabled") {
 					FormatLog(Text: "Free Daily Boost", Title: true);
-					ItemArray = new[] {bot.Config.Get<BoostEnum>("BoostEnum").ToString()};
+					ItemArray = new[] {$"{bot.Config.Get<BoostEnum>("BoostEnum").ToString().Replace("_", " ")}! (60 min)"};
 					QuantityArray = new[] {500};
 					QuestArray = new[] {4069};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog("Daily Boost", "Doing the Legend-Only Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						SafeQuestComplete(QuestArray[0]);
-						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						bot.Wait.ForPickup(ItemArray[0]);
+						FormatLog("Daily Boost", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
-				} */
+				}
 
-				// Ballyhoo's Ad Rewards
+				// Ballyhoo's Ad Rewards - 5 AC / 500 Gold
 				if (bot.Config.Get<bool>("Ballyhoo")) {
 					FormatLog(Text: "Ballyhoo's Ad Rewards", Title: true);
 					SafeMapJoin("ballyhoo");
 					if (bot.GetGameObject<int>("world.myAvatar.objData.iDailyAds") < 3) {
+						FormatLog("Ballyhoo", "Obtaining Ad Rewards", Tabs: 1);
 						int i = 0;
 						while (bot.GetGameObject<int>("world.myAvatar.objData.iDailyAds") < 3) {
 							bot.SendPacket("%xt%zm%getAdReward%7070%");
@@ -576,11 +752,12 @@ public class SmartDailies
 
 				// Void Highlord - Elder's Blood
 				if (bot.Config.Get<bool>("EldersBlood")) {
-					FormatLog(Text: "Void Highlord (Elder's Blood)", Title: true);
-					ItemArray = new[] {"Void Highlord", "Elder's Blood"};
+					FormatLog(Text: "Void Highlord (Elders' Blood)", Title: true);
+					ItemArray = new[] {"Void Highlord", "Elders' Blood"};
 					QuantityArray = new[] {1, 5};
 					QuestArray = new[] {802};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
 						FarmMode();
@@ -598,6 +775,7 @@ public class SmartDailies
 						bot.Wait.ForPickup(ItemArray[1]);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
+					ItemArray = new[] {"Elders' Blood"};
 					BankArray(ItemArray);
 				}
 
@@ -637,6 +815,7 @@ public class SmartDailies
 					QuantityArray = new[] {10};
 					QuestArray = new[] {2091};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog("Mine Crafting", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray.Concat(ItemArrayB).ToArray());
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
 						FarmMode();
@@ -675,6 +854,7 @@ public class SmartDailies
 					QuantityArray = new[] {10};
 					QuestArray = new[] {2098};
 					if (DailyCheckANY(QuestArray[0])) {
+						FormatLog("Hard Core Metals", "Doing the Daily Quest", Tabs: 1);
 						UnbankList(ItemArray.Concat(ItemArrayB).ToArray());
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
 						FarmMode();
@@ -705,9 +885,67 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				
-
-
+				// Armor of Awe - Pauldron of Awe - Pauldron Fragment - Pauldron Shard
+				if (bot.Config.Get<bool>("ArmorOfAwe")) {
+					FormatLog(Text: "Armor of Awe (Pauldron of Awe)", Title: true);
+					if (!CheckStorage("Armor of Awe")) {
+						ItemArray = new[] {"Legendary Awe Pass", "Guardian Awe Pass", "Armor of Awe Pass", "Pauldron of Awe", "Pauldron Fragment", "Pauldron Shard"};
+						if (!CheckStorage("Pauldron of Awe")) {
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+							if (!CheckStorage("Pauldron Fragment", 15)) {
+								List<int> AweQuests = new List<int>();
+								if (CheckStorage("Legendary Awe Pass")) {
+									FormatLog("Pauldron of Awe", "Legendary Awe Pass found, adding Quest to ToDo list", Tabs: 1);
+									AweQuests.Add(4160);
+								}
+								if (CheckStorage("Guardian Awe Pass")) {
+									FormatLog("Pauldron of Awe", "Guardian Awe Pass found, adding Quest to ToDo list", Tabs: 1);
+									AweQuests.Add(4161);
+								}
+								if (CheckStorage("Armor of Awe Pass")) {
+									FormatLog("Pauldron of Awe", "Armor of Awe Pass found, adding Quest to ToDo list", Tabs: 1);
+									AweQuests.Add(4162);
+								}
+								if (AweQuests.Count >= 1) {
+									QuestArray = AweQuests.ToArray();
+									int i = 0;
+									SoloMode();
+									foreach (int Quest in QuestArray) {
+										ItemFarm(
+											"Pauldron Shard", 15,
+											Temporary: false,
+											HuntFor: bot.Config.Get<bool>("DisableHunt"),
+											QuestID: Quest,
+											MonsterName: "Ultra Akriloth",
+											MapName: "gravestrike",
+											CellName: "r1",
+											PadName: "Left"
+										);
+										SafeQuestComplete(Quest);
+										i++;
+										FormatLog("Pauldron of Awe", $"Completed Daily Quest {i} time(s)", Tabs: 1);
+									}
+								}
+								else FormatLog("Pauldron of Awe", "No Awe Passes found, please buy all possible Awe Passes before trying again.", Tabs: 1); 
+							}
+							else {
+								if (bot.Bank.Contains("Pauldron Fragment"))
+									bot.Bank.ToInventory("Pauldron Fragment");
+								SafePurchase(
+									"Pauldron of Awe", 1,
+									MapName: "museum",
+									ShopID: 1129
+								);
+							}
+							BankArray(ItemArray);
+						}
+						else
+							FormatLog("Pauldron of Awe", "You already own [Pauldron of Awe] x1", Tabs: 1);
+					}
+					else
+						FormatLog("Armor of Awe", "You already own [Armor of Awe] x1", Tabs: 1);
+				}
 
 			}
 
@@ -732,12 +970,9 @@ public class SmartDailies
 		*	Lord of Order
 
 		-		Cosmetics
-		*	Mad Weaponsmith
-		*	Cysero's SUPER Hammer
 		*	Golden Inquisitor of Shadowfall
 
 		-		Priority Misc. Farm
-		*	Free Daily Boost (Ragnas / Battleon) Legend Only	
 		*	Legendary Pauldron of Awe
 
 		-		Misc. Farm
@@ -759,42 +994,34 @@ public class SmartDailies
 	------------------------------------------------------------------------------------------------------------*/
 
 	/*
-			//TargetName - Component
-			if (bot.Config.Get<bool>("String")) {
-				FormatLog(Text: "String", Title: true);
-				ItemArray = new[] {"String", "String"};
-				QuantityArray = new[] {0, 0};
-				QuestArray = new[] {0000, 0000};
-				if (DailyCheckANY(QuestArray[0])) {
-					UnbankList(ItemArray);
-					GetDropList(ItemArray);
-
-					SafeQuestComplete(QuestArray[0]);
-					bot.Wait.ForPickup(ItemArray[1]);
-					FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
-				}
-				BuyGoal(
-					MapName: "String",
-					ShopID: 000
-				);
-				BankArray(ItemArray);
-			}
-
-					FormatLog($"{ItemArray[0]}", "Using the Legend-Only Quest", Tabs: 1);
-					ItemFarm(
-						"Shadow Scales", 5,
-						Temporary: true,
-						HuntFor: bot.Config.Get<bool>("DisableHunt"),
-						QuestID: QuestArray[0],
-						MonsterName: "Shadow Serpent",
-						MapName: "bludrut4",
-						CellName: "r5",
-						PadName: "Right"
+				if (bot.Config.Get<bool>("String")) {
+					FormatLog(Text: "String", Title: true);
+					ItemArray = new[] {"String", "String"};
+					QuantityArray = new[] {0, 0};
+					QuestArray = new[] {0000, 0000};
+					if (DailyCheckANY(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						ItemFarm(
+							"String", 0,
+							Temporary: true,
+							HuntFor: bot.Config.Get<bool>("DisableHunt"),
+							QuestID: QuestArray[0],
+							MonsterName: "*",
+							MapName: "battleon",
+							CellName: "Enter",
+							PadName: "Spawn"
+						);
+						SafeQuestComplete(QuestArray[0]);
+						bot.Wait.ForPickup(ItemArray[1]);
+						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BuyGoal(
+						MapName: "String",
+						ShopID: 000
 					);
-					SafeQuestComplete(QuestArray[0]);
-					bot.Wait.ForPickup(ItemArray[1]);
-					FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}");
-
+					BankArray(ItemArray);
+				}
 	*/
 
 	/*------------------------------------------------------------------------------------------------------------
@@ -806,11 +1033,14 @@ public class SmartDailies
 	{
 		EquipList(SoloingGear);
 		SkillList(SoloingSkillOrder);
+		if (!PrivateOnly)
+			MapNumber = 1;
 	}
 	public void FarmMode()
 	{
 		EquipList(FarmingGear);
 		SkillList(FarmingSkillOrder);
+		MapNumber = PrivateRoomNumber;
 	}
 
 	public enum MineCraftingEnum
@@ -824,7 +1054,6 @@ public class SmartDailies
 		Silver = 12308,
 		Platinum = 12315
 	}
-
 	public enum HardCoreMetalsEnum
 	{
 		Choose_Here,
@@ -836,7 +1065,6 @@ public class SmartDailies
 		Thorium = 12075,
 		Mercury = 12122
 	}
-
 	public enum BoostEnum
 	{
 		XP_Boost = 27552,
@@ -844,49 +1072,6 @@ public class SmartDailies
 		GOLD_Boost = 27554,
 		Class_Boost = 27555,
 		Disabled
-	}
-
-	public void Mancer (string MancerType, string ItemName, string MonsterName , string MapName, string CellName, int ShopID)
-	{
-		if (DailyCheckANY(QuestArray[0])) {
-			UnbankList(ItemArray);
-			GetDropList(ItemArray);
-			if (IsMember) {
-				FormatLog($"{ItemArray[0]}", "Using the Legend-Only Quest", Tabs: 1);
-				ItemFarm(
-					ItemName, 1, 
-					Temporary: true,
-					HuntFor: bot.Config.Get<bool>("DisableHunt"),
-					QuestID: QuestArray[1],
-					MonsterName: MonsterName,
-					MapName: MapName, 
-					CellName: CellName, 
-					PadName: "Left"
-				);
-				SafeQuestComplete(QuestArray[1]);
-			}
-			else {
-				FormatLog($"{ItemArray[0]}", "Using the Free-Player Quest", Tabs: 1);
-				ItemFarm(
-					ItemName, 1, 
-					Temporary: true,
-					HuntFor: bot.Config.Get<bool>("DisableHunt"),
-					QuestID: QuestArray[0],
-					MonsterName: MonsterName,
-					MapName: MapName, 
-					CellName: CellName, 
-					PadName: "Left"
-				);
-				SafeQuestComplete(QuestArray[0]);
-			}
-			bot.Wait.ForPickup(ItemArray[1]);
-			FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
-		}
-		BuyGoal(
-			MapName: MapName,
-			ShopID: ShopID
-		);
-		BankArray(ItemArray);
 	}
 
 	public void BuyGoal(string MapName, int ShopID) 
@@ -923,7 +1108,6 @@ public class SmartDailies
 		}
 		return true;
 	}
-	
 	public bool DailyCheckALL (int QuestID)
 	{
 		ExitCombat();
@@ -959,7 +1143,6 @@ public class SmartDailies
 			}
 		}
 	}
-
 	public bool CheckStorage(string item, int quant = 1)
 	{
 		if (bot.Bank.Contains(item, quant))
