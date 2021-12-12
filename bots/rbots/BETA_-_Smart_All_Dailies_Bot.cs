@@ -435,7 +435,7 @@ public class SmartDailies
 								bot.Quests.EnsureAccept(Quest);
 							}
 							ItemFarm(
-								"Nightmare Fire", 1,
+								"Unlucky Horseshoe", 1,
 								Temporary: true,
 								HuntFor: bot.Config.Get<bool>("DisableHunt"),
 								QuestID: QuestArray[0],
@@ -451,15 +451,16 @@ public class SmartDailies
 							bot.Quests.EnsureAccept(QuestArray[0]);
 						}
 						ItemFarm(
-								"Unlucky Horseshoe", 1,
-								Temporary: true,
-								HuntFor: bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[0],
-								MonsterName: "Nightmare",
-								MapName: "deadmoor",
-								CellName: "r5",
-								PadName: "Left"
-							);
+							"Nightmare Fire", 1,
+							Temporary: true,
+							HuntFor: bot.Config.Get<bool>("DisableHunt"),
+							QuestID: QuestArray[0],
+							MonsterName: "Nightmare",
+							MapName: "deadmoor",
+							CellName: "r5",
+							PadName: "Left"
+						);
+						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
@@ -486,22 +487,6 @@ public class SmartDailies
 								bot.Quests.EnsureAccept(Quest);
 							}
 							ItemFarm(
-								"Geist's Chain Link", 1,
-								Temporary: true,
-								HuntFor: bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[0],
-								MonsterName: "Geist",
-								MapName: "deadmoor",
-								CellName: "r5",
-								PadName: "Left"
-							);
-							SafeQuestComplete(QuestArray[1]);
-						}
-						else {
-							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
-							bot.Quests.EnsureAccept(QuestArray[0]);
-						}
-						ItemFarm(
 								"Geist's Pocket Lint", 1,
 								Temporary: true,
 								HuntFor: bot.Config.Get<bool>("DisableHunt"),
@@ -511,6 +496,23 @@ public class SmartDailies
 								CellName: "r13",
 								PadName: "Right"
 							);
+							SafeQuestComplete(QuestArray[1]);
+						}
+						else {
+							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+							bot.Quests.EnsureAccept(QuestArray[0]);
+						}
+						ItemFarm(
+								"Geist's Chain Link", 1,
+								Temporary: true,
+								HuntFor: bot.Config.Get<bool>("DisableHunt"),
+								QuestID: QuestArray[0],
+								MonsterName: "Geist",
+								MapName: "deadmoor",
+								CellName: "r5",
+								PadName: "Left"
+							);
+						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
