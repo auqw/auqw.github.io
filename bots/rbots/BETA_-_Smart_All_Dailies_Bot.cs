@@ -22,7 +22,7 @@ public class SmartDailies
 
 		You can contact me with any questions or suggestions via discord at Lord Exelot#9674
 	*/
-	public string Password = "Input Password Here";
+	public string Password = "harbor";
 
 	//-----------EDIT BELOW-------------//
 	public static int PrivateRoomNumber = 999999;
@@ -418,7 +418,7 @@ public class SmartDailies
 			/// Cosmetics
 			if (!bot.Config.Get<bool>("DisableCosmetics")) {
 				FormatLog(Text: "Cosmetics", Title: true);
-
+/*
 				// Mad Weaponsmith - C-Armor Token
 				if (bot.Config.Get<bool>("MadWeaponsmith")) {
 					FormatLog(Text: "Mad Weaponsmith", Title: true);
@@ -522,7 +522,7 @@ public class SmartDailies
 					);
 					BankArray(ItemArray);
 				}
-
+*/
 				// Bright Knight 
 				if (bot.Config.Get<bool>("BrightKnight")) {
 					FormatLog(Text: "Bright Knight", Title: true);
