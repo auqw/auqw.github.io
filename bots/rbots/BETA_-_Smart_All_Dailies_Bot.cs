@@ -185,6 +185,7 @@ public class SmartDailies
 						);
 						BankArray(ItemArray);
 					}
+					else FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
 				}
 
 				// Cryomancer - Glacera Ice Token
