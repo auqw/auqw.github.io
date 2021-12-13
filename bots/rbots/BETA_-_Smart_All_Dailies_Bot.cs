@@ -143,46 +143,48 @@ public class SmartDailies
 					ItemArray = new[] {"Pyromancer", "Shurpu Blaze Token"};
 					QuantityArray = new[] {1, 84};
 					QuestArray = new[] {2209, 2210};
-					if (DailyCheckANY(QuestArray[0])) {
-						UnbankList(ItemArray);
-						GetDropList(ItemArray);
-						SoloMode();
-						if (IsMember) {
-							FormatLog($"{ItemArray[0]}", "Doing the Legend-Only Daily Quest", Tabs: 1);
-							ItemFarm(
-								"Guardian Shale", 1, 
-								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[1],
-								MonsterName: "Shurpu Ring Guardian",
-								MapName: "xancave", 
-								CellName: "r11", 
-								PadName: "Left"
-							);
-							SafeQuestComplete(QuestArray[1]);
+					if (bot.Quests.IsUnlocked(2157)) {
+						if (DailyCheckANY(QuestArray[0])) {
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+							SoloMode();
+							if (IsMember) {
+								FormatLog($"{ItemArray[0]}", "Doing the Legend-Only Daily Quest", Tabs: 1);
+								ItemFarm(
+									"Guardian Shale", 1, 
+									Temporary: true,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: QuestArray[1],
+									MonsterName: "Shurpu Ring Guardian",
+									MapName: "xancave", 
+									CellName: "r11", 
+									PadName: "Left"
+								);
+								SafeQuestComplete(QuestArray[1]);
+							}
+							else {
+								FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
+								ItemFarm(
+									"Guardian Shale", 1, 
+									Temporary: true,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: QuestArray[0],
+									MonsterName: "Shurpu Ring Guardian",
+									MapName: "xancave", 
+									CellName: "r11", 
+									PadName: "Left"
+								);
+								SafeQuestComplete(QuestArray[0]);
+							}
+							bot.Wait.ForPickup(ItemArray[1]);
+							FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
-						else {
-							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
-							ItemFarm(
-								"Guardian Shale", 1, 
-								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[0],
-								MonsterName: "Shurpu Ring Guardian",
-								MapName: "xancave", 
-								CellName: "r11", 
-								PadName: "Left"
-							);
-							SafeQuestComplete(QuestArray[0]);
-						}
-						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						BuyGoal(
+							MapName: "xancave",
+							ShopID: 447
+						);
+						BankArray(ItemArray);
 					}
-					BuyGoal(
-						MapName: "xancave",
-						ShopID: 447
-					);
-					BankArray(ItemArray);
 				}
 
 				// Cryomancer - Glacera Ice Token
