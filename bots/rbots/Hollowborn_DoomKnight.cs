@@ -9,20 +9,8 @@ public class ExeScript
 	public readonly int[] SkillOrder = { 1, 2, 4, 3 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public string[] FarmGear = { 
-		"Legion Revenant", 
-		"Hollowborn Reaper's Scythe", 
-		"Head of the Legion Beast", 
-		"Shadow DragonMaster's Wings", 
-		"Polly Rogers" 
-	};
-	public string[] SoloGear = {
-		"TimeKeeper",
-		"Necrotic Sword of Doom",
-		"Helm of Awe",
-		"Blood Paladin Wings",
-		"Polly Rogers"
-	};
+	public string[] FarmGear = { };
+	public string[] SoloGear = { };
 	//-----------EDIT ABOVE-------------//
 
 	public int MapNumber = 2142069;
@@ -129,7 +117,6 @@ public class ExeScript
 		 "Worshipper of Doom",
 		 "Ingredients?"
 	};
-	
 
 	public int FarmLoop;
 	public int SavedState;
@@ -511,7 +498,7 @@ public class ExeScript
 		}
 	}
 	
-	public void AlchemyRanking() //Thank you Tato
+	public void AlchemyRanking() //Credit to; jz.#9644 ("not so cool, jayzee" on the server)
 	{
 		UnbankList(AlchemyItems);
 		GetDropList(AlchemyItems);
@@ -519,32 +506,52 @@ public class ExeScript
 		{
 			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Aquiring Needed Items");
 			ItemFarm(
-			"Dragon Scale", 30,
-			HuntFor: true,
-			QuestID: 0,
-			MonsterName: "Water Draconian",
-			MapName: "lair"
-		);
-
+				"Dragon Scale", 30,
+				HuntFor: true,
+				QuestID: 0,
+				MonsterName: "Water Draconian",
+				MapName: "lair"
+			);
 			ItemFarm(
-			"Ice Vapor", 30,
-			HuntFor: true,
-			QuestID: 0,
-			MonsterName: "Water Draconian",
-			MapName: "lair"
-		);
+				"Ice Vapor", 30,
+				HuntFor: true,
+				QuestID: 0,
+				MonsterName: "Water Draconian",
+				MapName: "lair"
+			);
+			if(!bot.Inventory.Contains("Dragon Runestone", 10))
+			{
+				if(!bot.Inventory.Contains("Gold Voucher 100k", 1))
+				{
+					while(bot.Player.Gold < 100000)
+					{
+						bot.Quests.EnsureAccept(236);
+						
+						if(!bot.Quests.CanComplete(236))
+						{
+							ItemFarm("Were Egg", 1, true, false, 0, "greenguardwest", "West12", "Left");
+						}
+						else SafeQuestComplete(236);
+						if(bot.Inventory.Contains("Berserker Bunny")) SafeSell("Berserker Bunny", 0);
+						bot.Sleep(700);
+					}
+					bot.Sleep(ScriptDelay);
+					SafePurchase("Gold Voucher 100k", 10, "alchemyacademy", 395);
+				}
+				bot.Sleep(ScriptDelay);
+				SafePurchase("Dragon Runestone", 10, "alchemyacademy", 395);
+			}
 
-			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Making Potions");			
-			bot.Player.Pickup("Dragon Scale", "Ice Vapor");
+			bot.Log($"[{DateTime.Now:HH:mm:ss}] AlchemyRanking \t Making Potions");
 			
 			SafeMapJoin("alchemy", "Enter", "Spawn");
-			bot.Sleep(500);
-			while(bot.Inventory.GetQuantity("Dragon Scale") > 1 && bot.Inventory.GetQuantity("Ice Vapor") > 1) 
+			bot.Sleep(700);
+			while (bot.Inventory.Contains("Dragon Scale" , 1) && (bot.Inventory.Contains("Ice Vapor", 1) && (bot.Inventory.Contains("Dragon Runestone", 1))))
 			{
-			bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11475%11478%false%Ready to Mix%Dragon Scale%Ice Vapor%Jera%Moose%");
-			bot.Sleep(17500);
-			bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11475%11475%fa lse%Mix Complete%Dragon Scale%Ice Vapor%Gebo%Moose%");
-			bot.Sleep(500);
+				bot.SendPacket("%xt%zm%crafting%1%getAlchWait%11475%11478%true%Ready to Mix%Dragon Scale%Ice Vapor%Gebo%Moose%");
+				bot.Sleep(15000);
+				bot.SendPacket("%xt%zm%crafting%1%checkAlchComplete%11475%11478%true%Mix Complete%Dragon Scale%Ice Vapor%Gebo%Moose%");
+				bot.Sleep(700);
 			}
 		}
 	}
