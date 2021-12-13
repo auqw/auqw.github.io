@@ -22,12 +22,13 @@ public class SmartDailies
 
 		You can contact me with any questions or suggestions via discord at Lord Exelot#9674
 	*/
-	public string Password = "harbor";
+	public string Password = "Input Password Here";
 
 	//-----------EDIT BELOW-------------//
 	public static int PrivateRoomNumber = 999999;
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
+	public int ExitCombatTimer = 2000;
 	public string[] SoloingGear = {"LightCaster"};
 	public string[] FarmingGear = {"Vampire Lord"};
 	public readonly int[] SoloingSkillOrder = { 3, 1, 2, 4 };
@@ -59,8 +60,8 @@ public class SmartDailies
 	public static bool DeathKnightLord = true;
 
 	// Cosmetics
-	public static bool MadWeaponsmith = false;
-	public static bool SUPERHammer = false;
+	public static bool MadWeaponsmith = true;
+	public static bool SUPERHammer = true;
 	public static bool BrightKnight = true;
 	public static bool MoglinPets = true;
 
@@ -418,7 +419,7 @@ public class SmartDailies
 			/// Cosmetics
 			if (!bot.Config.Get<bool>("DisableCosmetics")) {
 				FormatLog(Text: "Cosmetics", Title: true);
-/*
+
 				// Mad Weaponsmith - C-Armor Token
 				if (bot.Config.Get<bool>("MadWeaponsmith")) {
 					FormatLog(Text: "Mad Weaponsmith", Title: true);
@@ -438,7 +439,7 @@ public class SmartDailies
 								"Unlucky Horseshoe", 1,
 								Temporary: true,
 								HuntFor: bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[0],
+								QuestID: QuestArray[1],
 								MonsterName: "Nightmare",
 								MapName: "deadmoor",
 								CellName: "r5",
@@ -475,19 +476,37 @@ public class SmartDailies
 				if (bot.Config.Get<bool>("SUPERHammer")) {
 					FormatLog(Text: "Cysero's SUPER Hammer", Title: true);
 					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Weapon Token"};
+					ItemArrayB = new[] {"Mad Weaponsmith"};
 					QuantityArray = new[] {1, 90};
 					QuestArray = new[] {4310, 4311};
-					if (DailyCheckANY(QuestArray[0])) {
-						UnbankList(ItemArray);
-						GetDropList(ItemArray);
-						SoloMode();
-						if (IsMember) {
-							FormatLog($"{ItemArray[0]}", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
-							foreach (int Quest in QuestArray) {
-								bot.Quests.EnsureAccept(Quest);
+					if (CheckStorage(ItemArrayB[0])) {
+						if (DailyCheckANY(QuestArray[0])) {
+							UnbankList(ItemArray.Concat(ItemArrayB).ToArray());
+							GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
+							SoloMode();
+							if (IsMember) {
+								FormatLog("Cysero's Hammer", "Doing the Free-Player & Legend-Only Daily Quests", Tabs: 1);
+								foreach (int Quest in QuestArray) {
+									bot.Quests.EnsureAccept(Quest);
+								}
+								ItemFarm(
+									"Geist's Pocket Lint", 1,
+									Temporary: true,
+									HuntFor: bot.Config.Get<bool>("DisableHunt"),
+									QuestID: QuestArray[1],
+									MonsterName: "Geist",
+									MapName: "deadmoor",
+									CellName: "r13",
+									PadName: "Right"
+								);
+								SafeQuestComplete(QuestArray[1]);
+							}
+							else {
+								FormatLog("Cysero's Hammer", "Doing the Free-Player Daily Quest", Tabs: 1);
+								bot.Quests.EnsureAccept(QuestArray[0]);
 							}
 							ItemFarm(
-								"Geist's Pocket Lint", 1,
+								"Geist's Chain Link", 1,
 								Temporary: true,
 								HuntFor: bot.Config.Get<bool>("DisableHunt"),
 								QuestID: QuestArray[0],
@@ -496,33 +515,19 @@ public class SmartDailies
 								CellName: "r13",
 								PadName: "Right"
 							);
-							SafeQuestComplete(QuestArray[1]);
+							SafeQuestComplete(QuestArray[0]);
+							bot.Wait.ForPickup(ItemArray[1]);
+							FormatLog("Cysero's Hammer", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
-						else {
-							FormatLog($"{ItemArray[0]}", "Doing the Free-Player Daily Quest", Tabs: 1);
-							bot.Quests.EnsureAccept(QuestArray[0]);
-						}
-						ItemFarm(
-								"Geist's Chain Link", 1,
-								Temporary: true,
-								HuntFor: bot.Config.Get<bool>("DisableHunt"),
-								QuestID: QuestArray[0],
-								MonsterName: "Geist",
-								MapName: "deadmoor",
-								CellName: "r5",
-								PadName: "Left"
-							);
-						SafeQuestComplete(QuestArray[0]);
-						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						BuyGoal(
+							MapName: "deadmoor",
+							ShopID: 500
+						);
+						BankArray(ItemArray);
 					}
-					BuyGoal(
-						MapName: "deadmoor",
-						ShopID: 500
-					);
-					BankArray(ItemArray);
+					else FormatLog("Cysero's Hammer", $"You don't have [{ItemArrayB[0]}] x1", Tabs: 1);
 				}
-*/
+
 				// Bright Knight 
 				if (bot.Config.Get<bool>("BrightKnight")) {
 					FormatLog(Text: "Bright Knight", Title: true);
@@ -890,8 +895,8 @@ public class SmartDailies
 				// Armor of Awe - Pauldron of Awe - Pauldron Fragment - Pauldron Shard
 				if (bot.Config.Get<bool>("ArmorOfAwe")) {
 					FormatLog(Text: "Armor of Awe (Pauldron of Awe)", Title: true);
+					ItemArray = new[] {"Legendary Awe Pass", "Guardian Awe Pass", "Armor of Awe Pass", "Pauldron of Awe", "Pauldron Fragment", "Pauldron Shard"};
 					if (!CheckStorage("Armor of Awe")) {
-						ItemArray = new[] {"Legendary Awe Pass", "Guardian Awe Pass", "Armor of Awe Pass", "Pauldron of Awe", "Pauldron Fragment", "Pauldron Shard"};
 						if (!CheckStorage("Pauldron of Awe")) {
 							UnbankList(ItemArray);
 							GetDropList(ItemArray);
@@ -940,13 +945,13 @@ public class SmartDailies
 									ShopID: 1129
 								);
 							}
-							BankArray(ItemArray);
 						}
 						else
 							FormatLog("Pauldron of Awe", "You already own [Pauldron of Awe] x1", Tabs: 1);
 					}
 					else
 						FormatLog("Armor of Awe", "You already own [Armor of Awe] x1", Tabs: 1);
+					BankArray(ItemArray);
 				}
 
 			}
@@ -975,7 +980,6 @@ public class SmartDailies
 		*	Golden Inquisitor of Shadowfall
 
 		-		Priority Misc. Farm
-		*	Legendary Pauldron of Awe
 
 		-		Misc. Farm
 		*	Shadow Shroud
@@ -1437,7 +1441,8 @@ public class SmartDailies
 	{
 		bot.Options.AggroMonsters = false;
 		bot.Player.Jump("Wait", "Spawn");
-		while (bot.Player.State == 2) { }
+		bot.Wait.ForCombatExit();
+		bot.Sleep(ExitCombatTimer);
 	}
 
 	/// <summary>
