@@ -105,7 +105,8 @@ public class SmartAttackHunt {
 			{
 				foreach (var Skill in Skillset)
 				{
-					bot.Player.UseSkill(Skill);
+					if (bot.Player.CanUseSkill(Skill))
+						bot.Player.UseSkill(Skill);
 				}
 			}
 		}, "Skill Handler");
