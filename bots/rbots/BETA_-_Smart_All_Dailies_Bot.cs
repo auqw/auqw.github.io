@@ -28,7 +28,7 @@ public class SmartDailies
 	public static int PrivateRoomNumber = 999999;
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public int ExitCombatTimer = 2000;
+	public int ExitCombatTimer = 700;
 	public string[] SoloingGear = {"LightCaster"};
 	public string[] FarmingGear = {"Vampire Lord"};
 	public readonly int[] SoloingSkillOrder = { 3, 1, 2, 4 };
@@ -36,47 +36,8 @@ public class SmartDailies
 
 
 	// If you dont want the popup menu that comes up, set DisableMenu to true		
-	// Warning: It wont do Mine Crafting and Hard Core Metals if you have the menu disabled.
-	// 			This is because no Ore/Metal will have been selected for these quests. 
+	// Warning: It wont do any Dailies that require you to select your prefered reward in the menu
 	public static bool DisableMenu = false;
-
-	//		Option Menu Default Values
-	public static bool buyGoal = true;
-	public static bool DisableQuantities = false;
-	public static bool PrivateOnly = false;
-	public static bool DisableHunt = false;
-
-	// Catagories
-	public static bool DisableClasses = false;
-	public static bool DisableCosmetics = true;
-	public static bool DisablePrioMisc = false;
-	public static bool DisableMisc = true;
-
-	// Classes
-	public static bool Pyromancer = true;
-	public static bool Cryomancer = true;
-	public static bool TheCollector = true;
-	public static bool ShadowScytheGeneral = true;
-	public static bool DeathKnightLord = true;
-
-	// Cosmetics
-	public static bool MadWeaponsmith = true;
-	public static bool SUPERHammer = true;
-	public static bool BrightKnight = true;
-	public static bool MoglinPets = true;
-
-	// Priority Misc. Items
-	public static bool TreasureChestKeys = true;
-	public static bool WheelOfDoom = true;	
-	public static bool Ballyhoo = true;
-	public static bool EldersBlood = true;
-	public static bool DrakathArmor = true;
-	public static bool ArmorOfAwe = true;
-
-	// Misc. Items
-	public static bool CryptoToken = true;
-	public static bool ShadowShroud = true;
-	public static bool GRUMBLE = true;
 
 	//-----------EDIT ABOVE-------------//
 
@@ -85,55 +46,55 @@ public class SmartDailies
 	public List<IOption> Options = new List<IOption>() {
 		new Option<string>("-", "Close this window in order to start the bot", " ", " "),
 		new Option<string>("-", " ", " ", " "),
-		new Option<bool>("buyGoal", "Buy the Final Product", "If enabled, the bot will automatically buy the final product (when available) of the things it farmed for.", buyGoal),
-		new Option<bool>("DisableQuantity", "Disable Quantity checks", "If enabled, the bot will continue to farm items even if the goal has already been reached.", DisableQuantities),
-		new Option<bool>("PrivateOnly", "Make all rooms private", "If enabled, the bot will make all rooms you go to private. If disabled, it will swap depending on if it's on Farm or Solo mode for that Daily Quest", PrivateOnly),
-		new Option<bool>("DisableHunt", "Disable Hunting mode", "Highly recommended to leave this off. Only turn this on if you are having issues with RBot's Hunting feature.", DisableHunt),
+		new Option<bool>("buyGoal", "Buy the Final Product", "If enabled, the bot will automatically buy the final product (when available) of the things it farmed for.", true),
+		new Option<bool>("DisableQuantity", "Disable Quantity checks", "If enabled, the bot will continue to farm items even if the goal has already been reached.", false),
+		new Option<bool>("PrivateOnly", "Make all rooms private", "If enabled, the bot will make all rooms you go to private. If disabled, it will swap depending on if it's on Farm or Solo mode for that Daily Quest", false),
+		new Option<bool>("DisableHunt", "Disable Hunting mode", "Highly recommended to leave this off. Only turn this on if you are having issues with RBot's Hunting feature.", false),
 
 		// Catagories
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable entire catagories", " ", " "),
-		new Option<bool>("DisableClasses", "    Disable all Classes", "If enabled, the bot will automatically skip the entire 'Classes' section.", DisableClasses),
-		new Option<bool>("DisableCosmetics", "    Disable all Cosmetics ", "If enabled, the bot will automatically skip the entire 'Cosmetics' section.", DisableCosmetics),
-		new Option<bool>("DisablePrioMisc", "    Disable all Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Priority Misc. Items' section.", DisablePrioMisc),
-		new Option<bool>("DisableMisc", "    Disable all non-Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Misc. Items' section.", DisableClasses),
+		new Option<bool>("DisableClasses", "    Disable all Classes", "If enabled, the bot will automatically skip the entire 'Classes' section.", false),
+		new Option<bool>("DisableCosmetics", "    Disable all Cosmetics ", "If enabled, the bot will automatically skip the entire 'Cosmetics' section.", false),
+		new Option<bool>("DisablePrioMisc", "    Disable all Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Priority Misc. Items' section.", false),
+		new Option<bool>("DisableMisc", "    Disable all non-Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Misc. Items' section.", false),
 
 		// Classes
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Classes", " ", " "),
-		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.", Pyromancer),
-		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", Cryomancer),
-		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", TheCollector),
-		new Option<bool>("ShadowScytheGeneral", "    ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", ShadowScytheGeneral),
-		new Option<bool>("DeathKnightLord", "    DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check.", DeathKnightLord),
+		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.", true),
+		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", true),
+		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", true),
+		new Option<bool>("ShadowScytheGeneral", "    ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", true),
+		new Option<bool>("DeathKnightLord", "    DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check.", true),
 
 		// Cosmetics
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Cosmetics", " ", " "),
-		new Option<bool>("MadWeaponsmith", "    Mad Weaponsmith", "If disabled, the bot will automatically skip the 'Mad Weaponsmith' check.", MadWeaponsmith),
-		new Option<bool>("SUPERHammer", "    Cysero's SUPER Hammer", "If disabled, the bot will automatically skip the 'Cysero's SUPER Hammer' check.", SUPERHammer),
-		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", BrightKnight),
-		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", MoglinPets),
+		new Option<bool>("MadWeaponsmith", "    Mad Weaponsmith", "If disabled, the bot will automatically skip the 'Mad Weaponsmith' check.", true),
+		new Option<bool>("SUPERHammer", "    Cysero's SUPER Hammer", "If disabled, the bot will automatically skip the 'Cysero's SUPER Hammer' check.", true),
+		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", true),
+		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", true),
 
 		// Priority Misc. Items
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Priority Misc. Items", " ", " "),
-		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check.", TreasureChestKeys),
-		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", WheelOfDoom),
+		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check.", true),
+		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", true),
 		new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check"),
-		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", Ballyhoo),
-		new Option<bool>("EldersBlood", "    Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", EldersBlood),
-		new Option<bool>("DrakathArmor", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", DrakathArmor),
+		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", true),
+		new Option<bool>("EldersBlood", "    Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", true),
+		new Option<bool>("DrakathArmor", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", true),
 		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check"),
 		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check."),
-		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check.", ArmorOfAwe),
+		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check.", true),
 		
 		// Misc. Items
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable Misc. Items", " ", " "),
-		new Option<bool>("CryptoToken", "    Crypto Tokens", "If disabled, the bot will automatically skip the 'Crypto Tokens' check.", CryptoToken),
-		new Option<bool>("ShadowShroud", "    Legion Castle (Shadow Shroud)", "If disabled, the bot will automatically skip the 'Legion Castle (Shadow Shroud)' check.", ShadowShroud),
-		new Option<bool>("GRUMBLE", "    GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check.", GRUMBLE)
+		new Option<bool>("CryptoToken", "    Crypto Tokens", "If disabled, the bot will automatically skip the 'Crypto Tokens' check.", true),
+		new Option<bool>("ShadowShroud", "    Legion Castle (Shadow Shroud)", "If disabled, the bot will automatically skip the 'Legion Castle (Shadow Shroud)' check.", true),
+		new Option<bool>("GRUMBLE", "    GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check.", true)
 	};
 
 	public bool DontPreconfigure = true;
@@ -820,7 +781,7 @@ public class SmartDailies
 				}
 
 				// Mine Crafting Ores - Aluminum / Barium / Gold / Iron / Copper / Silver / Platinum
-				if (bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString() != "Choose_Here") {
+				if (bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString() != "Disabled") {
 					FormatLog(Text: "Mine Crafting Ores", Title: true);
 					ItemArray = new[] {bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString()};
 					ItemArrayB = new[] {"Axe of the Prospector"};
@@ -859,7 +820,7 @@ public class SmartDailies
 				}
 
 				// Hard Core Metals - Arsenic / Beryllium / Chromium / Palladium / Rhodium / Thorium / Mercury
-				if (IsMember && bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString() != "Choose_Here") {
+				if (IsMember && bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString() != "Disabled") {
 					FormatLog(Text: "Hard Core Metals", Title: true);
 					ItemArray = new[] {bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString()};
 					ItemArrayB = new[] {"Axe of the Prospector"};
@@ -1095,7 +1056,7 @@ public class SmartDailies
 	{
 		EquipList(SoloingGear);
 		SkillList(SoloingSkillOrder);
-		if (!PrivateOnly)
+		if (!bot.Config.Get<bool>("PrivateOnly"))
 			MapNumber = 1;
 	}
 	public void FarmMode()
@@ -1107,7 +1068,7 @@ public class SmartDailies
 
 	public enum MineCraftingEnum
 	{
-		Choose_Here,
+		Disabled,
 		Aluminum = 11608,
 		Barium = 11932,
 		Gold = 12157,
@@ -1118,7 +1079,7 @@ public class SmartDailies
 	}
 	public enum HardCoreMetalsEnum
 	{
-		Choose_Here,
+		Disabled,
 		Arsenic = 11287,
 		Beryllium = 11534,
 		Chromium = 11591,
@@ -1129,11 +1090,11 @@ public class SmartDailies
 	}
 	public enum BoostEnum
 	{
+		Disabled,
 		XP_Boost = 27552,
 		REP_Boost = 27553,
 		GOLD_Boost = 27554,
-		Class_Boost = 27555,
-		Disabled
+		Class_Boost = 27555
 	}
 
 	public void BuyGoal(string MapName, int ShopID) 
