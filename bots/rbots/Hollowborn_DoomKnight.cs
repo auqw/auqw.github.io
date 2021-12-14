@@ -463,11 +463,13 @@ public class ExeScript
 			SafePurchase(
 				"Receipt of Swindle", 1, 
 				MapName: "tercessuinotlim",
-				ShopID: 1951);
+				ShopID: 1951
+			);
 			SafePurchase(
 				"Doomatter", 10, 
 				MapName: "tercessuinotlim", 
-				ShopID: 1951);
+				ShopID: 1951
+			);
 		}
 		MapNumber = 1;
 		EquipList(SoloGear);
@@ -548,10 +550,10 @@ public class ExeScript
 						if(bot.Inventory.Contains("Berserker Bunny")) SafeSell("Berserker Bunny", 0);
 						bot.Sleep(700);
 					}
-					bot.Sleep(ScriptDelay);
+					bot.Sleep(700);
 					SafePurchase("Gold Voucher 100k", 10, "alchemyacademy", 395);
 				}
-				bot.Sleep(ScriptDelay);
+				bot.Sleep(700);
 				SafePurchase("Dragon Runestone", 10, "alchemyacademy", 395);
 			}
 
