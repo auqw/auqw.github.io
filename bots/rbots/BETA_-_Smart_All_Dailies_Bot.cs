@@ -109,7 +109,7 @@ public class SmartDailies
 	public int FarmLoop;
 	public int SavedState;
 	public ScriptInterface bot => ScriptInterface.Instance;
-	public void ScriptMain(ScriptInterface bot)	
+	public void ScriptMain(ScriptInterface bot)
 	{
 
 		if (Password != "harbor") {
@@ -441,10 +441,10 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				// Cysero's SUPER Hammer - C-Weapon Token
+				// Cysero's SUPER Hammer - C-Hammer Token
 				if (bot.Config.Get<bool>("SUPERHammer")) {
 					FormatLog(Text: "Cysero's SUPER Hammer", Title: true);
-					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Weapon Token"};
+					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Hammer Token"};
 					ItemArrayB = new[] {"Mad Weaponsmith"};
 					QuantityArray = new[] {1, 90};
 					QuestArray = new[] {4310, 4311};
@@ -720,7 +720,7 @@ public class SmartDailies
 							bot.SendPacket("%xt%zm%getAdReward%7070%");
 							i++;
 							FormatLog("Ballyhoo", $"Received Ad Reward {i} time(s)");
-							bot.Sleep(700);
+							bot.Sleep(1000);
 						}
 					}
 					else FormatLog("Ballyhoo", "Max. amount of Ad Rewards already received today");
