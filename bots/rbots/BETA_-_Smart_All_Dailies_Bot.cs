@@ -28,7 +28,7 @@ public class SmartDailies
 	public static int PrivateRoomNumber = 999999;
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public int ExitCombatTimer = 700;
+	public int ScriptDelay = 700;
 	public string[] SoloingGear = {"LightCaster"};
 	public string[] FarmingGear = {"Vampire Lord"};
 	public readonly int[] SoloingSkillOrder = { 3, 1, 2, 4 };
@@ -62,11 +62,12 @@ public class SmartDailies
 		// Classes
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Classes", " ", " "),
+		new Option<bool>("LordOfOrder", "    Lord of Order", "If disabled, the bot will automatically skip the 'Lord of Order' check.", true),
 		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.", true),
 		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", true),
 		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", true),
 		new Option<bool>("ShadowScytheGeneral", "    ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", true),
-		new Option<bool>("DeathKnightLord", "    DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check.", true),
+		new Option<bool>("DeathKnightLord", "    DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check. \n - Legend-Only", true),
 
 		// Cosmetics
 		new Option<string>("-", " ", " ", " "),
@@ -133,11 +134,794 @@ public class SmartDailies
 
 			FormatLog(Text: "Script Started", Title: true);
 			
-			/// Classes
+		/// Classes
 			if (!bot.Config.Get<bool>("DisableClasses")) {
 				FormatLog(Text: "Classes", Title: true);
 
-				// Pyromancer - Shurpu Blaze Token
+			// Lord of Order
+				if (bot.Config.Get<bool>("LordOfOrder")) {
+					FormatLog(Text: "Lord of Order", Title: true);
+					if (!CheckStorage("Lord of Order"))
+						FormatLog("DailyCheck", "You already own [Lord of Order] x1");
+				// The Final Challenge (7165)
+					else if (bot.Quests.IsUnlocked(7165)) {
+						if (bot.Quests.IsDailyComplete(7165))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "The Final Challenge", Title: true);
+							ItemArray = new[] {
+								"Lord Of Order", 
+								"Champion of Chaos Confronted"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Champion of Chaos Confronted
+							SoloMode();
+							FormatLog("Farming", "[Champion of Chaos Confronted] x1 from [Champion of Chaos]");
+							ItemFarm(
+								"Champion of Chaos Confronted", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7165,
+								MonsterName: "Champion of Chaos",
+								MapName: "ultradrakath",
+								CellName: "r1",
+								PadName: "Left"
+							);
+							SafeQuestComplete(7165);
+							BankArray(ItemArray);
+						}
+					}
+
+				// Blessing of Order (7164)
+					else if (bot.Quests.IsUnlocked(7164)) {
+						if (bot.Quests.IsDailyComplete(7164))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Blessing of Order", Title: true);
+						// You must have completed DoomVaultB
+							if (!bot.Quests.IsUnlocked(3004))
+								FormatLog("Quest", "Completion of the /DoomVaultB story is required");
+							else {
+								ItemArray = new[] {
+									"Lord Of Order Armor", 
+									"Weapon Imprint", 
+									"Lure of Order", 
+									"Quixotic Mana Essence", 
+									"Inversion Infusion"
+								};
+								UnbankList(ItemArray);
+								GetDropList(ItemArray);
+							// Weapon Imprint
+								SoloMode();
+								FormatLog("Farming", "[Weapon Imprint] x15 from [Undead Raxgore]");
+								FormatLog("WARNING", "Extremely difficult boss");
+								FormatLog(Text: "You might need to farm this manually", Followup: true);
+								ItemFarm(
+									"Weapon Imprint", 15,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7164,
+									MonsterName: "Undead Raxgore",
+									MapName: "doomvaultb",
+									CellName: "r16",
+									PadName: "Left"
+								);
+							// Lure of Order
+								if (bot.Player.GetFactionRank("Fishing") < 7) {
+									while (bot.Player.GetFactionRank("Fishing") < 7) {
+										int i = 0;
+										while (!bot.Inventory.Contains("Fishing Dynamite", 10)) {
+											ItemFarm(
+												"Faith's Fi'shtick", 1,
+												Temporary: true,
+												HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+												QuestID: 1682,
+												MonsterName: "Slime",
+												MapName: "greenguardwest",
+												CellName: "West4",
+												PadName: "Right"
+											);
+											SafeQuestComplete(1682);
+										}
+										SafeMapJoin("fishing");
+										while (bot.Inventory.Contains("Fishing Dynamite", 1)) {
+											bot.SendPacket("%xt%zm%FishCast%1%Dynamite%30%");
+											bot.Sleep(3500);
+											bot.SendPacket("%xt%zm%getFish%1%false%");
+											i++;
+											FormatLog("Fishing", $"Fished {i} times");
+											bot.Sleep(1500);
+										}
+									}
+								}
+								SafePurchase(
+									"Lure of Order", 1,
+									MapName: "greenguardwest",
+									ShopID: 363
+								);
+							// Quixotic Mana Essence
+								SoloMode();
+								FormatLog("Farming", "[Quixotic Mana Essence] x10 from [Ultra Xiang]");
+								FormatLog("WARNING", "Extremely difficult boss");
+								FormatLog(Text: "You might need to farm this manually", Followup: true);
+								ItemFarm(
+									"Quixotic Mana Essence", 10,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7164,
+									MonsterName: "Ultra Xiang",
+									MapName: "mirrorportal",
+									CellName: "r6",
+									PadName: "Right"
+								);
+							// Inversion InfusionSoloMode();
+								FormatLog("Farming", "[Inversion Infusion] x5 from [Serepthys]");
+								ItemFarm(
+									"Inversion Infusion", 5,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7164,
+									MonsterName: "Serepthys",
+									MapName: "yasaris",
+									CellName: "r2a",
+									PadName: "Bottom"
+								);
+								SafeQuestComplete(7164);
+								BankArray(ItemArray);
+							}
+						}
+					}
+
+				// Axiom (7163)
+					else if (bot.Quests.IsUnlocked(7163)) {
+						if (bot.Quests.IsDailyComplete(7163))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Blessing of Order", Title: true);
+							ItemArray = new[] {
+								"Lord of Order Polearm", 
+								"Law of Nature", 
+								"Law of Time", 
+								"Law of Gravity", 
+								"Law of Relativity",
+								"Law of Conservation of Energy",
+								"Law of Low Drop Rates"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Law of Nature
+							SoloMode();
+							FormatLog("Farming", "[Law of Nature] x1 from [monster]");
+							ItemFarm(
+								"Law of Nature", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Guardian Spirit",
+								MapName: "elfhame",
+								CellName: "r7",
+								PadName: "Bottom"
+							);
+						// Law of Time
+							FormatLog("Farming", "[Law of Time] x1 from [Kathool]");
+							ItemFarm(
+								"Law of Time", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Kathool",
+								MapName: "deepchaos",
+								CellName: "Frame4",
+								PadName: "Left"
+							);
+						// Law of Gravity
+							FormatLog("Farming", "[Law of Gravity] x1 from [Shadowstone Support]");
+							ItemFarm(
+								"Law of Gravity", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Shadowstone Support",
+								MapName: "necrocavern",
+								CellName: "r12",
+								PadName: "Left"
+							);
+						// Law of Relativity
+							FormatLog("Farming", "[Law of Relativity] x1 from [Reflecteract]");
+							ItemFarm(
+								"Law of Relativity", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Reflecteract",
+								MapName: "blackholesun",
+								CellName: "r9",
+								PadName: "Left"
+							);
+						// Law of Conservation of Energy
+							FormatLog("Farming", "[Law of Conservation of Energy] x1 from [Tonitru]");
+							ItemFarm(
+								"Law of Conservation of Energy", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Tonitru",
+								MapName: "thunderfang",
+								CellName: "r8",
+								PadName: "Top"
+							);
+						// Law of Low Drop Rates
+							FormatLog("Farming", "[Law of Low Drop Rates] x1 from [Red Dragon]");
+							ItemFarm(
+								"Law of Low Drop Rates", 1000,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7163,
+								MonsterName: "Red Dragon",
+								MapName: "lair",
+								CellName: "End",
+								PadName: "Right"
+							);
+							SafeQuestComplete(7163);
+							BankArray(ItemArray);
+						}
+					}
+						
+				// Ordinance (7162)
+					else if (bot.Quests.IsUnlocked(7162)) {
+						if (bot.Quests.IsDailyComplete(7162))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Ordinance", Title: true);
+							ItemArray = new[] {
+								"Lord Of Order Blade", 
+								"Acolyte's Braille",
+								"Suppressed Drows", 
+								"Suppressed Undead", 
+								"Suppressed Horcs", 
+								"Suppressed Weavers", 
+								"Strength of Resilience"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Acolyte's Braille
+							FarmMode();
+							FormatLog("Farming", "[Acolyte's Braille] x1 from [Chaos Healer]");
+							ItemFarm(
+								"Acolyte's Braille", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Chaos Healer",
+								MapName: "newfinale",
+								CellName: "r1",
+								PadName: "Left"
+							);
+						// Suppressed Drows
+							FarmMode();
+							FormatLog("Farming", "[Suppressed Drows] x50 from [Drow Assassin|Drow Soldier]");
+							ItemFarm(
+								"Suppressed Drows", 50,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Drow Assassin|Drow Soldier",
+								MapName: "wardwarf",
+								CellName: "r2",
+								PadName: "Left"
+							);
+						// Suppressed Undead
+							FormatLog("Farming", "[Suppressed Undead] x50 from [Skeletal Fire Mage|Undead Mage|Skeleton]");
+							ItemFarm(
+								"Suppressed Undead", 50,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Skeletal Fire Mage|Undead Mage|Skeleton",
+								MapName: "warundead",
+								CellName: "r2",
+								PadName: "Right"
+							);
+						// Suppressed Horcs
+							FormatLog("Farming", "[Suppressed Horcs] x50 from [Horc Warrior]");
+							ItemFarm(
+								"Suppressed Horcs", 50,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Horc Warrior",
+								MapName: "warhorc",
+								CellName: "r2",
+								PadName: "Left"
+							);
+						// Suppressed Weavers
+							FormatLog("Farming", "[Suppressed Weavers] x50 from [Weaver Queen's Hound]");
+							ItemFarm(
+								"Suppressed Weavers", 50,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Weaver Queen's Hound",
+								MapName: "weaverwar",
+								CellName: "s1",
+								PadName: "Right"
+							);
+						// Strength of Resilience
+							SoloMode();
+							FormatLog("Farming", "[Strength of Resilience] x1 from [Xyfrag]");
+							ItemFarm(
+								"Strength of Resilience", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7162,
+								MonsterName: "Xyfrag",
+								MapName: "thevoid",
+								CellName: "r12",
+								PadName: "Left"
+							);
+							SafeQuestComplete(7162);
+							BankArray(ItemArray);
+						}
+					}
+
+				// Harmony (7161)
+					else if (bot.Quests.IsUnlocked(7161)) {
+						if (bot.Quests.IsDailyComplete(7161))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Harmony", Title: true);
+							ItemArray = new[] {
+								"High Lord Of Order Helm",
+								"Unity of Life",
+								"Harmony of Solace",
+								"Teamwork Observed",
+								"Scroll of Enchantment"
+								};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Unity of Life
+							FarmMode();
+							FormatLog("Farming", "[Unity of Life] x1 from [Tree of Destiny]");
+							ItemFarm(
+								"Unity of Life", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7161,
+								MonsterName: "Tree of Destiny",
+								MapName: "elemental",
+								CellName: "r4",
+								PadName: "Right"
+							);
+						// Harmony of Solace
+							SoloMode();
+							FormatLog("Farming", "[Harmony of Solace] x1 from [Faust]");
+							ItemFarm(
+								"Harmony of Solace", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7161,
+								MonsterName: "Faust",
+								MapName: "orchestra",
+								CellName: "R8",
+								PadName: "Down"
+							);
+						// Teamwork Observed
+							FarmMode();
+							FormatLog("Farming", "[Teamwork Observed] x100 from [Pactagonal Knight]");
+							ItemFarm(
+								"Teamwork Observed", 100,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7161,
+								MonsterName: "Pactagonal Knight",
+								MapName: "cathedral",
+								CellName: "r8",
+								PadName: "Bottom"
+							);
+						// Scroll of Enchantment
+							SoloMode();
+							FormatLog("Farming", "[Scroll of Enchantment] x15 from [Queen's ArchSage]");
+							ItemFarm(
+								"Scroll of Enchantment", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7161,
+								MonsterName: "Queen's ArchSage",
+								MapName: "goose",
+								CellName: "r12",
+								PadName: "Left"
+							);
+							SafeQuestComplete(7161);
+							BankArray(ItemArray);
+						}
+					}
+						
+				// Strike of Order (7160)
+					else if (bot.Quests.IsUnlocked(7160)) {
+						if (bot.Quests.IsDailyComplete(7160))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Strike of Order", Title: true);
+						// You must have completed Drakonnan
+							if (!bot.Quests.IsUnlocked(6319))
+								FormatLog("Quest", "Completion of the /Drakonnan story is required");
+							else {
+								ItemArray = new[] {
+									"Lord of Order Horns",
+									"Hanzamune Dragon Koi Blade",
+									"The Supreme Arcane Staff",
+									"Dragonoid of Hours",
+									"Safiria's Spirit Orb",
+									"Ice Katana"
+								};
+								UnbankList(ItemArray);
+								GetDropList(ItemArray);
+							// Hanzamune Dragon Koi Blade
+								SoloMode();
+								FormatLog("Farming", "[Hanzamune Dragon Koi Blade] x1 from [Kitsune]");
+								ItemFarm(
+									"Hanzamune Dragon Koi Blade", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7160,
+									MonsterName: "kitsune",
+									MapName: "Kitsune",
+									CellName: "Boss",
+									PadName: "Left"
+								);
+							// The Supreme Arcane Staff
+								FormatLog("Farming", "[The Supreme Arcane Staff] x1 from [Monster]");
+								ItemFarm(
+									"The Supreme Arcane Staff", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7160,
+									MonsterName: "Ledgermayne",
+									MapName: "ledgermayne",
+									CellName: "Boss",
+									PadName: "Right"
+								);
+							// Dragonoid of Hours
+								FormatLog("Farming", "[Dragonoid of Hours] x1 from [Monster]");
+								ItemFarm(
+									"Dragonoid of Hours", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7160,
+									MonsterName: "Dragonoid",
+									MapName: "mqlesson",
+									CellName: "Boss",
+									PadName: "Left"
+								);
+							// Safiria's Spirit Orb
+								FormatLog("Obtaining", "[Safiria's Spirit Orb] x1 from Map maxius", Tabs: 1);
+								if (bot.Inventory.Contains("Safiria's Spirit Orb")) {
+									SafeMapJoin("maxius");
+									bot.Wait.ForMapLoad("maxius");
+									bot.SendPacket("%xt%zm%getMapItem%10978%5470%");
+								}
+							// Ice Katana
+								FormatLog("Obtaining", "[Ice Katana] x1 from Quest 6319", Tabs: 1);
+								if (bot.Inventory.Contains("Ice Katana") && bot.Inventory.GetItemByName("Ice Katana").ID == 43684)
+									FormatLog("Pre-Owned", "You already own [Ice Katana] x1");
+								else {
+									FarmMode();
+									ItemFarm(
+										"Inferno Heart", 1,
+										Temporary: true,
+										HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+										QuestID: 6319,
+										MonsterName: "Living Fire",
+										MapName: "drakonnan",
+										CellName: "r3",
+										PadName: "Bottom"
+									);
+									SafeQuestComplete(6319);
+								}
+								SafeQuestComplete(7160);
+								BankArray(ItemArray);
+							}
+						}
+					}
+						
+				// Steadfast Will (7159)
+					else if (bot.Quests.IsUnlocked(7159)) {
+						if (bot.Quests.IsDailyComplete(7159))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Steadfast Will", Title: true);
+						// You must have completed LivingDungeon
+							if (bot.Quests.IsUnlocked(4362))
+								FormatLog("Quest", "Completion of the /LivingDungeon story is required");
+							else {
+								ItemArray = new[] {
+									"Lord of Order Helm",
+									"Gaiazor's Cornerstone",
+									"Dakka's Crystal",
+									"Andre's Necklace Fragment",
+									"Desolich's Skull"
+								};
+								UnbankList(ItemArray);
+								GetDropList(ItemArray);
+							// Gaiazor's Cornerstone
+								SoloMode();
+								FormatLog("Farming", "[Gaiazor's Cornerstone] x1 from [Gaiazor]");
+								ItemFarm(
+									"Gaiazor's Cornerstone", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7159,
+									MonsterName: "Gaiazor",
+									MapName: "gaiazor",
+									CellName: "r8",
+									PadName: "Left"
+								);
+							// Dakka's Crystal
+								FormatLog("Farming", "[Dakka's Crystal] x1 from [Dakka the Dire Dragon]");
+								ItemFarm(
+									"Dakka's Crystal", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7159,
+									MonsterName: "Dakka the Dire Dragon",
+									MapName: "treetitanbattle",
+									CellName: "Enter",
+									PadName: "Spawn"
+								);
+							// Andre's Necklace Fragment
+								FormatLog("Farming", "[Andre's Necklace Fragment] x1 from [Giant Necklace]");
+								ItemFarm(
+									"Andre's Necklace Fragment", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7159,
+									MonsterName: "Giant Necklace",
+									MapName: "andre",
+									CellName: "r2",
+									PadName: "Left"
+								);
+							// Desolich's Skull
+								FormatLog("Farming", "[Desolich's Skull] x1 from [Desolich]");
+								FormatLog("WARNING", "Extremely difficult boss");
+								FormatLog(Text: "You might need to farm this manually", Followup: true);
+								ItemFarm(
+									"Desolich's Skull", 1,
+									Temporary: false,
+									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									QuestID: 7159,
+									MonsterName: "Desolich",
+									MapName: "desolich",
+									CellName: "r3",
+									PadName: "Left"
+								);
+								SafeQuestComplete(7159);
+								BankArray(ItemArray);
+							}
+						}
+					}
+						
+				// Purification of Chaos (7158)
+					else if (bot.Quests.IsUnlocked(7158)) {
+						if (bot.Quests.IsDailyComplete(7158))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Purification of Chaos", Title: true);
+							ItemArray = new[] {
+								"Lord of Order Double Wings + Wrap",
+								"Chaoroot",
+								 "The Supreme Arcane Staff", //For 'Strike of Order'
+								"Chaotic War Essence",
+								"Chaorrupting Particles",
+								"Purified Raindrop"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Chaoroot
+							SoloMode();
+							FormatLog("Farming", "[Chaoroot] x15 from [Ledgermayne]");
+							ItemFarm(
+								"Chaoroot", 15,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7158,
+								MonsterName: "Ledgermayne",
+								MapName: "ledgermayne",
+								CellName: "Boss",
+								PadName: "Right"
+							);
+						// Chaotic War Essence
+							FormatLog("Farming", "[Chaotic War Essence] x15 from [Ultra Chaos Warlord]");
+							ItemFarm(
+								"Chaotic War Essence", 15,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7158,
+								MonsterName: "Ultra Chaos Warlord",
+								MapName: "chaosboss",
+								CellName: "r2",
+								PadName: "Spawn"
+							);
+						// Chaorrupting Particles
+							FormatLog("Farming", "[Chaorrupting Particles] x15 from [Chaorruption]");
+							ItemFarm(
+								"Chaorrupting Particles", 15,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7158,
+								MonsterName: "Chaorruption",
+								MapName: "shadowgates",
+								CellName: "r13",
+								PadName: "Left"
+							);
+						// Purified Raindrop
+							FormatLog("Farming", "[Purified Raindrop] x45 from [Chaos Lord Lionfang]");
+							ItemFarm(
+								"Purified Raindrop", 45,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7158,
+								MonsterName: "Chaos Lord Lionfang",
+								MapName: "stormtemple",
+								CellName: "r16",
+								PadName: "Left"
+							);
+							SafeQuestComplete(7158);
+							BankArray(ItemArray);
+						}
+					}
+						
+				// Spirit of Justice (7157)
+					else if (bot.Quests.IsUnlocked(7157)) {
+						if (bot.Quests.IsDailyComplete(7157))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Spirit of Justice", Title: true);
+							ItemArray = new[] {
+								"Lord Of Order Wings",
+								"Lord of Order Wings + Wrap",
+								"Warden Elfis Detained",
+								"Piggy Drake Punished",
+								"Mysterious Stranger Foiled",
+								"Calico Cobby Crushed"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Warden Elfis Detained
+							SoloMode();
+							FormatLog("Farming", "[Warden Elfis Detained] x1 from [Warden Elfis]");
+							ItemFarm(
+								"Warden Elfis Detained", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7157,
+								MonsterName: "Warden Elfis",
+								MapName: "dwarfprison",
+								CellName: "Warden",
+								PadName: "Right"
+							);
+						// Piggy Drake Punished
+							FormatLog("Farming", "[Piggy Drake Punished] x1 from [Piggy Drake]");
+							ItemFarm(
+								"Piggy Drake Punished", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7157,
+								MonsterName: "Piggy Drake",
+								MapName: "prison",
+								CellName: "Tax",
+								PadName: "Right"
+							);
+						// Mysterious Stranger Foiled
+							FormatLog("Farming", "[Mysterious Stranger Foiled] x1 from [Mysterious Stranger]");
+							ItemFarm(
+								"Mysterious Stranger Foiled", 1,
+								Temporary: false,
+								HuntFor: false,
+								QuestID: 7157,
+								MonsterName: "Mysterious Stranger",
+								MapName: "mysteriousdungeon",
+								CellName: "r19",
+								PadName: "Left"
+							);
+						// Calico Cobby Crushed
+							FormatLog("Farming", "[Calico Cobby Crushed] x1 from [Calico Cobby]");
+							ItemFarm(
+								"Calico Cobby Crushed", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7157,
+								MonsterName: "Calico Cobby",
+								MapName: "dreammaster",
+								CellName: "r5a",
+								PadName: "Right"
+							);
+							SafeQuestComplete(7157);
+							BankArray(ItemArray);
+						}
+					}
+
+				// Heart of Servitude (7156)
+					else if (bot.Quests.IsUnlocked(7156)) {
+						if (bot.Quests.IsDailyComplete(7156))
+							FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
+						else {
+							FormatLog(Text: "Heart of Servitude", Title: true);
+						// You must have completed CitadelRuins
+							if (!bot.Quests.IsUnlocked(6182))
+								FormatLog("Quest", "Completion of the /CitadelRuins story is required");
+							ItemArray = new[] {
+								"Lord of Order Wrap",
+								"Lord of Order Bladed Wrap",
+								"Pristine Blades of Order",
+								"Dreadrock Donation Receipt",
+								"Deadmoor Spirits Helped",
+								"Mage's Gratitude",
+								"Ravenscar's Truth"
+							};
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+						// Pristine Blades of Order
+							SoloMode();
+							FormatLog("Farming", "[Pristine Blades of Order] x1 from [Chaorrupted Knight]");
+							ItemFarm(
+								"Pristine Blades of Order", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7156,
+								MonsterName: "Chaorrupted Knight",
+								MapName: "watchtower",
+								CellName: "Frame3",
+								PadName: "Left"
+							);
+						// Dreadrock Donation Receipt
+							FormatLog("Purchasing", "[Dreadrock Donation Receipt] x1 from Shop 1221", Tabs: 1);
+							SafePurchase(
+								"Dreadrock Donation Receipt", 1,
+								MapName: "dreadrock",
+								ShopID: 1221
+							);
+						// Deadmoor Spirits Helped
+							FormatLog("Farming", "[Deadmoor Spirits Helped] x1 from [Banshee Mallora]");
+							ItemFarm(
+								"Deadmoor Spirits Helped", 1,
+								Temporary: false,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 7156,
+								MonsterName: "Banshee Mallora",
+								MapName: "deadmoor",
+								CellName: "r30",
+								PadName: "left"
+							);
+						// Mage's Gratitude
+							FormatLog("Obtaining", "[Mage's Gratitude] x1 from Quest 6182", Tabs: 1);
+							ItemFarm(
+								"Enn'tröpy Defeated", 1,
+								Temporary: true,
+								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								QuestID: 6182,
+								MonsterName: "Enn'tröpy",
+								MapName: "citadelruins",
+								CellName: "r11b",
+								PadName: "Bottom"
+							);
+							SafeQuestComplete(6182);
+						// Ravenscar's Truth
+							FormatLog("Purchasing", "[Ravenscar's Truth] x1 from Shop 614");
+							SafePurchase(
+								"Ravenscar's Truth", 1,
+								MapName: "ravenscar",
+								ShopID: 614
+							);
+							SafeQuestComplete(7156);
+							BankArray(ItemArray);
+						}
+					}
+					
+					else FormatLog("DailyChecker", "Daily Quest unavailable", Tabs: 1);
+				}
+
+			// Pyromancer - Shurpu Blaze Token
 				if (bot.Config.Get<bool>("Pyromancer")) {
 					FormatLog(Text: "Pyromancer", Title: true);
 					ItemArray = new[] {"Pyromancer", "Shurpu Blaze Token"};
@@ -177,6 +961,7 @@ public class SmartDailies
 								SafeQuestComplete(QuestArray[0]);
 							}
 							bot.Wait.ForPickup(ItemArray[1]);
+							bot.Sleep(ScriptDelay);
 							FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
@@ -188,7 +973,7 @@ public class SmartDailies
 					else FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
 				}
 
-				// Cryomancer - Glacera Ice Token
+			// Cryomancer - Glacera Ice Token
 				if (bot.Config.Get<bool>("Cryomancer")) {
 					FormatLog(Text: "Cryomancer", Title: true);
 					ItemArray = new[] {"Cryomancer", "Glacera Ice Token"};
@@ -227,6 +1012,7 @@ public class SmartDailies
 							SafeQuestComplete(QuestArray[0]);
 						}
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
@@ -236,7 +1022,7 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				// The Collector - Token of Collection
+			// The Collector - Token of Collection
 				if (bot.Config.Get<bool>("TheCollector")) {
 					FormatLog(Text: "The Collector", Title: true);
 					ItemArray = new[] {"The Collector", "Token of Collection"};
@@ -291,6 +1077,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
@@ -300,11 +1087,11 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 				
-				// ShadowScythe General - Shadow Shield
+			// ShadowScythe General - Shadow Shield
 				if (bot.Config.Get<bool>("ShadowScytheGeneral")) {
 					FormatLog(Text: "ShadowScythe General", Title: true);
 					ItemArray = new[] {"ShadowScythe General", "Shadow Shield"};
-					QuantityArray = new[] {1, 50};
+					QuantityArray = new[] {1, 100};
 					QuestArray = new[] {3828, 3827};
 					if (DailyCheckANY(QuestArray[0])) {
 						UnbankList(ItemArray);
@@ -343,6 +1130,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("ShadowScy Gen.", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
@@ -352,7 +1140,7 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				//DeathKnight Lord - Shadow Skull
+			//DeathKnight Lord - Shadow Skull
 				if (IsMember && bot.Config.Get<bool>("DeathKnightLord")) {
 					FormatLog(Text: "DeathKnight Lord", Title: true);
 					ItemArray = new[] {"DeathKnight Lord", "Shadow Skull"};
@@ -375,6 +1163,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
@@ -385,11 +1174,11 @@ public class SmartDailies
 				}
 			}
 
-			/// Cosmetics
+		/// Cosmetics
 			if (!bot.Config.Get<bool>("DisableCosmetics")) {
 				FormatLog(Text: "Cosmetics", Title: true);
 
-				// Mad Weaponsmith - C-Armor Token
+			// Mad Weaponsmith - C-Armor Token
 				if (bot.Config.Get<bool>("MadWeaponsmith")) {
 					FormatLog(Text: "Mad Weaponsmith", Title: true);
 					ItemArray = new[] {"Mad Weaponsmith", "C-Armor Token"};
@@ -441,7 +1230,7 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				// Cysero's SUPER Hammer - C-Hammer Token
+			// Cysero's SUPER Hammer - C-Hammer Token
 				if (bot.Config.Get<bool>("SUPERHammer")) {
 					FormatLog(Text: "Cysero's SUPER Hammer", Title: true);
 					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Hammer Token"};
@@ -486,6 +1275,7 @@ public class SmartDailies
 							);
 							SafeQuestComplete(QuestArray[0]);
 							bot.Wait.ForPickup(ItemArray[1]);
+							bot.Sleep(ScriptDelay);
 							FormatLog("Cysero's Hammer", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
@@ -497,7 +1287,7 @@ public class SmartDailies
 					else FormatLog("Cysero's Hammer", $"You don't have [{ItemArrayB[0]}] x1", Tabs: 1);
 				}
 
-				// Bright Knight 
+			// Bright Knight 
 				if (bot.Config.Get<bool>("BrightKnight")) {
 					FormatLog(Text: "Bright Knight", Title: true);
 				// Bright Knight - Seal of Light
@@ -521,6 +1311,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
@@ -551,7 +1342,7 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-				// Twig, Twilly & Zorbak pet - Moglin MEAL
+			// Twig, Twilly & Zorbak pet - Moglin MEAL
 				if (bot.Config.Get<bool>("MoglinPets")) {
 					FormatLog(Text: "Twig, Twilly & Zorbak Pets", Title: true);
 					FormatLog("Notice", "The bot can only the quest all these use once a day.");
@@ -578,6 +1369,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
@@ -644,11 +1436,11 @@ public class SmartDailies
 				}
 			}
 
-			/// Priority Misc. Items
+		/// Priority Misc. Items
 			if (!bot.Config.Get<bool>("DisablePrioMisc")) {
 				FormatLog(Text: "Priority Misc. Items", Title: true);
 				
-				// Mothly Treasure Chest Keys - Magic Treasure Chest Key
+			// Mothly Treasure Chest Keys - Magic Treasure Chest Key
 				if (IsMember && bot.Config.Get<bool>("TreasureChestKeys")) {
 					FormatLog(Text: "Mothly Treasure Chest Keys", Title: true);
 					ItemArray = new[] {"Magic Treasure Chest Key"};
@@ -663,7 +1455,7 @@ public class SmartDailies
 					else FormatLog("MonthlyCheck", "Monthly Quest unavailable", Tabs: 1);
 				}
 
-				// The Wheel of Doom
+			// The Wheel of Doom
 				if (bot.Config.Get<bool>("TheWheelOfDoom")) {
 					FormatLog(Text: "The Wheel of Doom", Title: true);
 					ItemArray = new[] {"Gear of Doom"};
@@ -692,7 +1484,7 @@ public class SmartDailies
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
 				}
 
-				// Free Daily Boost - XP Boost /  REP Boost /  GOLD Boost / Class Boost 
+			// Free Daily Boost - XP Boost /  REP Boost / GOLD Boost / Class Boost 
 				if (IsMember && bot.Config.Get<BoostEnum>("BoostEnum").ToString() != "Disabled") {
 					FormatLog(Text: "Free Daily Boost", Title: true);
 					ItemArray = new[] {$"{bot.Config.Get<BoostEnum>("BoostEnum").ToString().Replace("_", " ")}! (60 min)"};
@@ -704,12 +1496,13 @@ public class SmartDailies
 						GetDropList(ItemArray);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[0]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("Daily Boost", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// Ballyhoo's Ad Rewards - 5 AC / 500 Gold
+			// Ballyhoo's Ad Rewards - 5 AC / 500 Gold
 				if (bot.Config.Get<bool>("Ballyhoo")) {
 					FormatLog(Text: "Ballyhoo's Ad Rewards", Title: true);
 					SafeMapJoin("ballyhoo");
@@ -726,7 +1519,7 @@ public class SmartDailies
 					else FormatLog("Ballyhoo", "Max. amount of Ad Rewards already received today");
 				}
 
-				// Void Highlord - Elder's Blood
+			// Void Highlord - Elder's Blood
 				if (bot.Config.Get<bool>("EldersBlood")) {
 					FormatLog(Text: "Void Highlord (Elders' Blood)", Title: true);
 					ItemArray = new[] {"Void Highlord", "Elders' Blood"};
@@ -749,13 +1542,14 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					ItemArray = new[] {"Elders' Blood"};
 					BankArray(ItemArray);
 				}
 
-				// Drakath's Armor - Dage's Scroll Fragment
+			// Drakath's Armor - Dage's Scroll Fragment
 				if  (bot.Config.Get<bool>("DrakathArmor")) {
 					FormatLog(Text: "Drakath's Armor (Dage's Scroll Fragment)", Title: true);
 					ItemArray = new[] {"Get Your Original Drakath's Armor", "Dage's Scroll Fragment"};
@@ -778,12 +1572,13 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("Drakath's Armor", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// Mine Crafting Ores - Aluminum / Barium / Gold / Iron / Copper / Silver / Platinum
+			// Mine Crafting Ores - Aluminum / Barium / Gold / Iron / Copper / Silver / Platinum
 				if (bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString() != "Disabled") {
 					FormatLog(Text: "Mine Crafting Ores", Title: true);
 					ItemArray = new[] {bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString()};
@@ -817,12 +1612,13 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<MineCraftingEnum>("MineCrafting"));
 						bot.Wait.ForPickup(ItemArray[0]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("Mine Crafting", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// Hard Core Metals - Arsenic / Beryllium / Chromium / Palladium / Rhodium / Thorium / Mercury
+			// Hard Core Metals - Arsenic / Beryllium / Chromium / Palladium / Rhodium / Thorium / Mercury
 				if (IsMember && bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString() != "Disabled") {
 					FormatLog(Text: "Hard Core Metals", Title: true);
 					ItemArray = new[] {bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString()};
@@ -856,12 +1652,13 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals"));
 						bot.Wait.ForPickup(ItemArray[0]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("Hard Core Metals", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// Armor of Awe - Pauldron of Awe - Pauldron Fragment - Pauldron Shard
+			// Armor of Awe - Pauldron of Awe - Pauldron Fragment - Pauldron Shard
 				if (IsMember && bot.Config.Get<bool>("ArmorOfAwe")) {
 					FormatLog(Text: "Armor of Awe (Pauldron of Awe)", Title: true);
 					ItemArray = new[] {"Legendary Awe Pass", "Pauldron of Awe", "Pauldron Fragment", "Pauldron Shard"};
@@ -884,7 +1681,8 @@ public class SmartDailies
 									);
 									SafeQuestComplete(4160);
 								}
-								else FormatLog("DailyCheck", $"Daily Quest unavailable", Tabs: 1);
+								else 
+									FormatLog("DailyCheck", $"Daily Quest unavailable", Tabs: 1);
 							}
 							else {
 								if (bot.Bank.Contains("Pauldron Fragment"))
@@ -906,11 +1704,11 @@ public class SmartDailies
 
 			}
 
-			/// Misc. Items
+		/// Misc. Items
 			if (!bot.Config.Get<bool>("DisableMisc")) {
 				FormatLog(Text: "Misc. Items", Title: true);
 
-				// Crypto Tokens
+			// Crypto Tokens
 				if (bot.Config.Get<bool>("CryptoToken")) {
 					FormatLog(Text: "Crypto Tokens", Title: true);
 					ItemArray = new[] {"Crypto Token"};
@@ -932,12 +1730,13 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[0]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// Legion Castle - Shadow Shroud
+			// Legion Castle - Shadow Shroud
 				if (bot.Config.Get<bool>("ShadowShroud")) {
 					FormatLog(Text: "Legion Castle (Shadow Shroud)", Title: true);
 					ItemArray = new[] {"Legion Castle","Shadow Shroud"};
@@ -959,12 +1758,13 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
+						bot.Sleep(ScriptDelay);
 						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
 
-				// GRUMBLE, GRUMBLE...
+			// GRUMBLE, GRUMBLE...
 				if (CheckStorage("Crag &amp; Bamboozle") && bot.Config.Get<bool>("GRUMBLE")) {
 					FormatLog(Text: "GRUMBLE, GRUMBLE...", Title: true);
 					ItemArray = new[] {"Diamond of Nulgath", "Blood Gem of the Archfiend"};
@@ -976,6 +1776,7 @@ public class SmartDailies
 						GetDropList(ItemArray.Concat(ItemArrayB).ToArray());
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[0]);
+						bot.Sleep(ScriptDelay);
 						FormatLog("GRUMBLE", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 						FormatLog("GRUMBLE", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
@@ -1006,12 +1807,20 @@ public class SmartDailies
 		*	Power Gems
 		*	Realm Gems
 		*	Read the Deisgn Notes! (Valencia /Battleon)
-		*	GRUMBLE, GRUMBLE..., (Crag & Bamboozle)
 
 		-		PvP
 		*	Is this even possible to bot?
 		*	1v1 Legion PvP Trophy
 		*	​1v1 PvP Trophy
+
+		-		QoL
+		*	Treasure Potion based logging for WoD
+		*	AC and GOLD based Logging for Ballyhoo
+
+		-		Known glitches
+		*	GOLD Boost! (60 min) wont be accepted properly
+		*	ItemFarm kills some enemies whilst the item already dropped
+	
 	*/
 
 	/*------------------------------------------------------------------------------------------------------------
@@ -1462,7 +2271,7 @@ public class SmartDailies
 		bot.Options.AggroMonsters = false;
 		bot.Player.Jump("Wait", "Spawn");
 		bot.Wait.ForCombatExit();
-		bot.Sleep(ExitCombatTimer);
+		bot.Sleep(ScriptDelay);
 	}
 
 	/// <summary>
