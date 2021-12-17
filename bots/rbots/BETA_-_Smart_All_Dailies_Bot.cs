@@ -62,8 +62,8 @@ public class SmartDailies
 		// Classes
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable specific Classes", " ", " "),
-		new Option<bool>("LordOfOrder", "    Lord of Order", "If disabled, the bot will automatically skip the 'Lord of Order' check.", true),
-		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check. \n - Completion of the /XanCave story is required.", true),
+		new Option<bool>("LordOfOrder", "    Lord of Order", "If disabled, the bot will automatically skip the 'Lord of Order' check.\nCompletion of these stories is required for seperate stages:\n - /CitadelRuins + /LivingDungeon + /Drakonnan + /DoomVaultB", true),
+		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.\n - Completion of the /XanCave story is required.", true),
 		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", true),
 		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", true),
 		new Option<bool>("ShadowScytheGeneral", "    ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", true),
@@ -82,20 +82,20 @@ public class SmartDailies
 		new Option<string>("-", "Enable/Disable specific Priority Misc. Items", " ", " "),
 		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check. \n - Legend-Only.", true),
 		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", true),
-		new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check. \n - Legend-Only."),
+		new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check.\n - Legend-Only."),
 		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", true),
 		new Option<bool>("EldersBlood", "    Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", true),
 		new Option<bool>("DrakathArmor", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", true),
 		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check."),
-		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check. \n - Legend-Only."),
-		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check. \n - Legend-Only.", true),
+		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check.\n - Legend-Only."),
+		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check.\n - Legend-Only.", true),
 		
 		// Misc. Items
 		new Option<string>("-", " ", " ", " "),
 		new Option<string>("-", "Enable/Disable Misc. Items", " ", " "),
 		new Option<bool>("CryptoToken", "    Crypto Tokens", "If disabled, the bot will automatically skip the 'Crypto Tokens' check.", true),
 		new Option<bool>("ShadowShroud", "    Legion Castle (Shadow Shroud)", "If disabled, the bot will automatically skip the 'Legion Castle (Shadow Shroud)' check.", true),
-		new Option<bool>("GRUMBLE", "    GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check. \n - Crag & Bamboozle required. ", true)
+		new Option<bool>("GRUMBLE", "    GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check.\n - Crag & Bamboozle required. ", true)
 	};
 
 	public bool DontPreconfigure = true;
@@ -632,7 +632,7 @@ public class SmartDailies
 						else {
 							FormatLog(Text: "Steadfast Will", Title: true);
 						// You must have completed LivingDungeon
-							if (bot.Quests.IsUnlocked(4362))
+							if (!bot.Quests.IsUnlocked(4362))
 								FormatLog("Quest", "Completion of the /LivingDungeon story is required");
 							else {
 								ItemArray = new[] {
@@ -1796,7 +1796,6 @@ public class SmartDailies
 
 	/*
 		-		Classes
-		*	Lord of Order
 
 		-		Cosmetics
 		*	Golden Inquisitor of Shadowfall
@@ -1818,7 +1817,7 @@ public class SmartDailies
 		*	AC and GOLD based Logging for Ballyhoo
 
 		-		Known glitches
-		*	GOLD Boost! (60 min) wont be accepted properly
+		*	Free Daily Boost wont be accepted properly
 		*	ItemFarm kills some enemies whilst the item already dropped
 	
 	*/
