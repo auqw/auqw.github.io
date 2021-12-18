@@ -36,7 +36,6 @@ public class Script {
 		foreach(var acc in accounts) {
 			while (!bot.Player.LoggedIn) {
                 bot.CallGameFunction("login", acc.Key, acc.Value);
-                bot.Player.Reconnect(server);
                 while (!bot.Player.Loaded) { }
                 while (!bot.Map.Loaded) { }
 
