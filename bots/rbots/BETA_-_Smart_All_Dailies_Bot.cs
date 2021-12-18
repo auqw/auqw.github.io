@@ -5,7 +5,7 @@ using RBot;
 using RBot.Options;
 using System.Windows.Forms;
 
-public class SmartDailies 
+public class SmartDailies
 {	
 
 	public string Password = "Password";
@@ -67,7 +67,7 @@ public class SmartDailies
 		new Option<bool>("DrakathArmor", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", true),
 		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check."),
 		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check.\n - Legend-Only."),
-		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron of Awe)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron of Awe)' check.\n - Legend-Only.", true)
+		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron Relic)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron Relic)' check.\n - Legend-Only.", true)
 	};	
 	public List<IOption> F_Toggle_specific_Cosmetics = new List<IOption>() {
 		// Cosmetics
@@ -91,6 +91,7 @@ public class SmartDailies
 	public int[] QuestArray;
 	public int SpaceNeeded = 0;
 	public int MapNumber = PrivateRoomNumber;
+	public bool DisableHunt = false;
 
 	public int FarmLoop;
 	public int SavedState;
@@ -102,13 +103,13 @@ public class SmartDailies
 			MessageBox.Show("This script requires RBot 3.6.2.0 or above. Stopping the script", "WARNING");
 			ScriptManager.StopScript();
 		}
-
 		if (!DisableMenu) bot.Config.Configure();
-
 		if (Password != "harbor") {
 			MessageBox.Show("Please read the READ-ME at the start of the script and place the password before starting this bot.", "Password Incorrect!");
 			ScriptManager.StopScript();
 		}
+		DisableHunt = bot.Config.Get<bool>("B_General_Options", "DisableHunt");
+
 
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
@@ -125,14 +126,14 @@ public class SmartDailies
 			FormatLog(Text: "Script Started", Title: true);
 			
 		/// Classes
-			if (!bot.Config.Get<bool>("DisableClasses")) {
+			if (!bot.Config.Get<bool>("C_Toggle_entire_Catagories", "DisableClasses")) {
 				FormatLog(Text: "Classes", Title: true);
 
 			// Lord of Order
-				if (bot.Config.Get<bool>("LordOfOrder")) {
+				if (bot.Config.Get<bool>("D_Toggle_specific_Classes", "LordOfOrder")) {
 					FormatLog(Text: "Lord of Order", Title: true);
 					if (CheckStorage("Lord of Order"))
-						FormatLog("DailyCheck", "You already own [Lord of Order] x1");
+						FormatLog("DailyCheck", "You already own [Lord of Order] x1", Tabs: 1);
 				// The Final Challenge (7165)
 					else if (bot.Quests.IsUnlocked(7165)) {
 						if (bot.Quests.IsDailyComplete(7165))
@@ -151,7 +152,7 @@ public class SmartDailies
 							ItemFarm(
 								"Champion of Chaos Confronted", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7165,
 								MonsterName: "Champion of Chaos",
 								MapName: "ultradrakath",
@@ -190,7 +191,7 @@ public class SmartDailies
 								ItemFarm(
 									"Weapon Imprint", 15,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7164,
 									MonsterName: "Undead Raxgore",
 									MapName: "doomvaultb",
@@ -205,7 +206,7 @@ public class SmartDailies
 											ItemFarm(
 												"Faith's Fi'shtick", 1,
 												Temporary: true,
-												HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+												HuntFor: !DisableHunt,
 												QuestID: 1682,
 												MonsterName: "Slime",
 												MapName: "greenguardwest",
@@ -238,7 +239,7 @@ public class SmartDailies
 								ItemFarm(
 									"Quixotic Mana Essence", 10,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7164,
 									MonsterName: "Ultra Xiang",
 									MapName: "mirrorportal",
@@ -250,7 +251,7 @@ public class SmartDailies
 								ItemFarm(
 									"Inversion Infusion", 5,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7164,
 									MonsterName: "Serepthys",
 									MapName: "yasaris",
@@ -286,7 +287,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Nature", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Guardian Spirit",
 								MapName: "elfhame",
@@ -298,7 +299,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Time", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Kathool",
 								MapName: "deepchaos",
@@ -310,7 +311,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Gravity", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Shadowstone Support",
 								MapName: "necrocavern",
@@ -322,7 +323,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Relativity", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Reflecteract",
 								MapName: "blackholesun",
@@ -334,7 +335,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Conservation of Energy", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Tonitru",
 								MapName: "thunderfang",
@@ -346,7 +347,7 @@ public class SmartDailies
 							ItemFarm(
 								"Law of Low Drop Rates", 1000,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7163,
 								MonsterName: "Red Dragon",
 								MapName: "lair",
@@ -381,7 +382,7 @@ public class SmartDailies
 							ItemFarm(
 								"Acolyte's Braille", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Chaos Healer",
 								MapName: "newfinale",
@@ -394,7 +395,7 @@ public class SmartDailies
 							ItemFarm(
 								"Suppressed Drows", 50,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Drow Assassin|Drow Soldier",
 								MapName: "wardwarf",
@@ -406,7 +407,7 @@ public class SmartDailies
 							ItemFarm(
 								"Suppressed Undead", 50,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Skeletal Fire Mage|Undead Mage|Skeleton",
 								MapName: "warundead",
@@ -418,7 +419,7 @@ public class SmartDailies
 							ItemFarm(
 								"Suppressed Horcs", 50,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Horc Warrior",
 								MapName: "warhorc",
@@ -430,7 +431,7 @@ public class SmartDailies
 							ItemFarm(
 								"Suppressed Weavers", 50,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Weaver Queen's Hound",
 								MapName: "weaverwar",
@@ -443,7 +444,7 @@ public class SmartDailies
 							ItemFarm(
 								"Strength of Resilience", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7162,
 								MonsterName: "Xyfrag",
 								MapName: "thevoid",
@@ -476,7 +477,7 @@ public class SmartDailies
 							ItemFarm(
 								"Unity of Life", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7161,
 								MonsterName: "Tree of Destiny",
 								MapName: "elemental",
@@ -489,7 +490,7 @@ public class SmartDailies
 							ItemFarm(
 								"Harmony of Solace", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7161,
 								MonsterName: "Faust",
 								MapName: "orchestra",
@@ -502,7 +503,7 @@ public class SmartDailies
 							ItemFarm(
 								"Teamwork Observed", 100,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7161,
 								MonsterName: "Pactagonal Knight",
 								MapName: "cathedral",
@@ -515,7 +516,7 @@ public class SmartDailies
 							ItemFarm(
 								"Scroll of Enchantment", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7161,
 								MonsterName: "Queen's ArchSage",
 								MapName: "goose",
@@ -553,7 +554,7 @@ public class SmartDailies
 								ItemFarm(
 									"Hanzamune Dragon Koi Blade", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7160,
 									MonsterName: "kitsune",
 									MapName: "Kitsune",
@@ -565,7 +566,7 @@ public class SmartDailies
 								ItemFarm(
 									"The Supreme Arcane Staff", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7160,
 									MonsterName: "Ledgermayne",
 									MapName: "ledgermayne",
@@ -577,7 +578,7 @@ public class SmartDailies
 								ItemFarm(
 									"Dragonoid of Hours", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7160,
 									MonsterName: "Dragonoid",
 									MapName: "mqlesson",
@@ -600,7 +601,7 @@ public class SmartDailies
 									ItemFarm(
 										"Inferno Heart", 1,
 										Temporary: true,
-										HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+										HuntFor: !DisableHunt,
 										QuestID: 6319,
 										MonsterName: "Living Fire",
 										MapName: "drakonnan",
@@ -640,7 +641,7 @@ public class SmartDailies
 								ItemFarm(
 									"Gaiazor's Cornerstone", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7159,
 									MonsterName: "Gaiazor",
 									MapName: "gaiazor",
@@ -652,7 +653,7 @@ public class SmartDailies
 								ItemFarm(
 									"Dakka's Crystal", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7159,
 									MonsterName: "Dakka the Dire Dragon",
 									MapName: "treetitanbattle",
@@ -664,7 +665,7 @@ public class SmartDailies
 								ItemFarm(
 									"Andre's Necklace Fragment", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7159,
 									MonsterName: "Giant Necklace",
 									MapName: "andre",
@@ -678,7 +679,7 @@ public class SmartDailies
 								ItemFarm(
 									"Desolich's Skull", 1,
 									Temporary: false,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: 7159,
 									MonsterName: "Desolich",
 									MapName: "desolich",
@@ -713,7 +714,7 @@ public class SmartDailies
 							ItemFarm(
 								"Chaoroot", 15,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7158,
 								MonsterName: "Ledgermayne",
 								MapName: "ledgermayne",
@@ -725,7 +726,7 @@ public class SmartDailies
 							ItemFarm(
 								"Chaotic War Essence", 15,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7158,
 								MonsterName: "Ultra Chaos Warlord",
 								MapName: "chaosboss",
@@ -737,7 +738,7 @@ public class SmartDailies
 							ItemFarm(
 								"Chaorrupting Particles", 15,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7158,
 								MonsterName: "Chaorruption",
 								MapName: "shadowgates",
@@ -749,7 +750,7 @@ public class SmartDailies
 							ItemFarm(
 								"Purified Raindrop", 45,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7158,
 								MonsterName: "Chaos Lord Lionfang",
 								MapName: "stormtemple",
@@ -783,7 +784,7 @@ public class SmartDailies
 							ItemFarm(
 								"Warden Elfis Detained", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7157,
 								MonsterName: "Warden Elfis",
 								MapName: "dwarfprison",
@@ -795,7 +796,7 @@ public class SmartDailies
 							ItemFarm(
 								"Piggy Drake Punished", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7157,
 								MonsterName: "Piggy Drake",
 								MapName: "prison",
@@ -819,7 +820,7 @@ public class SmartDailies
 							ItemFarm(
 								"Calico Cobby Crushed", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7157,
 								MonsterName: "Calico Cobby",
 								MapName: "dreammaster",
@@ -857,7 +858,7 @@ public class SmartDailies
 							ItemFarm(
 								"Pristine Blades of Order", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7156,
 								MonsterName: "Chaorrupted Knight",
 								MapName: "watchtower",
@@ -876,7 +877,7 @@ public class SmartDailies
 							ItemFarm(
 								"Deadmoor Spirits Helped", 1,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 7156,
 								MonsterName: "Banshee Mallora",
 								MapName: "deadmoor",
@@ -888,7 +889,7 @@ public class SmartDailies
 							ItemFarm(
 								"Enn'tröpy Defeated", 1,
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: 6182,
 								MonsterName: "Enn'tröpy",
 								MapName: "citadelruins",
@@ -908,11 +909,11 @@ public class SmartDailies
 						}
 					}
 					
-					else FormatLog("DailyChecker", "Daily Quest unavailable", Tabs: 1);
+					else FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
 				}
 
 			// Pyromancer - Shurpu Blaze Token
-				if (bot.Config.Get<bool>("Pyromancer")) {
+				if (bot.Config.Get<bool>("D_Toggle_specific_Classes", "Pyromancer")) {
 					FormatLog(Text: "Pyromancer", Title: true);
 					ItemArray = new[] {"Pyromancer", "Shurpu Blaze Token"};
 					QuantityArray = new[] {1, 84};
@@ -927,7 +928,7 @@ public class SmartDailies
 								ItemFarm(
 									"Guardian Shale", 1, 
 									Temporary: true,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: QuestArray[1],
 									MonsterName: "Shurpu Ring Guardian",
 									MapName: "xancave", 
@@ -941,7 +942,7 @@ public class SmartDailies
 								ItemFarm(
 									"Guardian Shale", 1, 
 									Temporary: true,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: QuestArray[0],
 									MonsterName: "Shurpu Ring Guardian",
 									MapName: "xancave", 
@@ -964,7 +965,7 @@ public class SmartDailies
 				}
 
 			// Cryomancer - Glacera Ice Token
-				if (bot.Config.Get<bool>("Cryomancer")) {
+				if (bot.Config.Get<bool>("D_Toggle_specific_Classes", "Cryomancer")) {
 					FormatLog(Text: "Cryomancer", Title: true);
 					ItemArray = new[] {"Cryomancer", "Glacera Ice Token"};
 					QuantityArray = new[] {1, 84};
@@ -978,7 +979,7 @@ public class SmartDailies
 							ItemFarm(
 								"Dark Ice", 1, 
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[1],
 								MonsterName: "Frost Invader",
 								MapName: "frozenruins", 
@@ -992,7 +993,7 @@ public class SmartDailies
 							ItemFarm(
 								"Dark Ice", 1, 
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[0],
 								MonsterName: "Frost Invader",
 								MapName: "frozenruins", 
@@ -1013,7 +1014,7 @@ public class SmartDailies
 				}
 
 			// The Collector - Token of Collection
-				if (bot.Config.Get<bool>("TheCollector")) {
+				if (bot.Config.Get<bool>("D_Toggle_specific_Classes", "TheCollector")) {
 					FormatLog(Text: "The Collector", Title: true);
 					ItemArray = new[] {"The Collector", "Token of Collection"};
 					ItemArrayB = new[] {"This Might Be A Token", "This is Definitely a Token", "This Could Be A Token"};
@@ -1031,7 +1032,7 @@ public class SmartDailies
 							ItemFarm(
 								ItemArrayB[1], 2,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[1],
 								MonsterName: "Killer Cricket|Carnivorous Cricket",
 								MapName: "terrarium",
@@ -1042,7 +1043,7 @@ public class SmartDailies
 							ItemFarm(
 								ItemArrayB[2], 2,
 								Temporary: false,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[2],
 								MonsterName: "Killer Cricket|Carnivorous Cricket",
 								MapName: "terrarium",
@@ -1058,7 +1059,7 @@ public class SmartDailies
 						ItemFarm(
 							ItemArrayB[0], 2,
 							Temporary: false,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Killer Cricket|Carnivorous Cricket",
 							MapName: "terrarium",
@@ -1078,7 +1079,7 @@ public class SmartDailies
 				}
 				
 			// ShadowScythe General - Shadow Shield
-				if (bot.Config.Get<bool>("ShadowScytheGeneral")) {
+				if (bot.Config.Get<bool>("D_Toggle_specific_Classes", "ShadowScytheGeneral")) {
 					FormatLog(Text: "ShadowScythe General", Title: true);
 					ItemArray = new[] {"ShadowScythe General", "Shadow Shield"};
 					QuantityArray = new[] {1, 100};
@@ -1095,7 +1096,7 @@ public class SmartDailies
 							ItemFarm(
 								"Broken Blade", 1,
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[1],
 								MonsterName: "Citadel Crusader|Lightguard Caster|Lightguard Paladin",
 								MapName: "lightguardwar",
@@ -1111,7 +1112,7 @@ public class SmartDailies
 						ItemFarm(
 							"Broken Blade", 1,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Citadel Crusader|Lightguard Caster|Lightguard Paladin",
 							MapName: "lightguardwar",
@@ -1131,7 +1132,7 @@ public class SmartDailies
 				}
 
 			//DeathKnight Lord - Shadow Skull
-				if (IsMember && bot.Config.Get<bool>("DeathKnightLord")) {
+				if (IsMember && bot.Config.Get<bool>("D_Toggle_specific_Classes", "DeathKnightLord")) {
 					FormatLog(Text: "DeathKnight Lord", Title: true);
 					ItemArray = new[] {"DeathKnight Lord", "Shadow Skull"};
 					QuantityArray = new[] {1, 30};
@@ -1144,7 +1145,7 @@ public class SmartDailies
 						ItemFarm(
 							"Shadow Scales", 5,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Shadow Serpent",
 							MapName: "bludrut4",
@@ -1165,11 +1166,11 @@ public class SmartDailies
 			}
 		
 		/// Priority Misc. Items
-			if (!bot.Config.Get<bool>("DisablePrioMisc")) {
+			if (!bot.Config.Get<bool>("C_Toggle_entire_Catagories", "DisablePrioMisc")) {
 				FormatLog(Text: "Priority Misc. Items", Title: true);
 				
 			// Mothly Treasure Chest Keys - Magic Treasure Chest Key
-				if (IsMember && bot.Config.Get<bool>("TreasureChestKeys")) {
+				if (IsMember && bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "TreasureChestKeys")) {
 					FormatLog(Text: "Mothly Treasure Chest Keys", Title: true);
 					ItemArray = new[] {"Magic Treasure Chest Key"};
 					QuestArray = new[] {1239};
@@ -1184,7 +1185,7 @@ public class SmartDailies
 				}
 
 			// The Wheel of Doom
-				if (bot.Config.Get<bool>("TheWheelOfDoom")) {
+				if (bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "TheWheelOfDoom")) {
 					FormatLog(Text: "The Wheel of Doom", Title: true);
 					ItemArray = new[] {"Gear of Doom"};
 					QuestArray = new[] {3075, 3076};
@@ -1223,16 +1224,16 @@ public class SmartDailies
 				}
 
 			// Free Daily Boost - XP Boost /  REP Boost / GOLD Boost / Class Boost 
-				if (IsMember && bot.Config.Get<BoostEnum>("BoostEnum").ToString() != "Disabled") {
+				if (IsMember && bot.Config.Get<BoostEnum>("E_Toggle_specific_Priority_Misc_Items", "BoostEnum").ToString() != "Disabled") {
 					FormatLog(Text: "Free Daily Boost", Title: true);
-					ItemArray = new[] {$"{bot.Config.Get<BoostEnum>("BoostEnum").ToString().Replace("_", " ")}! (60 min)"};
+					ItemArray = new[] {$"{bot.Config.Get<BoostEnum>("E_Toggle_specific_Priority_Misc_Items", "BoostEnum").ToString().Replace("_", " ")}! (60 min)"};
 					QuantityArray = new[] {500};
 					QuestArray = new[] {4069};
 					if (DailyCheckANY(QuestArray[0])) {
 						FormatLog("Daily Boost", "Doing the Legend-Only Daily Quest", Tabs: 1);
 						UnbankList(ItemArray);
 						GetDropList(ItemArray);
-						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<BoostEnum>("BoostEnum"));
+						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<BoostEnum>("E_Toggle_specific_Priority_Misc_Items", "BoostEnum"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
 						FormatLog("Daily Boost", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
@@ -1241,7 +1242,7 @@ public class SmartDailies
 				}
 
 			// Ballyhoo's Ad Rewards - 5 AC / 500 Gold
-				if (bot.Config.Get<bool>("Ballyhoo")) {
+				if (bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "Ballyhoo")) {
 					FormatLog(Text: "Ballyhoo's Ad Rewards", Title: true);
 					SafeMapJoin("ballyhoo");
 					if (bot.GetGameObject<int>("world.myAvatar.objData.iDailyAds") < 3) {
@@ -1261,7 +1262,7 @@ public class SmartDailies
 				}
 
 			// Void Highlord - Elder's Blood
-				if (bot.Config.Get<bool>("EldersBlood")) {
+				if (bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "EldersBlood")) {
 					FormatLog(Text: "Void Highlord (Elders' Blood)", Title: true);
 					ItemArray = new[] {"Void Highlord", "Elders' Blood"};
 					QuantityArray = new[] {1, 5};
@@ -1274,7 +1275,7 @@ public class SmartDailies
 						ItemFarm(
 							"Slain Gorillaphant", 50,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Gorillaphant",
 							MapName: "arcangrove",
@@ -1291,7 +1292,7 @@ public class SmartDailies
 				}
 
 			// Drakath's Armor - Dage's Scroll Fragment
-				if  (bot.Config.Get<bool>("DrakathArmor")) {
+				if  (bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "DrakathArmor")) {
 					FormatLog(Text: "Drakath's Armor (Dage's Scroll Fragment)", Title: true);
 					ItemArray = new[] {"Get Your Original Drakath's Armor", "Dage's Scroll Fragment"};
 					QuantityArray = new[] {1, 13};
@@ -1304,7 +1305,7 @@ public class SmartDailies
 						ItemFarm(
 							"Chaos Power Increased", 6,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "*",
 							MapName: "mountdoomskull",
@@ -1320,9 +1321,9 @@ public class SmartDailies
 				}
 
 			// Mine Crafting Ores - Aluminum / Barium / Gold / Iron / Copper / Silver / Platinum
-				if (bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString() != "Disabled") {
+				if (bot.Config.Get<MineCraftingEnum>("E_Toggle_specific_Priority_Misc_Items", "MineCrafting").ToString() != "Disabled") {
 					FormatLog(Text: "Mine Crafting Ores", Title: true);
-					ItemArray = new[] {bot.Config.Get<MineCraftingEnum>("MineCrafting").ToString()};
+					ItemArray = new[] {bot.Config.Get<MineCraftingEnum>("E_Toggle_specific_Priority_Misc_Items", "MineCrafting").ToString()};
 					ItemArrayB = new[] {"Axe of the Prospector"};
 					QuantityArray = new[] {10};
 					QuestArray = new[] {2091};
@@ -1334,7 +1335,7 @@ public class SmartDailies
 						ItemFarm(
 							"Raw Ore", 30,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Balboa",
 							MapName: "stalagbite",
@@ -1344,14 +1345,14 @@ public class SmartDailies
 						ItemFarm(
 							"Axe of the Prospector", 1,
 							Temporary: false,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Balboa",
 							MapName: "stalagbite",
 							CellName: "Enter",
 							PadName: "Spawn"
 						);
-						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<MineCraftingEnum>("MineCrafting"));
+						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<MineCraftingEnum>("E_Toggle_specific_Priority_Misc_Items", "MineCrafting"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
 						FormatLog("Mine Crafting", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
@@ -1360,9 +1361,9 @@ public class SmartDailies
 				}
 
 			// Hard Core Metals - Arsenic / Beryllium / Chromium / Palladium / Rhodium / Thorium / Mercury
-				if (IsMember && bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString() != "Disabled") {
+				if (IsMember && bot.Config.Get<HardCoreMetalsEnum>("E_Toggle_specific_Priority_Misc_Items", "HardCoreMetals").ToString() != "Disabled") {
 					FormatLog(Text: "Hard Core Metals", Title: true);
-					ItemArray = new[] {bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals").ToString()};
+					ItemArray = new[] {bot.Config.Get<HardCoreMetalsEnum>("E_Toggle_specific_Priority_Misc_Items", "HardCoreMetals").ToString()};
 					ItemArrayB = new[] {"Axe of the Prospector"};
 					QuantityArray = new[] {10};
 					QuestArray = new[] {2098};
@@ -1374,7 +1375,7 @@ public class SmartDailies
 						ItemFarm(
 							"Raw Ore", 30,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Balboa",
 							MapName: "stalagbite",
@@ -1384,14 +1385,14 @@ public class SmartDailies
 						ItemFarm(
 							"Axe of the Prospector", 1,
 							Temporary: false,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Balboa",
 							MapName: "stalagbite",
 							CellName: "Enter",
 							PadName: "Spawn"
 						);
-						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<HardCoreMetalsEnum>("HardCoreMetals"));
+						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<HardCoreMetalsEnum>("E_Toggle_specific_Priority_Misc_Items", "HardCoreMetals"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
 						FormatLog("Hard Core Metals", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
@@ -1399,12 +1400,12 @@ public class SmartDailies
 					BankArray(ItemArray);
 				}
 
-			// Armor of Awe - Pauldron of Awe - Pauldron Fragment - Pauldron Shard
-				if (IsMember && bot.Config.Get<bool>("ArmorOfAwe")) {
-					FormatLog(Text: "Armor of Awe (Pauldron of Awe)", Title: true);
-					ItemArray = new[] {"Legendary Awe Pass", "Pauldron of Awe", "Pauldron Fragment", "Pauldron Shard"};
+			// Armor of Awe - Pauldron Relic - Pauldron Fragment - Pauldron Shard
+				if (IsMember && bot.Config.Get<bool>("E_Toggle_specific_Priority_Misc_Items", "ArmorOfAwe")) {
+					FormatLog(Text: "Armor of Awe (Pauldron Relic)", Title: true);
+					ItemArray = new[] {"Legendary Awe Pass", "Pauldron Relic", "Pauldron Fragment", "Pauldron Shard"};
 					if (!CheckStorage("Armor of Awe")) {
-						if (!CheckStorage("Pauldron of Awe")) {
+						if (!CheckStorage("Pauldron Relic")) {
 							if (!CheckStorage("Pauldron Fragment", 15)) {
 								if (!bot.Quests.IsDailyComplete(4160)) {
 									UnbankList(ItemArray);
@@ -1413,7 +1414,7 @@ public class SmartDailies
 									ItemFarm(
 										"Pauldron Shard", 15,
 										Temporary: false,
-										HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+										HuntFor: !DisableHunt,
 										QuestID: 4160,
 										MonsterName: "Ultra Akriloth",
 										MapName: "gravestrike",
@@ -1429,14 +1430,14 @@ public class SmartDailies
 								if (bot.Bank.Contains("Pauldron Fragment"))
 									bot.Bank.ToInventory("Pauldron Fragment");
 								SafePurchase(
-									"Pauldron of Awe", 1,
+									"Pauldron Relic", 1,
 									MapName: "museum",
 									ShopID: 1129
 								);
 							}
 						}
 						else
-							FormatLog("Pauldron of Awe", "You already own [Pauldron of Awe] x1", Tabs: 1);
+							FormatLog("Pauldron Relic", "You already own [Pauldron Relic] x1", Tabs: 1);
 					}
 					else
 						FormatLog("Armor of Awe", "You already own [Armor of Awe] x1", Tabs: 1);
@@ -1446,11 +1447,11 @@ public class SmartDailies
 			}
 
 		/// Cosmetics
-			if (!bot.Config.Get<bool>("DisableCosmetics")) {
+			if (!bot.Config.Get<bool>("C_Toggle_entire_Catagories", "DisableCosmetics")) {
 				FormatLog(Text: "Cosmetics", Title: true);
 
 			// Mad Weaponsmith - C-Armor Token
-				if (bot.Config.Get<bool>("MadWeaponsmith")) {
+				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "MadWeaponsmith")) {
 					FormatLog(Text: "Mad Weaponsmith", Title: true);
 					ItemArray = new[] {"Mad Weaponsmith", "C-Armor Token"};
 					QuantityArray = new[] {1, 90};
@@ -1467,7 +1468,7 @@ public class SmartDailies
 							ItemFarm(
 								"Unlucky Horseshoe", 1,
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[1],
 								MonsterName: "Nightmare",
 								MapName: "deadmoor",
@@ -1483,7 +1484,7 @@ public class SmartDailies
 						ItemFarm(
 							"Nightmare Fire", 1,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Nightmare",
 							MapName: "deadmoor",
@@ -1502,7 +1503,7 @@ public class SmartDailies
 				}
 
 			// Cysero's SUPER Hammer - C-Hammer Token
-				if (bot.Config.Get<bool>("SUPERHammer")) {
+				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "SUPERHammer")) {
 					FormatLog(Text: "Cysero's SUPER Hammer", Title: true);
 					ItemArray = new[] {"Cysero's SUPER Hammer", "C-Hammer Token"};
 					ItemArrayB = new[] {"Mad Weaponsmith"};
@@ -1521,7 +1522,7 @@ public class SmartDailies
 								ItemFarm(
 									"Geist's Pocket Lint", 1,
 									Temporary: true,
-									HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+									HuntFor: !DisableHunt,
 									QuestID: QuestArray[1],
 									MonsterName: "Geist",
 									MapName: "deadmoor",
@@ -1537,7 +1538,7 @@ public class SmartDailies
 							ItemFarm(
 								"Geist's Chain Link", 1,
 								Temporary: true,
-								HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+								HuntFor: !DisableHunt,
 								QuestID: QuestArray[0],
 								MonsterName: "Geist",
 								MapName: "deadmoor",
@@ -1559,7 +1560,7 @@ public class SmartDailies
 				}
 
 			// Bright Knight 
-				if (bot.Config.Get<bool>("BrightKnight")) {
+				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "BrightKnight")) {
 					FormatLog(Text: "Bright Knight", Title: true);
 				// Bright Knight - Seal of Light
 					ItemArray = new[] {"Bright Knight", "Seal of Light"};
@@ -1614,7 +1615,7 @@ public class SmartDailies
 				}
 
 			// Twig, Twilly & Zorbak pet - Moglin MEAL
-				if (bot.Config.Get<bool>("MoglinPets")) {
+				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "MoglinPets")) {
 					FormatLog(Text: "Twig, Twilly & Zorbak Pets", Title: true);
 					FormatLog("Notice", "The bot can only the quest all these use once a day.");
 					FormatLog(Followup: true, Text: "Ignore the extra DailyCheker messages");
@@ -1631,7 +1632,7 @@ public class SmartDailies
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Frogzard",
 							MapName: "nexus",
@@ -1660,7 +1661,7 @@ public class SmartDailies
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Frogzard",
 							MapName: "nexus",
@@ -1688,7 +1689,7 @@ public class SmartDailies
 						ItemFarm(
 							"Frogzard Meat", 3,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Frogzard",
 							MapName: "nexus",
@@ -1708,11 +1709,11 @@ public class SmartDailies
 			}
 
 		/// Misc. Items
-			if (!bot.Config.Get<bool>("DisableMisc")) {
+			if (!bot.Config.Get<bool>("C_Toggle_entire_Catagories", "DisableMisc")) {
 				FormatLog(Text: "Misc. Items", Title: true);
 
 			// Crypto Tokens
-				if (bot.Config.Get<bool>("CryptoToken")) {
+				if (bot.Config.Get<bool>("G_Toggle_specific_Misc_Items", "CryptoToken")) {
 					FormatLog(Text: "Crypto Tokens", Title: true);
 					ItemArray = new[] {"Crypto Token"};
 					QuantityArray = new[] {300};
@@ -1724,7 +1725,7 @@ public class SmartDailies
 						ItemFarm(
 							"Metal Ore", 1,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Sneevil",
 							MapName: "boxes",
@@ -1740,7 +1741,7 @@ public class SmartDailies
 				}
 
 			// Legion Castle - Shadow Shroud
-				if (bot.Config.Get<bool>("ShadowShroud")) {
+				if (bot.Config.Get<bool>("G_Toggle_specific_Misc_Items", "ShadowShroud")) {
 					FormatLog(Text: "Legion Castle (Shadow Shroud)", Title: true);
 					ItemArray = new[] {"Legion Castle","Shadow Shroud"};
 					QuantityArray = new[] {1, 15};
@@ -1752,7 +1753,7 @@ public class SmartDailies
 						ItemFarm(
 							"Shadow Canvas", 5,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "Shadow Creeper",
 							MapName: "bludrut2",
@@ -1768,7 +1769,7 @@ public class SmartDailies
 				}
 			
 			// Read the Design Notes!
-				if (bot.Config.Get<bool>("DesignNotes")) {
+				if (bot.Config.Get<bool>("G_Toggle_specific_Misc_Items", "DesignNotes")) {
 					FormatLog(Text: "Read the Design Notes!", Title: true);
 					QuestArray = new[] {1213};
 					if (DailyCheckANY(QuestArray[0])) {
@@ -1778,7 +1779,7 @@ public class SmartDailies
 				}
 
 			// Power Gems
-				if (bot.Config.Get<bool>("PowerGem")) {
+				if (bot.Config.Get<bool>("G_Toggle_specific_Misc_Items", "PowerGem")) {
 					FormatLog(Text: "Power Gem", Title: true);
 					ItemArray = new[] {"Power Gem"};
 					QuantityArray = new[] {1000};
@@ -1798,7 +1799,7 @@ public class SmartDailies
 				}
 
 			// GRUMBLE, GRUMBLE...
-				if (CheckStorage("Crag &amp; Bamboozle") && bot.Config.Get<bool>("GRUMBLE")) {
+				if (CheckStorage("Crag &amp; Bamboozle") && bot.Config.Get<bool>("G_Toggle_specific_Misc_Items", "GRUMBLE")) {
 					FormatLog(Text: "GRUMBLE, GRUMBLE...", Title: true);
 					ItemArray = new[] {"Diamond of Nulgath", "Blood Gem of the Archfiend"};
 					ItemArrayB = new[] {"Crag &amp; Bamboozle"};
@@ -1815,8 +1816,8 @@ public class SmartDailies
 					}
 					BankArray(ItemArray.Concat(ItemArrayB).ToArray());
 				}
-			}
 
+			}
 			StopBot("All (selected) Dailies complete. All materials banked.");
 		}
 	}
@@ -1858,7 +1859,7 @@ public class SmartDailies
 	------------------------------------------------------------------------------------------------------------*/
 
 	/*
-				if (bot.Config.Get<bool>("String")) {
+				if (bot.Config.Get<bool>("Catagory", "String")) {
 					FormatLog(Text: "String", Title: true);
 					ItemArray = new[] {"String", "String"};
 					QuantityArray = new[] {0, 0};
@@ -1870,7 +1871,7 @@ public class SmartDailies
 						ItemFarm(
 							"String", 0,
 							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
+							HuntFor: !DisableHunt,
 							QuestID: QuestArray[0],
 							MonsterName: "*",
 							MapName: "battleon",
@@ -1898,7 +1899,7 @@ public class SmartDailies
 	{
 		EquipList(SoloingGear);
 		SkillList(SoloingSkillOrder);
-		if (!bot.Config.Get<bool>("PrivateOnly"))
+		if (!bot.Config.Get<bool>("B_General_Options", "PrivateOnly"))
 			MapNumber = 1;
 	}
 	public void FarmMode()
@@ -1941,7 +1942,7 @@ public class SmartDailies
 
 	public void BuyGoal(string MapName, int ShopID) 
 	{
-		if (bot.Config.Get<bool>("buyGoal")) {
+		if (bot.Config.Get<bool>("B_General_Options", "buyGoal")) {
 			if (!CheckStorage(ItemArray[0], QuantityArray[0]) && CheckStorage(ItemArray[1], QuantityArray[1])) {
 				SafePurchase(
 					ItemArray[0], 
@@ -1957,7 +1958,7 @@ public class SmartDailies
 	public bool DailyCheckANY (int QuestID)
 	{
 		ExitCombat();
-		if (!bot.Config.Get<bool>("DisableQuantity")) {
+		if (!bot.Config.Get<bool>("B_General_Options", "DisableQuantity")) {
 			foreach (string Item in ItemArray)
 			{
 				int QuantityIndex = Array.IndexOf(ItemArray, Item);
@@ -1976,7 +1977,7 @@ public class SmartDailies
 	public bool DailyCheckALL (int QuestID)
 	{
 		ExitCombat();
-		if (!bot.Config.Get<bool>("DisableQuantity")) {
+		if (!bot.Config.Get<bool>("B_General_Options", "DisableQuantity")) {
 			int count = 0;
 			foreach (string Item in ItemArray)
 			{
@@ -2013,6 +2014,8 @@ public class SmartDailies
 		if (bot.Bank.Contains(item, quant))
 			return true;
 		if (bot.Inventory.Contains(item, quant))
+			return true;
+		if (bot.Inventory.ContainsHouseItem(item))
 			return true;
 		return false;
 	}
