@@ -1660,7 +1660,6 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup("*");
-						FormatLog("Golden Inquisitor", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 0);
 						List<string> PostQuestInv = GetInvNames();
 						List<string> RemainderInv = PostQuestInv.Except(PreQuestInv).ToList();
 						foreach(string Name in RemainderInv)
@@ -1905,6 +1904,7 @@ public class SmartDailies
 
 		-		QoL
 		*	Find out a way to actually check if Power Gem has already been obtained
+		*	Auto relog if you're stuck on The Collector
 
 
 		-		Known glitches
