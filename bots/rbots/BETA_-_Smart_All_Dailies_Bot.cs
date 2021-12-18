@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using RBot;
 using RBot.Options;
-using System.Windows.Forms;
+using RBot.Items;
 
 public class SmartDailies
 {	
@@ -19,7 +20,6 @@ public class SmartDailies
 	public string[] FarmingGear = {"Vampire Lord"};
 	public readonly int[] SoloingSkillOrder = { 3, 1, 2, 4 };
 	public readonly int[] FarmingSkillOrder = { 4, 2, 3, 1 };
-
 
 	// If you dont want the popup menu that comes up, set DisableMenu to true
 	// Warning: It wont do any Dailies that require you to select your prefered reward in the menu
@@ -43,44 +43,47 @@ public class SmartDailies
 	};
 	public List<IOption> C_Toggle_entire_Catagories = new List<IOption>() {
 		// Catagories
-		new Option<bool>("DisableClasses", "    Disable all Classes", "If enabled, the bot will automatically skip the entire 'Classes' section.", false),
-		new Option<bool>("DisableCosmetics", "    Disable all Cosmetics ", "If enabled, the bot will automatically skip the entire 'Cosmetics' section.", false),
-		new Option<bool>("DisablePrioMisc", "    Disable all Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Priority Misc. Items' section.", false),
-		new Option<bool>("DisableMisc", "    Disable all non-Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Misc. Items' section.", false)
+		new Option<bool>("DisableClasses", "Disable all Classes", "If enabled, the bot will automatically skip the entire 'Classes' section.", false),
+		new Option<bool>("DisableCosmetics", "Disable all Cosmetics ", "If enabled, the bot will automatically skip the entire 'Cosmetics' section.", false),
+		new Option<bool>("DisablePrioMisc", "Disable all Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Priority Misc. Items' section.", false),
+		new Option<bool>("DisableMisc", "Disable all non-Priority Misc Items", "If enabled, the bot will automatically skip the entire 'Misc. Items' section.", false)
 	};
 	public List<IOption> D_Toggle_specific_Classes = new List<IOption>() {
 		// Classes
-		new Option<bool>("LordOfOrder", "    Lord of Order", "If disabled, the bot will automatically skip the 'Lord of Order' check.\nCompletion of these stories is required for seperate stages:\n - /CitadelRuins + /LivingDungeon + /Drakonnan + /DoomVaultB", true),
-		new Option<bool>("Pyromancer", "    Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.\n - Completion of the /XanCave story is required.", true),
-		new Option<bool>("Cryomancer", "    Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", true),
-		new Option<bool>("TheCollector", "    The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", true),
-		new Option<bool>("ShadowScytheGeneral", "    ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", true),
-		new Option<bool>("DeathKnightLord", "    DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check. \n - Legend-Only.", true),
+		new Option<bool>("LordOfOrder", "Lord of Order", "If disabled, the bot will automatically skip the 'Lord of Order' check.\nCompletion of these stories is required for seperate stages:\n - /CitadelRuins + /LivingDungeon + /Drakonnan + /DoomVaultB", true),
+		new Option<bool>("Pyromancer", "Pyromancer", "If disabled, the bot will automatically skip the 'Pyromancer' check.\n - Completion of the /XanCave story is required.", true),
+		new Option<bool>("Cryomancer", "Cryomancer", "If disabled, the bot will automatically skip the 'Cryomancer' check.", true),
+		new Option<bool>("TheCollector", "The Collector", "If disabled, the bot will automatically skip the 'The Collector' check.", true),
+		new Option<bool>("ShadowScytheGeneral", "ShadowScythe General", "If disabled, the bot will automatically skip the 'ShadowScythe General' check.", true),
+		new Option<bool>("DeathKnightLord", "DeathKnight Lord", "If disabled, the bot will automatically skip the 'DeathKnight Lord' check. \n - Legend-Only.", true),
 	};
 	public List<IOption> E_Toggle_specific_Priority_Misc_Items = new List<IOption>() {
 		// Priority Misc. Items
-		new Option<bool>("TreasureChestKeys", "    Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check. \n - Legend-Only.", true),
-		new Option<bool>("TheWheelOfDoom", "    The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", true),
-		new Option<BoostEnum>("BoostEnum", "    Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check.\n - Legend-Only."),
-		new Option<bool>("Ballyhoo", "    Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", true),
-		new Option<bool>("EldersBlood", "    Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", true),
-		new Option<bool>("DrakathArmor", "    Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", true),
-		new Option<MineCraftingEnum>("MineCrafting", "    Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check."),
-		new Option<HardCoreMetalsEnum>("HardCoreMetals", "    Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check.\n - Legend-Only."),
-		new Option<bool>("ArmorOfAwe", "    Armor of Awe (Pauldron Relic)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron Relic)' check.\n - Legend-Only.", true)
+		new Option<bool>("TreasureChestKeys", "Monthly Treasure Chest Keys", "If disabled, the bot will automatically skip the 'Monthly Treasure Chest Keys' check. \n - Legend-Only.", true),
+		new Option<bool>("TheWheelOfDoom", "The Wheel of Doom", "If disabled, the bot will automatically skip the 'The Wheel of Doom' check.", true),
+		new Option<BoostEnum>("BoostEnum", "Free Daily Boost", "Select an type of Boost to receive in order to for the 'Free Daily Boost' check.\n - Legend-Only."),
+		new Option<bool>("Ballyhoo", "Ballyhoo's Ad Rewards", "If disabled, the bot will automatically skip the 'Ballyhoo's Ad Rewards' check.", true),
+		new Option<bool>("EldersBlood", "Void Highlord (Elders' Blood)", "If disabled, the bot will automatically skip the 'Void Highlord (Elders' Blood)' check.", true),
+		new Option<bool>("DrakathArmor", "Drakath's Armour", "If disabled, the bot will automatically skip the 'Drakath's Armor' check.", true),
+		new Option<MineCraftingEnum>("MineCrafting", "Mine Crafting Ores", "Select an type of Ore to farm in order to enable the 'Mine Crafting Ores' check."),
+		new Option<HardCoreMetalsEnum>("HardCoreMetals", "Hard Core Metals", "Select an type of Metal to farm in order to enable the 'Hard Core Metals' check.\n - Legend-Only."),
+		new Option<bool>("ArmorOfAwe", "Armor of Awe (Pauldron Relic)", "If disabled, the bot will automatically skip the 'Armor of Awe (Pauldron Relic)' check.\n - Legend-Only.", true)
 	};	
 	public List<IOption> F_Toggle_specific_Cosmetics = new List<IOption>() {
 		// Cosmetics
-		new Option<bool>("MadWeaponsmith", "    Mad Weaponsmith", "If disabled, the bot will automatically skip the 'Mad Weaponsmith' check.", true),
-		new Option<bool>("SUPERHammer", "    Cysero's SUPER Hammer", "If disabled, the bot will automatically skip the 'Cysero's SUPER Hammer' check.", true),
-		new Option<bool>("BrightKnight", "    Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", true),
-		new Option<bool>("MoglinPets", "    Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", true)
+		new Option<bool>("MadWeaponsmith", "Mad Weaponsmith", "If disabled, the bot will automatically skip the 'Mad Weaponsmith' check.", true),
+		new Option<bool>("SUPERHammer", "Cysero's SUPER Hammer", "If disabled, the bot will automatically skip the 'Cysero's SUPER Hammer' check.", true),
+		new Option<bool>("BrightKnight", "Bright Knight", "If disabled, the bot will automatically skip the 'Bright Knight' check.", true),
+		new Option<bool>("GoldenInquisitor", "Golden Inquisitor of Shadowfall", "If disabled, the bot will automatically skip the 'Golden Inquisitor of Shadowfall' check.", true),
+		new Option<bool>("MoglinPets", "Twig, Twilly and Zorbak Pets", "If disabled, the bot will automatically skip the 'Twig, Twilly & Zorbak Pets' check.", true)
 	};
 	public List<IOption> G_Toggle_specific_Misc_Items = new List<IOption>() {
 		// Misc. Items
-		new Option<bool>("CryptoToken", "    Crypto Tokens", "If disabled, the bot will automatically skip the 'Crypto Tokens' check.", true),
-		new Option<bool>("ShadowShroud", "    Legion Castle (Shadow Shroud)", "If disabled, the bot will automatically skip the 'Legion Castle (Shadow Shroud)' check.", true),
-		new Option<bool>("GRUMBLE", "    GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check.\n - Crag & Bamboozle required. ", true)
+		new Option<bool>("CryptoToken", "Crypto Tokens", "If disabled, the bot will automatically skip the 'Crypto Tokens' check.", true),
+		new Option<bool>("ShadowShroud", "Legion Castle (Shadow Shroud)", "If disabled, the bot will automatically skip the 'Legion Castle (Shadow Shroud)' check.", true),
+		new Option<bool>("DesignNotes", "Read the Design Notes!", "If disabled, the bot will automatically skip the 'Read the Design Notes!' check.", true),
+		new Option<bool>("PowerGem", "Power Gem", "If disabled, the bot will automatically skip the 'Power Gem' attempt.", true),
+		new Option<bool>("GRUMBLE", "GRUMBLE, GRUMBLE...", "If disabled, the bot will automatically skip the 'GRUMBLE, GRUMBLE...' check.\n - Crag & Bamboozle required. ", true)
 	};
 
 	public bool DontPreconfigure = true;
@@ -89,7 +92,7 @@ public class SmartDailies
 	public string[] ItemArrayB;
 	public int[] QuantityArray;
 	public int[] QuestArray;
-	public int SpaceNeeded = 0;
+	public int SpaceNeeded = 12;
 	public int MapNumber = PrivateRoomNumber;
 	public bool DisableHunt = false;
 
@@ -105,7 +108,7 @@ public class SmartDailies
 		}
 		if (!DisableMenu) bot.Config.Configure();
 		if (Password != "harbor") {
-			MessageBox.Show("Please read the READ-ME at the start of the script and place the password before starting this bot.", "Password Incorrect!");
+			MessageBox.Show("Please read the READ-ME in the Options pop-up menu and edit in the correct password before starting this bot.", "Password Incorrect!");
 			ScriptManager.StopScript();
 		}
 		DisableHunt = bot.Config.Get<bool>("B_General_Options", "DisableHunt");
@@ -953,7 +956,7 @@ public class SmartDailies
 							}
 							bot.Wait.ForPickup(ItemArray[1]);
 							bot.Sleep(ScriptDelay);
-							FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
 							MapName: "xancave",
@@ -1004,7 +1007,7 @@ public class SmartDailies
 						}
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "frozenruins",
@@ -1069,7 +1072,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "collection",
@@ -1122,7 +1125,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("ShadowScy Gen.", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog("ShadowScy Gen.", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "shadowfall",
@@ -1155,7 +1158,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "bonecastle",
@@ -1163,6 +1166,7 @@ public class SmartDailies
 					);
 					BankArray(ItemArray);
 				}
+			
 			}
 		
 		/// Priority Misc. Items
@@ -1189,6 +1193,7 @@ public class SmartDailies
 					FormatLog(Text: "The Wheel of Doom", Title: true);
 					ItemArray = new[] {"Gear of Doom"};
 					QuestArray = new[] {3075, 3076};
+					List<string> PreQuestInv = GetInvNames();
 					ExitCombat();
 					if (IsMember && bot.Quests.IsDailyComplete(QuestArray[0]) && !CheckStorage(ItemArray[0], 3))
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
@@ -1200,7 +1205,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						if (bot.Inventory.GetQuantity("Treasure Potion") != PreDaily) {
 							FormatLog("Wheel of Doom", $"You received [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion") - PreDaily}", Tabs: 1);
-							FormatLog("Wheel of Doom", $"You now own [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion")}", Tabs: 1);
+							FormatLog("Wheel of Doom", $"You now have [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion")}", Tabs: 1);
 						}
 						bot.Wait.ForDrop("*");
 						bot.Player.PickupAll(true);
@@ -1214,13 +1219,18 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[1]);
 						if (bot.Inventory.GetQuantity("Treasure Potion") != PreDaily) {
 							FormatLog("Wheel of Doom", $"You received [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion") - PreDaily}", Tabs: 1);
-							FormatLog("Wheel of Doom", $"You now own [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion")}", Tabs: 1);
+							FormatLog("Wheel of Doom", $"You now have [Treasure Potion] x{bot.Inventory.GetQuantity("Treasure Potion")}", Tabs: 1);
 						}
 						bot.Wait.ForDrop("*");
 						bot.Player.PickupAll(true);
 					}
 					else if (!IsMember)
 						FormatLog("Wheel of Doom", "Quests unavailable", Tabs: 1);
+					List<string> PostQuestInv = GetInvNames();
+					List<string> RemainderInv = PostQuestInv.Except(PreQuestInv).ToList();
+					foreach(string Name in RemainderInv)
+						FormatLog("Wheel of Doom", $"You received [{Name}] x{bot.Inventory.GetQuantity(Name)}", Tabs: 1);
+					BankArray(RemainderInv.ToArray());
 				}
 
 			// Free Daily Boost - XP Boost /  REP Boost / GOLD Boost / Class Boost 
@@ -1236,7 +1246,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<BoostEnum>("E_Toggle_specific_Priority_Misc_Items", "BoostEnum"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("Daily Boost", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+						FormatLog("Daily Boost", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1285,7 +1295,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					ItemArray = new[] {"Elders' Blood"};
 					BankArray(ItemArray);
@@ -1315,7 +1325,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("Drakath's Armor", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog("Drakath's Armor", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1355,7 +1365,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<MineCraftingEnum>("E_Toggle_specific_Priority_Misc_Items", "MineCrafting"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("Mine Crafting", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+						FormatLog("Mine Crafting", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1395,7 +1405,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0], (int)bot.Config.Get<HardCoreMetalsEnum>("E_Toggle_specific_Priority_Misc_Items", "HardCoreMetals"));
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("Hard Core Metals", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+						FormatLog("Hard Core Metals", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1493,7 +1503,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "deadmoor",
@@ -1548,7 +1558,7 @@ public class SmartDailies
 							SafeQuestComplete(QuestArray[0]);
 							bot.Wait.ForPickup(ItemArray[1]);
 							bot.Sleep(ScriptDelay);
-							FormatLog("Cysero's Hammer", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+							FormatLog("Cysero's Hammer", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
 							MapName: "deadmoor",
@@ -1584,7 +1594,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 
@@ -1609,7 +1619,52 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+					}
+					BankArray(ItemArray);
+				}
+
+			// Golden Inquisitor of Shadowfall
+				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "GoldenInquisitor")) {
+					FormatLog(Text: "Golden Inquisitor of Shadowfall", Title: true);
+					ItemArray = new[] {
+						"Golden Inquisitor of Shadowfall",
+						"Gilded Inquisitor's Female Morph",
+						"Gilded Inquisitor's Male Morph",
+						"Golden Inquisitor's Locks",
+						"Golden Inquisitor's Hair",
+						"Golden Inquisitor's Helm",
+						"Golden Inquisitor's Crested Helm",
+						"Golden Inquisitor's Spear",
+						"Golden Inquisitor's Blade",
+						"Golden Inquisitor's Wrap",
+						"Golden Inquisitor's Back Blade",
+						"Golden Inquisitor's Back Blade + Wrap"
+					};
+					QuantityArray = new[] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+					QuestArray = new[] {491};
+					if (DailyCheckALL(QuestArray[0])) {
+						UnbankList(ItemArray);
+						GetDropList(ItemArray);
+						List<string> PreQuestInv = GetInvNames();
+						FarmMode();
+						ItemFarm(
+							"Inquisitor Contract", 7,
+							Temporary: true,
+							HuntFor: !DisableHunt,
+							QuestID: QuestArray[0],
+							MonsterName: "Inquisitor Guard",
+							MapName: "citadel",
+							CellName: "m1",
+							PadName: "Up"
+						);
+						SafeQuestComplete(QuestArray[0]);
+						bot.Wait.ForPickup("*");
+						FormatLog("Golden Inquisitor", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 0);
+						List<string> PostQuestInv = GetInvNames();
+						List<string> RemainderInv = PostQuestInv.Except(PreQuestInv).ToList();
+						foreach(string Name in RemainderInv)
+							FormatLog("Golden Inquisitor", $"You received [{Name}] x{bot.Inventory.GetQuantity(Name)}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1617,95 +1672,99 @@ public class SmartDailies
 			// Twig, Twilly & Zorbak pet - Moglin MEAL
 				if (bot.Config.Get<bool>("F_Toggle_specific_Cosmetics", "MoglinPets")) {
 					FormatLog(Text: "Twig, Twilly & Zorbak Pets", Title: true);
-					FormatLog("Notice", "The bot can only the quest all these use once a day.");
-					FormatLog(Followup: true, Text: "Ignore the extra DailyCheker messages");
 				// Twig Pet
-					FormatLog(Text: "Twig Pet", Title: true);
-					ItemArray = new[] {"Twig Pet", "Moglin MEAL"};
-					QuantityArray = new[] {1, 30};
-					QuestArray = new[] {4159};
-					if (DailyCheckANY(QuestArray[0])) {
-						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
-						UnbankList(ItemArray);
-						GetDropList(ItemArray);
-						FarmMode();
-						ItemFarm(
-							"Frogzard Meat", 3,
-							Temporary: true,
-							HuntFor: !DisableHunt,
-							QuestID: QuestArray[0],
-							MonsterName: "Frogzard",
-							MapName: "nexus",
-							CellName: "Enter",
-							PadName: "Spawn"
+					if (!CheckStorage("Twig Pet")) {
+						FormatLog(Text: "Twig Pet", Title: true);
+						ItemArray = new[] {"Twig Pet", "Moglin MEAL"};
+						QuantityArray = new[] {1, 30};
+						QuestArray = new[] {4159};
+						if (DailyCheckANY(QuestArray[0])) {
+							FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+							FarmMode();
+							ItemFarm(
+								"Frogzard Meat", 3,
+								Temporary: true,
+								HuntFor: !DisableHunt,
+								QuestID: QuestArray[0],
+								MonsterName: "Frogzard",
+								MapName: "nexus",
+								CellName: "Enter",
+								PadName: "Spawn"
+							);
+							SafeQuestComplete(QuestArray[0]);
+							bot.Wait.ForPickup(ItemArray[1]);
+							bot.Sleep(ScriptDelay);
+							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						}
+						BuyGoal(
+							MapName: "Twig Pet",
+							ShopID: 1081
 						);
-						SafeQuestComplete(QuestArray[0]);
-						bot.Wait.ForPickup(ItemArray[1]);
-						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						BankArray(ItemArray);
 					}
-					BuyGoal(
-						MapName: "Twig Pet",
-						ShopID: 1081
-					);
-					BankArray(ItemArray);
-
-				// Twilly Pet
-					FormatLog(Text: "Twilly Pet", Title: true);
-					ItemArray = new[] {"Twilly Pet", "Moglin MEAL"};
-					if (DailyCheckANY(QuestArray[0])) {
-						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
-						UnbankList(ItemArray);
-						GetDropList(ItemArray);
-						FarmMode();
-						ItemFarm(
-							"Frogzard Meat", 3,
-							Temporary: true,
-							HuntFor: !DisableHunt,
-							QuestID: QuestArray[0],
-							MonsterName: "Frogzard",
-							MapName: "nexus",
-							CellName: "Enter",
-							PadName: "Spawn"
+					// Twilly Pet
+					else if (!CheckStorage("Twilly Pet")) {
+						FormatLog(Text: "Twilly Pet", Title: true);
+						ItemArray = new[] {"Twilly Pet", "Moglin MEAL"};
+						if (DailyCheckANY(QuestArray[0])) {
+							FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+							FarmMode();
+							ItemFarm(
+								"Frogzard Meat", 3,
+								Temporary: true,
+								HuntFor: !DisableHunt,
+								QuestID: QuestArray[0],
+								MonsterName: "Frogzard",
+								MapName: "nexus",
+								CellName: "Enter",
+								PadName: "Spawn"
+							);
+							SafeQuestComplete(QuestArray[0]);
+							bot.Wait.ForPickup(ItemArray[1]);
+							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						}
+						BuyGoal(
+							MapName: "Twilly Pet",
+							ShopID: 1081
 						);
-						SafeQuestComplete(QuestArray[0]);
-						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						BankArray(ItemArray);
 					}
-					BuyGoal(
-						MapName: "Twilly Pet",
-						ShopID: 1081
-					);
-					BankArray(ItemArray);
-
-				// Zorbak Pet
-					FormatLog(Text: "Zorbak Pets", Title: true);
-					ItemArray = new[] {"Zorbak Pet", "Moglin MEAL"};
-					if (DailyCheckANY(QuestArray[0])) {
-						FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
-						UnbankList(ItemArray);
-						GetDropList(ItemArray);
-						FarmMode();
-						ItemFarm(
-							"Frogzard Meat", 3,
-							Temporary: true,
-							HuntFor: !DisableHunt,
-							QuestID: QuestArray[0],
-							MonsterName: "Frogzard",
-							MapName: "nexus",
-							CellName: "Enter",
-							PadName: "Spawn"
+					// Zorbak Pet
+					else if (!CheckStorage("Zorbak Pet")) {
+						FormatLog(Text: "Zorbak Pet", Title: true);
+						ItemArray = new[] {"Zorbak Pet", "Moglin MEAL"};
+						if (DailyCheckANY(QuestArray[0])) {
+							FormatLog($"{ItemArray[0]}", "Doing the Daily Quest", Tabs: 1);
+							UnbankList(ItemArray);
+							GetDropList(ItemArray);
+							FarmMode();
+							ItemFarm(
+								"Frogzard Meat", 3,
+								Temporary: true,
+								HuntFor: !DisableHunt,
+								QuestID: QuestArray[0],
+								MonsterName: "Frogzard",
+								MapName: "nexus",
+								CellName: "Enter",
+								PadName: "Spawn"
+							);
+							SafeQuestComplete(QuestArray[0]);
+							bot.Wait.ForPickup(ItemArray[1]);
+							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						}
+						BuyGoal(
+							MapName: "Zorbak Pet",
+							ShopID: 1081
 						);
-						SafeQuestComplete(QuestArray[0]);
-						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						BankArray(ItemArray);
 					}
-					BuyGoal(
-						MapName: "Zorbak Pet",
-						ShopID: 1081
-					);
-					BankArray(ItemArray);
+					else FormatLog("Moglin Pets", "You own all Moglin Pets", Tabs: 1);
 				}
+			
 			}
 
 		/// Misc. Items
@@ -1735,7 +1794,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1763,7 +1822,7 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
 						bot.Sleep(ScriptDelay);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray);
 				}
@@ -1773,8 +1832,8 @@ public class SmartDailies
 					FormatLog(Text: "Read the Design Notes!", Title: true);
 					QuestArray = new[] {1213};
 					if (DailyCheckANY(QuestArray[0])) {
-						SafeQuestComplete(QuestArray[0]);
 						FormatLog("Design Notes", "Doing the Daily Quest", Tabs: 1);
+						SafeQuestComplete(QuestArray[0]);
 					}
 				}
 
@@ -1791,10 +1850,11 @@ public class SmartDailies
 						bot.Wait.ForPickup(ItemArray[0]);
 						if (bot.Inventory.GetQuantity(ItemArray[0]) != PreDaily) {
 							FormatLog($"{ItemArray[0]}", $"You received [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0]) - PreDaily}", Tabs: 1);
-							FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
 						}
+						else FormatLog("WeeklyCheck", "Weekly Gem Unavailable", Tabs: 1);
 					}
-					else FormatLog("DailyCheck", $"You already own [{ItemArray[0]}] x{QuantityArray[0]}", Tabs: 1);
+					else FormatLog("WeeklyCheck", $"You already own [{ItemArray[0]}] x{QuantityArray[0]}", Tabs: 1);
 					BankArray(ItemArray);
 				}
 
@@ -1811,13 +1871,14 @@ public class SmartDailies
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[0]);
 						bot.Sleep(ScriptDelay);
-						FormatLog("GRUMBLE", $"You now own [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
-						FormatLog("GRUMBLE", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog("GRUMBLE", $"You now have [{ItemArray[0]}] x{bot.Inventory.GetQuantity(ItemArray[0])}", Tabs: 1);
+						FormatLog("GRUMBLE", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BankArray(ItemArray.Concat(ItemArrayB).ToArray());
 				}
 
 			}
+			
 			StopBot("All (selected) Dailies complete. All materials banked.");
 		}
 	}
@@ -1832,12 +1893,10 @@ public class SmartDailies
 		-		Classes
 
 		-		Cosmetics
-		*	Golden Inquisitor of Shadowfall
 
 		-		Priority Misc. Farm
 
 		-		Misc. Farm
-		*	Realm Gems
 
 		-		PvP
 		*	Is this even possible to bot?
@@ -1845,7 +1904,6 @@ public class SmartDailies
 		*	​1v1 PvP Trophy
 
 		-		QoL
-		*	AC and GOLD based Logging for Ballyhoo
 		*	Find out a way to actually check if Power Gem has already been obtained
 
 
@@ -1880,7 +1938,7 @@ public class SmartDailies
 						);
 						SafeQuestComplete(QuestArray[0]);
 						bot.Wait.ForPickup(ItemArray[1]);
-						FormatLog($"{ItemArray[0]}", $"You now own [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
+						FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 					}
 					BuyGoal(
 						MapName: "String",
@@ -1938,6 +1996,13 @@ public class SmartDailies
 		REP_Boost = 27553,
 		GOLD_Boost = 27554,
 		Class_Boost = 27555
+	}
+
+	public List<string> GetInvNames() {
+		List<string> ItemNamedList = new List<string>();
+		foreach(InventoryItem Item in bot.Inventory.Items)
+			ItemNamedList.Add(Item.Name);
+		return ItemNamedList;
 	}
 
 	public void BuyGoal(string MapName, int ShopID) 
@@ -2403,18 +2468,18 @@ public class SmartDailies
 	/// </summary>
 	/// <param name="Value"> true -> hides monsters. false -> reveals them </param>
 	public void HideMonsters(bool Value) {
-	  switch(Value) {
-	     case true:
-	        if (!bot.GetGameObject<bool>("ui.monsterIcon.redX.visible")) {
-	           bot.CallGameFunction("world.toggleMonsters");
-	        }
-	        return;
-	     case false:
-	        if (bot.GetGameObject<bool>("ui.monsterIcon.redX.visible")) {
-	           bot.CallGameFunction("world.toggleMonsters");
-	        }
-	        return;
-	  }
+		switch(Value) {
+			case true:
+			if (!bot.GetGameObject<bool>("ui.monsterIcon.redX.visible")) {
+				bot.CallGameFunction("world.toggleMonsters");
+			}
+			return;
+			case false:
+			if (bot.GetGameObject<bool>("ui.monsterIcon.redX.visible")) {
+				bot.CallGameFunction("world.toggleMonsters");
+			}
+			return;
+		}
 	}
 
 	/// <summary>
@@ -2566,13 +2631,13 @@ public class SmartDailies
 
 
 	public void DeathHandler() {
-      bot.RegisterHandler(2, b => {
-         if (bot.Player.State==0) {
-            bot.Player.SetSpawnPoint();
-            ExitCombat();
-            bot.Sleep(12000);
-         }
-      });
+	bot.RegisterHandler(2, b => {
+		if (bot.Player.State==0) {
+			bot.Player.SetSpawnPoint();
+			ExitCombat();
+			bot.Sleep(12000);
+		}
+	});
 	}
 
 
