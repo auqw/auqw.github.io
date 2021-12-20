@@ -52,6 +52,7 @@ public class SmartAttackHunt {
 					foreach (var Quest in bot.Quests.ActiveQuests) {
 						int QuestID = Quest.ID;
 						if (bot.Quests.CanComplete(QuestID)) {
+							ExitCombat();
 							bot.Wait.ForQuestComplete(QuestID);
 							bot.Sleep(700);
 						}
@@ -175,6 +176,7 @@ public class SmartAttackHunt {
 	{
 		bot.Options.AggroMonsters = false;
 		bot.Player.Jump("Wait", "Spawn");
+		bot.Wait.ForCellChange("Wait");
 		bot.Wait.ForCombatExit();
 		bot.Sleep(2000);
 	}
