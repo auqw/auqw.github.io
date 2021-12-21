@@ -2,7 +2,7 @@ using System;
 using RBot;
 using System.Collections.Generic;
 
-public class BluuPurpleTemplate
+public class SwordHavenrep
 {
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 2142069;
