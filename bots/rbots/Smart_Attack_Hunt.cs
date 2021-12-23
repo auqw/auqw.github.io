@@ -8,10 +8,16 @@ public class SmartAttackHunt {
 	/// - If you target a monster in-game before activating the bot, it will hunt that monster all across the map (private room is advised).
 	/// - If you dont target a monster in-game before hand, it will attack any monster on screen and will stay on said screen.
 	/// Note that the bot will automatically turn in any quests that are completed while the bot is active.
+	/// ConsiderBossHPTreshhold is the amount of HP an enemy needs to have in order to be considered a boss, this is used for hunting delay
+	/// Its recommanded to use attack mode if you are farming a boss for a quest
 	
 	//-----------EDIT BELOW-------------//
 	public int TurnInAttempts = 10;
+	public int ConsiderBossHPTreshhold = 100000;
 	public readonly int[] SkillOrder = { 2, 4, 3, 1 };
+
+	public bool AutoQuestComplete = true;
+	public bool DropGrabber = false;
 	public string[] GrabTheseDrops = {
 		"Item Name Here",
 		"Item Name Here",
@@ -24,46 +30,67 @@ public class SmartAttackHunt {
 
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public string Target;
+	public int MonsterMaxHP;
 	public void ScriptMain(ScriptInterface bot){
 		bot.Options.SafeTimings = true;
 		bot.Options.RestPackets = true;
-		bot.Options.InfiniteRange = false;
+		bot.Options.InfiniteRange = true;
+		bot.Options.ExitCombatBeforeQuest = true;
 		
-		//Remove the "//" on the line below to activate the automation of picking up drops.
-		//GetDropList(GrabTheseDrops);
+
+		if (DropGrabber)
+			GetDropList(GrabTheseDrops);
 		SkillList(SkillOrder);
-		AutoQuestComplete();
 		DeathHandler();
 		
 		FormatLog(Text: "Script Started", Title: true);
-
-		// Checking if player should hunt or attack
 		if (bot.Player.HasTarget) {
 			Target = bot.Player.Target.Name;
-			FormatLog("Hunting", $"[{Target}]");
+			MonsterMaxHP = bot.Player.Target.HP;
 		}
-		else FormatLog("Attacking", "[Everything]", Tabs: 1);
-
-		// The Hunting part
-		if (bot.Player.HasTarget)
+		
+	// Hunting
+		if (Target != null) {
+			FormatLog("Hunting", $"[{Target}]");
 			while(!bot.ShouldExit()) {
 				bot.Player.Hunt(Target);
-				if (bot.Quests.ActiveQuests.Count >= 1)
-					foreach (var Quest in bot.Quests.ActiveQuests) {
-						int QuestID = Quest.ID;
-						if (bot.Quests.CanComplete(QuestID)) {
-							ExitCombat();
-							bot.Wait.ForQuestComplete(QuestID);
-							bot.Sleep(700);
+			
+			// Auto Quest Complete
+				if (AutoQuestComplete) {
+					if (bot.Quests.ActiveQuests.Count >= 1) {
+					// Sleep 750 if the enemy is a boss
+						if (BossCheck())
+							bot.Sleep(750);
+						foreach (var Quest in bot.Quests.ActiveQuests) {
+							int QuestID = Quest.ID;
+							if (bot.Quests.CanComplete(QuestID)) {
+								ModSafeQuestComplete(QuestID);
+							}
 						}
 					}
+				}
 			}
-		
-		// The Attacking part
-		else while(!bot.ShouldExit()) {
-			bot.Player.SetSpawnPoint();
-			bot.Player.Attack("*");
 		}
+		
+	// Attacking
+		else {
+			FormatLog("Attacking", "[Everything]", Tabs: 1);
+			while(!bot.ShouldExit()) {
+				bot.Player.SetSpawnPoint();
+				bot.Player.Attack("*");
+			// Auto Quest Complete
+				if (AutoQuestComplete) {
+					if (bot.Quests.ActiveQuests.Count >= 1) {
+						foreach (var Quest in bot.Quests.ActiveQuests) {
+							int QuestID = Quest.ID;
+							if (bot.Quests.CanComplete(QuestID)) {
+								ModSafeQuestComplete(QuestID);
+							}
+						}
+					}
+				}
+			}
+		}	
 	}
 	
 	/*------------------------------------------------------------------------------------------------------------
@@ -71,28 +98,13 @@ public class SmartAttackHunt {
 	------------------------------------------------------------------------------------------------------------*/
 	//These functions are required for this bot to function.
 
-	/// <summary>
-	/// Constantly checks if there are quests ready for turnin. If that is the case, jump to Wait, Enter 
-	/// </summary>
-	public void AutoQuestComplete()
-	{
-		if(bot.Handlers.Any(h => h.Name == "Quest Handler"))
-			bot.Handlers.RemoveAll(h => h.Name == "Quest Handler");
-		bot.RegisterHandler(4, b => {
-			if (bot.Quests.ActiveQuests.Count >= 1) {
-				foreach (var Quest in bot.Quests.ActiveQuests) {
-					int QuestID = Quest.ID;
-					if (bot.Quests.CanComplete(QuestID)) {
-						string Cell = bot.Player.Cell;
-						string Pad = bot.Player.Pad;
-						SafeQuestComplete(QuestID);
-						bot.Player.Jump(Cell, Pad);
-					}
-				}
-			}
-		}, "Quest Handler");
+	public bool BossCheck() {
+		if (bot.Monsters.CurrentMonsters.Count() == 1)
+			return true;
+		if (MonsterMaxHP >= ConsiderBossHPTreshhold)
+			return true;
+		return false;
 	}
-
 
 	/// <summary>
 	/// Spams Skills when in combat. You can get in combat by going to a cell with monsters in it with bot.Options.AggroMonsters enabled or using an attack command against one.
@@ -132,21 +144,27 @@ public class SmartAttackHunt {
 	/// <summary>
 	/// Attempts to complete the quest with the set amount of {TurnInAttempts}. If it fails to complete, logs out. If it successfully completes, re-accepts the quest and checks if it can be completed again.
 	/// </summary>
-	public void SafeQuestComplete(int QuestID, int ItemID = -1)
+	public void ModSafeQuestComplete(int QuestID)
 	{
 		//Must have the following functions in your script:
 		//ExitCombat
 
-		ExitCombat();
-		bot.Quests.EnsureAccept(QuestID);
-		bot.Quests.EnsureComplete(QuestID, ItemID, tries: TurnInAttempts);
-		if (bot.Quests.IsInProgress(QuestID))
-		{
-			FormatLog("Quest", $"Turned in Quest {QuestID} unsuccesfully. Logging out");
-			bot.Player.Logout();
+		string Cell = bot.Player.Cell;
+		string Pad = bot.Player.Pad;
+		int i = 0;
+		while (bot.Quests.CanComplete(QuestID)) {
+			if (bot.Player.Cell != "Wait" || bot.Player.InCombat)
+				ExitCombat();
+			bot.Quests.EnsureComplete(QuestID);
+			i++;
+			if (i > TurnInAttempts) {
+				FormatLog("Quest", $"Turning in Quest {QuestID} failed. Logging out");
+				bot.Player.Logout();
+			}
 		}
-		FormatLog("Quest", $"Turned in Quest {QuestID}");
+		FormatLog("Quest", $"Turning in Quest {QuestID} successful.");
 		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
+		bot.Player.Jump(Cell, Pad);
 	}
 
 	/// <summary>
@@ -178,7 +196,6 @@ public class SmartAttackHunt {
 		bot.Player.Jump("Wait", "Spawn");
 		bot.Wait.ForCellChange("Wait");
 		bot.Wait.ForCombatExit();
-		bot.Sleep(2000);
 	}
 
 	public void DeathHandler() {
