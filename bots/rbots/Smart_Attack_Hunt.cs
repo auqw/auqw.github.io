@@ -9,11 +9,10 @@ public class SmartAttackHunt {
 	/// - If you dont target a monster in-game before hand, it will attack any monster on screen and will stay on said screen.
 	/// Note that the bot will automatically turn in any quests that are completed while the bot is active.
 	/// ConsiderBossHPTreshhold is the amount of HP an enemy needs to have in order to be considered a boss, this is used for hunting delay
-	/// Its recommanded to use attack mode if you are farming a boss for a quest
+	/// Its recommended to use attack mode if you are farming a boss for a quest
 	
 	//-----------EDIT BELOW-------------//
 	public int TurnInAttempts = 10;
-	public int ConsiderBossHPTreshhold = 100000;
 	public readonly int[] SkillOrder = { 2, 4, 3, 1 };
 
 	public bool AutoQuestComplete = true;
@@ -30,7 +29,6 @@ public class SmartAttackHunt {
 
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public string Target;
-	public int MonsterMaxHP;
 	public void ScriptMain(ScriptInterface bot){
 		bot.Options.SafeTimings = true;
 		bot.Options.RestPackets = true;
@@ -44,23 +42,17 @@ public class SmartAttackHunt {
 		DeathHandler();
 		
 		FormatLog(Text: "Script Started", Title: true);
-		if (bot.Player.HasTarget) {
+		if (bot.Player.HasTarget)
 			Target = bot.Player.Target.Name;
-			MonsterMaxHP = bot.Player.Target.HP;
-		}
 		
 	// Hunting
 		if (Target != null) {
 			FormatLog("Hunting", $"[{Target}]");
 			while(!bot.ShouldExit()) {
 				bot.Player.Hunt(Target);
-			
 			// Auto Quest Complete
 				if (AutoQuestComplete) {
 					if (bot.Quests.ActiveQuests.Count >= 1) {
-					// Sleep 750 if the enemy is a boss
-						if (BossCheck())
-							bot.Sleep(750);
 						foreach (var Quest in bot.Quests.ActiveQuests) {
 							int QuestID = Quest.ID;
 							if (bot.Quests.CanComplete(QuestID)) {
@@ -97,14 +89,6 @@ public class SmartAttackHunt {
 													 Required Functions
 	------------------------------------------------------------------------------------------------------------*/
 	//These functions are required for this bot to function.
-
-	public bool BossCheck() {
-		if (bot.Monsters.CurrentMonsters.Count() == 1)
-			return true;
-		if (MonsterMaxHP >= ConsiderBossHPTreshhold)
-			return true;
-		return false;
-	}
 
 	/// <summary>
 	/// Spams Skills when in combat. You can get in combat by going to a cell with monsters in it with bot.Options.AggroMonsters enabled or using an attack command against one.
