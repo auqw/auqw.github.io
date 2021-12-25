@@ -97,8 +97,8 @@ public class SmartDailies
 	public void ScriptMain(ScriptInterface bot)
 	{
 
-		if (!Forms.Main.Text.StartsWith($"RBot 3.6.3.0")) {
-			MessageBox.Show("This script requires RBot 3.6.3.0 or above. Stopping the script", "WARNING");
+		if (!Forms.Main.Text.StartsWith($"RBot 3.6.3.1")) {
+			MessageBox.Show("This script requires RBot 3.6.3.1 or above. Stopping the script", "WARNING");
 			ScriptManager.StopScript();
 		}
 		if (!DisableMenu) bot.Config.Configure();
