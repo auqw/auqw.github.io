@@ -214,26 +214,35 @@ class UploadCog(commands.Cog, BaseProgram):
                     author.append(ver_author)
 
 
-        exists_already = ""
-        if botName in BaseProgram.rbots:
-            exists_already = "\n\> Upload Bot overwrite existing bot.\n"
-
-        BaseProgram.rbots[botName] = {}
-        BaseProgram.rbots[botName]["date"] = date_
         if len(author) > 1:
             author_joined = ', '.join(author)
         else:
             author_joined = str(author[0]).strip()
-        BaseProgram.rbots[botName]["authors"] = author
-        BaseProgram.rbots[botName]["tags"] = [x.title().strip() for x in tags_.strip().split(", ")]
-        BaseProgram.rbots[botName]["description"] = desc
-        print(author)
+        
+
+        exists_already = ""
+        if botName in BaseProgram.rbots:
+            exists_already = "\n\> Upload Bot overwrite existing bot."
+            if author:
+                BaseProgram.rbots[botName]["authors"] = author
+            if tags_:
+                BaseProgram.rbots[botName]["tags"] = [x.title().strip() for x in tags_.strip().split(", ")]
+            if desc:
+                BaseProgram.rbots[botName]["description"] = desc
+        else:
+            BaseProgram.rbots[botName] = {}
+            BaseProgram.rbots[botName]["authors"] = author
+            BaseProgram.rbots[botName]["tags"] = [x.title().strip() for x in tags_.strip().split(", ")]
+            BaseProgram.rbots[botName]["description"] = desc
+
+
+        BaseProgram.rbots[botName]["date"] = date_
+
         # return
-        # if not BaseProgram.debug:
         self.git_save_bots("rbots", data, botName, author_joined)
         self.git_save("rbots")
 
-        await ctx.send(f"\> Successfully Uploaded rbot: `{botName}` by {author_joined}{exists_already}.")
+        await ctx.send(f"\> Successfully Uploaded rbot: `{botName}` by {author_joined}.{exists_already}")
         return
 
 
