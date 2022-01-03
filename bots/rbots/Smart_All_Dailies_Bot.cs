@@ -96,11 +96,7 @@ public class SmartDailies
 	public ScriptInterface bot => ScriptInterface.Instance;
 	public void ScriptMain(ScriptInterface bot)
 	{
-
-		if (!Forms.Main.Text.StartsWith($"RBot 3.6.3.1")) {
-			MessageBox.Show("This script requires RBot 3.6.3.1 or above. Stopping the script", "WARNING");
-			ScriptManager.StopScript();
-		}
+		VersionChecker("3.6.3.2");
 		if (!DisableMenu) bot.Config.Configure();
 		DisableHunt = bot.Config.Get<bool>("B_General_Options", "DisableHunt");
 
@@ -835,74 +831,75 @@ public class SmartDailies
 						// You must have completed CitadelRuins
 							if (!bot.Quests.IsUnlocked(6182))
 								FormatLog("Quest", "Completion of the /CitadelRuins story is required");
-							ItemArray = new[] {
-								"Lord of Order Wrap",
-								"Lord of Order Bladed Wrap",
-								"Pristine Blades of Order",
-								"Dreadrock Donation Receipt",
-								"Deadmoor Spirits Helped",
-								"Mage's Gratitude",
-								"Ravenscar's Truth"
-							};
-							UnbankList(ItemArray);
-							GetDropList(ItemArray);
-						// Pristine Blades of Order
-							SoloMode();
-							FormatLog("Farming", "[Pristine Blades of Order] x1 from [Chaorrupted Knight]");
-							ItemFarm(
-								"Pristine Blades of Order", 1,
-								Temporary: false,
-								HuntFor: !DisableHunt,
-								QuestID: 7156,
-								MonsterName: "Chaorrupted Knight",
-								MapName: "watchtower",
-								CellName: "Frame3",
-								PadName: "Left"
-							);
-						// Dreadrock Donation Receipt
-							FormatLog("Purchasing", "[Dreadrock Donation Receipt] x1 from Shop 1221", Tabs: 1);
-							SafePurchase(
-								"Dreadrock Donation Receipt", 1,
-								MapName: "dreadrock",
-								ShopID: 1221
-							);
-						// Deadmoor Spirits Helped
-							FormatLog("Farming", "[Deadmoor Spirits Helped] x1 from [Banshee Mallora]");
-							ItemFarm(
-								"Deadmoor Spirits Helped", 1,
-								Temporary: false,
-								HuntFor: !DisableHunt,
-								QuestID: 7156,
-								MonsterName: "Banshee Mallora",
-								MapName: "deadmoor",
-								CellName: "r30",
-								PadName: "left"
-							);
-						// Mage's Gratitude
-							FormatLog("Obtaining", "[Mage's Gratitude] x1 from Quest 6182", Tabs: 1);
-							ItemFarm(
-								"Enn'tröpy Defeated", 1,
-								Temporary: true,
-								HuntFor: !DisableHunt,
-								QuestID: 6182,
-								MonsterName: "Enn'tröpy",
-								MapName: "citadelruins",
-								CellName: "r11b",
-								PadName: "Bottom"
-							);
-							SafeQuestComplete(6182);
-						// Ravenscar's Truth
-							FormatLog("Purchasing", "[Ravenscar's Truth] x1 from Shop 614");
-							SafePurchase(
-								"Ravenscar's Truth", 1,
-								MapName: "ravenscar",
-								ShopID: 614
-							);
-							SafeQuestComplete(7156);
-							BankArray(ItemArray);
+							else {
+								ItemArray = new[] {
+									"Lord of Order Wrap",
+									"Lord of Order Bladed Wrap",
+									"Pristine Blades of Order",
+									"Dreadrock Donation Receipt",
+									"Deadmoor Spirits Helped",
+									"Mage's Gratitude",
+									"Ravenscar's Truth"
+								};
+								UnbankList(ItemArray);
+								GetDropList(ItemArray);
+							// Pristine Blades of Order
+								SoloMode();
+								FormatLog("Farming", "[Pristine Blades of Order] x1 from [Chaorrupted Knight]");
+								ItemFarm(
+									"Pristine Blades of Order", 1,
+									Temporary: false,
+									HuntFor: !DisableHunt,
+									QuestID: 7156,
+									MonsterName: "Chaorrupted Knight",
+									MapName: "watchtower",
+									CellName: "Frame3",
+									PadName: "Left"
+								);
+							// Dreadrock Donation Receipt
+								FormatLog("Purchasing", "[Dreadrock Donation Receipt] x1 from Shop 1221", Tabs: 1);
+								SafePurchase(
+									"Dreadrock Donation Receipt", 1,
+									MapName: "dreadrock",
+									ShopID: 1221
+								);
+							// Deadmoor Spirits Helped
+								FormatLog("Farming", "[Deadmoor Spirits Helped] x1 from [Banshee Mallora]");
+								ItemFarm(
+									"Deadmoor Spirits Helped", 1,
+									Temporary: false,
+									HuntFor: !DisableHunt,
+									QuestID: 7156,
+									MonsterName: "Banshee Mallora",
+									MapName: "deadmoor",
+									CellName: "r30",
+									PadName: "left"
+								);
+							// Mage's Gratitude
+								FormatLog("Obtaining", "[Mage's Gratitude] x1 from Quest 6182", Tabs: 1);
+								ItemFarm(
+									"Enn'tröpy Defeated", 1,
+									Temporary: true,
+									HuntFor: !DisableHunt,
+									QuestID: 6182,
+									MonsterName: "Enn'tröpy",
+									MapName: "citadelruins",
+									CellName: "r11b",
+									PadName: "Bottom"
+								);
+								SafeQuestComplete(6182);
+							// Ravenscar's Truth
+								FormatLog("Purchasing", "[Ravenscar's Truth] x1 from Shop 614");
+								SafePurchase(
+									"Ravenscar's Truth", 1,
+									MapName: "ravenscar",
+									ShopID: 614
+								);
+								SafeQuestComplete(7156);
+								BankArray(ItemArray);
+							}
 						}
 					}
-					
 					else FormatLog("DailyCheck", "Daily Quest unavailable", Tabs: 1);
 				}
 
@@ -2000,13 +1997,15 @@ public class SmartDailies
 	public void BuyGoal(string MapName, int ShopID) 
 	{
 		if (bot.Config.Get<bool>("B_General_Options", "buyGoal")) {
-			if (!CheckStorage(ItemArray[0], QuantityArray[0]) && CheckStorage(ItemArray[1], QuantityArray[1]))
+			if (!CheckStorage(ItemArray[0], QuantityArray[0]) && CheckStorage(ItemArray[1], QuantityArray[1])) {
+				UnbankList(ItemArray);
 				SafePurchase(
 					ItemArray[0], 
 					QuantityArray[0], 
 					MapName: MapName, 
 					ShopID: ShopID
 				);
+			}
 		}
 	}
 
@@ -2093,6 +2092,19 @@ public class SmartDailies
 		bot.Sleep(5000);
 		FormatLog("Relogin", "Finished");
 		bot.Options.AutoRelogin = autoRelogSwitch;
+	}
+
+	public void VersionChecker(string TargetVersion)
+	{
+		int[] TargetVArray = Array.ConvertAll(TargetVersion.Split('.'), int.Parse);
+		int[] CurrentVArray = Array.ConvertAll(Forms.Main.Text.Replace("RBot ", "").Split('.'), int.Parse);
+		foreach (int Digit in TargetVArray) {
+			int Index = Array.IndexOf(TargetVArray, Digit);
+			if (Digit > CurrentVArray[Index]) {
+				MessageBox.Show($"This script requires RBot {TargetVersion} or above. Stopping the script", "WARNING");
+				ScriptManager.StopScript();
+			}
+		}
 	}
 
 	/*------------------------------------------------------------------------------------------------------------
