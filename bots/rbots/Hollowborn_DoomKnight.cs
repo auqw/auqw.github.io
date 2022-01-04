@@ -130,7 +130,7 @@ public class ExeScript
 		bot.Log($"[{DateTime.Now:HH:mm:ss}] -----Scrip Launched-----");
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
-		VersionCheck("3.6.1.0");
+		VersionChecker("3.6.3.2");
 		
 		ConfigureBotOptions();
 		ConfigureLiteSettings();
@@ -598,13 +598,18 @@ public class ExeScript
 		}
 	}
 	
-	public void VersionCheck(string version)
-    {
-        if (!Forms.Main.Text.StartsWith($"RBot {version}"))
-        {
-            MessageBox.Show($"This bot is likely glitch out if you dont have RBot {version} or above. You have been warned", "WARNING");
-        }
-    }
+	public void VersionChecker(string TargetVersion)
+	{
+		int[] TargetVArray = Array.ConvertAll(TargetVersion.Split('.'), int.Parse);
+		int[] CurrentVArray = Array.ConvertAll(Forms.Main.Text.Replace("RBot ", "").Split('.'), int.Parse);
+		foreach (int Digit in TargetVArray) {
+			int Index = Array.IndexOf(TargetVArray, Digit);
+			if (Digit > CurrentVArray[Index]) {
+				MessageBox.Show($"This script requires RBot {TargetVersion} or above. Stopping the script", "WARNING");
+				ScriptManager.StopScript();
+			}
+		}
+	}
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
