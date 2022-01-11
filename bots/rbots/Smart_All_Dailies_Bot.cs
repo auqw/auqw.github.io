@@ -1688,7 +1688,7 @@ public class SmartDailies
 							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
-							MapName: "Twig Pet",
+							MapName: "ariapet",
 							ShopID: 1081
 						);
 						BankArray(ItemArray);
@@ -1717,7 +1717,7 @@ public class SmartDailies
 							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
-							MapName: "Twilly Pet",
+							MapName: "ariapet",
 							ShopID: 1081
 						);
 						BankArray(ItemArray);
@@ -1746,7 +1746,7 @@ public class SmartDailies
 							FormatLog($"{ItemArray[0]}", $"You now have [{ItemArray[1]}] x{bot.Inventory.GetQuantity(ItemArray[1])}", Tabs: 1);
 						}
 						BuyGoal(
-							MapName: "Zorbak Pet",
+							MapName: "ariapet",
 							ShopID: 1081
 						);
 						BankArray(ItemArray);
