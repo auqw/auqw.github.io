@@ -58,7 +58,7 @@ public class Fishing_Rep_By_Tato  //🥔🥔🥔🥔
 					SafeMapJoin("fishing");
 					while (bot.Inventory.Contains("Fishing Dynamite", 1)) {
 						bot.SendPacket("%xt%zm%FishCast%1%Dynamite%30%");
-						bot.Sleep(3500);
+						bot.Sleep(5000);
 						bot.SendPacket("%xt%zm%getFish%1%false%");
 						i++;
 						FormatLog("Fishing", $"Fished {i} times");
