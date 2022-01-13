@@ -9,7 +9,7 @@ public class Fishing_Rep_By_Tato  //🥔🥔🥔🥔
 	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public string[] RequiredItems = { "Fishing Dynamite" };
+	public string[] RequiredItems = { "Fishing Dynamite", "Fishing Bait" };
 	public string[] EquippedItems = { };
 	int i = 0;
 	//-----------EDIT ABOVE-------------//
@@ -18,7 +18,7 @@ public class Fishing_Rep_By_Tato  //🥔🥔🥔🥔
 	public int FarmLoop;
 	public int SavedState;
 	public ScriptInterface bot => ScriptInterface.Instance;
-		public void ScriptMain(ScriptInterface bot)
+	public void ScriptMain(ScriptInterface bot)
 	{
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
 
@@ -37,38 +37,90 @@ public class Fishing_Rep_By_Tato  //🥔🥔🥔🥔
 		{
 			while (!bot.Player.Loaded) { }
 			FormatLog(Title: true, Text: "Fishing for compliments");
-
-			if (bot.Player.GetFactionRank("Fishing") < 10) {
-				
-				while (bot.Player.GetFactionRank("Fishing") < 10) {
-					int i = 0;
-					while (!bot.Inventory.Contains("Fishing Dynamite", 10)) {
-						ItemFarm(
-							"Faith's Fi'shtick", 1,
-							Temporary: true,
-							HuntFor: !bot.Config.Get<bool>("DisableHunt"),
-							QuestID: 1682,
-							MonsterName: "Slime",
-							MapName: "greenguardwest",
-							CellName: "West4",
-							PadName: "Right"
-						);
-						SafeQuestComplete(1682);
-					}
-					SafeMapJoin("fishing");
-					while (bot.Inventory.Contains("Fishing Dynamite", 1)) {
-						bot.SendPacket("%xt%zm%FishCast%1%Dynamite%30%");
-						bot.Sleep(5000);
-						bot.SendPacket("%xt%zm%getFish%1%false%");
-						i++;
-						FormatLog("Fishing", $"Fished {i} times");
-						bot.Sleep(1500);
-					}
-				}
-			}
-			StopBot("Congratulations, you're a Master-baiter");
+			FishingCheck();
 		}
 	}
+
+	public void FishingCheck()
+	{
+		FormatLog(Title: true, Text: "Fishing Check");
+
+		while (bot.Player.GetFactionRank("Fishing") < 2) 
+		{
+			while (!bot.Inventory.Contains("Fishing Bait", 10))
+			{ 
+				FishingBait(10);
+			}
+			while (bot.Inventory.Contains("Fishing Bait", 1)) 
+			{
+				bot.SendPacket("%xt%zm%FishCast%1%Pole%1%");
+				bot.Sleep(5000);
+				bot.SendPacket("%xt%zm%getFish%1%false%");
+				i++;
+				FormatLog("Rod Fishing", $"Fished {i} times");
+				bot.Sleep(1500);
+			}
+		}
+		Fishing();
+	}
+
+	public void FishingDynamite(int Quantity)
+	{
+        if (bot.Inventory.Contains("Fishing Dynamite", Quantity))  
+            return;	
+			
+		FormatLog(Title: true, Text: "Fishing Dynamite Farm");
+			
+        while (!bot.Inventory.Contains("Fishing Dynamite", Quantity))
+        {
+			ItemFarm("Faith's Fi'shtick", 1, true, false, 1682, "Slime", "greenguardwest", "West4", "Right");
+			SafeQuestComplete(1682);
+        }
+	}
+	
+	public void FishingBait(int Quantity)
+	{
+        if (bot.Inventory.Contains("Fishing Bait", Quantity))  
+            return;	
+			
+		FormatLog(Title: true, Text: "Fishing Bait Farm");
+
+        while (!bot.Inventory.Contains("Fishing Bait", Quantity))
+        {
+			ItemFarm("Fishing Bait", 1, true, false, 1682, "Slime", "greenguardwest", "West4", "Right");
+			SafeQuestComplete(1682);
+        }
+
+	}
+	
+			
+	public void Fishing()
+	{
+		FormatLog(Title: true, Text: "Fishing Starting");
+
+		if (bot.Player.GetFactionRank("Fishing") < 10) {
+			
+			while (bot.Player.GetFactionRank("Fishing") < 10) {
+				int i = 0;
+				while (!bot.Inventory.Contains("Fishing Dynamite", 10)) 
+				{
+					FishingDynamite(10);
+				}
+				SafeMapJoin("fishing");
+				while (bot.Inventory.Contains("Fishing Dynamite", 1)) 
+				{
+					bot.SendPacket("%xt%zm%FishCast%1%Dynamite%30%");
+					bot.Sleep(5000);
+					bot.SendPacket("%xt%zm%getFish%1%false%");
+					i++;
+					FormatLog("Explosive Fishing", $"Fished {i} times");
+					bot.Sleep(1500);
+				}
+			}
+		}
+		StopBot("Congratulations, you're a Master-baiter");
+	}
+	
 
 	/*------------------------------------------------------------------------------------------------------------
 													 Invokable Functions
