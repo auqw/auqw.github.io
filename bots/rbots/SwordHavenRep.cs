@@ -1,9 +1,24 @@
+//cs_include Scripts/CoreBots.cs
+//cs_include Scripts/CoreFarms.cs
+//cs_include Scripts/CoreDailys.cs
+
 using System;
 using RBot;
 using System.Collections.Generic;
 
+
+
+
 public class SwordHavenrep
 {
+
+	
+public ScriptInterface Bot => ScriptInterface.Instance;
+public CoreBots Core => CoreBots.Instance;
+public CoreFarms Farm = new CoreFarms();
+public CoreDailys Dailys = new CoreDailys();
+
+
 	//-----------EDIT BELOW-------------//
 	public int MapNumber = 2142069;
 	public readonly int[] SkillOrder = { 3, 1, 2, 4 };
@@ -12,8 +27,8 @@ public class SwordHavenrep
     public int[] QuestList = { 3064, 3066, 3067 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-	public string[] RequiredItems = { FarmClass, SoloClass };
-    public static string FarmClass = "Vampire Lord";
+	public string[] RequiredItems = {FarmClass, SoloClass, "Super-Fan Swag Token A", "Super-Fan Swag Token C", "Super-Fan Swag Token D"};    
+	public static string FarmClass = "Vampire Lord";
     public static string SoloClass = "Void Highlord";
    	public string[] MaxSetEquip = { "Necrotic Sword of Doom", "Dual Necrotic Swords of Doom", "Polly Roger", "Head of the Legion Beast", "Fire Champion's Armor", "Awescended Omni Wings"  };
        
@@ -23,6 +38,7 @@ public class SwordHavenrep
 	public int FarmLoop;
 	public int SavedState;
 	public ScriptInterface bot => ScriptInterface.Instance;
+
 	public void ScriptMain(ScriptInterface bot)
 	{
 		if (bot.Player.Cell != "Wait") bot.Player.Jump("Wait", "Spawn");
@@ -43,43 +59,49 @@ public class SwordHavenrep
             while (bot.Player.GetFactionRank("Swordhaven") < 10)
             if (bot.Player.IsMember)
             {
-						{
-                        SafeEquip(FarmClass);
-						bot.Log(" Membership Due Swordhaven Rep");
-						ItemFarm(
-						"Doppelganger Documents", 1,
-						Temporary: true,
-						HuntFor: false,
-						QuestID: 1310,
-						MonsterName: "*",
-						MapName: "collectorlab"
-						);
-						SafeQuestComplete(1310);
-                        }
-			if (bot.Inventory.Contains("Super-Fan Swag Token A", 1)) {SafeQuestComplete(4343);}
-			if (bot.Inventory.Contains("Super-Fan Swag Token C", 200))
-							{
-								SafePurchase("Super-Fan Swag Token B", 20, "Collection", 325);
-								bot.Sleep(700);
-								SafePurchase("Super-Fan Swag Token A", 1, "Collection", 325);
-							}
+				{
+					SafeEquip(FarmClass);
+					bot.Log(" Membership Due Swordhaven Rep");
+					ItemFarm(
+					"Doppelganger Documents", 1,
+					Temporary: true,
+					HuntFor: false,
+					QuestID: 1310,
+					MonsterName: "*",
+					MapName: "collectorlab"
+					);
+					SafeQuestComplete(1310);
+                }
+				if (bot.Inventory.Contains("Super-Fan Swag Token A", 1))
+				{
+					SafeQuestComplete(4343);
+				}
+				if (bot.Inventory.Contains("Super-Fan Swag Token C", 200))
+				{
+					SafePurchase("Super-Fan Swag Token B", 20, "Collection", 325);
+					bot.Sleep(700);
+					SafePurchase("Super-Fan Swag Token A", 1, "Collection", 325);
+				}
             }
+			
             else if (!bot.Player.IsMember)
-            {         
-            
-            while (bot.Player.GetFactionRank("Swordhaven") < 10)
-            {
-		    SkillList(FarmClass, SkillOrderFarmClass);
-            SafeEquip(FarmClass);
-			ItemFarm("Dungeon Fiend Hair Bow", 5, true, true, 3065, "Dungeon Fiend", "castle");
-			ItemFarm("Dungeon Fiend Bow Tie", 5, true, true, 3065, "Dungeon Fiend", "castle"); 
-			ItemFarm("Eradicated Arachnid", 10, true, true, 3066, "Castle Spider", "castle"); 
-			ItemFarm("Castle Wraith Defeated", 10, true, true, 3067, "Castle Wraith", "castle"); 
-            SafeQuestComplete(3065);
-            SafeQuestComplete(3066);
-            SafeQuestComplete(3067);
-            }
-
+            {               
+				while (bot.Player.GetFactionRank("Swordhaven") < 10)
+				{
+					bot.Quests.EnsureAccept(3065);
+					bot.Quests.EnsureAccept(3066);
+					bot.Quests.EnsureAccept(3067);
+					SkillList(FarmClass, SkillOrderFarmClass);
+					SafeEquip(FarmClass);
+					ItemFarm("Dungeon Fiend Hair Bow", 5, true, true, 3065, "Dungeon Fiend", "castle");
+					ItemFarm("Dungeon Fiend Bow Tie", 5, true, true, 3065, "Dungeon Fiend", "castle"); 
+					ItemFarm("Eradicated Arachnid", 10, true, true, 3066, "Castle Spider", "castle"); 
+					ItemFarm("Castle Wraith Defeated", 10, true, true, 3067, "Castle Wraith", "castle"); 
+					SafeQuestComplete(3065);
+					SafeQuestComplete(3066);
+					SafeQuestComplete(3067);
+					
+				}
             }
         }
 		StopBot($"All Done Boss");
@@ -100,7 +122,7 @@ public class SwordHavenrep
 		*	SafeEquip("ItemName");
 		*	SafePurchase("ItemName", ItemQuantityNeeded, "MapName", "MapNumber", ShopID)
 		*	SafeSell("ItemName", ItemQuantityNeeded)
-		*	SafeQuestComplete(QuestID, ItemID)
+		*	EnsureComplete(QuestID, ItemID)
 		*	StopBot("Text", "MapName", "MapNumber", "CellName", "PadName", "Caption")
 	*/
 
@@ -144,7 +166,7 @@ public class SwordHavenrep
 					FarmLoop++;
 					if (bot.Map.Name != MapName.ToLower()) SafeMapJoin(MapName.ToLower());
 					if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
-					bot.Options.AggroMonsters = true;
+					bot.Options.AggroMonsters = false;
 					AttackType("h", MonsterName);
 					if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
 				}
@@ -157,7 +179,7 @@ public class SwordHavenrep
 					if (bot.Map.Name != MapName.ToLower()) SafeMapJoin(MapName.ToLower(), CellName, PadName);
 					if (bot.Player.Cell != CellName) bot.Player.Jump(CellName, PadName);
 					if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
-					bot.Options.AggroMonsters = true;
+					bot.Options.AggroMonsters = false;
 					AttackType("a", MonsterName);
 					if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
 				}
@@ -172,7 +194,7 @@ public class SwordHavenrep
 					FarmLoop++;
 					if (bot.Map.Name != MapName.ToLower()) SafeMapJoin(MapName.ToLower());
 					if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
-					bot.Options.AggroMonsters = true;
+					bot.Options.AggroMonsters = false;
 					AttackType("h", MonsterName);
 					if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
 				}
@@ -185,7 +207,7 @@ public class SwordHavenrep
 					if (bot.Map.Name != MapName.ToLower()) SafeMapJoin(MapName.ToLower(), CellName, PadName);
 					if (bot.Player.Cell != CellName) bot.Player.Jump(CellName, PadName);
 					if (QuestID > 0) bot.Quests.EnsureAccept(QuestID);
-					bot.Options.AggroMonsters = true;
+					bot.Options.AggroMonsters = false;
 					AttackType("a", MonsterName);
 					if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
 				}
@@ -214,12 +236,12 @@ public class SwordHavenrep
 	startFarmLoop:
 		if (FarmLoop > 0) goto maintainFarmLoop;
 		SavedState++;
-		FormatLog("Farm", $"Started Farming Loop {SavedState}");
+		bot.Log("Started Farming Loop {SavedState}.");
 		goto maintainFarmLoop;
 
 	breakFarmLoop:
 		SmartSaveState();
-		FormatLog("Farm", $"Completed Farming Loop {SavedState}");
+		bot.Log("Completed Farming Loop {SavedState}.");
 		FarmLoop = 0;
 		goto startFarmLoop;
 
@@ -232,7 +254,7 @@ public class SwordHavenrep
 			if (!bot.Quests.IsInProgress(Quest)) bot.Quests.EnsureAccept(Quest);
 			if (bot.Quests.CanComplete(Quest)) SafeQuestComplete(Quest);
 		}
-		bot.Options.AggroMonsters = true;
+		bot.Options.AggroMonsters = false;
 		AttackType("a", MonsterName);
 		if (FarmLoop > SaveStateLoops) goto breakFarmLoop;
 	}
@@ -317,15 +339,52 @@ public class SwordHavenrep
 		//ExitCombat
 
 		ExitCombat();
+		bot.Sleep(750);
 		bot.Quests.EnsureAccept(QuestID);
-		bot.Quests.EnsureComplete(QuestID, ItemID, tries: TurnInAttempts);
+		bot.Quests.EnsureComplete(QuestID, ItemID, tries: 10);
 		if (bot.Quests.IsInProgress(QuestID))
 		{
-			FormatLog("Quest", $"Turning in Quest {QuestID} failed. Logging out");
+			bot.Log($"[{DateTime.Now:HH:mm:ss}] Quest \t \t Failed to turn in Quest {QuestID}. Logging out.");
+			Relogin();
+		}
+		bot.Log($"[{DateTime.Now:HH:mm:ss}] Quest \t \t Turned In Quest {QuestID} successfully.");
+		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
+	}
+	
+			public void Relogin()
+			{
+				bool autoRelogSwitch = bot.Options.AutoRelogin;
+				bot.Options.AutoRelogin = false;
+				bot.Sleep(3500);
+				bot.Log("Relogin started");
+				bot.Player.Logout();
+				bot.Sleep(5000);
+				RBot.Servers.Server server = bot.Options.AutoReloginAny 
+						? RBot.Servers.ServerList.Servers.Find(x => x.IP != RBot.Servers.ServerList.LastServerIP) 
+						: RBot.Servers.ServerList.Servers.Find(s => s.IP == RBot.Servers.ServerList.LastServerIP) ?? RBot.Servers.ServerList.Servers[0];
+				bot.Player.Login(bot.Player.Username, bot.Player.Password);
+				bot.Player.Connect(server);
+				while(!bot.Player.LoggedIn)
+					bot.Sleep(1500);
+				bot.Sleep(6500);
+				bot.Log("Relogin finished");
+				bot.Options.AutoRelogin = autoRelogSwitch;
+			}
+	
+	public void SafeQuestCompleteDaily(int QuestID, int ItemID = -1)
+	{
+		//Must have the following functions in your script:
+		//ExitCombat
+
+		ExitCombat();
+		bot.Quests.EnsureAccept(QuestID);
+		bot.Quests.EnsureComplete(QuestID, ItemID, tries: 10);
+		if (bot.Quests.IsInProgress(QuestID))
+		{
+			bot.Log("Failed to turn in Quest {QuestID}. Logging out.");
 			bot.Player.Logout();
 		}
-		FormatLog("Quest", $"Turning in Quest {QuestID} successful.");
-		while (!bot.Quests.IsInProgress(QuestID)) bot.Quests.EnsureAccept(QuestID);
+		bot.Log("Turned In Quest {QuestID} successfully.");
 	}
 
 	/// <summary>
