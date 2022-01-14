@@ -56,7 +56,7 @@ public class BluuPurpleTemplate
 	public readonly int[] SkillOrder = { 2, 3, 4, 2 };
 	public int SaveStateLoops = 8700;
 	public int TurnInAttempts = 10;
-    public static string[] Ver1Items = { "Spirit Orb", "Blinding Light Fragments", "Undead Essence", "Blinding Aura", "Bright Aura" };
+    public static string[] Ver1Items = { "Blinding Broadsword of Destiny", "Spirit Orb", "Blinding Light Fragments", "Undead Essence", "Blinding Aura", "Bright Aura" };
     public static string[] Ver2Items = { "Spirit Orb", "Undead Essence", "Great Ornate Warhammer", "Ultimate Weapon Kit", "Bright Aura", "Loyal Spirit Orb" };
 	public static string[] Ver3Items = { "Bone Dust", "Undead Energy", "Cavern Celestite", "Spirit Orb" };
 
@@ -82,7 +82,7 @@ public class BluuPurpleTemplate
         SkillList(SkillOrder);
         EquipList(EquippedItems);
         GetDropList(Combined);
-		Unbank(Combined)
+		UnbankList(Combined);
 
 		while (!bot.ShouldExit())
 		{
@@ -100,12 +100,9 @@ public class BluuPurpleTemplate
                     StopBot();
                 }
 
-            if (bot.Quests.IsUnlocked(2178))  //100 Spirit Orbs guaranteed 
+            if (bot.Quests.IsUnlocked(2178) && bot.Inventory.Contains("Blinding Broadsword of Destiny"))  //100 Spirit Orbs guaranteed 
             {
                 FormatLog(Title: true, Text: "Doing Spirit Orb Ver1");
-                CheckSpace(Ver1Items);
-        		GetDropList(Ver1Items);
-				if (bot.Bank.Contains(Ver1Items)) bot.Bank.ToInventory(Ver1Items);
                 BroadSword(10500);
                 FormatLog(Title: true, Text: "Spirit Orb Ver1 [Finished]");           
                 StopBot();
@@ -114,8 +111,6 @@ public class BluuPurpleTemplate
             else if (bot.Quests.IsUnlocked(2163)) //chance at 100 Spirit orbs
             {
                 FormatLog(Title: true, Text: "Doing Spirit Orb Ver2"); 
-                CheckSpace(Ver2Items);
-        		GetDropList(Ver2Items);
                 UltiKit(10500);   
                 FormatLog(Title: true, Text: "Spirit Orb Ver2 [Finished]");              
                 StopBot();
@@ -124,8 +119,6 @@ public class BluuPurpleTemplate
             else if (bot.Quests.IsAvailable(939))
             {
 				FormatLog(Title: true, Text: "Doing Spirit Orb Ver3");
-				CheckSpace(Ver3Items);
-				GetDropList(Ver3Items);
 				SpiritOrbs(10500); //Spirit Orb (Misc) x5/x10/x15/x20
 				FormatLog(Title: true, Text: "Spirit Orb Ver3 [Finished]");            
 				StopBot();
@@ -136,6 +129,8 @@ public class BluuPurpleTemplate
 
     public void EssentialEssences(int Quantity)
     {    
+		GetDropList(Ver3Items);
+
         if (bot.Inventory.Contains("Undead Essence", Quantity))  
             return;
         
@@ -156,6 +151,10 @@ public class BluuPurpleTemplate
 
     public void BroadSword(int Quantity)
     {
+		CheckSpace(Ver1Items);
+		GetDropList(Ver1Items);
+		UnbankList(Ver1Items);   
+
         if (bot.Inventory.Contains("Spirit Orb", Quantity))  
             return;
         
@@ -174,6 +173,10 @@ public class BluuPurpleTemplate
 
     public void UltiKit(int Quantity) 
     {
+		CheckSpace(Ver2Items);
+		GetDropList(Ver2Items);  
+		UnbankList(Ver2Items);    
+
         if (bot.Inventory.Contains("Spirit Orb", Quantity))  
             return;
         
@@ -197,7 +200,11 @@ public class BluuPurpleTemplate
     }
     
     public void  SpiritOrbs(int Quantity) 
-    {          
+    {    
+		CheckSpace(Ver3Items);
+		GetDropList(Ver3Items);
+		UnbankList(Ver3Items);   
+
         if (bot.Inventory.Contains("Spirit Orb", Quantity))  
             return;
         
@@ -595,7 +602,7 @@ public class BluuPurpleTemplate
 	/// Change the player's name and guild for your bots specifications.
 	/// Recommended Default Bot Configurations.
 	/// </summary>
-	public void ConfigureBotOptions(string PlayerName = "Bot By AuQW", string GuildName = "https://auqw.tk/", bool LagKiller = true, bool SafeTimings = true, bool RestPackets = true, bool AutoRelogin = true, bool PrivateRooms = true, bool InfiniteRange = true, bool SkipCutscenes = true, bool ExitCombatBeforeQuest = true, bool HideMonster=true)
+	public void ConfigureBotOptions(string PlayerName = "Bot By AuQW", string GuildName = "https://auqw.tk/", bool LagKiller = true, bool SafeTimings = true, bool RestPackets = true, bool AutoRelogin = true, bool PrivateRooms = true, bool InfiniteRange = true, bool SkipCutscenes = true, bool ExitCombatBeforeQuest = true, bool HideMonster = true)
 	{
 		SendMSGPacket("Configuring bot.", "AuQW", "moderator");
 		bot.Options.CustomName = PlayerName;
@@ -727,7 +734,7 @@ public class BluuPurpleTemplate
 	}
 
 	/// <summary>
-	/// Unbanks all items in an array after banking every other AC-tagged Misc item in the inventory.
+	/// UnbankLists all items in an array after banking every other AC-tagged Misc item in the inventory.
 	/// </summary>
 	/// <param name="UnbankList"></param>
 	public void UnbankList(params string[] UnbankList)
