@@ -143,9 +143,9 @@ public class BluuPurpleTemplate
 		int i = 1;   
         while (!bot.Inventory.Contains("Undead Essence", Quantity))
         {   
-            ItemFarm("Bone Terror Soul", 1, true, true, 939, "Bone Terror", "battleundera", "r3", "Left");   
-            ItemFarm("Undead Champion Soul", 1, true, true, 939, "Undead Champion", "battleunderb", "r7", "Left");  
-            ItemFarm("Jellyfish Soul", 1, true, true, 939, "Crystalized Jellyfish", "battleunderc", "r5", "Left");
+            ItemFarm("Bone Terror Soul", 1, true, false, 939, "Bone Terror", "battleundera", "r3", "Left");   
+            ItemFarm("Undead Champion Soul", 1, true, false, 939, "Undead Champion", "battleunderb", "r7", "Left");  
+            ItemFarm("Jellyfish Soul", 1, true, false, 939, "Crystalized Jellyfish", "battleunderc", "r5", "Left");
             SafeQuestComplete(939);
             i++; 	
         }   
