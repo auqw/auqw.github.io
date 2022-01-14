@@ -82,6 +82,7 @@ public class BluuPurpleTemplate
         SkillList(SkillOrder);
         EquipList(EquippedItems);
         GetDropList(Combined);
+		Unbank(Combined)
 
 		while (!bot.ShouldExit())
 		{
@@ -104,6 +105,7 @@ public class BluuPurpleTemplate
                 FormatLog(Title: true, Text: "Doing Spirit Orb Ver1");
                 CheckSpace(Ver1Items);
         		GetDropList(Ver1Items);
+				if (bot.Bank.Contains(Ver1Items)) bot.Bank.ToInventory(Ver1Items);
                 BroadSword(10500);
                 FormatLog(Title: true, Text: "Spirit Orb Ver1 [Finished]");           
                 StopBot();
@@ -143,8 +145,8 @@ public class BluuPurpleTemplate
 		int i = 1;   
         while (!bot.Inventory.Contains("Undead Essence", Quantity))
         {   
-            ItemFarm("Bone Terror Soul", 1, true, false, 939, "Bone Terror", "battleundera", "r3", "Left");   
-            ItemFarm("Undead Champion Soul", 1, true, false, 939, "Undead Champion", "battleunderb", "r7", "Left");  
+            ItemFarm("Bone Terror Soul", 1, true, false, 939, "Bone Terror", "battleundera", "r7", "Left");   
+            ItemFarm("Undead Champion Soul", 1, true, false, 939, "Undead Champion", "battleunderb", "r3", "Left");  
             ItemFarm("Jellyfish Soul", 1, true, false, 939, "Crystalized Jellyfish", "battleunderc", "r5", "Left");
             SafeQuestComplete(939);
             i++; 	
