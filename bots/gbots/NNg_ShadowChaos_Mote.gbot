@@ -4,744 +4,55 @@
     "$type": "System.Collections.Generic.List`1[[Grimoire.Botting.IBotCommand, Grimoire]], mscorlib",
     "$values": [
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBotDelay, Grimoire",
-        "Delay": 1
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 2000
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "declare_var"
+        "Label": "deez nut"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "equip_class"
+        "Name": "deez nut"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
+        "Text": "[221,153,255]████████████████████████████████████████████████"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
-        "ItemName": "Legion Revenant"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "check_zone"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "declare_var"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "s"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "a"
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
+        "Text": "[255,255,255]Bot is migrated to another community"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "anti_dc"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "anti_dc"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIs, Grimoire",
-        "Tag": "Map",
-        "Text": "Map is",
-        "Value1": "bank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "unbank_stuff"
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "(Write Text Here)",
+        "Alpha": 1,
+        "R": 220,
+        "G": 220,
+        "B": 220
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
+        "Text": "[221,153,255]████████████████████████████████████████████████"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Pad"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
-        "Map": "bank",
-        "Cell": "Enter",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "anti_dc"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "unbank_stuff"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Pad"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in bank",
-        "Value1": "ShadowChaos Mote",
-        "Value2": "*"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
-        "TransferFromBank": true,
-        "ItemName": "ShadowChaos Mote"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in bank",
-        "Value1": "ShadowChaos Mote",
-        "Value2": "*"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Bruh"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 900
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "ShadowChaos Mote",
-        "Value2": "300"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "shadowchaos_mote"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Pad"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBeep, Grimoire",
-        "Times": 3
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 5000
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "shadowchaos_mote"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestInProgress, Grimoire",
-        "Tag": "Quest",
-        "Text": "Quest is in progress",
-        "Value1": "7700",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "7700_req"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Pad"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 800
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%acceptQuest%53958%7700%"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
-        "Quest": {
-          "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 7700,
-          "IsInProgress": true
-        }
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "shadowchaos_mote"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "7700_req"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in temp",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "chaos_shadow_15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Pad"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdRest, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 2500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestCompleted, Grimoire",
-        "Tag": "Quest",
-        "Text": "Quest can be turned in",
-        "Value1": "7700",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
-        "Quest": {
-          "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 7700,
-          "IsInProgress": true
-        }
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestInProgress, Grimoire",
-        "Tag": "Quest",
-        "Text": "Quest is in progress",
-        "Value1": "7700",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLogout, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "chaos_shadow_15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIs, Grimoire",
-        "Tag": "Map",
-        "Text": "Map is",
-        "Value1": "lagunabeach",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "lagun_r5"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "NNg"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin, Grimoire",
-        "Map": "lagunabeach-1e99",
-        "Cell": "r5",
-        "Pad": "Left"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "chaos_shadow_15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "lagun_r5"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "a",
-        "Value": 1
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIsNot, Grimoire",
-        "Tag": "Misc",
-        "Text": "Int is not",
-        "Value1": "s",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "get_farming_class"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "r5",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "r5",
-        "Pad": "Left"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "r5",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in temp inventory",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-        "Type": 1
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdAttack, Grimoire",
-        "Monster": "*"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "3: Depraved Empowerment",
-        "Index": "3",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in temp inventory",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "4: Anathema",
-        "Index": "4",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "0: Malevolent Burst",
-        "Index": "0",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in temp inventory",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "1: Atramentous Shade",
-        "Index": "1",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in temp inventory",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill, Grimoire",
-        "Skill": "2: Wicked Purgatory",
-        "Index": "2",
-        "SafeHp": 100,
-        "SafeMp": 100
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInTemp, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in temp inventory",
-        "Value1": "Chaos-ShadowFlame Sample",
-        "Value2": "15"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "main_check"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "lagun_r5"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "get_farming_class"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-        "Int": "s",
-        "Value": 1
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Blank",
-        "Pad": "Left"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-        "Tag": "Map",
-        "Text": "Cell is not",
-        "Value1": "Blank",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 2
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Combat.CmdRest, Grimoire"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "equip_class"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": " "
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-        "Name": "check_zone"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
-        "Tag": "Misc",
-        "Text": "Int is",
-        "Value1": "a",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-        "Label": "lagun_r5"
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+        "Text": "",
+        "R": 220,
+        "G": 220,
+        "B": 220
       }
     ]
   },
@@ -754,7 +65,7 @@
     "$values": []
   },
   "Author": "Author",
-  "Description": "Description",
+  "Description": "Description (Write in Rich Text Format)",
   "Boosts": {
     "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
     "$values": []
@@ -762,25 +73,40 @@
   "Drops": {
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": [
-      "ShadowChaos Mote"
+      "ShadowSlayer's Apprentice",
+      "Shadowslayer Apprentice Badge",
+      "Bot By NNg_",
+      "Chibi Eldritch Yume",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Holy Wasabi",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Elders' Blood",
+      "Sage Tonic",
+      "Gold Voucher 100k",
+      "Hazmat Suit (Temp)",
+      "Hazmat Suit"
     ]
   },
-  "Server": {
-    "$type": "Grimoire.Game.Data.Server, Grimoire",
-    "sName": "Safiria",
-    "iPort": 16658
-  },
   "SkillDelay": 500,
-  "ExitCombatBeforeRest": true,
-  "EnablePickup": true,
   "EnableRejection": true,
   "AutoRelogin": true,
-  "RelogDelay": 5000,
-  "RelogRetryUponFailure": true,
-  "BotDelay": 1,
+  "RelogDelay": 4000,
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
-  "Untarget": true,
   "LagKiller": true,
   "SkipCutscenes": true,
   "WalkSpeed": 8,
@@ -795,7 +121,10 @@
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": []
   },
-  "EnsureTries": 20,
-  "AFK": true,
-  "DropDelay": 1000
+  "Packets": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
+  "DropDelay": 1000,
+  "PacketDelay": 250
 }
