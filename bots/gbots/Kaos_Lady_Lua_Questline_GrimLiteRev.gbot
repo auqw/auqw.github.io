@@ -13,7 +13,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -21,11 +21,11 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": "[121, 157, 121]Vordred's Armor"
+        "Text": "[227, 180, 20]Lady Lua"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": "[149, 167, 131]STORYLINE BOT"
+        "Text": "[255, 190, 30 ]STORYLINE BOT"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -49,7 +49,7 @@
      },
      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-        "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -65,7 +65,7 @@
       },
   {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-          "Text": "[149, 167, 131]TABLE OF CONTENTS"
+          "Text": "[255, 190, 30 ]TABLE OF CONTENTS"
         },
         {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -97,7 +97,7 @@
         },
         {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-          "Text": "[149, 167, 131]1. SETTINGS"
+          "Text": "[255, 190, 30 ]1. SETTINGS"
         },
         {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -131,14 +131,14 @@
     "Tag": "Misc",
     "Text": "Set Temporary Variable",
     "Value1": "Soloing Class",
-    "Value2": "Your Dad"
+    "Value2": "Legion Revenant"
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
     "Tag": "Misc",
     "Text": "Set Temporary Variable",
     "Value1": "Farming Class",
-    "Value2": "Your Mom"
+    "Value2": "Legion Revenant"
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -158,7 +158,7 @@
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-    "Text": "[149, 167, 131]2. SKILL SECTION"
+    "Text": "[255, 190, 30 ]2. SKILL SECTION"
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -178,7 +178,7 @@
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-    "Text": "[149, 167, 131]Farming Skills Here"
+    "Text": "[255, 190, 30 ]Farming Skills Here"
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
@@ -259,7 +259,7 @@
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-    "Text": "[149, 167, 131]Soloing Skills Here"
+    "Text": "[255, 190, 30 ]Soloing Skills Here"
   },
   {
     "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -348,7 +348,7 @@
         },
         {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-          "Text": "[149, 167, 131]4. BOAT START"
+          "Text": "[255, 190, 30 ]4. BOAT START"
         },
         {
           "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -416,14 +416,14 @@
         "Tag": "Misc",
         "Text": "Set Temporary Variable",
         "Value1": "Solo Skill Counter",
-        "Value2": "60"
+        "Value2": "12"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
         "Tag": "Misc",
         "Text": "Set Temporary Variable",
         "Value1": "Farming Skill Counter",
-        "Value2": "60"
+        "Value2": "12"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
@@ -446,7 +446,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
-        "Packet": "%xt%zm%getQuests%128431%8376%8377%8378%8379%8380%8381%"
+        "Packet": "%xt%zm%getQuests%128431%8498%8499%8500%8501%8502%8503%8504%8505%"
      },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
@@ -490,29 +490,59 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "m-7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8505",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8505 - Tame That Tiger!"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8504",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8504 - Tyger, Tyger, Burning Bright"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "m-6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8503",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Yin and Yang"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
   "Name": "m-5"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is available",
-  "Value1": "8381",
+  "Value1": "8502",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8381 - Empower Vordred's Armor"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
-  "Tag": "Quest",
-  "Text": "Quest is available",
-  "Value1": "8380",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8380 - VOIDUMINANCE"
+  "Label": "8502 - Winning Streak"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
@@ -522,12 +552,12 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is available",
-  "Value1": "8379",
+  "Value1": "8501",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8379 - MORE SKULLS ON THOSE SKULLS"
+  "Label": "8501 - A Royal Feast"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
@@ -537,12 +567,12 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is available",
-  "Value1": "8378",
+  "Value1": "8500",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - MORE SKULLS ON THE SKULLS"
+  "Label": "8500 - The Eye(s) of the Tiger"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
@@ -552,12 +582,12 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is available",
-  "Value1": "8377",
+  "Value1": "8499",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - MORE SKULLS"
+  "Label": "8499 - A New Year in Bloom"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
@@ -567,12 +597,12 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is available",
-  "Value1": "8376",
+  "Value1": "8498",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8376 - SKULLS"
+  "Label": "8498 - Earning Your Stripes"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -754,7 +784,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -762,11 +792,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]QUESTLINE 1"
+  "Text": "[255, 190, 30 ]QUESTLINE 1"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]/warundead"
+  "Text": "[250,250,250]/ravenloss"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -774,7 +804,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 }
 ,
 {
@@ -791,10 +821,87 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8376 - SKULLS"
+  "Name": "8498 - Earning Your Stripes"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8498 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8498",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8498,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "ravenloss",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "ravenloss",
+  "Room": "[Map No.]",
+  "Cell": "r8",
+  "Pad": "Center"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8498 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8498 - High-Quality Silk"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "ravenloss",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "ravenloss",
+  "Room": "[Map No.]",
+  "Cell": "r8",
+  "Pad": "Center"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r8",
+  "Value2": "Center"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r8",
+  "Pad": "Center"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
@@ -804,115 +911,214 @@
   "Value2": "*"
 },
 {
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Check",
-  "Value2": "8376 - Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIsNot, Grimoire",
-  "Tag": "Misc",
-  "Text": "Int is not",
-  "Value1": "Class Equip",
-  "Value2": "1"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
-  "Int": "Class Equip",
-  "Value": 1
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
-  "Tag": "Quest",
-  "Text": "Quest is not in progress",
-  "Value1": "8376",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
-  "Quest": {
-    "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8376,
-    "CanComplete": true
-  }
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "warundead",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "warundead",
-  "Room": "[Map No.]",
-  "Cell": "r2",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Class Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8376 - Check"
-},
-{
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
 {
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r2",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r2",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
-  "Tag": "Quest",
-  "Text": "Quest can not be turned in",
-  "Value1": "8376",
-  "Value2": ""
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "High-Quality Silk",
+  "Value2": "10"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8498 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8498 - Orange and Black Dye"
+},
+{
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "ravenloss",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "ravenloss",
+  "Room": "[Map No.]",
+  "Cell": "r4",
+  "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "Blank",
-  "Value2": ""
+  "Value1": "r4",
+  "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Blank",
-  "Pad": "Kaos"
+  "Cell": "r4",
+  "Pad": "Left"
 },
 {
-  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-  "Delay": 1600
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "ChaosWeaver Magi"
 },
 {
-  "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
-  "Quest": {
-    "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8376,
-    "CanComplete": true
-  }
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
 },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Orange and Black Dye",
+  "Value2": "6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8498 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8498 - Blue and White Dye"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "ravenloss",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "ravenloss",
+  "Room": "[Map No.]",
+  "Cell": "r4",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r4",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r4",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "ChaosWeaver Knight"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Blue and White Dye",
+  "Value2": "6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8498 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8498 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "High-Quality Silk",
+"Value2": "10"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8498 - High-Quality Silk"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Orange and Black Dye",
+"Value2": "6"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8498 - Orange and Black Dye"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Blue and White Dye",
+"Value2": "6"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8498 - Blue and White Dye"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8498
+}
+  },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
   "Delay": 200
@@ -940,7 +1146,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -948,11 +1154,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]QUESTLINE 2"
+  "Text": "[255, 190, 30 ]QUESTLINE 2"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]/graveyard"
+  "Text": "[250,250,250]/akibacny"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -960,7 +1166,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 }
 ,
 {
@@ -977,7 +1183,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - MORE SKULLS"
+  "Name": "8499 - A New Year in Bloom"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -987,40 +1193,66 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Check",
-  "Value2": "8377 - Check"
+  "Value2": "8499 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is not in progress",
-  "Value1": "8377",
+  "Value1": "8499",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8377,
+    "QuestID": 8499,
     "CanComplete": true
   }
 },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8504",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8504",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8504,
+          "CanComplete": true
+        }
+      },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "graveyard",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "graveyard",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "End",
-  "Pad": "Right"
+  "Cell": "r9",
+  "Pad": "Left"
 },
 {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Check"
+"Label": "8499 - Check"
       },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1028,7 +1260,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Bone Axe"
+  "Name": "8499 - Complimentary Cinerarias"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -1037,398 +1269,27 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "graveyard",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "graveyard",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "End",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "End",
-  "Value2": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "End",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Big Jack Sprat"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Bone Axe",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Spine Gripper"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "battleundera",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "battleundera",
-  "Room": "[Map No.]",
-  "Cell": "r4",
-  "Pad": "Down"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r4",
-  "Value2": "Down"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r4",
-  "Pad": "Down"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Angry Undead Giant"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Spine Gripper",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Dread Staff"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "marsh",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "marsh",
-  "Room": "[Map No.]",
-  "Cell": "End",
+  "Cell": "r9",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "End",
+  "Value1": "r9",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "End",
+  "Cell": "r9",
   "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Dreadspider"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dread Staff",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - O-dokuro Blade"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "odokuro",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "odokuro",
-  "Room": "[Map No.]",
-  "Cell": "Boss",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "Boss",
-  "Value2": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Boss",
-  "Pad": "Right"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "O-dokuro"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "O-dokuro Blade",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
-},		
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-"Text": " "
-  },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8377 - Ancient Skull Blade"
-  },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "arcangrove",
-  "Value2": ""
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "arcangrove",
-        "Room": "[Map No.]",
-        "Cell": "Enter",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
-        "ShopId": 214
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Ancient Skull Blade",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
-        "ItemName": "Ancient Skull Blade"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Ancient Skull Blade",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 3
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Dracolich Destroyer Scythe"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "dragonheart",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "dragonheart",
-  "Room": "[Map No.]",
-  "Cell": "r12",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r12",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r12",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Avatar of Desolich"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dracolich Destroyer Scythe",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Dark Palace Token"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "dagefortress",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "dagefortress",
-  "Room": "[Map No.]",
-  "Cell": "Enter",
-  "Pad": "Spawn"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "Enter",
-  "Value2": "Spawn"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Enter",
-  "Pad": "Spawn"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
@@ -1441,84 +1302,28 @@
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dark Palace Token",
-        "Value2": "10"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Complimentary Cinerarias",
+  "Value2": "8"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
+  "Label": "8499 - Check"
 },		
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-"Text": " "
-  },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8377 - Screaming Might"
-  },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "dagefortress",
-  "Value2": ""
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "dagefortress",
-        "Room": "[Map No.]",
-        "Cell": "Enter",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
-        "ShopId": 1144
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Screaming Might",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
-        "ItemName": "Screaming Might"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Screaming Might",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 3
-      },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
   "Text": " "
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8377 - Boneblade of Gorgorath"
+  "Name": "8499 - Terrific Tiger Lilies"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -1527,26 +1332,89 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "wrath",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "wrath",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "r12",
+  "Cell": "r11",
+  "Pad": "Top"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r11",
+  "Value2": "Top"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r11",
+  "Pad": "Top"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Terrific Tiger Lilies",
+  "Value2": "10"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8499 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8499 - Astounding Anthuriums"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "akibacny",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "akibacny",
+  "Room": "[Map No.]",
+  "Cell": "cny20b",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r12",
+  "Value1": "cny20b",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r12",
+  "Cell": "cny20b",
   "Pad": "Left"
 },
 {
@@ -1554,26 +1422,26 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Gorgorath"
+  "Value2": "*"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Boneblade of Gorgorath",
-        "Value2": "1"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Astounding Anthuriums",
+  "Value2": "8"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8377 - Check"
+  "Label": "8499 - Check"
 },		
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1581,106 +1449,40 @@
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8377 - Check"
+"Name": "8499 - Check"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Bone Axe",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Complimentary Cinerarias",
+"Value2": "8"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Bone Axe"
+"Label": "8499 - Complimentary Cinerarias"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Spine Gripper",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Terrific Tiger Lilies",
+"Value2": "10"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Spine Gripper"
+"Label": "8499 - Terrific Tiger Lilies"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dread Staff",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Astounding Anthuriums",
+"Value2": "8"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Dread Staff"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "O-dokuro Blade",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - O-dokuro Blade"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Ancient Skull Blade",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Ancient Skull Blade"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dracolich Destroyer Scythe",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Dracolich Destroyer Scythe"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dark Palace Token",
-        "Value2": "10"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Dark Palace Token"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Screaming Might",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Screaming Might"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Boneblade of Gorgorath",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8377 - Boneblade of Gorgorath"
+"Label": "8499 - Astounding Anthuriums"
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
@@ -1702,7 +1504,7 @@
 "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
 "Quest": {
   "$type": "Grimoire.Game.Data.Quest, Grimoire",
-  "QuestID": 8377
+  "QuestID": 8499
 }
   },
 {
@@ -1732,7 +1534,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1740,11 +1542,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]QUESTLINE 3"
+  "Text": "[255, 190, 30 ]QUESTLINE 3"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]/shadowfall"
+  "Text": "[250,250,250]/mobius"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1752,7 +1554,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 }
 ,
 {
@@ -1769,7 +1571,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - MORE SKULLS ON THE SKULLS"
+  "Name": "8500 - The Eye(s) of the Tiger"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -1779,20 +1581,20 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Check",
-  "Value2": "8378 - Check"
+  "Value2": "8500 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is not in progress",
-  "Value1": "8378",
+  "Value1": "8500",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8378,
+    "QuestID": 8500,
     "CanComplete": true
   }
 },
@@ -1800,75 +1602,19 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "shadowfall",
+  "Value1": "mobius",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "shadowfall",
+  "Map": "mobius",
   "Room": "[Map No.]",
-  "Cell": "Inside",
-  "Pad": "Left"
+  "Cell": "Side2",
+  "Pad": "Center"
 },
 {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Check"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-"Text": " "
-  },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8378 - Shadow Lich"
-  },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "shadowfall",
-  "Value2": ""
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "shadowfall",
-        "Room": "[Map No.]",
-        "Cell": "Inside",
-        "Pad": "Left"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
-        "ShopId": 89
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Shadow Lich",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
-        "ItemName": "Shadow Lich"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Shadow Lich",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 3
+"Label": "8500 - Check"
       },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1876,7 +1622,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Escherion's Robe"
+  "Name": "8500 - Chaos Eyeball"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -1885,53 +1631,53 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "escherion",
+  "Value1": "mobius",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "escherion",
+  "Map": "mobius",
   "Room": "[Map No.]",
-  "Cell": "Boss",
-  "Pad": "Left"
+  "Cell": "Side2",
+  "Pad": "Center"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "Boss",
-  "Value2": "Left"
+  "Value1": "Side2",
+  "Value2": "Center"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Boss",
-  "Pad": "Left"
+  "Cell": "Side2",
+  "Pad": "Center"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Escherion"
+  "Value2": "Chaos Sp-eye"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Escherion's Robe",
-        "Value2": "1"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Chaos Eyeball",
+  "Value2": "5"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
+  "Label": "8500 - Check"
 },		
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -1939,7 +1685,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Undead Terror Armor"
+  "Name": "8500 - Evil Eyeball"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -1948,53 +1694,53 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "battleundera",
+  "Value1": "ebonslate",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "battleundera",
+  "Map": "ebonslate",
   "Room": "[Map No.]",
-  "Cell": "r7",
-  "Pad": "Right"
+  "Cell": "Enter",
+  "Pad": "Spawn"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r7",
-  "Value2": "Right"
+  "Value1": "Enter",
+  "Value2": "Spawn"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r7",
-  "Pad": "Right"
+  "Cell": "Enter",
+  "Pad": "Spawn"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Bone Terror"
+  "Value2": "*"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Terror Armor",
-        "Value2": "1"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Evil Eyeball",
+  "Value2": "5"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
+  "Label": "8500 - Check"
 },		
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2002,7 +1748,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Dage's Approval"
+  "Name": "8500 - Deadly Eyeball"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2011,26 +1757,89 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "evilwardage",
+  "Value1": "deathgazer",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "evilwardage",
+  "Map": "deathgazer",
   "Room": "[Map No.]",
-  "Cell": "r11",
+  "Cell": "Enter",
+  "Pad": "Spawn"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Enter",
+  "Value2": "Spawn"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Enter",
+  "Pad": "Spawn"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Deadly Eyeball",
+  "Value2": "2"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8500 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8500 - Heartbreaking Eyeball"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "battlewedding",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "battlewedding",
+  "Room": "[Map No.]",
+  "Cell": "h2",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r11",
+  "Value1": "h2",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r11",
+  "Cell": "h2",
   "Pad": "Left"
 },
 {
@@ -2044,146 +1853,20 @@
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dage's Approval",
-        "Value2": "100"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Heartbreaking Eyeball",
+  "Value2": "1"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Dage's Favor"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "evilwardage",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "evilwardage",
-  "Room": "[Map No.]",
-  "Cell": "r11",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r11",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r11",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "*"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dage's Favor",
-        "Value2": "75"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Undead Warrior Bruiser"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "evilwardage",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "evilwardage",
-  "Room": "[Map No.]",
-  "Cell": "r12",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r12",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r12",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "*"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Warrior Bruiser",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
+  "Label": "8500 - Check"
 },		
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2191,214 +1874,51 @@
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8378 - Undead Warrior Executioner"
-  },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "evilwardage",
-  "Value2": ""
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "evilwardage",
-        "Room": "[Map No.]",
-        "Cell": "Enter",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
-        "ShopId": 454
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Warrior Executioner",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
-        "ItemName": "Undead Warrior Executioner"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Warrior Executioner",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 3
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8378 - Skulls of the Necromancer"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "necrocavern",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "necrocavern",
-  "Room": "[Map No.]",
-  "Cell": "r13",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r13",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r13",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Shadow Dragon"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Skulls of the Necromancer",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8378 - Check"
-},		
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-"Text": " "
+"Name": "8500 - Check"
   },
   {
-"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8378 - Check"
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Chaos Eyeball",
+"Value2": "5"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Shadow Lich",
-        "Value2": "1"
-      },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Shadow Lich"
+"Label": "8500 - Chaos Eyeball"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Escherion's Robe",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Evil Eyeball",
+"Value2": "5"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Escherion's Robe"
+"Label": "8500 - Evil Eyeball"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Terror Armor",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Deadly Eyeball",
+"Value2": "2"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Undead Terror Armor"
+"Label": "8500 - Deadly Eyeball"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dage's Approval",
-        "Value2": "100"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Heartbreaking Eyeball",
+"Value2": "1"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Dage's Approval"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Dage's Favor",
-        "Value2": "75"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Dage's Favor"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Warrior Bruiser",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Undead Warrior Bruiser"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Warrior Executioner",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Undead Warrior Executioner"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Skulls of the Necromancer",
-        "Value2": "1"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8378 - Skulls of the Necromancer"
+"Label": "8500 - Heartbreaking Eyeball"
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
@@ -2420,7 +1940,7 @@
 "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
 "Quest": {
   "$type": "Grimoire.Game.Data.Quest, Grimoire",
-  "QuestID": 8378
+  "QuestID": 8500
 }
   },
 {
@@ -2450,7 +1970,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2458,11 +1978,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]QUESTLINE 4"
+  "Text": "[255, 190, 30 ]QUESTLINE 4"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]/desolich"
+  "Text": "[250,250,250]/akibacny"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2470,7 +1990,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 }
 ,
 {
@@ -2487,7 +2007,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8379 - MORE SKULLS ON THOSE SKULLS"
+  "Name": "8501 - A Royal Feast"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2497,20 +2017,20 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Check",
-  "Value2": "8379 - Check"
+  "Value2": "8501 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is not in progress",
-  "Value1": "8379",
+  "Value1": "8501",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8379,
+    "QuestID": 8501,
     "CanComplete": true
   }
 },
@@ -2518,19 +2038,19 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "desolich",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "desolich",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "r3",
+  "Cell": "Emperor4",
   "Pad": "Left"
 },
 {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8379 - Check"
+"Label": "8501 - Check"
       },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2538,7 +2058,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8379 - Desolich's Skull"
+  "Name": "8501 - Ox Tail"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2547,26 +2067,26 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "desolich",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "desolich",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "r3",
+  "Cell": "Emperor4",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r3",
+  "Value1": "Emperor4",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r3",
+  "Cell": "Emperor4",
   "Pad": "Left"
 },
 {
@@ -2574,26 +2094,26 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Desolich"
+  "Value2": "*"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Desolich's Skull",
-        "Value2": "5"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Ox Tail",
+  "Value2": "1"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8379 - Check"
+  "Label": "8501 - Check"
 },		
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2601,7 +2121,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8379 - Undead Raxgore's Skull"
+  "Name": "8501 - Boar Shoulder"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2610,26 +2130,26 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "doomvaultb",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "doomvaultb",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "r26",
+  "Cell": "Emperor",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r26",
+  "Value1": "Emperor",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r26",
+  "Cell": "Emperor",
   "Pad": "Left"
 },
 {
@@ -2637,26 +2157,26 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Undead Raxgore"
+  "Value2": "*"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Raxgore's Skull",
-        "Value2": "10"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Boar Shoulder",
+  "Value2": "1"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8379 - Check"
+  "Label": "8501 - Check"
 },		
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2664,7 +2184,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8379 - Legion Lich Lord's Skull"
+  "Name": "8501 - Rat… Meaty Bit"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2673,26 +2193,26 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "frozenlair",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "frozenlair",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "r3",
+  "Cell": "Emperor3",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "r3",
+  "Value1": "Emperor3",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r3",
+  "Cell": "Emperor3",
   "Pad": "Left"
 },
 {
@@ -2700,89 +2220,26 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Target Monster",
-  "Value2": "Legion Lich Lord"
+  "Value2": "*"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Legion Lich Lord's Skull",
-        "Value2": "15"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Rat… Meaty Bit",
+  "Value2": "3"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8379 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8379 - Reaper's Skull"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "thevoid",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "thevoid",
-  "Room": "[Map No.]",
-  "Cell": "r16",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r16",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r16",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Reaper"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Reaper's Skull",
-        "Value2": "20"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8379 - Check"
+  "Label": "8501 - Check"
 },		
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2790,51 +2247,40 @@
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8379 - Check"
+"Name": "8501 - Check"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Desolich's Skull",
-        "Value2": "5"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Ox Tail",
+"Value2": "1"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8379 - Desolich's Skull"
+"Label": "8501 - Ox Tail"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Undead Raxgore's Skull",
-        "Value2": "10"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Boar Shoulder",
+"Value2": "1"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8379 - Undead Raxgore's Skull"
+"Label": "8501 - Boar Shoulder"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Legion Lich Lord's Skull",
-        "Value2": "15"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Rat… Meaty Bit",
+"Value2": "3"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8379 - Legion Lich Lord's Skull"
-  },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Reaper's Skull",
-        "Value2": "20"
-      },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8379 - Reaper's Skull"
+"Label": "8501 - Rat… Meaty Bit"
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
@@ -2856,7 +2302,7 @@
 "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
 "Quest": {
   "$type": "Grimoire.Game.Data.Quest, Grimoire",
-  "QuestID": 8379
+  "QuestID": 8501
 }
   },
 {
@@ -2886,7 +2332,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2894,11 +2340,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]QUESTLINE 5"
+  "Text": "[255, 190, 30 ]QUESTLINE 5"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]/epicvordred"
+  "Text": "[250,250,250]/creatures"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -2906,7 +2352,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[149, 167, 131]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 }
 ,
 {
@@ -2923,7 +2369,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8380 - VOIDUMINANCE"
+  "Name": "8502 - Winning Streak"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -2933,66 +2379,40 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Check",
-  "Value2": "8380 - Check"
+  "Value2": "8502 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is not in progress",
-  "Value1": "8380",
+  "Value1": "8502",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8380,
+    "QuestID": 8502,
     "CanComplete": true
   }
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
-        "Tag": "Quest",
-        "Text": "Quest is not in progress",
-        "Value1": "8381",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
-        "Tag": "Quest",
-        "Text": "Quest is not in progress",
-        "Value1": "8381",
-        "Value2": ""
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
-        "Quest": {
-          "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 8381,
-          "CanComplete": true
-        }
-      },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "epicvordred",
+  "Value1": "creatures",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "epicvordred",
+  "Map": "creatures",
   "Room": "[Map No.]",
-  "Cell": "Enter",
-  "Pad": "Spawn"
+  "Cell": "Tiger",
+  "Pad": "Left"
 },
 {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8380 - Check"
+"Label": "8502 - Check"
       },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -3000,7 +2420,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8380 - (Necro) Scroll of Dark Arts"
+  "Name": "8502 - Bright as a White Tiger"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -3009,208 +2429,26 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "epicvordred",
+  "Value1": "creatures",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "epicvordred",
+  "Map": "creatures",
   "Room": "[Map No.]",
-  "Cell": "Enter",
-  "Pad": "Spawn"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "Enter",
-  "Value2": "Spawn"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Enter",
-  "Pad": "Spawn"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Ultra Vordred"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "(Necro) Scroll of Dark Arts",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8380 - Check"
-},		
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8380 - Noxus Runes"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "lightguardwar",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "lightguardwar",
-  "Room": "[Map No.]",
-  "Cell": "Noxus",
+  "Cell": "Tiger",
   "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "Noxus",
+  "Value1": "Tiger",
   "Value2": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Noxus",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
-  "Tag": "Misc",
-  "Text": "Update Temporary Variable",
-  "Value1": "Target Monster",
-  "Value2": "Extreme Noxus"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
-  "Type": 1
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Noxus Runes",
-        "Value2": "1"
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "Skill Check"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8380 - Check"
-},		
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-"Text": " "
-  },
-  {
-"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8380 - Sally's Necronomicon"
-  },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "necrotower",
-  "Value2": ""
-},
-      {
-        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-        "Map": "necrotower",
-        "Room": "[Map No.]",
-        "Cell": "Enter",
-        "Pad": "Spawn"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdLoad, Grimoire",
-        "ShopId": 282
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Sally's Necronomicon",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBuyFast, Grimoire",
-        "ItemName": "Sally's Necronomicon"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
-        "Delay": 1500
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Sally's Necronomicon",
-        "Value2": "1"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
-        "Index": 3
-      },
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": " "
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8380 - Ancient Evil of the Necropolis"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Map is not",
-  "Value1": "necrodungeon",
-  "Value2": ""
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "necrodungeon",
-  "Room": "[Map No.]",
-  "Cell": "r22",
-  "Pad": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
-  "Tag": "Map",
-  "Text": "Cell is not",
-  "Value1": "r22",
-  "Value2": "Left"
-},
-{
-  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "r22",
+  "Cell": "Tiger",
   "Pad": "Left"
 },
 {
@@ -3224,20 +2462,209 @@
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
   "Type": 1
 },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Ancient Evil of the Necropolis",
-        "Value2": "1"
-      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Bright as a White Tiger",
+  "Value2": "4"
+},
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
   "Label": "Skill Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "8380 - Check"
+  "Label": "8502 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8502 - Blazed Through Underlings"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "phoenixrise",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "phoenixrise",
+  "Room": "[Map No.]",
+  "Cell": "r4",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r4",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r4",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Blazed Through Underlings",
+  "Value2": "12"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8502 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8502 - Superior to Cinderclaw"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "phoenixrise",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "phoenixrise",
+  "Room": "[Map No.]",
+  "Cell": "r8",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r8",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r8",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Superior to Cinderclaw",
+  "Value2": "2"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8502 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8502 - Overshadowed ShadowClaw"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "fireplanewar",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "fireplanewar",
+  "Room": "[Map No.]",
+  "Cell": "r6",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r6",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r6",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Overshadowed ShadowClaw",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8502 - Check"
 },		
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -3245,51 +2672,51 @@
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-"Name": "8380 - Check"
+"Name": "8502 - Check"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "(Necro) Scroll of Dark Arts",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Bright as a White Tiger",
+"Value2": "4"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8380 - (Necro) Scroll of Dark Arts"
+"Label": "8502 - Bright as a White Tiger"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Noxus Runes",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Blazed Through Underlings",
+"Value2": "12"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8380 - Noxus Runes"
+"Label": "8502 - Blazed Through Underlings"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Sally's Necronomicon",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Superior to Cinderclaw",
+"Value2": "2"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8380 - Sally's Necronomicon"
+"Label": "8502 - Superior to Cinderclaw"
   },
-      {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
-        "Tag": "Item",
-        "Text": "Is not in inventory",
-        "Value1": "Ancient Evil of the Necropolis",
-        "Value2": "1"
-      },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Overshadowed ShadowClaw",
+"Value2": "1"
+  },
   {
 "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-"Label": "8380 - Ancient Evil of the Necropolis"
+"Label": "8502 - Overshadowed ShadowClaw"
   },
   {
 "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
@@ -3311,7 +2738,7 @@
 "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
 "Quest": {
   "$type": "Grimoire.Game.Data.Quest, Grimoire",
-  "QuestID": 8380
+  "QuestID": 8502
 }
   },
 {
@@ -3320,7 +2747,879 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
-  "Label": "m-5"
+  "Label": "m-6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]QUESTLINE 6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]/shadowfortress"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 6.1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Yin and Yang"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8503 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8503",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8503,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r13",
+  "Pad": "Bottom"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - First Head Finished"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r13",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r13",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r13",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "1st Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "First Head Finished",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Second Head Smashed"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r12",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r12",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r12",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "2nd Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Second Head Smashed",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Third Head Thrashed"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r12",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r12",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r12",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "3rd Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Third Head Thrashed",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Fourth Head Flattened"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r11",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r11",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r11",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "4th Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Fourth Head Flattened",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Fifth Head Floored"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r11",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r11",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r11",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "5th Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Fifth Head Floored",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8503 - Sixth Head Slaughtered"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "shadowfortress",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "shadowfortress",
+  "Room": "[Map No.]",
+  "Cell": "r10",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r10",
+  "Value2": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r10",
+  "Pad": "Bottom"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "6th Head of Orochi"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Sixth Head Slaughtered",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8503 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8503 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "First Head Finished",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - First Head Finished"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Second Head Smashed",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Second Head Smashed"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Third Head Thrashed",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Third Head Thrashed"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Fourth Head Flattened",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Fourth Head Flattened"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Fifth Head Floored",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Fifth Head Floored"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Sixth Head Slaughtered",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8503 - Sixth Head Slaughtered"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8503
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]QUESTLINE 7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]/akibacny"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[255, 190, 30 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 7.1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8504 - Tyger, Tyger, Burning Bright"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8504 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8504",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8504,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "akibacny",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "akibacny",
+  "Room": "[Map No.]",
+  "Cell": "cny17c",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8504 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8504 - Lantern Flame"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "akibacny",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "akibacny",
+  "Room": "[Map No.]",
+  "Cell": "cny17c",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "cny17c",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "cny17c",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "Fiery Lantern"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Lantern Flame",
+  "Value2": "10"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8504 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8504 - Burning Bomb"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "akibacny",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "akibacny",
+  "Room": "[Map No.]",
+  "Cell": "cny20c",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "cny20c",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "cny20c",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "Lin Kuei"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Burning Bomb",
+  "Value2": "10"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8504 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8504 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Lantern Flame",
+"Value2": "10"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8504 - Lantern Flame"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Burning Bomb",
+"Value2": "10"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8504 - Burning Bomb"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8504
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-7"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -3341,11 +3640,11 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
-  "Text": "[250,250,250]Quest 5.2"
+  "Text": "[250,250,250]Quest 7.2"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8381 - Empower Vordred's Armor"
+  "Name": "8505 - Tame That Tiger!"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
@@ -3362,7 +3661,7 @@
   "Tag": "Misc",
   "Text": "Update Temporary Variable",
   "Value1": "Check",
-  "Value2": "8381 - Check"
+  "Value2": "8505 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIsNot, Grimoire",
@@ -3380,14 +3679,14 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
   "Tag": "Quest",
   "Text": "Quest is not in progress",
-  "Value1": "8381",
+  "Value1": "8505",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8381,
+    "QuestID": 8505,
     "CanComplete": true
   }
 },
@@ -3395,15 +3694,15 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Map is not",
-  "Value1": "epicvordred",
+  "Value1": "akibacny",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
-  "Map": "epicvordred",
+  "Map": "akibacny",
   "Room": "[Map No.]",
-  "Cell": "Enter",
-  "Pad": "Spawn"
+  "Cell": "Emperor5",
+  "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
@@ -3411,7 +3710,7 @@
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
-  "Name": "8381 - Check"
+  "Name": "8505 - Check"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
@@ -3421,19 +3720,19 @@
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
   "Tag": "Map",
   "Text": "Cell is not",
-  "Value1": "Enter",
+  "Value1": "Emperor5",
   "Value2": ""
 },
 {
   "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-  "Cell": "Enter",
-  "Pad": "Spawn"
+  "Cell": "Emperor5",
+  "Pad": "Left"
 },
 {
   "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
   "Tag": "Quest",
   "Text": "Quest can not be turned in",
-  "Value1": "8381",
+  "Value1": "8505",
   "Value2": ""
 },
 {
@@ -3463,7 +3762,7 @@
   "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
   "Quest": {
     "$type": "Grimoire.Game.Data.Quest, Grimoire",
-    "QuestID": 8381,
+    "QuestID": 8505,
     "CanComplete": true
   }
 },
@@ -3551,7 +3850,7 @@
   "Drops": {
     "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
     "$values": [
-"Undead Army Skull","Bone Axe","Spine Gripper","Dread Staff","O-dokuro Blade","Ancient Skull Blade","Dracolich Destroyer Scythe","Dark Palace Token","Screaming Might","Boneblade of Gorgorath","Shadow Lich","Escherion's Robe","Undead Terror Armor","Skulls of the Necromancer","Dage's Approval","Dage's Favor","Undead Warrior Bruiser","Undead Warrior Executioner","Desolich's Skull","Undead Raxgore's Skull","Legion Lich Lord's Skull","Reaper's Skull","(Necro) Scroll of Dark Arts","Noxus Runes","Sally's Necronomicon","Ancient Evil of the Necropolis","Empowered Vordred's Armor","Altar Of Vordred","Chibi Vordred"]
+]
   },
   "Server": {
     "$type": "Grimoire.Game.Data.Server, Grimoire",
