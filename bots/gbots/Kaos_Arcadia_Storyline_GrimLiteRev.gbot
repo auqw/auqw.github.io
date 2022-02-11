@@ -1,0 +1,3933 @@
+{
+  "$type": "Grimoire.Botting.Configuration, Grimoire",
+  "Commands": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Botting.IBotCommand, Grimoire]], mscorlib",
+    "$values": [
+  {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "Settings"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[225, 123, 137 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " "
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[197, 113, 127]Arcadia"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[225, 123, 137 ]STORYLINE BOT"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[210,210,210]by Kaos"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " sdfsdf"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[100,100,100]Join Discord"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[250,250,250]discord.io/AQWBots"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " sdfsdf"
+     },
+     {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[225, 123, 137 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " "
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " "
+      },
+  {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[225, 123, 137 ]TABLE OF CONTENTS"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[250,250,250]1. Settings"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[250,250,250]2. Skill Section"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[250,250,250]3. Boat Start"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[225, 123, 137 ]1. SETTINGS"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[250, 250, 250]Change Classes here"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+    "Name": "Settings"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+    "Tag": "Misc",
+    "Text": "Set Temporary Variable",
+    "Value1": "Map No.",
+    "Value2": "1e99"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+    "Tag": "Misc",
+    "Text": "Set Temporary Variable",
+    "Value1": "Soloing Class",
+    "Value2": "Legion Revenant"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+    "Tag": "Misc",
+    "Text": "Set Temporary Variable",
+    "Value1": "Farming Class",
+    "Value2": "Legion Revenant"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+    "Label": "Start"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[225, 123, 137 ]2. SKILL SECTION"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[250, 250, 250]Change Skillsets here."
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[225, 123, 137 ]Farming Skills Here"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+    "Name": " v Add Farming Skills Here v "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+    "Int": "Skill Rotation Counter"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "3: Skill",
+    "Index": "3",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "2: Skill",
+    "Index": "2",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "1: Skill",
+    "Index": "1",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "4: Skill",
+    "Index": "4",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+    "type": 1,
+    "Int": "Skill Rotation Counter",
+    "Value": 1
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntLessThan, Grimoire",
+    "Tag": "Misc",
+    "Text": "Int Lesser Than",
+    "Value1": "Skill Rotation Counter",
+    "Value2": "[Farming Skill Counter]"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+    "Index": 6
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+    "Name": " ^ Add Farming Skills Here ^ "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+    "Label": "[Check]"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": "[225, 123, 137 ]Soloing Skills Here"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+    "Text": " "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+    "Name": " v Add Soloing Skills Here v "
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+    "Int": "Skill Rotation Counter"
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "3: Skill",
+    "Index": "3",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "2: Skill",
+    "Index": "2",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "1: Skill",
+    "Index": "1",
+    "SafeHp": 100,
+    "SafeMp": 100
+  },
+  {
+    "$type": "Grimoire.Botting.Commands.Combat.CmdUseSkill2, Grimoire",
+    "Monster": "[Target Monster]",
+    "Skill": "4: Skill",
+    "Index": "4",
+    "SafeHp": 100,
+    "SafeMp": 100
+    },
+    {
+      "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+          "type": 1,
+          "Int": "Skill Rotation Counter",
+          "Value": 1
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntLessThan, Grimoire",
+          "Tag": "Misc",
+          "Text": "Int Lesser Than",
+          "Value1": "Skill Rotation Counter",
+          "Value2": "[Solo Skill Counter]"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+         "Index": 6
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+          "Name": " ^ Add Soloing Skills Here ^ "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+          "Label": "[Check]"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[225, 123, 137 ]4. BOAT START"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[250, 250, 250]Just press Start and enjoy :)"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+        },
+        {
+          "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+          "Text": " "
+        },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "Start"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Cell is not",
+        "Value1": "Blank",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+        "Cell": "Blank",
+        "Pad": "Kaos"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBotDelay, Grimoire"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdChange, Grimoire",
+        "Text": "BOT BY KAOS"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdChange, Grimoire",
+        "Guild": true,
+        "Text": "DISCORD.IO/AQWBOTS"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Check",
+        "Value2": "null"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Return",
+        "Value2": "null"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Solo Skill Counter",
+        "Value2": "12"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Farming Skill Counter",
+        "Value2": "12"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdSetVar, Grimoire",
+        "Tag": "Misc",
+        "Text": "Set Temporary Variable",
+        "Value1": "Target Monster",
+        "Value2": "*"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "Int": "Complete"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "Int": "Class Equip"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 1600
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getQuests%128431%8507%8508%8509%8510%8511%8512%8513%8514%8515%8516%8517%8518%8519%"
+     },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 200
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+        "Label": "m"
+      }
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Boat Manager"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "m"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
+  "Tag": "Misc",
+  "Text": "Int is",
+  "Value1": "Complete",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "End"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8519",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8519 - Unconditional"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8518",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8518 - Four Princesses"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8517",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8517 - Salt Bin"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8516",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8516 - Vanta Black"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8515",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8515 - Squeaky Toy"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8514",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8514 - Road Not Taken"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8513",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8513 - Tea Diffusion"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8512",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8512 - Flowers for a Crown"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8511",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8511 - Princess Carry"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8510",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8510 - Poincare Recurrence"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8509",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8509 - Melty Blood"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8508",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8508 - Sticking Your Neck Out"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestAvailable, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is available",
+  "Value1": "8507",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8507 - Cotton Candy Sky"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m"
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Equip Manager"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "Class Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
+  "Tag": "Misc",
+  "Text": "Int is",
+  "Value1": "Class Equip",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Equip Farming Class"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Equip Soloing Class"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIs, Grimoire",
+  "Tag": "Misc",
+  "Text": "Int is",
+  "Value1": "Class Equip",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": " v Add Farming Skills Here v "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": " v Add Soloing Skills Here v "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "Equip Farming Class"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdEquipped, Grimoire",
+  "Tag": "Item",
+  "Text": "Is equipped",
+  "Value1": "[Farming Class]",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in inventory",
+  "Value1": "[Farming Class]",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
+  "ItemName": "[Farming Class]",
+  "Safe": true
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "Equip Soloing Class"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdEquipped, Grimoire",
+  "Tag": "Item",
+  "Text": "Is equipped",
+  "Value1": "[Soloing Class]",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInInventory, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in inventory",
+  "Value1": "[Soloing Class]",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Item.CmdEquip, Grimoire",
+  "ItemName": "[Soloing Class]",
+  "Safe": true
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "[Check]"
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[225, 123, 137 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[225, 123, 137 ]QUESTLINE 1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]/arcadia"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[225, 123, 137 ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8507 - Cotton Candy Sky"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8507 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIsNot, Grimoire",
+  "Tag": "Misc",
+  "Text": "Int is not",
+  "Value1": "Class Equip",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+  "Int": "Class Equip",
+  "Value": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8507",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8507,
+    "CanComplete": true
+  }
+},
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8510",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8510",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8510,
+          "CanComplete": true
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8511",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8511",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8511,
+          "CanComplete": true
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8514",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8514",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8514,
+          "CanComplete": true
+        }
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r2",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Class Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8507 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r2",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r2",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest can not be turned in",
+  "Value1": "8507",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 1600
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8507,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.2"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8508 - Sticking Your Neck Out"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8508 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8508",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8508,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r2",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8508 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8508 - Climb Leftmost Ladder"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9625%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Climb Leftmost Ladder",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8508 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8508 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Climb Leftmost Ladder",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8508 - Climb Leftmost Ladder"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 500
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8508
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.3"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8509 - Melty Blood"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8509 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8509",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8509,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r3",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8509 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8509 - Shadowscythe Helmet"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r3",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r3",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r3",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Shadowscythe Helmet",
+  "Value2": "8"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8509 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8509 - Book of the Fallen Read"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9626%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Book of the Fallen Read",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8509 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8509 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Shadowscythe Helmet",
+"Value2": "8"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8509 - Shadowscythe Helmet"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Book of the Fallen Read",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8509 - Book of the Fallen Read"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8509
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.4"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8510 - Poincare Recurrence"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8510 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8510",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8510,
+    "CanComplete": true
+  }
+},
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8511",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8511",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8511,
+          "CanComplete": true
+        }
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8514",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8514",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8514,
+          "CanComplete": true
+        }
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8510 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8510 - Butterflies Caught"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r5",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Butterflies Caught",
+  "Value2": "8"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8510 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8510 - Throne Touched"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9630%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Throne Touched",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8510 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8510 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Butterflies Caught",
+"Value2": "8"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8510 - Butterflies Caught"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Throne Touched",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8510 - Throne Touched"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8510
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.5"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8511 - Princess Carry"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8511 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8511",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8511,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8511 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8511 - Butterfly Wings"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r5",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r5",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Butterfly Wings",
+  "Value2": "8"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8511 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8511 - Climb Rightmost Ladder"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9631%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Climb Rightmost Ladder",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8511 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8511 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Butterfly Wings",
+"Value2": "8"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8511 - Butterfly Wings"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Climb Rightmost Ladder",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8511 - Climb Rightmost Ladder"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8511
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.6"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8512 - Flowers for a Crown"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8512 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8512",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8512,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r6",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8512 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8512 - Flowers Picked"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9632%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Flowers Picked",
+  "Value2": "4"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8512 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8512 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Flowers Picked",
+"Value2": "4"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8512 - Flowers Picked"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 500
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8512
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8513 - Tea Diffusion"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8513 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8513",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8513,
+    "CanComplete": true
+  }
+},
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8515",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8515",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8515,
+          "CanComplete": true
+        }
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8513 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8513 - Vampire Minions Defanged"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r7",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Vampire Minions Defanged",
+  "Value2": "8"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8513 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8513 - Book of Afternoon Tea Read"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9627%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Book of Afternoon Tea Read",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8513 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8513 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Vampire Minions Defanged",
+"Value2": "8"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8513 - Vampire Minions Defanged"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Book of Afternoon Tea Read",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8513 - Book of Afternoon Tea Read"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8513
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.8"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8514 - Road Not Taken"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8514 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8514",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8514,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r8",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8514 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8514 - Butterflies Slapped"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r8",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r8",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r8",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Butterflies Slapped",
+  "Value2": "7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8514 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8514 - Item Inspected"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9633%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Item Inspected",
+  "Value2": "4"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8514 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8514 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Butterflies Slapped",
+"Value2": "7"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8514 - Butterflies Slapped"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Item Inspected",
+"Value2": "4"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8514 - Item Inspected"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8514
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.9"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8515 - Squeaky Toy"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8515 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8515",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8515,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8515 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8515 - Climb Rightmost Ladder"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9634%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Climb Rightmost Ladder",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8515 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8515 - Vampire Entrails"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r7",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r7",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Vampire Entrails",
+  "Value2": "7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8515 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8515 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Climb Rightmost Ladder",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8515 - Climb Rightmost Ladder"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Vampire Entrails",
+"Value2": "7"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8515 - Vampire Entrails"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8515
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.10"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8516 - Vanta Black"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8516 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8516",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8516,
+    "CanComplete": true
+  }
+},
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8518",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+        "Tag": "Quest",
+        "Text": "Quest is not in progress",
+        "Value1": "8518",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+        "Quest": {
+          "$type": "Grimoire.Game.Data.Quest, Grimoire",
+          "QuestID": 8518,
+          "CanComplete": true
+        }
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r9",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8516 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8516 - Wraith Defeated"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r9",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r9",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r9",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Wraith Defeated",
+  "Value2": "7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8516 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8516 - Bones Examined"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9635%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Bones Examined",
+  "Value2": "3"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8516 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8516 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Wraith Defeated",
+"Value2": "7"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8516 - Wraith Defeated"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Bones Examined",
+"Value2": "3"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8516 - Bones Examined"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8516
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.11"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8517 - Salt Bin"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8517 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8517",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8517,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r9",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8517 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8517 - Read the Saltfire Book Anyways"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9628%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Read the Saltfire Book Anyways",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8517 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8517 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Read the Saltfire Book Anyways",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8517 - Read the Saltfire Book Anyways"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 500
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8517
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.12"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8518 - Four Princesses"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8518 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8518",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8518,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r10",
+  "Pad": "Left"
+},
+{
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8518 - Check"
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8518 - Crowns Examined"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+  "Packet": "%xt%zm%getMapItem%21%9636%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Crowns Examined",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdIndex, Grimoire",
+  "Index": 2
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8518 - Check"
+},		
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8518 - Wraith Vanquished"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r10",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r10",
+  "Value2": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r10",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+  "Tag": "Item",
+  "Text": "Is not in temp",
+  "Value1": "Wraith Vanquished",
+  "Value2": "7"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "8518 - Check"
+},		
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+"Text": " "
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+"Name": "8518 - Check"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Crowns Examined",
+"Value2": "1"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8518 - Crowns Examined"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdNotInTemp, Grimoire",
+"Tag": "Item",
+"Text": "Is not in temp",
+"Value1": "Wraith Vanquished",
+"Value2": "7"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+"Label": "8518 - Wraith Vanquished"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+"Tag": "Map",
+"Text": "Cell is not",
+"Value1": "Blank",
+"Value2": ""
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+"Cell": "Blank",
+"Pad": "Kaos"
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+"Delay": 1600
+  },
+  {
+"$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+"Quest": {
+  "$type": "Grimoire.Game.Data.Quest, Grimoire",
+  "QuestID": 8518
+}
+  },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m-1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": " "
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+  "Text": "[250,250,250]Quest 1.13"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8519 - Unconditional"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Target Monster",
+  "Value2": "*"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdUpdateVar, Grimoire",
+  "Tag": "Misc",
+  "Text": "Update Temporary Variable",
+  "Value1": "Check",
+  "Value2": "8519 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdIntIsNot, Grimoire",
+  "Tag": "Misc",
+  "Text": "Int is not",
+  "Value1": "Class Equip",
+  "Value2": "1"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+  "Int": "Class Equip",
+  "Value": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest is not in progress",
+  "Value1": "8519",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8519,
+    "CanComplete": true
+  }
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Map is not",
+  "Value1": "arcadia",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+  "Map": "arcadia",
+  "Room": "[Map No.]",
+  "Cell": "r12",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Class Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+  "Name": "8519 - Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire",
+  "Type": 1
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "r12",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "r12",
+  "Pad": "Left"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotCompleted, Grimoire",
+  "Tag": "Quest",
+  "Text": "Quest can not be turned in",
+  "Value1": "8519",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "Skill Check"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdToggleProvoke, Grimoire"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdCellIsNot, Grimoire",
+  "Tag": "Map",
+  "Text": "Cell is not",
+  "Value1": "Blank",
+  "Value2": ""
+},
+{
+  "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
+  "Cell": "Blank",
+  "Pad": "Kaos"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 1600
+},
+{
+  "$type": "Grimoire.Botting.Commands.Quest.CmdCompleteQuest, Grimoire",
+  "Quest": {
+    "$type": "Grimoire.Game.Data.Quest, Grimoire",
+    "QuestID": 8519,
+    "CanComplete": true
+  }
+},
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdInt, Grimoire",
+        "Int": "Complete",
+        "Value": 1
+      },
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+  "Delay": 200
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdGotoLabel, Grimoire",
+  "Label": "m"
+},
+{
+  "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
+  "Text": "(Write Text Here)",
+  "Alpha": 1,
+  "R": 220,
+  "G": 220,
+  "B": 220
+}
+,
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " "
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[39,39,39]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": " "
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
+        "Text": "[250,250,250]Congratulations!"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
+        "Name": "End"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdMapIsNot, Grimoire",
+        "Tag": "Map",
+        "Text": "Map is not",
+        "Value1": "freakitiki",
+        "Value2": ""
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Map.CmdJoin2, Grimoire",
+        "Map": "freakitiki",
+        "Room": "[Map No.]",
+        "Cell": "Enter",
+        "Pad": "Spawn"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdDelay, Grimoire",
+        "Delay": 500
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdReturn, Grimoire"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdStop, Grimoire"
+      }    ]
+  },
+  "Skills": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.Skill, Grimoire]], mscorlib",
+    "$values": []
+  },
+  "Quests": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.Quest, Grimoire]], mscorlib",
+    "$values": []
+  },
+  "Author": "Author",
+  "Description": "Description (Write in RTF)",
+  "Boosts": {
+    "$type": "System.Collections.Generic.List`1[[Grimoire.Game.Data.InventoryItem, Grimoire]], mscorlib",
+    "$values": []
+  },
+  "Drops": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": [
+]
+  },
+  "Server": {
+    "$type": "Grimoire.Game.Data.Server, Grimoire",
+    "sName": "Sepulchure",
+    "iPort": 58486
+  },
+  "ExitCombatBeforeRest": true,
+  "EnablePickup": true,
+  "EnableRejection": true,
+  "AutoRelogin": true,
+  "RelogDelay": 5000,
+  "BotDelay": 500,
+  "SkipDelayIndexIf": true,
+  "InfiniteAttackRange": true,
+  "LagKiller": true,
+  "SkipCutscenes": true,
+  "WalkSpeed": 8,
+  "NotifyUponDrop": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
+  "RestMp": 60,
+  "RestHp": 60,
+  "RestartUponDeath": true,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+    "$values": []
+  },
+  "EnsureTries": 20,
+  "DropDelay": 1000
+}
