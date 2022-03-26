@@ -326,40 +326,40 @@ class UploadCog(commands.Cog, BaseProgram):
         return
 
 
-    @commands.command()
-    async def massdelete(self, ctx, *, botName):
-        botNames = [x.strip() for x in botName.split(",")]
-        user = self.clean_char(ctx.author.id)
+    # @commands.command()
+    # async def massdelete(self, ctx, *, botName):
+    #     botNames = [x.strip() for x in botName.split(",")]
+    #     user = self.clean_char(ctx.author.id)
 
-        if user not in BaseProgram.settings["verified_list"]:
-            await ctx.send("\> Sorry. User is not a verified boat maker.")
-            return
+    #     if user not in BaseProgram.settings["verified_list"]:
+    #         await ctx.send("\> Sorry. User is not a verified boat maker.")
+    #         return
 
-        if not botNames:
-            await ctx.send("\> Enter bot names (rbot or gbot) separated by comma. ( , )")
-            return
+    #     if not botNames:
+    #         await ctx.send("\> Enter bot names (rbot or gbot) separated by comma. ( , )")
+    #         return
 
-        gbot_lists = []
-        rbot_lists = []
-        for botName in botNames:
-            if botName in BaseProgram.gbots:
-                BaseProgram.gbots.pop(botName, None)
-                gbot_lists.append(botName)
-                continue
+    #     gbot_lists = []
+    #     rbot_lists = []
+    #     for botName in botNames:
+    #         if botName in BaseProgram.gbots:
+    #             BaseProgram.gbots.pop(botName, None)
+    #             gbot_lists.append(botName)
+    #             continue
 
-            if botName in BaseProgram.rbots:
-                BaseProgram.rbots.pop(botName, None)
-                rbot_lists.append(botName)
+    #         if botName in BaseProgram.rbots:
+    #             BaseProgram.rbots.pop(botName, None)
+    #             rbot_lists.append(botName)
 
-        if gbot_lists:
-            self.git_save("gbots")
-        if rbot_lists:
-            self.git_save("rbots")
+    #     if gbot_lists:
+    #         self.git_save("gbots")
+    #     if rbot_lists:
+    #         self.git_save("rbots")
 
 
 
-        await ctx.send(f"\> Successfully mass-deleted the following.```{gbot_lists.join(", ")}\n{rbot_lists.join(", ")}```")
-        return
+    #     await ctx.send(f"\> Successfully mass-deleted the following.```{gbot_lists.join(", ")}\n{rbot_lists.join(", ")}```")
+    #     return
 
     def clean_char(self, id_):
         return re.sub("[<@!>]", "", str(id_)).strip()
