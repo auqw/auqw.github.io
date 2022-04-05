@@ -36,7 +36,8 @@ class UploadCog(commands.Cog, BaseProgram):
 
     @commands.command()
     async def verify(self, ctx, name: str = "", user: discord.Member = ""):
-        if ctx.author.id != 252363724894109700:
+        verifyAuthority = [252363724894109700, 781102368787791903]
+        if ctx.author.id not in verifyAuthority:
             await ctx.send(f"\> BTFO you're not <@252363724894109700>")
             return
 
