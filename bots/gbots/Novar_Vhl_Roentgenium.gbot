@@ -52,7 +52,7 @@
         "Tag": "Misc",
         "Text": "Set Temporary Variable",
         "Value1": "Map No.",
-        "Value2": "1"
+        "Value2": "1e99"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank2, Grimoire",
@@ -297,6 +297,18 @@
         "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
         "TransferFromBank": true,
         "ItemName": "Relic of Chaos"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
+        "Tag": "Item",
+        "Text": "Is in bank",
+        "Value1": "Archfiend's Favor",
+        "Value2": "*"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
+        "TransferFromBank": true,
+        "ItemName": "Archfiend's Favor"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
@@ -1272,8 +1284,7 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2857,
-          "IsInProgress": true
+          "QuestID": 2857
         }
       },
       {
