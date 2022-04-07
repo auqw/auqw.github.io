@@ -75,7 +75,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Enter",
+        "Cell": "Blank",
         "Pad": "Spawn"
       },
       {
@@ -299,18 +299,6 @@
         "ItemName": "Relic of Chaos"
       },
       {
-        "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdInBank, Grimoire",
-        "Tag": "Item",
-        "Text": "Is in bank",
-        "Value1": "Archfiend's Favor",
-        "Value2": "*"
-      },
-      {
-        "$type": "Grimoire.Botting.Commands.Item.CmdBankTransfer, Grimoire",
-        "TransferFromBank": true,
-        "ItemName": "Archfiend's Favor"
-      },
-      {
         "$type": "Grimoire.Botting.Commands.Misc.CmdBlank3, Grimoire",
         "Text": "",
         "R": 220,
@@ -324,6 +312,10 @@
       {
         "$type": "Grimoire.Botting.Commands.Misc.CmdLabel, Grimoire",
         "Name": "CHECK"
+      },
+      {
+        "$type": "Grimoire.Botting.Commands.Misc.CmdPacket, Grimoire",
+        "Packet": "%xt%zm%getQuests%128431%5660%2566%2857%4748%318%802%"
       },
       {
         "$type": "Grimoire.Botting.Commands.Misc.Statements.CmdQuestNotInProgress, Grimoire",
@@ -342,7 +334,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Enter",
+        "Cell": "Blank",
         "Pad": "Spawn"
       },
       {
@@ -1121,7 +1113,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Enter",
+        "Cell": "Blank",
         "Pad": "Spawn"
       },
       {
@@ -1284,7 +1276,8 @@
         "$type": "Grimoire.Botting.Commands.Quest.CmdAcceptQuest, Grimoire",
         "Quest": {
           "$type": "Grimoire.Game.Data.Quest, Grimoire",
-          "QuestID": 2857
+          "QuestID": 2857,
+          "IsInProgress": true
         }
       },
       {
@@ -1554,7 +1547,7 @@
       },
       {
         "$type": "Grimoire.Botting.Commands.Map.CmdMoveToCell, Grimoire",
-        "Cell": "Enter",
+        "Cell": "Blank",
         "Pad": "Spawn"
       },
       {
@@ -3839,7 +3832,7 @@
   "EnablePickup": true,
   "EnableRejection": true,
   "AutoRelogin": true,
-  "RelogDelay": 6969,
+  "RelogDelay": 5000,
   "RelogRetryUponFailure": true,
   "SkipDelayIndexIf": true,
   "InfiniteAttackRange": true,
@@ -3861,6 +3854,7 @@
   },
   "NotifyItemOnPickup": true,
   "RelogUponQuestFailure": true,
+  "RelogUponItemBuyFailure": true,
   "AFK": true,
   "DropDelay": 3000
 }
