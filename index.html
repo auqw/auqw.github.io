@@ -228,8 +228,8 @@
     <div class="tab">
       <button class="tablinks tablinks-boat defaultOpen" onclick="openTab(event, 'tabGbots', 'tabcontent-boat','tablinks-boat')">GBots</button>
       <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabMaster', 'tabcontent-boat','tablinks-boat')">Pinned GBots</button>
-      <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabRbots', 'tabcontent-boat','tablinks-boat')">RBots</button>
-      <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabRbotMaster', 'tabcontent-boat','tablinks-boat')">Master RBots</button>
+      <!-- <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabRbots', 'tabcontent-boat','tablinks-boat')">RBots</button> -->
+      <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabRbotMaster', 'tabcontent-boat','tablinks-boat')">RBots</button>
       <button class="close" onclick="closeModal('modalBoats')">x</button>
     </div>
 
@@ -269,9 +269,9 @@
     </div>
 
     <div id="tabRbotMaster" class="tabcontent tabcontent-boat">
-      <h2>Rbot Master Bots</h2>
-      <p>The Master Project dedicated to creating a comprehensive aqw rbot.</p>
-      <p><b>Download Link</b>: <a href="https://github.com/BrenoHenrike/Scripts/releases/">Click Here</a></p>
+      <h2>Rbots</h2>
+      <p>The RBot client automatically downloads rbot scripts from our bot makers.</p>
+
       <p><b>F.A.Q.</b>: <a href="https://github.com/BrenoHenrike/Scripts#faq">Click Here</a></p>
       <p><b>Authors</b>:
         <ul>
@@ -694,122 +694,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       // 2. Initialize table search function
       tableStart();
-    }
-
-
-
-    // Create searchable Table function
-    var tableRbotStart = null;
-    $(function() {
-
-      function my_fun2() {
-        $("#rTable").DataTable({
-          order: [
-            [3, "desc"]
-          ],
-        });
-      }
-      tableRbotStart = my_fun2;
-    })
-
-    // Gets the rbots json
-    fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/rbots.json')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        rbotAppendData(data);
-      })
-      .catch(function(err) {
-        console.log('error: ' + err);
-      });
-
-    function rbotAppendData(data) {
-
-      // 1. Creates the rbot table content
-      var mainContainer = document.getElementById("rbotBody");
-      for (var key in data) {
-        let rowtr = document.createElement('tr');
-        let tags = data[key]["tags"].join(", ");
-        let authors = data[key]["authors"].join(", ");
-        let desc = data[key]["description"];
-        let time = data[key]["date"];
-        let botName = capitalize(key.replaceAll("_", " ").replaceAll("-", " "));
-
-        for (let auth in data[key]["authors"]) {
-          botName = botName.replace(data[key]["authors"][auth], "");
-
-        }
-
-        let cnt = "";
-        if (tags == "") {
-          cnt = `
-                  <td></t>
-                  <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName} <span class="spancircle">No metadata</span></a>
-                     <div class="collapsibleContent c-cnt">
-                             <p><b>Filename:</b> ${key}</p>
-                     </div>
-                  </td>`;
-        } else if (desc == "") {
-          cnt = `
-                  <td></t>
-                  <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName}</a>
-                     <div class="collapsibleContent c-cnt">
-                          <p><b>Filename:</b> ${key}</p>
-                          <p><b>Tags:</b> ${tags}</p>
-                      </div>
-                  </td>`;
-        } else {
-          cnt = `
-                  <td></t>
-                  <td class="c-info">${authors}</td>
-                  <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)" >${botName}</a>
-                     <div class="collapsibleContent c-cnt">
-                          <p><b>Filename:</b> ${key}</p>
-                          <p><b>Tags:</b> ${tags}</p>
-                          <p><b>Description:</b> ${desc}</p>
-                      </div>
-                  </td>`;
-        }
-
-        rowtr.name = authors;
-        rowtr.id = key;
-        rowtr.innerHTML = cnt +
-          `
-            <td class="c-info c-time sorting_1">${time}</td>
-            <td class="c-info"><a class="btn2" href="./bots/rbots/${key}">Download</a></td>`
-        mainContainer.appendChild(rowtr);
-      }
-
-      // 2. Initialize table search function
-      tableRbotStart();
-
-
-
 
       let tabs = document.getElementsByClassName("defaultOpen");
       for (var index = 0; index < tabs.length; index++) {
         tabs[index].click();
       }
-
-      // // 3. Creates the Collapsible Script - for the table rows
-      // var coll = document.getElementsByClassName("collapsible");
-      // var i;
-      // for (i = 0; i < coll.length; i++) {
-      //    coll[i].addEventListener("click", function () {
-      //       this.classList.toggle("activeCollapse");
-      //       var content = this.nextElementSibling;
-      //       if (content.style.display === "block") {
-      //          content.style.display = "none";
-      //       } else {
-      //          content.style.display = "block";
-      //       }
-      //    });
-      // }
-
     }
+
+
+
+    // Create searchable Table function
+    // var tableRbotStart = null;
+    // $(function() {
+
+    //   function my_fun2() {
+    //     $("#rTable").DataTable({
+    //       order: [
+    //         [3, "desc"]
+    //       ],
+    //     });
+    //   }
+    //   tableRbotStart = my_fun2;
+    // })
+
+    // Gets the rbots json
+    // fetch('https://raw.githubusercontent.com/BloomAutist47/auqw-portal-revised/main/lib/Data/rbots.json')
+    //   .then(function(response) {
+    //     return response.json();
+    //   })
+    //   .then(function(data) {
+    //     rbotAppendData(data);
+    //   })
+    //   .catch(function(err) {
+    //     console.log('error: ' + err);
+    //   });
+
+    // function rbotAppendData(data) {
+
+    //   // 1. Creates the rbot table content
+    //   var mainContainer = document.getElementById("rbotBody");
+    //   for (var key in data) {
+    //     let rowtr = document.createElement('tr');
+    //     let tags = data[key]["tags"].join(", ");
+    //     let authors = data[key]["authors"].join(", ");
+    //     let desc = data[key]["description"];
+    //     let time = data[key]["date"];
+    //     let botName = capitalize(key.replaceAll("_", " ").replaceAll("-", " "));
+
+    //     for (let auth in data[key]["authors"]) {
+    //       botName = botName.replace(data[key]["authors"][auth], "");
+
+    //     }
+
+    //     let cnt = "";
+    //     if (tags == "") {
+    //       cnt = `
+    //               <td></t>
+    //               <td class="c-info">${authors}</td>
+    //               <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName} <span class="spancircle">No metadata</span></a>
+    //                  <div class="collapsibleContent c-cnt">
+    //                          <p><b>Filename:</b> ${key}</p>
+    //                  </div>
+    //               </td>`;
+    //     } else if (desc == "") {
+    //       cnt = `
+    //               <td></t>
+    //               <td class="c-info">${authors}</td>
+    //               <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)">${botName}</a>
+    //                  <div class="collapsibleContent c-cnt">
+    //                       <p><b>Filename:</b> ${key}</p>
+    //                       <p><b>Tags:</b> ${tags}</p>
+    //                   </div>
+    //               </td>`;
+    //     } else {
+    //       cnt = `
+    //               <td></t>
+    //               <td class="c-info">${authors}</td>
+    //               <td class="c-name"><a class="collapsible" type="button" onclick="collapseNextDiv(this)" >${botName}</a>
+    //                  <div class="collapsibleContent c-cnt">
+    //                       <p><b>Filename:</b> ${key}</p>
+    //                       <p><b>Tags:</b> ${tags}</p>
+    //                       <p><b>Description:</b> ${desc}</p>
+    //                   </div>
+    //               </td>`;
+    //     }
+
+    //     rowtr.name = authors;
+    //     rowtr.id = key;
+    //     rowtr.innerHTML = cnt +
+    //       `
+    //         <td class="c-info c-time sorting_1">${time}</td>
+    //         <td class="c-info"><a class="btn2" href="./bots/rbots/${key}">Download</a></td>`
+    //     mainContainer.appendChild(rowtr);
+    //   }
+
+    //   // 2. Initialize table search function
+    //   tableRbotStart();
+
+
+
+
+
+
+    //   // // 3. Creates the Collapsible Script - for the table rows
+    //   // var coll = document.getElementsByClassName("collapsible");
+    //   // var i;
+    //   // for (i = 0; i < coll.length; i++) {
+    //   //    coll[i].addEventListener("click", function () {
+    //   //       this.classList.toggle("activeCollapse");
+    //   //       var content = this.nextElementSibling;
+    //   //       if (content.style.display === "block") {
+    //   //          content.style.display = "none";
+    //   //       } else {
+    //   //          content.style.display = "block";
+    //   //       }
+    //   //    });
+    //   // }
+
+    // }
+    
   </script>
 
 
