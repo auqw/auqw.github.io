@@ -1,16 +1,8 @@
 <!DOCTYPE html>
-<!-- https://www.cssportal.com/html-formatter/ -->
-<!-- http://html-minify.online-domain-tools.com/ -->
-<!-- https://skalman.github.io/UglifyJS-online/ -->
-<html lang=en style="min-height: 100%">
+<html lang="en" style="min-height: 100%">
 
 <head>
     <meta charset="utf-8">
-
-    <staticcontent>
-        <clientcache cachecontrolmode="UseMaxAge" cachecontrolmaxage="365.00:00:00" />
-    </staticcontent>
-
 
     <!-- Infos -->
     <title>AutoQuest Worlds</title>
@@ -67,11 +59,10 @@
     <!-- End Google Tag Manager -->
 
     <!-- Script -->
-    <!-- <script type="text/javascript" src="./lib/Data/boats.json"></script> -->
-    <script type="text/javascript" src=./js/bloom.js></script>
-    <script type="text/javascript" type="text/javascript" src=./js/jquery.min.js></script>
-    <script type="text/javascript" src=./js/jquery.dataTables.min.js type=text/javascript></script>
-    <script type="text/javascript" src=./js/bootstrap.min.js type=text/javascript></script>
+    <script src="./js/bloom.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 
     <style type="text/css">
         #Layer_1_5,
@@ -86,7 +77,6 @@
 
     <div class="header">
         <div class="header-imgs">
-            <!-- <img src="./css/parallax/full.webp"> -->
             <img id="Layer_7" src="./css/parallax/Layer 7 - Sky.webp">
             <img id="Layer_6" src="./css/parallax/Layer 6 - Landscape.webp">
             <img id="Layer_5" src="./css/parallax/Layer 5.webp">
@@ -97,7 +87,6 @@
             <img id="Layer_1" src="./css/parallax/Layer 1 - Foreground.webp">
         </div>
         <div id="header-info">
-            <!-- <p>New Grimlite V.1.2 !?</p> -->
             <h1 id="title">AutoQuest Worlds</h1>
             <h3 id="subtitle"><i>The Autistic Sailor's AQW Paradise. We like sailing smyuhh</i></h3>
             <button class="btn fade" id="myBtnBoats" onclick="openModal('modalBoats')"><svg class="svgIcon"
@@ -114,35 +103,10 @@
                         <title>Cloud Download icon</title>
                     </path>
                 </svg> Download Client</button>
-            <!-- <button class="btn btn-darker fade" id="myBtnDownload" onclick="openModal('modalFeedback')"><svg class="svgIcon" fill="currentColor" height="24" viewbox="0 0 24 24" width="24"><path d="M17,13L12,18L7,13H10V9H14V13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"><title>Cloud Download icon</title></path></svg> Feedback Button</button> -->
         </div>
     </div>
 </head>
 
-
-<!-- The Daily Modal -->
-<div id="modalDaily" class="modal">
-    <div class="modal-content">
-        <div class="tab">
-            <button class="tablinks tablinks-client defaultOpen active" style="background-color:#F33F35;">Daily
-                Gift</button>
-            <button class="close" onclick="closeModal('modalDaily')">x</button>
-        </div>
-        <div id="tabGift" class="tabcontent" style="display: block;">
-            <img class="modal-content" id="img01">
-            <h1 id="dailyTitle"></h1>
-            <div id="dailyDescription">
-                <p><b>Location: </b><span id="loc">/join bloodtusk</span> <button class="btn btn-red"
-                        onclick="copy2clipboard('loc')">copy</button></p>
-                <p><b>Enemy: </b> <a href="http://aqwwiki.wikidot.com/Horc-Boar-Scout" target="_blank">Horc Boar
-                        Scout</a></p>
-                <p><b>Item: </b> 0 AC Select Pieces Of The Seasonal Immortal Crusader Set + Celebrate Uruguay'S
-                    Independence Day Tomorrow</p>
-                <p><b>Date Posted:</b> 24 August 2021</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- The Client Modal -->
 <div id="modalClient" class="modal modal-mini">
@@ -152,82 +116,77 @@
             <button class="tablinks tablinks-client defaultOpen"
                 onclick="openTab(event, 'tabClient', 'tabcontent-client','tablinks-client')">Bot Clients</button>
             <button class="tablinks tablinks-client"
-                onclick="openTab(event, 'tabIssues', 'tabcontent-client','tablinks-client')">Issues</button>
+                onclick="openTab(event, 'tabSkuaIssues', 'tabcontent-client','tablinks-client')">Skua Issues</button>
+            <button class="tablinks tablinks-client"
+                onclick="openTab(event, 'tabGrimIssues', 'tabcontent-client','tablinks-client')">Grim Issues</button>
             <button class="tablinks tablinks-client"
                 onclick="openTab(event, 'tabCredits', 'tabcontent-client','tablinks-client')">Credits</button>
             <button class="close" onclick="closeModal('modalClient')">x</button>
         </div>
-
         <div id="tabClient" class="tabcontent tabcontent-client">
-
-
-
             <h3>Download Skua (Recommended)</h3>
+            <p>Newer and beginner-friendly with ~1800 premade scripts and frequent updates. Mostly plug-and-play and can handle most Ultras. Requires <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.201-windows-x64-installer" target="_blank">.NET 10 SDK</a>.</p>
             <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
                     <path
                         d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
                 </svg> <a class="link" href="https://github.com/auqw/Skua/releases/latest"
                     target="_blank">Download Skua Client</a></p>
-            <!--<p>2. <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
-                    <path
-                        d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
-                </svg> <a class="link"
-                    href="https://github.com/BrenoHenrike/Skua/releases/download/1.0.0.0/Skua.Dependencies.exe"
-                    target="_blank">Install Skua Dependencies</a></p>
-            <p>3. Follow the steps to install the dependencies <br>
-                <image style="height: 250px; object-fit: contain;"
-                    src="https://media.discordapp.net/attachments/805367955923533845/948565742595477524/lTpiFgwkc5.gif">
-            </p>-->
-            <!--
-      <p>You need Both CleanFlash and NET requirements. Check the Issue tab.</p>
-      <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg>        <a class="link" href="https://github.com/BrenoHenrike/RBot/releases/" target="_blank">Rbot Breno Client v.4.1.2.1</a> (Recommended)</p>
-      <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg>        <a class="link" href="https://brenohenrike.github.io/Scripts/" target="_blank">Rbot Breno Docs</a></p> -->
-            <!-- <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg> <a class="link" href="https://github.com/rodit/RBot/releases" target="_blank">Rbot Client v.3.6.0</a></p> -->
-
             <br>
-
-            <h3>Download Grimoire </h3>
-            <p>You need CleanFlash. Check Issue tab.</p>
+            <h3>Download GrimLite Ligma</h3>
+            <p>More advanced, focused on building your own scripts with greater flexibility. Better for complex setups and edge-case Ultras but has a steeper learning curve. Uses .NET Framework 4.8 (already on Windows).</p>
             <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 24 24">
                     <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm3 8v3h-14v-3h-2v5h18v-5h-2z" />
-                </svg> <a href="https://github.com/GentleGanku/GrimliteRev/releases/" id="clientDwnGrimRev">Grimlite Rev
-                    v.1.3 (Skymeister)</a> (Recommended)</p>
-
-
-            <!-- <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 24 24"><path d="M16 11h5l-9 10-9-10h5v-11h8v11zm3 8v3h-14v-3h-2v5h18v-5h-2z"/></svg> <a href="./grim/BaseGrimlite.rar" id="clientDwnGrimBase">Base Grimlite</a></p> -->
-            <!-- <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 24 24"><path d="M16 11h5l-9 10-9-10h5v-11h8v11zm3 8v3h-14v-3h-2v5h18v-5h-2z"/></svg> <a href="./grim/Grimoire.3.8+.PRO.v.1.7.8.eol.patched.rar" id="clientDwnGrimPro">Grimoire 3.8+PRO v.1.7.8 eol patched.</a></p> -->
-
-            <!-- <br> -->
-            <!-- <h3>Download Vanilla</h3> -->
-            <!-- <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg> <a class="link" href="https://www.artix.com/downloads/artixlauncher/?utm_source=AQW_SIDE&amp;utm_medium=banner&amp;utm_campaign=GameLauncher" target="_blank">Artix Launcher</a></p> -->
+                </svg> <a href="https://github.com/Froztt13/Grimlite-Li/releases/latest" id="clientDwnGrimRev">GrimLite Ligma</a></p>
+            <br>
+            <p>Both clients require <a href="https://github.com/wtffidy/CleanFlashBackUp/releases/" target="_blank">CleanFlash</a>. Check the Issues tabs for full installation details.</p>
+            <img src="https://images2.imgbox.com/39/0b/deIzwLxI_o.gif" alt="CleanFlash installation guide" style="max-width:100%;border-radius:4px;">
             <br>
             <h4>Terms of Condition</h4>
-            <p>You can download and share Grimlite Rev to your community, however, you must properly credit the the
-                portal and the authors from the "Credit" Tab.</p>
+            <p>You can download and share GrimLite Ligma to your community, however, you must properly credit the portal and the authors from the "Credit" Tab.</p>
             <p class="smallfont">To see all grimoire versions and source code, visit the <a href="./d/versions.html"
                     target="_blank">Version Page</a> on the docs.</p>
-
-
         </div>
 
-        <div id="tabIssues" class="tabcontent tabcontent-client">
-            <h3>Client not opening?</h3>
-            <p>Flash Player is uninstalled. Download and install one CleanFlash</p>
-            <p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 24 24">
-                    <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm3 8v3h-14v-3h-2v5h18v-5h-2z" />
-                </svg> <a href="https://github.com/wtffidy/CleanFlashBackUp/releases/" target="_blank">
-                    CleanFlash Installer (34.0.0.242)</a></p>
-
+        <div id="tabSkuaIssues" class="tabcontent tabcontent-client">
+            <h3>CleanFlash in/reinstallation:</h3>
+            <p><b>To install CleanFlash properly, follow these steps:</b></p>
+            <h4>1. Download <a href="https://github.com/wtffidy/CleanFlashBackUp/releases/" target="_blank">CleanFlash</a> from the backup repo here.</h4>
+            <h5>Troubleshooting</h5>
+            <ul>
+                <li>If Windows Defender prompts you with a security warning:
+                    <ul>
+                        <li>Click on &quot;Show more&quot; to reveal additional options.</li>
+                        <li>Select &quot;Run anyway&quot; to proceed with installing CleanFlash.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>2. When downloading, Windows Defender might prompt a security warning.</h4>
+            <h4>3. When going through the installation, FOLLOW THE <a href="https://imgbox.com/deIzwLxI" target="_blank">GIF</a>:</h4>
+            <p>Keep the gif as its required to install exactly as it shows.</p>
             <br>
             <h3>Skua not opening?</h3>
-            <p>Install the latest <code>.NET 6 Desktop Runtime</code> and <code>ASP.NET 6 Core Runtime</code> from <a
-                    href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" target="_blank">Microsoft</a>. <!--Or get
-                it from below:--></p>
-            <!--<p><svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 24 24">
-                    <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm3 8v3h-14v-3h-2v5h18v-5h-2z" />
-                </svg> <a href="https://github.com/BrenoHenrike/Skua/releases/download/1.0.0.0/Skua.Dependencies.exe"
-                    target="_blank">Skua.Dependencies.exe</a> (direct link)</p>-->
+            <p>Install the latest <code>.NET 10 SDK x64</code> from <a href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0" target="_blank">Microsoft</a>.</p>
+        </div>
 
+        <div id="tabGrimIssues" class="tabcontent tabcontent-client">
+            <h3>CleanFlash in/reinstallation:</h3>
+            <p><b>To install CleanFlash properly, follow these steps:</b></p>
+            <h4>1. Download <a href="https://github.com/wtffidy/CleanFlashBackUp/releases/" target="_blank">CleanFlash</a> from the backup repo here.</h4>
+            <h5>Troubleshooting</h5>
+            <ul>
+                <li>If Windows Defender prompts you with a security warning:
+                    <ul>
+                        <li>Click on &quot;Show more&quot; to reveal additional options.</li>
+                        <li>Select &quot;Run anyway&quot; to proceed with installing CleanFlash.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>2. When downloading, Windows Defender might prompt a security warning.</h4>
+            <h4>3. When going through the installation, FOLLOW THE <a href="https://imgbox.com/deIzwLxI" target="_blank">GIF</a>:</h4>
+            <p>Keep the gif as its required to install exactly as it shows.</p>
+            <br>
+            <h3>GrimLite not opening?</h3>
+            <p><code>.NET 4.8</code> is required, which comes pre-installed with Windows. If missing, install it from <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48" target="_blank">Microsoft</a>.</p>
             <br>
             <h3>Stuck at connecting/loading fix.</h3>
             <p>First try relogging and restarting grim. If that still won't work, do this.</p>
@@ -236,7 +195,6 @@
                 <li>Find "Marcomedia" folder inside Roaming and delete it.</li>
                 <li>Restart Grimoire/Skua.</li>
             </ol>
-
             <br>
             <h3>Broken Grim UI fix</h3>
             <p>Grim Client looks like shit with the autistic looking UI? Try this:</p>
@@ -246,16 +204,17 @@
                 <li>Check "Overide high DPI scaling behavior" and select "System (Enhanced)"</li>
                 <li>Click Ok. Run Grimoire.</li>
             </ol>
-            <p class="smallfont">To see more grimoire fixes, visit the <a href="./d/installation.html"
-                    target="_blank">Installations Page</a> on the docs.</p>
+            <p class="smallfont">To see more grimoire fixes, visit the <a href="./d/installation.html" target="_blank">Installations Page</a> on the docs.</p>
         </div>
 
         <div id="tabCredits" class="tabcontent tabcontent-client">
-            <h3>Skua Developers</h3>
+            <h3>Skua Contributers</h3>
             <ul>
-                <li>Breno_Henrike</li>
-                <li>Lord Exelot</li>
-                <li>Purple</li>
+                <li><b>Breno Henrike</b>, Creator of Skua (converted Rbot to Skua).</li>
+                <li><b>SharpTheNightmare</b> (Purple), Current Lead Developer. (versions 1.2.4.0 => to Current)</li>
+                <li><b>Lord Exelot</b>, Ex Scripts Manager.</li>
+                <li><b>Tato</b>, Current Scripts Manager &amp; Discord Manager.</li>
+                <li><b>Bogalj</b>, Current Scripts Sub-Manger.</li>
             </ul>
 
             <h3>Grimoire Developers</h3>
@@ -267,13 +226,7 @@
                 <li>Cat for combining Grimoire with AQLite and updating it to Grimlite.</li>
                 <li>133Spider for his Open Source AQLite.</li>
                 <li>Ganku for creating Grimlite Rev Updates and fixes.</li>
-            </ul>
-
-            <h3>RBot Developers (decrepit)</h3>
-            <ul>
-                <li>Rodit</li>
-                <li>Breno_Henrike</li>
-                <li>Purple</li>
+                <li>Froztt13 for maintaining GrimLite Ligma.</li>
             </ul>
 
             <p class="smallfont">For more info, visit the <a href="./d/authors.html" target="_blank">Authors Page</a> on
@@ -287,14 +240,11 @@
 <div id="modalBoats" class="modal">
     <div class="modal-content modal-boats">
 
-        <!-- <h1 class="font-chancery">Download Bots</h1> -->
-        <!-- <p><b>Reminder:</b> Always check the tags of the bot to look for relevant info about it.</p> -->
         <div class="tab">
             <button class="tablinks tablinks-boat defaultOpen"
                 onclick="openTab(event, 'tabGbots', 'tabcontent-boat','tablinks-boat')">GBots</button>
             <button class="tablinks tablinks-boat"
                 onclick="openTab(event, 'tabMaster', 'tabcontent-boat','tablinks-boat')">Pinned GBots</button>
-            <!-- <button class="tablinks tablinks-boat" onclick="openTab(event, 'tabRbots', 'tabcontent-boat','tablinks-boat')">RBots</button> -->
             <button class="tablinks tablinks-boat"
                 onclick="openTab(event, 'tabRbotMaster', 'tabcontent-boat','tablinks-boat')">Skua Bots</button>
             <button class="close" onclick="closeModal('modalBoats')">x</button>
@@ -364,30 +314,6 @@
             </p>
         </div>
 
-        <div id="tabRbots" class="tabcontent tabcontent-boat">
-            <div class="boat-container">
-                <table id="rTable" class="myTable">
-                    <colgroup>
-                        <col span=1 style="width: 2%">
-                        <col span=1 style="width: 10%">
-                        <col span=1 style="width: 40%">
-                        <col span=1 style="width: 10%">
-
-                        <col span=1 style="width: 10%">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Author</th>
-                            <th>Boat Name</th>
-
-                            <th>Date</th>
-                            <th>Click Here</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rbotBody"></tbody>
-                </table>
-            </div>
         </div>
 
         <div id="tabGbots" class="tabcontent tabcontent-boat">
@@ -568,11 +494,6 @@
                 <div>
                     <h1>News</h1>
                     <div id="portalNews">
-                        <!-- <p>"As of yesterday (3 Sep 2021), Grimlite Rev v.1.2 is currently broken due to the new spider OMG client updates. We are currently working to fix it. For the time being, please switch to the Grimlite Rev v.1.1, we will soon post an update on v.1.2. Thanks!"<br><br> - AutoQuest Worlds Community</p> -->
-                        <!-- <p>The new update that fixes v.1.2 is now out! Please download it from the "Download Grimoire" button</p> -->
-                        <!-- <p>Grimoire is currently broken due to the latest server rewrite, causing its proxy to be incompatible. We apologize for the inconvenience. The dev is working on it to try to find a fix. Please watch out in the Discord server for any updates. For the time being, you can try using other botting client such as Rbot.</p> -->
-                        <!-- <p>Speaking of RBot, we currently have a new tab in the <b>Get Bots</b> called "Rbot" where we will be posting bots for rbot.</p> -->
-                        <!--<p>Grimoire 1.3 is finally back and fully working!</p>-->
                         <p>We have a new discord server (29th of Match 2023). Use the buttons on the site to (re-)join.
                         </p>
                         <p>Our newest client, based on Rodit's RBot is out. Skua by Breno_Henrike</p>
@@ -615,22 +536,15 @@
                                 d="M6 2l1.171.203c-.355 2.245.791 2.519 2.699 2.874 1.468.273 3.13.622 3.13 3.284v.639h-1.183v-.639c0-1.556-.48-1.809-2.164-2.122-2.583-.48-4.096-1.391-3.653-4.239zm18 14c0 3.312-2.607 6-5.825 6-1.511 0-2.886-.595-3.921-1.565-1.311-1.229-3.278-1.132-4.55.038-1.03.948-2.389 1.527-3.879 1.527-3.217 0-5.825-2.688-5.825-6s2.608-6 5.825-6l12.563.007c3.118.116 5.612 2.755 5.612 5.993zm-15-1h-2v-2h-2v2h-2v2h2v2h2v-2h2v-2zm4 1h-2v1h2v-1zm4-2c0 .552.447 1 1 1s1-.448 1-1-.447-1-1-1-1 .448-1 1zm0 2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1zm2 2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1zm2-2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1z">
                             </path>
                         </svg> Grimoire Guide</button>
-                    <!-- <button class="btn margin-y-mini2 btn-side btn-darker" id="myBtnBoats" onclick="openInNewTab('./d/quest.html')"><svg class="svgIcon" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2l1.171.203c-.355 2.245.791 2.519 2.699 2.874 1.468.273 3.13.622 3.13 3.284v.639h-1.183v-.639c0-1.556-.48-1.809-2.164-2.122-2.583-.48-4.096-1.391-3.653-4.239zm18 14c0 3.312-2.607 6-5.825 6-1.511 0-2.886-.595-3.921-1.565-1.311-1.229-3.278-1.132-4.55.038-1.03.948-2.389 1.527-3.879 1.527-3.217 0-5.825-2.688-5.825-6s2.608-6 5.825-6l12.563.007c3.118.116 5.612 2.755 5.612 5.993zm-15-1h-2v-2h-2v2h-2v2h2v2h2v-2h2v-2zm4 1h-2v1h2v-1zm4-2c0 .552.447 1 1 1s1-.448 1-1-.447-1-1-1-1 .448-1 1zm0 2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1zm2 2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1zm2-2c0-.552-.447-1-1-1s-1 .448-1 1 .447 1 1 1 1-.448 1-1z"></path></svg> Questlist</button> -->
                 </div>
                 <br>
-                <div class="nav-contain" id="dailyGift">
-                    <h1>Daily Gift</h1>
-                    <div class="overlay-red"><img class="image-fit" id="myImg" alt="Daily Gift"
-                            src="https://cdn.discordapp.com/attachments/830702959679373352/880351758168236062/unknown.png">
-                    </div>
-                </div>
-                <br>
+
                 <div class="nav-contain">
                     <h1>Server Status</h1>
                     <p><b>Today: </b><span id="serverDate"></span></p>
                     <p><b>Time: </b><span id="serverTime"></span></p>
-                    <p id="serverBoost"><b>Boost: </b>- 72 Hour Double Gold, Xp, Rep, And Class Points Boost</p>
-                    <p id="serverDeadline"><b>Ends in: </b>November 13, 2021</p>
+                    <p id="serverBoost"><b>Boost: </b>Loading...</p>
+                    <p id="serverDeadline"></p>
                 </div>
             </div>
 
@@ -658,12 +572,6 @@
 
     <!-- Initializing functions -->
     <script type="text/javascript">
-        // Image Modal
-        document.getElementById("myImg").onclick = function () {
-            document.getElementById("modalDaily").style.display = "block";
-            document.getElementById("img01").src = this.src;
-        }
-
         // Set time
         setInterval(function () {
             showTime("serverDate", "serverTime");
@@ -933,46 +841,47 @@
     </script>
 
 
-    <script type="text/javascript">
-        // Gets the boats json
-        fetch('https://raw.githubusercontent.com/BloomAutist47/bloom-bot/master/Data/auqw.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                addDailyBoost(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
+        <script type="text/javascript">
+        // Fetch today's events from the Artix Entertainment calendar
+        async function loadArtixCalendar() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const todayStr = `${yyyy}-${mm}-${dd}`;
 
-        function addDailyBoost(data) {
-            document.getElementById("serverBoost").innerHTML = `<b>Boost: </b>${data["boost"]["item"]}`;
-            document.getElementById("serverDeadline").innerHTML = `<b>Ends in: </b>${data["boost"]["endsin"]}`;
+            const boostEl = document.getElementById('serverBoost');
+            const deadlineEl = document.getElementById('serverDeadline');
 
-            document.getElementById("myImg").src = data["daily"]["image"];
-            let target = "";
-            if (data["daily"]["quest"] == "") {
-                // Enemy mode
-                let enemy = data["daily"]["enemy"][0].replace("<", "").replaceAll(">", "");
-                target = `<p><b>Enemy: </b> <a href='${data["daily"]["enemy"][1]}' target='_blank'>${enemy}</a></p>`;
-            } else {
-                target = `<p><b>Quest: </b> ${data["daily"]["quest"]}</p>`;
+            try {
+                const res = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.artix.com/calendar/'));
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const html = await res.text();
+
+                const events = [];
+                const re = /title:\s*'((?:[^'\\]|\\.)*)'\s*,\s*url:\s*'([^']+?)'(?:\s*\+[^,}]+)?,\s*start:\s*'(\d{4}-\d{2}-\d{2})'/g;
+                let match;
+                while ((match = re.exec(html)) !== null) {
+                    const title = match[1].replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+                    events.push({ title, url: match[2], start: match[3] });
+                }
+
+                const todayEvents = events.filter(e => e.start === todayStr);
+                if (todayEvents.length > 0) {
+                    const items = todayEvents.map(e => `<a href="${e.url}" target="_blank">${e.title}</a>`).join('<br>');
+                    boostEl.innerHTML = `<b>Today: </b>${items}`;
+                    deadlineEl.innerHTML = '';
+                } else {
+                    boostEl.innerHTML = `<b>Boost: </b>None listed today`;
+                    deadlineEl.innerHTML = `<a href="https://www.artix.com/calendar/" target="_blank">View full calendar</a>`;
+                }
+            } catch (err) {
+                console.log('Artix calendar error: ' + err);
+                boostEl.innerHTML = `<b>Boost: </b><a href="https://www.artix.com/calendar/" target="_blank">artix.com/calendar</a>`;
+                deadlineEl.innerHTML = '';
             }
-
-            document.getElementById("dailyTitle").innerHTML = `<b><a href="${data["daily"]["link"]}">Daily Gift</a></b>`;
-            document.getElementById("dailyDescription").innerHTML = `
-         <div id="dailyDescription">
-            <p><b>Location: </b><span id="loc">${data["daily"]["location"]}</span> <button class="btn btn-red" onclick="copy2clipboard('loc')">copy</button></p>
-         ` + target +
-                `
-            <p><b>Item: </b> ${data["daily"]["item"]}</p>
-            <p><b>Date Posted:</b> ${data["daily"]["date"]}</p>
-         </div>
-         `
-
-
         }
+        loadArtixCalendar();
     </script>
 
 
